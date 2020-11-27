@@ -1,0 +1,107 @@
+#properties {
+    width: 100%;
+    height: 384px;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+#properties fieldset {
+    border-radius: var(--fieldset-border-radius);
+    border: 1px solid var(--fieldset-border-color);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+#properties fieldset,
+#properties input:not([type=color]){
+    margin-bottom: 10px;
+}
+
+#properties .flexbox input{
+    margin-bottom: initial;
+}
+
+#properties :focus{
+    outline: none;
+}
+
+#properties input:not([type=color]) {
+    cursor: text;
+    border-radius: var(--input-border-radius);
+    border: 1px solid var(--input-border-color);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    background-color: var(--input-color);
+    color: var(--text-color);
+    padding: .5em .5em;
+}
+
+#properties input:focus{
+    border-color: var(--input-focus-border-color) !important;
+}
+
+#properties .flexbox>*{
+    margin: 2.5px;
+}
+
+#properties input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+#properties input[type=number]::-webkit-inner-spin-button,
+#properties input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+#properties label{
+    cursor: pointer;
+}
+
+#properties h2:first-child{
+    border-bottom: 1px solid var(--meta-box-border-color);
+    margin-bottom: 0px; 
+    padding: 5px 10px;
+}
+
+#properties input[type=color]{
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+::-webkit-color-swatch{
+    border:none;
+}
+#properties input[type=color]:focus{
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#properties-content{
+    height: 343px;
+    z-index: 0;
+    overflow: auto;
+}
+#properties-shadow-top,
+#properties-shadow-bottom{
+    box-shadow: inset 0px 12px 5px var(--metabox-background);
+    z-index: 2;
+    position: absolute;
+    height: 15px;
+    width: calc( 100% - var(--scrollbar-width) );
+}
+
+#properties-content>*{
+    z-index: -2;
+}
+#properties-shadow-bottom{
+    box-shadow: inset 0px -12px 10px var(--metabox-background);
+    top:367px;
+    border-bottom-left-radius: var(--metabox-border-radius);
+}

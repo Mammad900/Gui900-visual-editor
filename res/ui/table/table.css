@@ -1,0 +1,19 @@
+table.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+table.table tr:not(:last-child){
+    border-bottom: 1px solid var(--table-inner-border-color);
+}
+table.table tr{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+table.table th,
+table.table td{
+    padding: 7px;
+}
+table.table.np th,
+table.table.np td{
+    padding: 10px;
+}

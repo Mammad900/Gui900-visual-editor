@@ -1,0 +1,36 @@
+:root[theme=dark-yellow]{
+    --back-color: #131300;
+    --text-color: #ffffff;
+    
+    --toolbar-background: #252500;
+    --toolbar-menuitem-hover: #333300;
+    --toolbar-menuitem-active: #3f3f00;
+    --toolbar-separator-color: rgb(255, 255, 0);
+    
+    --meta-box-border-color: #ffff00;
+    --metabox-background: #252500;
+    
+    --table-outer-border-color: #ffff00;
+    --table-inner-border-color: #5c5c00;
+
+    --scrollbar-thumb: rgba(58, 58, 0, 0.74);
+    --scrollbar-background: rgba(255, 255, 0, 0);
+    --scrollbar-thumb-hover: rgba(83, 83, 0, 0.93);
+    --main-scrollbar-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+    --main-scrollbar-background: 131313;
+
+    --selection-background: rgb(243, 243, 0);
+    --contenteditable-focus-background: #ffff0142;
+    
+    --dialog-background-color: #181800;
+    --dialog-link-color: rgb(255, 255, 66);
+    --dialog-link-hover-underline-color: white;
+    --dialog-textarea-background-color: #272700;
+    
+    --tooltip-color: #252500;
+    
+    --fieldset-border-color: yellow;
+    --input-border-color: yellow;
+    --input-focus-border-color: rgb(63, 63, 0);
+    --input-color: #333300;
+}

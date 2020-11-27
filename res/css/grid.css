@@ -1,0 +1,47 @@
+.flexbox{
+    display: flex;
+}
+.grid .left {
+    float: left;
+}
+
+.grid .right {
+    float: right;
+}
+
+@media screen and (max-width:700px) {
+    .grid .s12,
+    .flexbox .s12 {
+        width: 100%;
+    }
+    .grid .left,
+    .grid .right{
+        float: unset;
+    }
+    .flexbox.responsive,
+    .flexbox.responsive-big{
+        display: block;
+    }
+}
+
+@media screen and (min-width:701px) and (max-width:1024px) {
+    .grid .m6,
+    .flexbox .m6 {
+        width: 50%;
+    }
+
+    .grid .m12,
+    .flexbox .m12 {
+        width: 100%;
+    }
+    .flexbox.responsive-big{
+        display: block;
+    }
+}
+
+@media screen and (min-width:1025px) {
+    .grid .l6,
+    .flexbox .l6 {
+        width: 50%;
+    }
+}

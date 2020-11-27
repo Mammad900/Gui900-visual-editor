@@ -1,0 +1,36 @@
+:root[theme=light-green]{
+    --back-color: #aeffae;
+    --text-color: #000000;
+
+    --toolbar-background: #94ff94;
+    --toolbar-menuitem-hover: #77ff77;
+    --toolbar-menuitem-active: #5bff5b;
+    --toolbar-separator-color: rgb(0, 255, 0);
+
+    --meta-box-border-color: #00ff00;
+    --metabox-background: #8eff8e;
+
+    --table-outer-border-color: #00ff00;
+    --table-inner-border-color: #74bb74;
+
+    --scrollbar-thumb: rgba(112, 187, 112, 0.74);
+    --scrollbar-background: rgba(255, 255, 255, 0);
+    --scrollbar-thumb-hover: rgba(54, 150, 54, 0.93);
+    --main-scrollbar-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+    --main-scrollbar-background: rgb(0, 255, 0);
+
+    --selection-background: rgb(102, 206, 102);
+    --contenteditable-focus-background: #4f9b4f41;
+    
+    --dialog-background-color: #7bff7b;
+    --dialog-link-color: rgb(0, 255, 0);
+    --dialog-link-hover-underline-color: black;
+    --dialog-textarea-background-color: rgb(196, 255, 196);
+    
+    --tooltip-color: #94ff94;
+    
+    --fieldset-border-color: rgb(0, 255, 0);
+    --input-border-color: rgb(0, 255, 0);
+    --input-focus-border-color: rgb(161, 255, 161);
+    --input-color: #66ff66;
+}

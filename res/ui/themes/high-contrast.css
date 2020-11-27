@@ -1,0 +1,44 @@
+:root[theme=high-contrast]{
+    --back-color: #000000;
+    --text-color: #ffffff;
+    
+    --toolbar-background: #000000;
+    --toolbar-menuitem-hover: #808080;
+    --toolbar-menuitem-active: #808080;
+    
+    --meta-box-border-color: #ffffff;
+    --metabox-background: #000000;
+    
+    --table-outer-border-color: #ffffff;
+    --table-inner-border-color: #ffffff;
+
+    --scrollbar-thumb: rgba(255, 255, 255, 0.658);
+    --scrollbar-background: rgba(255, 255, 255, 0);
+    --scrollbar-thumb-hover: rgb(255, 255, 255);
+    --main-scrollbar-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0);
+    --main-scrollbar-background: 131313;
+
+    --selection-background: rgb(131, 131, 131);
+    --contenteditable-focus-background: rgba(255, 255, 255, 0.255);
+    
+    --dialog-background-color: #000000;
+    --dialog-link-color: rgb(0, 183, 255);
+    --dialog-link-hover-underline-color: white;
+    --dialog-textarea-background-color: #000000;
+    
+    --tooltip-color: rgb(0, 0, 0);
+    
+    --fieldset-border-color: rgb(255, 255, 255);
+    --input-border-color: rgb(255, 255, 255);
+    --input-focus-border-color: blue;
+    --input-color: #000000;
+    
+    --border: 1px solid white;
+}
+
+:root[theme=high-contrast] body>.content{
+    height: calc( 100vh - 29.5px)
+}
+:root[theme=high-contrast] #toolbar .menuitem .dropdown .dropdown{
+    left:-2px
+}

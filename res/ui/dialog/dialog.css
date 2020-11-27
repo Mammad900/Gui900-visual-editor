@@ -1,0 +1,68 @@
+#dialog {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--dialog-dim-fallback-color);
+    background-color: var(--dialog-dim-color);
+}
+
+#dialog .content {
+    background-color: var(--dialog-background-color);
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+    user-select: text;
+    cursor: text;
+    border: var(--border);
+}
+
+#dialog .content .options{
+    text-align: right;
+    user-select: none;
+    cursor: default;
+    margin-top: 10px;
+}
+
+#dialog .content .options .option{
+    background-color: var(--toolbar-background);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    border: var(--border);
+}
+#dialog .content .options .option:hover{
+    background-color: var(--toolbar-menuitem-hover);
+}
+#dialog .content .options .option:active{
+    background-color: var(--toolbar-menuitem-active);
+}
+#dialog .content .options .option:focus{
+    outline: none;
+}
+
+#dialog .content textarea{
+    width: 100%;
+    resize: vertical;
+    border: none;
+    cursor: text;
+    min-height: 20px;
+    background-color: var(--dialog-textarea-background-color);
+    color: var(--text-color);
+}
+#dialog .content textarea:focus{
+    outline: none;
+}
+#dialog a{
+    text-decoration: none;
+    color: var(--dialog-link-color);
+    cursor: pointer;
+}
+#dialog a:hover{
+    text-decoration: underline var(--dialog-link-hover-underline-color);
+}
