@@ -3,7 +3,6 @@
     height: 384px;
     min-width: 200px;
     position: relative;
-    overflow: hidden;
 }
 
 #properties fieldset {

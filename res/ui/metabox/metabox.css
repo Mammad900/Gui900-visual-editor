@@ -5,6 +5,7 @@
     border-radius: var(--metabox-border-radius);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
     background-color: var(--metabox-background);
+    overflow: hidden;
 }
 .meta-box>h2:first-child{
     margin-top: 0;

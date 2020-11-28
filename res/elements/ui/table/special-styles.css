@@ -1,18 +1,3 @@
-#elements_table tr:last-child .buttons>*:first-child button.button {
-    border-bottom-left-radius: var(--metabox-border-radius);
-}
-#elements_table tr:last-child td:first-child {
-    border-bottom-left-radius: var(--metabox-border-radius);
-}
-#elements_table tr:first-child td:first-child {
-    border-top-left-radius: var(--metabox-border-radius);
-}
-#elements_table tr:last-child td:last-child {
-    border-bottom-right-radius: var(--metabox-border-radius);
-}
-#elements_table tr:first-child td:last-child {
-    border-top-right-radius: var(--metabox-border-radius);
-}
 #elements_table tr:not(:first-of-type) td:nth-child(2){
     user-select: text;
 }
