@@ -73,6 +73,11 @@
     cursor: pointer;
     border: 1px solid gray;
 }
+
+#properties input[type=color]::-moz-color-swatch{
+    border-radius: 8px;
+}
+
 ::-webkit-color-swatch{
     border:none;
 }
