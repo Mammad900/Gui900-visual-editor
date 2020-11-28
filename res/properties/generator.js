@@ -106,6 +106,38 @@ var properties={
             input.attr("list",id);
             container.append(dat);
             return input;
+        },
+        checkBox:
+        /**
+         * 
+         * @param {JQuery<HTMLElement>} container 
+         * @param {string} label 
+         * @param {string} id 
+         * @param {boolean} value
+         */
+        function (container, label, id, value, block=false) {
+            var contain=$(block?"<div></div>":"<span></span>").addClass("vertical-center").css("white-space","nowrap");
+            if(!block)contain.css("margin-right","10px");
+            var cb=$("<i/>").attr("id",id);
+            if(value){
+                cb.addClass(["far","fa-check-square"]).data("checked","1");
+            }
+            else{
+                cb.addClass(["far","fa-square"]).data("checked","0");
+            }
+            contain.on("click",function (e) {
+                var check=$("#"+id);
+                if(check.data("checked")=="0"){
+                    check.removeClass("fa-square").addClass("fa-check-square").data("checked","1");
+                }
+                else{
+                    check.removeClass("fa-check-square").addClass("fa-square").data("checked","0");
+                }
+            })
+            cb.css("margin-right","5px");
+            contain.append(cb,$("<span></span>").text(label));
+            container.append(contain);
+            return cb;
         }
     }
 }
