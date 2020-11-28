@@ -56,7 +56,8 @@ function loadJsCssFile(filename){
     loadJsCssFile(value);
 });
 
-$(function(){
+var retries=0;
+function LP(){
     setTimeout(function(){
         try{
             [
@@ -73,11 +74,20 @@ $(function(){
             });
         }
         catch(err){
-                document.getElementById("loading-header").innerHTML+=
-                `<p>An error occurred. Please reload the page.<br>
-                 If you reloaded a few times but the issue persists, please <a href='#'>Open an issue.</a><br>
-                Error: <code>`+err.message+`</code>
-                 </p>`
+            console.error(err);
+            document.getElementById("loading-header").innerHTML+=
+            `<p>An error occurred. Please reload the page.<br>
+                If you reloaded a few times but the issue persists, please <a href='#'>Open an issue.</a><br>
+            Error: <code>`+err.message+`</code>
+                </p>`;
+            if(retries<10){
+                if(typeof(err)==ReferenceError){
+                    document.getElementById("loading-header").innerHTML+="<p>Retrying for "+retries+"th time</p>"
+                    retries++
+                    LP(); // Again
+                }
+            }
         }
     },1000);
-});
+};
+$(LP);
