@@ -17,6 +17,7 @@ function loadJsCssFile(filename){
 }
 
 [
+    "res/js/theme-loader.js", //Theme loader
     "res/ui/toolbar/toolbar.js", //Toolbar controller, creates tool bar HTML and handle onclick
     "res/ui/toolbar/items.js", //Holds toolbar data
     "res/pages/ui/table/buttons.js", //Pages table row buttons generator 
@@ -25,7 +26,6 @@ function loadJsCssFile(filename){
     "res/elements/ui/table/row.js", //Elements table rows
     "res/ui/dialog/dialog.js", //Handles dialogs
     "res/js/key-bindings.js", //Key bindings
-    "res/js/theme-loader.js", //Theme loader
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
