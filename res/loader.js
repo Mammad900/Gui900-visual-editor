@@ -26,6 +26,8 @@ function loadJsCssFile(filename){
     "res/elements/ui/table/row.js", //Elements table rows
     "res/ui/dialog/dialog.js", //Handles dialogs
     "res/js/key-bindings.js", //Key bindings
+    "res/properties/generator.js", //Properties generator
+    "res/properties/items.js", //Uses properties generator
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
@@ -69,6 +71,7 @@ function LP(){
                 LP_HandleNewElementButton,
                 LP_CreateHiddenFileInput,
                 LP_GenerateToolbar,
+                LP_Properties,
                 LP_HandleColorPickerInput,
                 LP_loaderEnd,
             ].forEach(function(value){
