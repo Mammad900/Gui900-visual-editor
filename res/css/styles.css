@@ -34,7 +34,7 @@ body {
 
 body>.content {
     overflow: auto;
-    height: calc( 100vh - 28.5px)
+    height: calc( 100vh - 28.5px);
 }
 body>.content::-webkit-scrollbar-track {
     box-shadow: var(--main-scrollbar-shadow);
