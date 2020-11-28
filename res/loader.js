@@ -45,7 +45,7 @@ function loadJsCssFile(filename){
     "res/css/scroll-bar.css", //Custom scroll-bars
     "res/css/grid.css", //Multi-column rows
     "res/ui/dialog/dialog.css", //Dialog styles
-    "res/ui/properties/styles.css", //Properties special styles
+    "res/properties/styles.css", //Properties special styles
     "res/ui/preview/styles.css", //Preview special styles
     "res/elements/ui/table/special-styles.css", //Elements table special styles
     "res/font-awesome/css/all.css", //Font awesome
