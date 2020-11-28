@@ -9,13 +9,15 @@
     float: right;
 }
 
+.flexbox>*{
+    width: 100%;
+}
+
 @media screen and (max-width:700px) {
-    .grid .s12,
-    .flexbox .s12 {
+    .grid .s12{
         width: 100%;
     }
-    .grid .s6,
-    .flexbox .s6 {
+    .grid .s6 {
         width: 50%;
     }
     .grid .left,
@@ -29,13 +31,11 @@
 }
 
 @media screen and (min-width:701px) and (max-width:1024px) {
-    .grid .m6,
-    .flexbox .m6 {
+    .grid .m6{
         width: 50%;
     }
 
-    .grid .m12,
-    .flexbox .m12 {
+    .grid .m12 {
         width: 100%;
     }
     .flexbox.responsive-big{
@@ -44,8 +44,7 @@
 }
 
 @media screen and (min-width:1025px) {
-    .grid .l6,
-    .flexbox .l6 {
+    .grid .l6{
         width: 50%;
     }
 }
