@@ -61,6 +61,8 @@ function LP(){
     setTimeout(function(){
         try{
             [
+                LP_GV_ElementsTableRows,
+                LP_GV_PagesTableRows,
                 LP_keyBindings,
                 LP_handleNewPageButton,
                 LP_CreateFirstPageRow,
