@@ -45,5 +45,4 @@ function LP_Properties() {
     properties.gen.datalist(p,properties.gen.inputText(p,"Font","property-font","&FreeSans9pt7b"),"property-font-list",list);
     properties.gen.checkBox(p,"Enabled?", "property-enabled", true);
     properties.gen.checkBox(p,"Visible?", "property-visible", true);
-    p.append("<br/><br/>")
 }
