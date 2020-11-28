@@ -84,13 +84,6 @@
 ::-moz-color-swatch{
     border:none;
 }
-#properties input[type=color]:focus{
-    height: 16px;
-    width: 16px;
-    padding: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
 #properties-content{
     height: 343px;
     z-index: 0;
