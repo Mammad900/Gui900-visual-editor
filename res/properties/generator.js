@@ -85,7 +85,10 @@ var properties={
         function (container, label, id, value) {
             var div=$("<div></div>").addClass("vertical-center");
             div.append($("<label></label>").attr("for",id).text(label));
-            var npt= $("<input/>").attr("type","color").attr("id",id).val(value);
+            var npt= $("<input/>").attr("type","color").attr("id",id).val(value).css("background-color",value);
+            npt.on("input",function (e) {
+                $(e.target).css("background-color",e.target.value);
+            })
             div.append(npt);
             container.append(div);
             return npt;

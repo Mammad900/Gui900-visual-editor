@@ -29,6 +29,7 @@ function LP_GV_ElementsTableRows() {
                 this.data[num-1][1].prop("disabled",false);
             }
             this.sortNumbers();
+            return tr;
         },
 
         sortNumbers: function(){

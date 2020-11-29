@@ -22,12 +22,16 @@ function loadJsCssFile(filename){
     "res/ui/toolbar/items.js", //Holds toolbar data
     "res/pages/ui/table/buttons.js", //Pages table row buttons generator 
     "res/pages/ui/table/row.js", //Pages table rows
+    "res/elements/element.js", //Elements handler
     "res/elements/ui/table/buttons.js", //Elements table row buttons generator
     "res/elements/ui/table/row.js", //Elements table rows
     "res/ui/dialog/dialog.js", //Handles dialogs
     "res/js/key-bindings.js", //Key bindings
     "res/properties/generator.js", //Properties generator
-    "res/properties/items.js", //Uses properties generator
+
+    "res/elements/types/button/createDefaultDataObject.js",
+    "res/elements/types/button/createProperties.js",
+    "res/elements/types/button/saveProperties.js",
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
@@ -71,7 +75,6 @@ function LP(){
                 LP_HandleNewElementButton,
                 LP_CreateHiddenFileInput,
                 LP_GenerateToolbar,
-                LP_Properties,
                 LP_HandleColorPickerInput,
                 LP_loaderEnd,
             ].forEach(function(value){

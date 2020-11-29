@@ -21,3 +21,7 @@
 #elements-table-column tr:not(:first-child){
     overflow: hidden;
 }
+
+#elements_table div.buttons{
+    display: inline-block;
+}
