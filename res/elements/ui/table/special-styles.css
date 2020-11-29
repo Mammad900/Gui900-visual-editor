@@ -21,6 +21,10 @@
 #elements-table-column tr:not(:first-child){
     overflow: hidden;
 }
+#elements-table-column tr:last-child{
+    border-bottom-left-radius: var(--box-border-radius);
+    border-bottom-right-radius: var(--box-border-radius);
+}
 
 #elements_table div.buttons{
     display: inline-block;
