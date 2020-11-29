@@ -84,9 +84,13 @@
 }
 
 #properties h2:first-child {
-    border-bottom: 1px solid var(--meta-box-border-color);
-    margin-bottom: 0px;
+    margin: 0px;
     padding: 5px 10px;
+    display: inline-block;
+}
+
+#properties>div:first-child{
+    border-bottom: 1px solid var(--meta-box-border-color);
 }
 
 #properties-content {

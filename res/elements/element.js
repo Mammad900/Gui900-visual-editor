@@ -24,6 +24,7 @@ var elements={
         elements.types[type].saveProperties(this.selectedElement);
         properties.getElement().children().remove();
         elements.types[type].createProperties(index);
+        $("#properties-header-details").text(this.data[index].type+' #'+index+' ('+$($("#elements_table").children().children()[index+1]).children()[2].innerHTML+")");
         elements.selectedElement=index;
     },
     selectedElement: -1
