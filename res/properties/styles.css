@@ -13,7 +13,8 @@
 }
 
 #properties fieldset,
-#properties input:not([type=color]) {
+#properties input:not([type=color]),
+#properties-content>div.vertical-center {
     margin-bottom: 10px;
 }
 
