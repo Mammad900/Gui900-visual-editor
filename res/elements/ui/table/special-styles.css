@@ -12,5 +12,12 @@
 }
 
 #elements-table-column{
-    min-width: 370px;
+    min-width: 400px;
+}
+
+#elements-table-column>.meta-box{
+    overflow: visible;
+}
+#elements-table-column tr:not(:first-child){
+    overflow: hidden;
 }
