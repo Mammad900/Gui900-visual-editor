@@ -32,6 +32,9 @@ function loadJsCssFile(filename){
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
     "res/elements/types/button/saveProperties.js",
+    "res/elements/types/label/createDefaultDataObject.js",
+    "res/elements/types/label/createProperties.js",
+    "res/elements/types/label/saveProperties.js",
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
