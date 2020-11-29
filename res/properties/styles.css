@@ -13,16 +13,8 @@
 }
 
 #properties fieldset,
-#properties input:not([type=color]){
+#properties input:not([type=color]) {
     margin-bottom: 10px;
-}
-
-#properties .flexbox input{
-    margin-bottom: initial;
-}
-
-#properties :focus{
-    outline: none;
 }
 
 #properties input:not([type=color]) {
@@ -35,36 +27,18 @@
     padding: .5em .5em;
 }
 
-#properties input:focus{
-    border-color: var(--input-focus-border-color) !important;
-}
-
-#properties .flexbox>*{
-    margin: 2.5px;
-}
-
 #properties input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
 }
 
-#properties input[type=number]::-webkit-inner-spin-button,
-#properties input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-}
+    #properties input[type=number]::-webkit-inner-spin-button,
+    #properties input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
 
-#properties label{
-    cursor: pointer;
-}
-
-#properties h2:first-child{
-    border-bottom: 1px solid var(--meta-box-border-color);
-    margin-bottom: 0px; 
-    padding: 5px 10px;
-}
-
-#properties input[type=color]{
+#properties input[type=color] {
     height: 16px;
     width: 16px;
     padding: 0;
@@ -73,37 +47,63 @@
     border: 1px solid gray;
 }
 
-#properties input[type=color]::-moz-color-swatch{
-    border-radius: 8px;
+    #properties input[type=color]::-moz-color-swatch {
+        border-radius: 8px;
+    }
+
+    ::-webkit-color-swatch {
+        border: none;
+    }
+    
+    ::-moz-color-swatch {
+        border: none;
+    }
+
+#properties input:focus {
+    border-color: var(--input-focus-border-color) !important;
 }
 
-::-webkit-color-swatch{
-    border:none;
+#properties :focus {
+    outline: none;
 }
-::-moz-color-swatch{
-    border:none;
+
+#properties label {
+    cursor: pointer;
 }
-#properties-content{
+
+#properties .flexbox input {
+    margin-bottom: initial;
+}
+
+#properties .flexbox>* {
+    margin: 2.5px;
+}
+
+#properties h2:first-child {
+    border-bottom: 1px solid var(--meta-box-border-color);
+    margin-bottom: 0px;
+    padding: 5px 10px;
+}
+
+#properties-content {
     height: 343px;
     z-index: 0;
     overflow: auto;
     padding-top: 5px;
     padding-bottom: 15spx;
 }
+
 #properties-shadow-top,
-#properties-shadow-bottom{
+#properties-shadow-bottom {
     box-shadow: inset 0px 12px 5px var(--metabox-background);
     z-index: 2;
     position: absolute;
     height: 15px;
-    width: calc( 100% - var(--scrollbar-width) );
+    width: calc(100% - var(--scrollbar-width));
 }
 
-#properties-content>*{
-    z-index: -2;
-}
-#properties-shadow-bottom{
+#properties-shadow-bottom {
     box-shadow: inset 0px -12px 10px var(--metabox-background);
-    top:367px;
+    top: 367px;
     border-bottom-left-radius: var(--metabox-border-radius);
 }
