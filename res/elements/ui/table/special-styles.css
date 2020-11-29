@@ -9,6 +9,7 @@
 }
 #elements_table td:first-child{
     min-width: 140px;
+    cursor: pointer;
 }
 
 #elements-table-column{
