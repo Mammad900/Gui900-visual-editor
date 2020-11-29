@@ -90,7 +90,7 @@
 }
 
 #properties>div:first-child{
-    border-bottom: 1px solid var(--meta-box-border-color);
+    border-bottom: 1px solid var(--box-border-color);
 }
 
 #properties-content {
@@ -103,7 +103,7 @@
 
 #properties-shadow-top,
 #properties-shadow-bottom {
-    box-shadow: inset 0px 12px 5px var(--metabox-background);
+    box-shadow: inset 0px 12px 5px var(--box-background);
     z-index: 2;
     position: absolute;
     height: 15px;
@@ -111,7 +111,7 @@
 }
 
 #properties-shadow-bottom {
-    box-shadow: inset 0px -12px 10px var(--metabox-background);
+    box-shadow: inset 0px -12px 10px var(--box-background);
     top: 367px;
-    border-bottom-left-radius: var(--metabox-border-radius);
+    border-bottom-left-radius: var(--box-border-radius);
 }

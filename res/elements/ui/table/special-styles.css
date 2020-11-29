@@ -15,7 +15,7 @@
     min-width: 400px;
 }
 
-#elements-table-column>.meta-box{
+#elements-table-column>.box{
     overflow: visible;
 }
 #elements-table-column tr:not(:first-child){

@@ -4,7 +4,7 @@
     --toolbar-sub-menu-width: 17em;
     --toolbar-item-height: calc(-10px - 1.15em);
 
-    --metabox-border-radius: 10px;
+    --box-border-radius: 10px;
     
     --dialog-dim-color: rgb(0 0 0 / 62%);
     --dialog-dim-fallback-color: rgb(0, 0, 0);

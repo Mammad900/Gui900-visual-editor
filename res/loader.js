@@ -44,7 +44,7 @@ function loadJsCssFile(filename){
     "res/ui/toolbar/toolbar.css", //Styles for the toolbar
     "res/css/constants.css", //Holds the UI constants
     "res/css/styles.css", //The main styles for the app
-    "res/ui/metabox/metabox.css", //Meta-box styles
+    "res/ui/box/box.css", //box styles
     "res/ui/table/table.css", //Table styles
     "res/ui/button/button.css", //Button styles
     "res/pages/ui/table/special-styles.css", //Styles specific to pages table
