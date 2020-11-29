@@ -21,7 +21,8 @@ var elements={
     selectElement:
     function (index){
         var type=this.data[index].type;
-        elements.types[type].saveProperties(this.selectedElement);
+        if(this.selectedElement!=-1)
+            elements.types[this.data[this.selectedElement].type].saveProperties(this.selectedElement);
         properties.getElement().children().remove();
         elements.types[type].createProperties(index);
         $("#properties-header-details").text(this.data[index].type+' #'+index+' ('+$($("#elements_table").children().children()[index+1]).children()[2].innerHTML+")");
