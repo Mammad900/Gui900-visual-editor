@@ -33,4 +33,6 @@
     --input-border-color: rgb(255, 255, 0);
     --input-focus-border-color: rgb(255, 255, 161);
     --input-color: #ffff66;
+
+    --wrong-input: rgb(255, 106, 106);
 }

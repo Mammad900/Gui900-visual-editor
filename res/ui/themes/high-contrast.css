@@ -34,6 +34,8 @@
     --input-color: #000000;
     
     --border: 1px solid white;
+
+    --wrong-input: rgb(255, 0, 0);
 }
 
 :root[theme=high-contrast] body>.content{

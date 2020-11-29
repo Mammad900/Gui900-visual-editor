@@ -59,6 +59,10 @@
         border: none;
     }
 
+#properties input.wrong {
+    background-color: var(--wrong-input);
+}
+
 #properties input:focus {
     border-color: var(--input-focus-border-color) !important;
 }
