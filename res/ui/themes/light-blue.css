@@ -35,4 +35,7 @@
     --input-color: #6666ff;
 
     --wrong-input: rgb(255, 106, 106);
+
+    --range-background-color: rgb(98, 98, 255);
+    --range-thumb-color: black;
 }

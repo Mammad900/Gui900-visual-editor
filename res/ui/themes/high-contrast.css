@@ -36,6 +36,9 @@
     --border: 1px solid white;
 
     --wrong-input: rgb(255, 0, 0);
+
+    --range-background-color: rgb(255, 255, 255);
+    --range-thumb-color: black;
 }
 
 :root[theme=high-contrast] body>.content{

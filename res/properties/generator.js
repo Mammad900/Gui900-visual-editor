@@ -141,6 +141,19 @@ var properties={
             contain.append(cb,$("<span></span>").text(label));
             container.append(contain);
             return cb;
-        }
+        },
+        inputRange:
+        /**
+         * 
+         * @param {JQuery<HTMLElement>} container 
+         * @param {string} label 
+         * @param {string} id 
+         * @param {Number} min 
+         * @param {Number} max 
+         * @param {Number} value 
+         */
+        function (container, label, id, min, max, value) {
+            return this.inputText(container,label,id,value).attr("type","range").attr("min",min).attr("max",max);
+        },
     }
 }

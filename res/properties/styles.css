@@ -18,7 +18,7 @@
     margin-bottom: 10px;
 }
 
-#properties input:not([type=color]) {
+#properties input:not([type=color]):not([type=range]) {
     cursor: text;
     border-radius: var(--input-border-radius);
     border: 1px solid var(--input-border-color);
@@ -37,6 +37,24 @@
     #properties input[type=number]::-webkit-inner-spin-button,
     #properties input[type=number]::-webkit-outer-spin-button {
         -webkit-appearance: none;
+    }
+
+#properties input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--range-background-color);
+    height: 10px;
+    border-radius: 5px;
+}
+
+    #properties input[type=range]::-webkit-slider-thumb{
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        background-color: var(--range-thumb-color);
+        border-radius: 7.5px;
+        height: 15px;
+        width: 15px;
+        cursor: e-resize;
     }
 
 #properties input[type=color] {
