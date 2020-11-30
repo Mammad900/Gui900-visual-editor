@@ -91,7 +91,7 @@ var properties={
             })
             div.append(npt);
             container.append(div);
-            return npt;
+            return div;
         },
         datalist:
         /**
