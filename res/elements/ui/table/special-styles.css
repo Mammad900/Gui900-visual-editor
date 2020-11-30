@@ -1,3 +1,6 @@
+#elements_table tr:last-child .buttons>*:first-child button.button {
+    border-bottom-left-radius: var(--box-border-radius);
+}
 #elements_table tr:not(:first-of-type) td:nth-child(2){
     user-select: text;
 }
