@@ -18,7 +18,7 @@ elements.types["Check-box"].createProperties= function (index) {
         properties.gen.inputColor(fs,"Box border: ", "properties-color-box-border",props.colors.box.border).css("display","inline-block").css("margin-right","15px");
         properties.gen.inputColor(fs,"Tick: ", "properties-color-tick",props.colors.box.tick).css("display","inline-block").css("margin-right","15px");
     });
-    properties.gen.inputNumber(p,"Size", "property-size",1,4,props.size)
+    properties.gen.inputRange(p,"Size", "property-size",1,4,props.size)
     properties.gen.checkBox(p,"Checked?", "property-checked", props.checked);
     properties.gen.checkBox(p,"Enabled?", "property-enabled", props.enabled);
     properties.gen.checkBox(p,"Visible?", "property-visible", props.visible);
