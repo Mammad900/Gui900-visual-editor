@@ -48,8 +48,8 @@
 #toolbar .menuitem:hover>.dropdown {display: block;}
 
 #toolbar .dropdown hr{
-    border-bottom: none;
-    border-top-color: var(--toolbar-separator-color);
+    border: none;
+    border-top: 1px solid var(--toolbar-separator-color);
 }
 
 .color-preview {
