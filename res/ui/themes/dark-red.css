@@ -5,12 +5,11 @@
     --toolbar-background: #250000;
     --toolbar-menuitem-hover: #330000;
     --toolbar-menuitem-active: #3f0000;
-    --toolbar-separator-color: rgb(255, 0, 0);
+    --toolbar-separator-color: #9e0000;
     
-    --box-border-color: #ff0000;
+    --box-border-color: #550000;
     --box-background: #250000;
     
-    --table-outer-border-color: #ff0000;
     --table-inner-border-color: #5c0000;
 
     --scrollbar-thumb: rgba(58, 0, 0, 0.74);
@@ -29,8 +28,8 @@
     
     --tooltip-color: #250000;
     
-    --fieldset-border-color: red;
-    --input-border-color: red;
+    --fieldset-border-color: #550000;
+    --input-border-color: #550000;
     --input-focus-border-color: rgb(63, 0, 0);
     --input-color: #330000;
 
