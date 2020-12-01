@@ -27,7 +27,9 @@ elements.types["Button"].createProperties= function (index) {
             })
         }
     ]),
-    properties.gen.inputText(p,"Text","property-text",props.text);
+    properties.gen.inputText(p,"Text","property-text",props.text).on("change",function (e) {
+        $($("#elements_table tr")[index+1]).children(":nth-child(3)").text($("#property-text").val())
+    });
     properties.gen.fieldset(p,"Colors",function (fs) {
         properties.gen.grid(fs,3,1,[
             function (col) {
