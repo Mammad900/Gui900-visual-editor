@@ -13,7 +13,8 @@ var elements={
         elements.selectElement(i);
         tr.on("click",function (e) {
             if(e.target==tr.children()[0]){
-                elements.selectElement(i);
+                var num= $("#elements_table tr").index(tr)-1
+                elements.selectElement(num);
             }
         });
     },

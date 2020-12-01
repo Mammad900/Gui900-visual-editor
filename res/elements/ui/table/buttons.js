@@ -25,6 +25,10 @@ elements.table={
                         elements.table.rows.data[n-1][1].prop("disabled",false);
                     }
                     elements.table.rows.sortNumbers();
+                    
+                    var arr2=elements.data[i];
+                    elements.data[i]=elements.data[i+1];
+                    elements.data[i+1]=arr2;
                 });
             container.append(b1[0]);
             var b2=elements.table.buttons.generateButton(
@@ -48,6 +52,10 @@ elements.table={
                         elements.table.rows.data[n-1][1].prop("disabled",false);
                     }
                     elements.table.rows.sortNumbers();
+
+                    var arr2=elements.data[i];
+                    elements.data[i]=elements.data[i-1];
+                    elements.data[i-1]=arr2;
                 });
             container.append(b2[0]);
             var b3=elements.table.buttons.generateButton(
@@ -67,6 +75,11 @@ elements.table={
                         }
                     ],function (id,e) {
                         if(id==1){
+                            if(this.selectedElement!=-1)
+                                elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement);
+                            properties.getElement().children().remove();
+                            $("#properties-header-details").text("No item selected");
+
                             var tr= row.parent().parent().parent().parent();
                             var i=$("#elements_table tr").index(tr)-1;
                             tr.remove();
@@ -79,6 +92,8 @@ elements.table={
                                     elements.table.rows.data[i-1][1].prop("disabled",true);
                                 }
                             }
+                            elements.data.splice(i, 1)
+                            elements.selectedElement=-1;
                         }
                         elements.table.rows.sortNumbers();
                         dialog.close();
