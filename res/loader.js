@@ -38,6 +38,9 @@ function loadJsCssFile(filename){
     "res/elements/types/check-box/createDefaultDataObject.js",
     "res/elements/types/check-box/createProperties.js",
     "res/elements/types/check-box/saveProperties.js",
+    "res/elements/types/slider/createDefaultDataObject.js",
+    "res/elements/types/slider/createProperties.js",
+    "res/elements/types/slider/saveProperties.js",
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
