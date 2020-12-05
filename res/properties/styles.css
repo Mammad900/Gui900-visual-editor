@@ -55,6 +55,7 @@
         height: 15px;
         width: 15px;
         cursor: e-resize;
+        border: var(--border);
     }
 
 #properties input[type=color] {
