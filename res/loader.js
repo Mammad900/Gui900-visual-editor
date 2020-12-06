@@ -20,6 +20,7 @@ function loadJsCssFile(filename){
     "res/js/theme-loader.js", //Theme loader
     "res/ui/toolbar/toolbar.js", //Toolbar controller, creates tool bar HTML and handle onclick
     "res/ui/toolbar/items.js", //Holds toolbar data
+    "res/pages/page.js", //Handles pages
     "res/pages/ui/table/buttons.js", //Pages table row buttons generator 
     "res/pages/ui/table/row.js", //Pages table rows
     "res/elements/element.js", //Elements handler
