@@ -2,10 +2,10 @@
     background-color: var(--toolbar-background);
     color: var(--text-color);
 }
-.button:hover:not(:disabled) {
+.button:hover:not(:disabled):not(.noHoverEffect) {
     background-color: var(--toolbar-menuitem-hover);
 }
-.button:active:not(:disabled) {
+.button:active:not(:disabled):not(.noRippleEffect) {
     background-color: var(--toolbar-menuitem-active) !important;
 }
 .button:focus{
@@ -15,7 +15,7 @@
     border: none;
 }
 
-.button.size38{
+.size38{
     height: 37.5px;
     width: 38px;
 }
