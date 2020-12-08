@@ -4,13 +4,23 @@ var elements={
     create:
     /**
      * 
-     * @param {"Button"|"Label"|"Check-box"|"Slider"|"Radio-button"} type 
+     * @param {"Button"|"Label"|"Check-box"|"Slider"|"Radio-button"|Object} el 
      */
-    function (type) {
+    function (el) {
+        var type;
+        var elementData;
+        if(typeof(el)=="object"){
+            type=el.type;
+            elementData=el;
+        }
+        else{
+            type=el;
+            elementData=elements.types[type].createDefaultDataObject();
+        }
         var i=this.data.length;
         var tr= this.table.rows.new("Untitled",type,type=="Slider");
         tr.data("index",i);
-        this.data.push(elements.types[type].createDefaultDataObject());
+        this.data.push(elementData);
         elements.selectElement(i);
         tr.on("click",function (e) {
             if(e.target==tr.children()[0]){
