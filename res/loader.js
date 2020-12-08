@@ -1,3 +1,4 @@
+'use strict';
 function loadJsCssFile(filename){
     var filetype= filename.split('.')[filename.split('.').length-1];
     if (filetype=="js"){ //if filename is a external JavaScript file

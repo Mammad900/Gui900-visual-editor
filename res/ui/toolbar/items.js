@@ -1,3 +1,4 @@
+'use strict';
 function LP_GenerateToolbar() {
     var toolbar = document.getElementById("toolbar");
     toolBar.menuItem(toolbar, "File", function (e) {}, function (file) {

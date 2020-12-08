@@ -1,3 +1,4 @@
+'use strict';
 var properties={
     getElement: function () {
         return $("#properties-content");

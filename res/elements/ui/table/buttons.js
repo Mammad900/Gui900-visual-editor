@@ -1,4 +1,4 @@
-
+'use strict';
 elements.table={
     buttons : {
         generateTripleButtons: function(td) {

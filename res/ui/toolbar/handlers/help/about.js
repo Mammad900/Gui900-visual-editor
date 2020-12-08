@@ -1,3 +1,4 @@
+'use strict';
 toolBar.handlers.help= {
     about: function (e) {
         dialog.new(

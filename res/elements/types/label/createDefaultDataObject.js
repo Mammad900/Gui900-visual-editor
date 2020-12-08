@@ -1,3 +1,4 @@
+'use strict';
 elements.types["Label"]={
     createDefaultDataObject: function () {
         return {

@@ -1,3 +1,4 @@
+'use strict';
 toolBar.handlers.open_from_file=function (e) {
     $("#fileinput").trigger("click");
 }

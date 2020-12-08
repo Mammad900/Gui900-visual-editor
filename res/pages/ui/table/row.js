@@ -1,3 +1,4 @@
+'use strict';
 function LP_GV_PagesTableRows() {
     pages.table.rows=
     {

@@ -1,3 +1,4 @@
+'use strict';
 elements.types["Button"]={
     createDefaultDataObject: function () {
         return {

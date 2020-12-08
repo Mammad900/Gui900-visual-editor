@@ -1,3 +1,4 @@
+'use strict';
 toolBar.handlers={
     file: {
         open: {

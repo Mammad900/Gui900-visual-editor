@@ -1,3 +1,4 @@
+'use strict';
 elements.types["Radio button"].createProperties= function (index) {
     var props=elements.data[index];
     var p=properties.getElement();

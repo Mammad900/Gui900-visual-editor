@@ -1,3 +1,4 @@
+'use strict';
 elements.types["Button"].saveProperties=function (index) {
     if(index==-1)return;
     function g(id) {

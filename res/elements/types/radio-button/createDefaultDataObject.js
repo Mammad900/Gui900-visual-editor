@@ -1,3 +1,4 @@
+'use strict';
 elements.types["Radio button"]={
     createDefaultDataObject: function () {
         return {

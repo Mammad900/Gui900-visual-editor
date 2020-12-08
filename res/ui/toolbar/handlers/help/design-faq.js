@@ -1,3 +1,4 @@
+'use strict';
 toolBar.handlers.help.design_FAQ= function (e) {
     dialog.new(
         `<h3>How to group several elements in a group, like Windows forms <code>GroupBox</code>?</h3>

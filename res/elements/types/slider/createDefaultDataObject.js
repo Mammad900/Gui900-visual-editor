@@ -1,3 +1,4 @@
+'use strict';
 elements.types["Slider"]={
     createDefaultDataObject: function () {
         return {
