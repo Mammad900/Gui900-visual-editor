@@ -85,7 +85,7 @@ function LP(){
                 LP_GV_PagesTableRows,
                 LP_keyBindings,
                 LP_handleNewPageButton,
-                LP_CreateFirstPageRow,
+                pages.create,
                 LP_HandleNewElementButton,
                 LP_CreateHiddenFileInput,
                 LP_GenerateToolbar,

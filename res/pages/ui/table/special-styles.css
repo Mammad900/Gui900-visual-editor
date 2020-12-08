@@ -9,8 +9,13 @@
 }
 #pages_table td:first-child{
     min-width: 140px;
+    cursor: pointer;
 }
 
 #pages-table-column{
     min-width: 350px;
+}
+
+#pages_table div.buttons{
+    display: inline-block;
 }

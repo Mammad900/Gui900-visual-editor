@@ -15,6 +15,18 @@ pages.table= {
                     var arr=pages.table.rows.data[i];
                     pages.table.rows.data[i]=pages.table.rows.data[i+1];
                     pages.table.rows.data[i+1]=arr;
+
+                    var arr2=pages.data[i];
+                    pages.data[i]=pages.data[i+1];
+                    pages.data[i+1]=arr2;
+                    
+                    if(pages.currentPage==i){
+                        pages.currentPage++;
+                    }
+                    else if(pages.currentPage==i+1){
+                        pages.currentPage--;
+                    }
+
                     if(i==0){
                         pages.table.rows.data[0][0].prop("disabled",true);
                         pages.table.rows.data[1][0].prop("disabled",false);
@@ -37,6 +49,17 @@ pages.table= {
                     var arr=pages.table.rows.data[i];
                     pages.table.rows.data[i]=pages.table.rows.data[i-1];
                     pages.table.rows.data[i-1]=arr;
+
+                    var arr2=pages.data[i];
+                    pages.data[i]=pages.data[i-1];
+                    pages.data[i-1]=arr2;
+                    
+                    if(pages.currentPage==i){
+                        pages.currentPage--;
+                    }
+                    else if(pages.currentPage==i-1){
+                        pages.currentPage++;
+                    }
 
                     if(i==1){
                         pages.table.rows.data[0][0].prop("disabled",true);
@@ -69,6 +92,14 @@ pages.table= {
                         if(id==1){
                             var tr= row.parent().parent().parent().parent();
                             var i=$("#pages_table tr").index(tr)-1;
+                            var ib=false;
+                            if(i==pages.currentPage){
+                                pages.selectPage((i==0)?1:0);
+                            }
+                            else{
+                                ib=i<pages.currentPage;
+                            }
+
                             tr.remove();
                             pages.table.rows.data.splice(i, 1)
                             if(!pages.table.rows.data.length==0){
@@ -78,6 +109,11 @@ pages.table= {
                                 if(i==pages.table.rows.data.length){
                                     pages.table.rows.data[i-1][1].prop("disabled",true);
                                 }
+                            }
+
+                            pages.data.splice(i, 1);
+                            if(ib){
+                                pages.currentPage--;
                             }
                         }
                         pages.table.rows.sortNumbers();
@@ -107,7 +143,5 @@ pages.table= {
     }
 };
 function LP_handleNewPageButton(){
-    $("#new_page_button").on("click",function(){
-        pages.table.rows.create("Untitled");
-    });
+    $("#new_page_button").on("click",pages.create);
 }

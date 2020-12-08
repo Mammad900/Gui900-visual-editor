@@ -36,6 +36,3 @@ function LP_GV_PagesTableRows() {
         data: []
     }
 }
-function LP_CreateFirstPageRow(){
-    pages.table.rows.create("Home");
-};
