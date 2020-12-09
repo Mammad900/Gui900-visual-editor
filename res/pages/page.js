@@ -34,6 +34,7 @@ var pages = {
             elements.selectedElement=-1;
 
             pages.data[pages.currentPage].elements=elements.data;
+            pages.data[pages.currentPage].background=$("#page_bc_color_input").val();
             elements.data=[];
             $("#elements_table tr:not(:first-child)").remove();
             elements.table.rows.data=[];
@@ -43,6 +44,7 @@ var pages = {
             pages.data[pages.currentPage].elements.forEach(function(v){
                elements.create(v);
             });
+            $("#page_bc_color_input").val(pages.data[pages.currentPage].background).css("background-color",pages.data[pages.currentPage].background)
         },
     currentPage: 0
 }

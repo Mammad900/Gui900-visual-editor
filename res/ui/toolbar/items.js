@@ -15,7 +15,7 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(page, "New page", "fa-plus", function (e) {});
         toolBar.subMenuItem(page, "Delete page", "fa-times", function (e) {});
         toolBar.separator(page);
-        toolBar.subMenuItem(page, '<input type="color" class="color-preview float-right" style="background-color: #000000;"/>Change background color', "fa-palette", function (e) {});
+        toolBar.subMenuItem(page, '<input type="color" id="page_bc_color_input" class="color-preview float-right" style="background-color: #000000;"/>Change background color', "fa-palette", function (e) {});
     });
     toolBar.menuItem(toolbar, "Element", function (e) {}, function (element) {
         toolBar.subMenuItem(element, "New element", "fa-plus", function (e) {}, function (new_element) {
