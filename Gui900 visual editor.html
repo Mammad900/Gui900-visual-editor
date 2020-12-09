@@ -27,17 +27,10 @@
             <div class="float-left box" id="preview">
                 <h2 style="margin: 5px; display: inline-block;">Preview</h2>
                 <canvas width="240px" height="320px" id="preview-canvas"></canvas>
-                <button class="button block" style="width:100%;border-bottom-left-radius: var(--box-border-radius);border-bottom-right-radius: var(--box-border-radius); margin-top: -5px;padding: 5px;">
+                <button class="button block" onclick="preview_refresh()" style="width:100%;border-bottom-left-radius: var(--box-border-radius);border-bottom-right-radius: var(--box-border-radius); margin-top: -5px;padding: 5px;">
                     <i class="fas fa-sync"></i>
                     Refresh
                 </button>
-                <script>
-                    $(function(){ 
-                        var ctx= document.getElementById("preview-canvas").getContext("2d");
-                        ctx.fillStyle = "#000000";
-                        ctx.fillRect(0, 0, 240, 320);
-                    });
-                </script>
             </div>
                 <div class="box" id="properties" style="padding: 0;">
                     <div>

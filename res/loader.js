@@ -30,6 +30,7 @@ function loadJsCssFile(filename){
     "res/ui/dialog/dialog.js", //Handles dialogs
     "res/js/key-bindings.js", //Key bindings
     "res/properties/generator.js", //Properties generator
+    "res/preview/preview.js", //Preview generator
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
@@ -89,6 +90,7 @@ function LP(){
                 LP_HandleNewElementButton,
                 LP_CreateHiddenFileInput,
                 LP_GenerateToolbar,
+                preview_refresh,
                 LP_HandleColorPickerInput,
                 LP_loaderEnd,
             ].forEach(function(value){
