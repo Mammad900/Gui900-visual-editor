@@ -56,20 +56,20 @@ function loadJsCssFile(filename){
 
 
     "res/ui/toolbar/toolbar.css", //Styles for the toolbar
-    "res/css/constants.css", //Holds the UI constants
-    "res/css/styles.css", //The main styles for the app
+    "res/ui/css/constants.css", //Holds the UI constants
+    "res/ui/css/styles.css", //The main styles for the app
     "res/ui/box/box.css", //box styles
     "res/ui/table/table.css", //Table styles
     "res/ui/button/button.css", //Button styles
     "res/pages/ui/table/special-styles.css", //Styles specific to pages table
-    "res/css/scroll-bar.css", //Custom scroll-bars
-    "res/css/grid.css", //Multi-column rows
+    "res/ui/css/scroll-bar.css", //Custom scroll-bars
+    "res/ui/css/grid.css", //Multi-column rows
     "res/ui/dialog/dialog.css", //Dialog styles
     "res/properties/styles.css", //Properties special styles
     "res/ui/preview/styles.css", //Preview special styles
     "res/elements/ui/table/special-styles.css", //Elements table special styles
     "res/font-awesome/css/all.css", //Font awesome
-    "res/css/tooltip.css", // Tooltips
+    "res/ui/css/tooltip.css", // Tooltips
 
     "res/js/loader-end.js", // Finishes loading
 ].forEach(function(value){
