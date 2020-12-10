@@ -4,18 +4,21 @@ elements.types["Slider"].saveProperties=function (index) {
     function g(id) {
         return $("#"+id).val();
     }
+    function n(id) {
+        return $("#"+id)[0].valueAsNumber;
+    }
     function b(id) {
         return (($("#"+id).data("checked"))=="1");
     }
     elements.data[index]={
         type: "Slider",
         position: {
-            x: g("property-position-x"),
-            y: g("property-position-y")
+            x: n("property-position-x"),
+            y: n("property-position-y")
         },
         size: {
-            width: g("property-size-x"),
-            height: g("property-size-y")
+            width: n("property-size-x"),
+            height: n("property-size-y")
         },
         text: g("property-text"),
         colors: {
@@ -26,9 +29,9 @@ elements.types["Slider"].saveProperties=function (index) {
             },
             border: g("property-color-border")
         },
-        min: g("property-min"),
-        value: g("property-value"),
-        max: g("property-max"),
+        min: n("property-min"),
+        value: n("property-value"),
+        max: n("property-max"),
         enabled: b("property-enabled"),
         visible: b("property-visible")
     }
