@@ -90,7 +90,7 @@ function LP(){
                 LP_HandleNewElementButton,
                 LP_CreateHiddenFileInput,
                 LP_GenerateToolbar,
-                preview_refresh,
+                preview.refresh,
                 LP_HandleColorPickerInput,
                 LP_loaderEnd,
             ].forEach(function(value){
