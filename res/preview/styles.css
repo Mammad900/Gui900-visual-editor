@@ -3,3 +3,12 @@
     max-width: 242px;
     min-width: 242px;
 }
+canvas {
+    /* https://stackoverflow.com/a/38747615/13561926, with some modifications*/
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
