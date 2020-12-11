@@ -14,12 +14,13 @@
 }
 
 @media screen and (max-width:700px) {
-    .grid .s12{
-        width: 100%;
-    }
-    .grid .s6 {
-        width: 50%;
-    }
+    .s3 {width: 25%; }
+    .s4 {width: 33%; }
+    .s6 {width: 50%; }
+    .s8 {width: 66%; }
+    .s9 {width: 75%; }
+    .s12{width: 100%;}
+
     .grid .left,
     .grid .right{
         float: unset;
@@ -31,20 +32,23 @@
 }
 
 @media screen and (min-width:701px) and (max-width:1024px) {
-    .grid .m6{
-        width: 50%;
-    }
+    .m3 {width: 25%; }
+    .m4 {width: 33%; }
+    .m6 {width: 50%; }
+    .m8 {width: 66%; }
+    .m9 {width: 75%; }
+    .m12{width: 100%;}
 
-    .grid .m12 {
-        width: 100%;
-    }
     .flexbox.responsive-big{
         display: block;
     }
 }
 
 @media screen and (min-width:1025px) {
-    .grid .l6{
-        width: 50%;
-    }
+    .l3 {width: 25%; }
+    .l4 {width: 33%; }
+    .l6 {width: 50%; }
+    .l8 {width: 66%; }
+    .l9 {width: 75%; }
+    .l12{width: 100%;}
 }
