@@ -44,6 +44,7 @@ function loadJsCssFile(filename){
     "res/elements/types/slider/createDefaultDataObject.js",
     "res/elements/types/slider/createProperties.js",
     "res/elements/types/slider/saveProperties.js",
+    "res/elements/types/slider/generatePreview.js",
     "res/elements/types/radio-button/createDefaultDataObject.js",
     "res/elements/types/radio-button/createProperties.js",
     "res/elements/types/radio-button/saveProperties.js",
