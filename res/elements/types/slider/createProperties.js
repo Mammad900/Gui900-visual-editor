@@ -34,21 +34,34 @@ elements.types["Slider"].createProperties= function (index) {
         properties.gen.inputColor(fs,"Background (right): ", "property-color-right",props.colors.background.right).css("display","inline-block").css("margin-right","15px");
         properties.gen.inputColor(fs,"Border: ", "property-color-border",props.colors.border).css("display","inline-block").css("margin-right","15px");
     });
-    properties.gen.grid(p, 3, 1, [
+    properties.gen.grid(p, 2, 2, [
         function (col) {
-            properties.gen.inputNumber(col, "Minimum", "property-min", -32767, props.max, props.min).css("margin-bottom","10px").on("change",function (e) {
-                $("#property-value").attr("min",e.target.value);
-                $("#property-max").attr("min",e.target.value);
-            });
+            col.addClass(["l9 m12 s12"]).css("margin","0");
+            properties.gen.grid(col, 3, 1, [
+                function (inCol) {
+                    properties.gen.inputNumber(inCol, "Minimum", "property-min", -32767, props.max, props.min).css("margin-bottom","10px").on("change",function (e) {
+                        $("#property-value").attr("min",e.target.value);
+                        $("#property-max").attr("min",e.target.value);
+                    });
+                },
+                function (inCol) {
+                    properties.gen.inputNumber(inCol, "Value", "property-value", props.min, props.max, props.value).css("margin-bottom","10px")
+                },
+                function (inCol) {
+                    properties.gen.inputNumber(inCol, "Maximum", "property-max", props.min, 32767, props.max).css("margin-bottom","10px").on("change",function (e) {
+                        $("#property-value").attr("max",e.target.value);
+                        $("#property-min").attr("max",e.target.value);
+                    });
+                }
+            ])
         },
         function (col) {
-            properties.gen.inputNumber(col, "Value", "property-value", props.min, props.max, props.value).css("margin-bottom","10px")
-        },
-        function (col) {
-            properties.gen.inputNumber(col, "Maximum", "property-max", props.min, 32767, props.max).css("margin-bottom","10px").on("change",function (e) {
-                $("#property-value").attr("max",e.target.value);
-                $("#property-min").attr("max",e.target.value);
-            });
+            col.addClass(["l3 m12 s12"]).css("margin","0");
+            properties.gen.grid(col, 1, 0, [
+                function (inCol) {
+                    properties.gen.inputNumber(inCol, "Thumb width", "property-thumb-width", 0, 50, props.thumbWidth);
+                }
+            ])
         }
     ])
     properties.gen.checkBox(p,"Enabled?", "property-enabled", props.enabled);

@@ -19,6 +19,7 @@ elements.types["Slider"]={
                 },
                 border: "#ffffff"
             },
+            thumbWidth: 7,
             min: 0,
             value: 20,
             max: 100,

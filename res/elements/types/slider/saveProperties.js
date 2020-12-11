@@ -29,6 +29,7 @@ elements.types["Slider"].saveProperties=function (index) {
             },
             border: g("property-color-border")
         },
+        thumbWidth: n("property-thumb-width"),
         min: n("property-min"),
         value: n("property-value"),
         max: n("property-max"),
