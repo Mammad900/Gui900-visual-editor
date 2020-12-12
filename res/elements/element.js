@@ -37,8 +37,11 @@ var elements={
             elements.types[this.data[this.selectedElement].type].saveProperties(this.selectedElement);
         properties.getElement().children().remove();
         elements.types[type].createProperties(index);
-        $("#properties-header-details").text(this.data[index].type+' #'+index+' ('+$($("#elements_table").children().children()[index+1]).children()[2].innerHTML+")");
+        this.updatePropertiesTitle(index);
         elements.selectedElement=index;
+    },
+    updatePropertiesTitle: function (index) {
+        $("#properties-header-details").text(this.data[index].type + ' #' + index + ' (' + $($("#elements_table").children().children()[index + 1]).children()[2].innerHTML + ")");
     },
     selectedElement: -1
 }
