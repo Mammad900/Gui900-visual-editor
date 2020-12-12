@@ -18,7 +18,15 @@ function LP_GV_ElementsTableRows() {
             var tr=$("<tr></tr>").append(td1);
             var buttons= elements.table.buttons.generateTripleButtons(td1);
             tr.append($("<td></td>").text(num));
-            tr.append($("<td></td>").text(name).attr("contenteditable",titleEditable));
+            var td3=$("<td></td>").text(name).attr("contenteditable",titleEditable);
+            if(titleEditable){ 
+                td3.on("input", function (e) {
+                    if(elements.selectedElement==num){
+                        elements.updatePropertiesTitle(num);
+                    }
+                })
+            }
+            tr.append(td3);
             tr.append($("<td></td>").text(type));
             this.data.push(buttons);
             $("#elements_table").append(tr);

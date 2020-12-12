@@ -14,6 +14,7 @@ elements.types["Check-box"].createProperties= function (index) {
     })
     properties.gen.inputText(p,"Text","property-text",props.text).on("change",function (e) {
         $($("#elements_table tr")[index+1]).children(":nth-child(3)").text($("#property-text").val())
+        elements.updatePropertiesTitle(index);
     });
     properties.gen.fieldset(p,"Colors",function (fs) {
         properties.gen.inputColor(fs,"Text: ", "properties-color-text",props.colors.text).css("display","inline-block").css("margin-right","15px");
