@@ -68,6 +68,7 @@ function loadJsCssFile(filename){
     "res/ui/css/grid.css", //Multi-column rows
     "res/ui/dialog/dialog.css", //Dialog styles
     "res/properties/styles.css", //Properties special styles
+    "res/properties/input-styles.css", //Properties fields styles
     "res/preview/styles.css", //Preview special styles
     "res/elements/ui/table/special-styles.css", //Elements table special styles
     "res/font-awesome/css/all.css", //Font awesome
