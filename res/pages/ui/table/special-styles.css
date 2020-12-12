@@ -8,7 +8,7 @@
     padding: 0;
 }
 #pages_table td:first-child{
-    min-width: 140px;
+    min-width: 165px;
     cursor: pointer;
 }
 
