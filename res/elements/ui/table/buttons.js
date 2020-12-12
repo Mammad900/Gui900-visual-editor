@@ -75,7 +75,7 @@ elements.table={
                         }
                     ],function (id,e) {
                         if(id==1){
-                            if(this.selectedElement!=-1)
+                            if(elements.selectedElement!=-1)
                                 elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement);
                             properties.getElement().children().remove();
                             $("#properties-header-details").text("No item selected");
