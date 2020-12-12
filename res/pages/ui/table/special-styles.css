@@ -24,8 +24,8 @@
     padding: 11px;
     width: 16px;
     box-sizing: content-box;
-    padding-right: 0;
     text-align: center;
+    cursor: pointer;
 }
 
 #pages_table.hiddenbox tr:not(:first-child),
