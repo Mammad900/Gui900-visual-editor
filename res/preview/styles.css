@@ -12,3 +12,23 @@ canvas {
     image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;
 }
+
+#preview.hiddenbox>*:not(:first-child) {
+    display: none;
+}
+
+#preview.hiddenbox {
+    height: fit-content;
+}
+
+#preview-openclose-button {
+    padding: 11px;
+    width: 16px;
+    box-sizing: content-box;
+    padding-right: 0;
+    text-align: center;
+}
+
+#preview.hiddenbox #preview-openclose-button::before {
+    content: "\f054";
+}

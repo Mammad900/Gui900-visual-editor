@@ -25,7 +25,12 @@
     <div class="content" style="display: none;">
         <div class="flexbox">
             <div class="float-left box" id="preview">
-                <h2 style="margin: 5px; display: inline-block;">Preview</h2>
+                <div class="vertical-center">
+                    <i class="fa fa-chevron-down" onclick="$('#preview').toggleClass('hiddenbox')" id="preview-openclose-button"></i> 
+                    <h2 style="margin: 5px; display: inline-block;">
+                        Preview
+                    </h2>
+                </div>
                 <canvas width="240px" height="320px" id="preview-canvas"></canvas>
                 <button class="button block" onclick="preview.refresh()" style="width:100%;border-bottom-left-radius: var(--box-border-radius);border-bottom-right-radius: var(--box-border-radius); margin-top: -5px;padding: 5px;">
                     <i class="fas fa-sync"></i>
