@@ -59,10 +59,11 @@
                     <table class="table np" style="border-radius: 10px;" id="elements_table"><tr style="border-radius: 10px;">
                         <td style="padding: 0; min-width: 165px;">
                             <div>
+                                <i class="fa fa-chevron-down" id="elements-openclose-button"  onclick="$('#elements_table').toggleClass('hiddenbox')"></i>
                                 <h2 style="margin: 5px; display: inline-block;">
                                     Elements
                                 </h2>
-                                <div class="float-right noselect tooltip" title="New element" style="margin-right: 10px;">
+                                <div class="float-right noselect tooltip" title="New element" style="margin-right: 10px;" id="new_element_button">
                                     <button class="noHoverEffect noRippleEffect button size38">
                                         <i class="fa fa-plus"></i>
                                     </button>

@@ -33,3 +33,23 @@
 #elements_table div.buttons{
     display: inline-block;
 }
+
+#elements-openclose-button {
+    padding: 11px;
+    width: 16px;
+    box-sizing: content-box;
+    padding-right: 0;
+    text-align: center;
+}
+
+#elements_table.hiddenbox tr:not(:first-child),
+#elements_table.hiddenbox tr:first-child td:not(:first-child),
+#elements_table.hiddenbox #new_element_button {
+    display: none;
+}
+#elements_table.hiddenbox tr:first-child{
+    border-bottom:0;
+}
+#elements_table.hiddenbox #elements-openclose-button::before{
+    content: "\f054";
+}
