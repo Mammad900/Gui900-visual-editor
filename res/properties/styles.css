@@ -1,6 +1,5 @@
 #properties {
     width: 100%;
-    height: 384px;
     min-width: 350px;
     position: relative;
 }
@@ -105,7 +104,7 @@
 
 #properties h2:first-child {
     margin: 0px;
-    padding: 5px 10px;
+    padding: 5px 0px;
     display: inline-block;
 }
 
@@ -135,4 +134,29 @@
     box-shadow: inset 0px -12px 10px var(--box-background);
     top: 367px;
     border-bottom-left-radius: var(--box-border-radius);
+}
+
+#properties.hiddenbox div:last-child {
+    display: none;
+}
+
+#properties.hiddenbox {
+    height: fit-content;
+}
+
+#properties.hiddenbox div:first-child {
+    border-bottom: none;
+}
+
+#properties-openclose-button {
+    float: left;
+    padding: 11px;
+    width: 16px;
+    text-align: center;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+#properties.hiddenbox #properties-openclose-button::before {
+    content: "\f054";
 }
