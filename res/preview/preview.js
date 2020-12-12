@@ -8,6 +8,7 @@ var preview={
             elements.types[val.type].generatePreview(index,$("#preview-canvas"));
         })
     },
+
     
     /**
      * 
@@ -38,6 +39,11 @@ var preview={
     lowQualityPixel: function (color) {
         var rgb=this.hexToRgb(color);
         return this.rgb565toHex(this.color565(rgb.r, rgb.g, rgb.b));
+    },
+
+    lowQualityDimPixel: function (color, multiplier=0.5) {
+        var rgb=this.hexToRgb(color);
+        return this.rgb565toHex(this.color565(rgb.r*multiplier, rgb.g*multiplier, rgb.b*multiplier));
     },
 
     hexToRgb: function (hex) { // https://stackoverflow.com/a/5624139/13561926
