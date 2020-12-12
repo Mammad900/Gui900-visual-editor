@@ -19,3 +19,23 @@
 #pages_table div.buttons{
     display: inline-block;
 }
+
+#pages-openclose-button {
+    padding: 11px;
+    width: 16px;
+    box-sizing: content-box;
+    padding-right: 0;
+    text-align: center;
+}
+
+#pages_table.hiddenbox tr:not(:first-child),
+#pages_table.hiddenbox tr:first-child td:not(:first-child),
+#pages_table.hiddenbox #new_page_button {
+    display: none;
+}
+#pages_table.hiddenbox tr:first-child{
+    border-bottom:0;
+}
+#pages_table.hiddenbox #pages-openclose-button::before{
+    content: "\f054";
+}
