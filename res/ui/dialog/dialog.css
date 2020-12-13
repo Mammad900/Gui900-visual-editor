@@ -15,9 +15,12 @@
     margin: 15% auto;
     padding: 20px;
     width: 50%;
+    border: var(--border);
+}
+
+#dialog.selectable .content * {
     user-select: text;
     cursor: text;
-    border: var(--border);
 }
 
 #dialog .content .options{
@@ -35,6 +38,7 @@
     cursor: pointer;
     margin-left: 10px;
     border: var(--border);
+    user-select: inherit;
 }
 #dialog .content .options .option:hover{
     background-color: var(--toolbar-menuitem-hover);

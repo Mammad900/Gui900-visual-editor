@@ -7,10 +7,14 @@ var dialog=
      * @param {String|JQuery|HTMLElement} Content The content of the dialog
      * @param {Array<object>} options Buttons of the dialog
      * @param {(result:Number|String,event:JQuery.ClickEvent)=>void} callback 
+     * @param {boolean} selectable
      */
-    function(Content, options, callback, defaultKeys=true){
+    function(Content, options, callback, selectable){
 
         var dialogE=$("<div></div>").attr("id","dialog"); // dialogE= dialog element
+        if(selectable){
+            dialogE.addClass("selectable");
+        }
 
         var content=$("<div></div>").addClass("content");
         dialogE.append(content);

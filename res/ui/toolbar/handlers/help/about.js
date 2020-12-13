@@ -11,6 +11,6 @@ toolBar.handlers.help= {
                 "text": "OK",
                 "key": 27
             }
-        ],function (id,e) {dialog.close();})
+        ],function (id,e) {dialog.close();}, true)
     }
 }
