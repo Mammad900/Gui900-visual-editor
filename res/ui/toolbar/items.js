@@ -12,18 +12,18 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(file, "Change editor theme", "fa-palette", function(e){}, ThemeMenuGenerator, true);
     });
     toolBar.menuItem(toolbar, "Page", function (e) {}, function (page) {
-        toolBar.subMenuItem(page, "New page", "fa-plus", function (e) {});
+        toolBar.subMenuItem(page, "New page", "fa-plus", pages.create);
         toolBar.subMenuItem(page, "Delete page", "fa-times", function (e) {});
         toolBar.separator(page);
         toolBar.subMenuItem(page, '<input type="color" id="page_bc_color_input" class="color-preview float-right" style="background-color: #000000;"/>Change background color', "fa-palette", function (e) {});
     });
     toolBar.menuItem(toolbar, "Element", function (e) {}, function (element) {
         toolBar.subMenuItem(element, "New element", "fa-plus", function (e) {}, function (new_element) {
-            toolBar.subMenuItem(new_element, "Button", "fa-square", function (e) {});
-            toolBar.subMenuItem(new_element, "Label", "fa-font", function (e) {});
-            toolBar.subMenuItem(new_element, "Check-box", "fa-check-square", function (e) {});
-            toolBar.subMenuItem(new_element, "Slider", "fa-sliders-h", function (e) {});
-            toolBar.subMenuItem(new_element, "Radio-button", "fa-dot-circle", function (e) {});
+            toolBar.subMenuItem(new_element, "Button", "fa-square", function (e) {elements.create("Button")});
+            toolBar.subMenuItem(new_element, "Label", "fa-font", function (e) {elements.create("Label")});
+            toolBar.subMenuItem(new_element, "Check-box", "fa-check-square", function (e) {elements.create("Check-box")});
+            toolBar.subMenuItem(new_element, "Slider", "fa-sliders-h", function (e) {elements.create("Slider")});
+            toolBar.subMenuItem(new_element, "Radio-button", "fa-dot-circle", function (e) {elements.create("Radio button")});
         }, true,false);
     });
     toolBar.menuItem(toolbar, "Help", function (e) {}, function (help) {
