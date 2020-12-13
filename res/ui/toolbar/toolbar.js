@@ -28,7 +28,9 @@ var toolBar=
         menuItem.append($("<div></div>").addClass("toolbar-button").html(innerHtml));
 
         if(hasChild){
-            menuItem.append($("<div></div>").addClass("dropdown"));
+            var dropdownc=$("<div></div>").addClass("dropdown-container").append($("<div></div>").addClass("dropdown"));
+            
+            menuItem.append(dropdownc);
         }
 
         container.append(menuItem);
@@ -53,7 +55,9 @@ var toolBar=
         menuItem.append(toolBarButton);
 
         if(hasChild){
-            menuItem.append($("<div></div>").addClass("dropdown"));
+            var dropdownc=$("<div></div>").addClass("dropdown-container").append($("<div></div>").addClass("dropdown"));
+            
+            menuItem.append(dropdownc);
         }
 
         container.append(menuItem);
@@ -62,7 +66,7 @@ var toolBar=
 
     getDropDown:
      function (element){
-        return element.children(".dropdown");
+        return element.children().children(".dropdown");
     },
 
     menuItem: function (container,innerHTML,event,callback=function(){},hasChild=true){

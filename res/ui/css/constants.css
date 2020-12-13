@@ -3,7 +3,8 @@
 
     --toolbar-sub-menu-width: 17em;
     --toolbar-item-height: calc(-10px - 1.15em);
-
+    --toolbar-hover-safe-area: 25px;
+    
     --box-border-radius: 10px;
     
     --dialog-dim-color: rgb(0 0 0 / 62%);

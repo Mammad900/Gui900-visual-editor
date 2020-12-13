@@ -33,20 +33,30 @@
     background-color: var(--toolbar-menuitem-hover);
 }
 #toolbar .menuitem .dropdown {
-    display: none;
-    position: absolute;
     width: var(--toolbar-sub-menu-width);
-    z-index: 1;
     background-color: var(--toolbar-background);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border:var(--border);
 }
+#toolbar .menuitem .dropdown-container{
+    position: absolute; 
+    display: none;
+    z-index: 1;
+}
 #toolbar .menuitem .dropdown .dropdown{
     z-index: 2;
-    margin-left: var(--toolbar-sub-menu-width);
     margin-top: var(--toolbar-item-height);
 }
-#toolbar .menuitem:hover>.dropdown {display: block;}
+#toolbar .menuitem>.dropdown-container {
+    left: calc( 0px - var(--toolbar-hover-safe-area) );
+    border: var(--toolbar-hover-safe-area) solid transparent;
+    border-top: none;
+}
+#toolbar .menuitem .dropdown-container .dropdown-container{
+    
+    margin-left: var(--toolbar-sub-menu-width);
+}
+#toolbar .menuitem:hover>.dropdown-container{display: block;}
 
 #toolbar .dropdown hr{
     border: none;
