@@ -24,7 +24,8 @@ elements.types["Slider"]={
             value: 20,
             max: 100,
             enabled: true,
-            visible: true
+            visible: true,
+            title: "Untitled"
         }
     }
 }

@@ -34,6 +34,7 @@ elements.types["Slider"].saveProperties=function (index) {
         value: n("property-value"),
         max: n("property-max"),
         enabled: b("property-enabled"),
-        visible: b("property-visible")
+        visible: b("property-visible"),
+        title: ($($("#elements_table tr")[index+1]).children(":nth-child(3)").text())
     }
 }
