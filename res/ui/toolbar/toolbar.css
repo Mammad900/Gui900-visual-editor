@@ -4,6 +4,7 @@
     box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
     z-index: 9;
     border-bottom: var(--border);
+    white-space: nowrap;
 }
 #toolbar *{
     z-index: inherit;
