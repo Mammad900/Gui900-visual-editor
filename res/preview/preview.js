@@ -1,6 +1,9 @@
 'use strict';
 var preview={
     refresh: function(){
+        if(elements.selectedElement!=-1){
+            elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement)
+        }
         var ctx= $("#preview-canvas")[0].getContext("2d");
         ctx.fillStyle = $("#page_bc_color_input").val();
         ctx.fillRect(0, 0, 240, 320);
