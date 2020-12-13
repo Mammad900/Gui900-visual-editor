@@ -79,9 +79,14 @@ body {
     background-color: var(--selection-background);
 }
 
-:not(.selectable) {
+* {
     cursor: default;
     user-select: none;
+}
+.selectable, .selectable *{
+    cursor: initial;
+    user-select: text;
+    
 }
 
 [contenteditable],
