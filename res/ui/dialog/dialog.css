@@ -18,11 +18,6 @@
     border: var(--border);
 }
 
-#dialog.selectable .content * {
-    user-select: text;
-    cursor: text;
-}
-
 #dialog .content .options{
     text-align: right;
     user-select: none;
