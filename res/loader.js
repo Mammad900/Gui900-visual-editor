@@ -35,6 +35,7 @@ function loadJsCssFile(filename){
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
     "res/elements/types/button/saveProperties.js",
+    "res/elements/types/button/generatePreview.js",
     "res/elements/types/label/createDefaultDataObject.js",
     "res/elements/types/label/createProperties.js",
     "res/elements/types/label/saveProperties.js",
