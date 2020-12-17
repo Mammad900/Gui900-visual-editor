@@ -4,18 +4,21 @@ elements.types["Button"].saveProperties=function (index) {
     function g(id) {
         return $("#"+id).val();
     }
+    function n(id) {
+        return $("#"+id)[0].valueAsNumber;
+    }
     function b(id) {
         return (($("#"+id).data("checked"))=="1");
     }
     elements.data[index]={
         type: "Button",
         position: {
-            x: g("property-position-x"),
-            y: g("property-position-y")
+            x: n("property-position-x"),
+            y: n("property-position-y")
         },
         size: {
-            width: g("property-size-x"),
-            height: g("property-size-y")
+            width: n("property-size-x"),
+            height: n("property-size-y")
         },
         text: g("property-text"),
         colors: {
@@ -23,7 +26,7 @@ elements.types["Button"].saveProperties=function (index) {
             background: g("properties-color-background"),
             border: g("properties-color-border")
         },
-        radius: g("property-radius"),
+        radius: n("property-radius"),
         enabled: b("property-enabled"),
         visible: b("property-visible")
     }
