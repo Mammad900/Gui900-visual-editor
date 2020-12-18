@@ -26,6 +26,9 @@ function LP_GenerateToolbar() {
             toolBar.subMenuItem(new_element, "Radio-button", "fa-dot-circle", function (e) {elements.create("Radio button")});
         }, true,false);
     });
+    toolBar.menuItem(toolbar, "Preview", function(e){}, function(_preview){
+        toolBar.subMenuItem(_preview, "Refresh", "fa-sync", preview.refresh);
+    })
     toolBar.menuItem(toolbar, "Help", function (e) {}, function (help) {
         toolBar.subMenuItem(help, "Design FAQ", "fa-question-circle", toolBar.handlers.help.design_FAQ);
         toolBar.separator(help);
