@@ -95,8 +95,9 @@ elements.table={
                 elements.data[i]=elements.data[i-1];
                 elements.data[i-1]=arr2;
             },
-            delete: function(){
-                var row=$(this);
+            delete: function(index){
+                var hasIndex=typeof(index)=='number';
+                var row=(!hasIndex)?$(this):undefined;
                 dialog.new("Do you really want to <strong>delete</strong> this element?<br>This cannot be undone.",[
                     {
                         "id": 0,
@@ -115,7 +116,7 @@ elements.table={
                         properties.getElement().children().remove();
                         $("#properties-header-details").text("No item selected");
 
-                        var tr= row.parent().parent().parent().parent();
+                        var tr =(!hasIndex)?(row.parent().parent().parent().parent()):(elements.table.rows.getRow(index));
                         var i=$("#elements_table tr").index(tr)-1;
                         tr.remove();
                         elements.table.rows.data.splice(i, 1)
