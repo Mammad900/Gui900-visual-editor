@@ -20,10 +20,28 @@ function (index,canvas) {
     preview.roundRect(ctx, x+0.5, y+0.5, w, h, button.radius, true, true);
 
     ctx.fillStyle= button.enabled ? preview.lowQualityPixel(button.colors.text) : preview.lowQualityDimPixel(button.colors.text);
-    ctx.font= "9pt arial";
     var txt=button.text;
+
+    var th=56; // FreeSana24pt7b
+    ctx.font= th+"px arial";
     var sz=ctx.measureText(txt);
+    if((sz.width>w)||(th>h)){
+        th=42; // FreeSans18pt7b
+        ctx.font= th+"px arial";
+        sz=ctx.measureText(txt);
+        if((sz.width>w)||(th>h)){
+            th=29; // FreeSans12pt7b
+            ctx.font= th+"px arial";
+            sz=ctx.measureText(txt);
+            if((sz.width>w)||(th>h)){
+                th=22; // FreeSans9pt7b
+                ctx.font= th+"px arial";
+                sz=ctx.measureText(txt);
+            }
+        }
+    }
+
     var tx=preview.centerAlign(sz.width, w, x);
-    var ty=preview.centerAlign(16, h, y);
-    ctx.fillText(txt, tx, ty+16);
+    var ty=preview.centerAlign(th*1.25, h, y);
+    ctx.fillText(txt, tx, ty+th);
 }
