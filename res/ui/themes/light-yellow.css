@@ -12,6 +12,7 @@
 
     --table-outer-border-color: #ffff00;
     --table-inner-border-color: #bbbb74;
+    --table-selected-row: #ffff75;
 
     --scrollbar-thumb: rgba(187, 187, 112, 0.74);
     --scrollbar-background: rgba(255, 255, 255, 0);

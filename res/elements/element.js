@@ -33,11 +33,14 @@ var elements={
     selectElement:
     function (index){
         var type=this.data[index].type;
-        if(this.selectedElement!=-1)
+        if(this.selectedElement!=-1){
             elements.types[this.data[this.selectedElement].type].saveProperties(this.selectedElement);
+            $(elements.table.rows.getRow(this.selectedElement)).removeClass("selected");
+        }
         properties.getElement().children().remove();
         elements.types[type].createProperties(index);
         this.updatePropertiesTitle(index);
+        $(elements.table.rows.getRow(index)).addClass("selected");
         elements.selectedElement=index;
     },
     updatePropertiesTitle: function (index) {

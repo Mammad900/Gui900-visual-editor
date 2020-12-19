@@ -11,6 +11,7 @@
     
     --table-outer-border-color: green;
     --table-inner-border-color: lightgreen;
+    --table-selected-row: rgb(223, 223, 0);
 
     --scrollbar-thumb: purple;
     --scrollbar-background: rgba(255, 255, 255, 0);

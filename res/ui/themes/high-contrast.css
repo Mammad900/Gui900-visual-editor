@@ -11,6 +11,7 @@
     
     --table-outer-border-color: #ffffff;
     --table-inner-border-color: #ffffff;
+    --table-selected-row: transparent;
 
     --scrollbar-thumb: rgba(255, 255, 255, 0.658);
     --scrollbar-background: rgba(255, 255, 255, 0);
@@ -50,4 +51,11 @@
 
 :root[theme=high-contrast] .tooltip .tooltiptext::after {
     border-color: white transparent transparent transparent;
+}
+
+:root[theme=high-contrast] table.table tr.selected td:first-child::before{
+    content: "";
+    height: 28px;
+    width: 5px;
+    background-color: white;
 }

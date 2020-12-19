@@ -9,6 +9,9 @@ table.table tr{
     padding-left: 5px;
     padding-right: 5px;
 }
+table.table tr.selected td{
+    background-color: var(--table-selected-row);
+}
 table.table th,
 table.table td{
     padding: 7px;

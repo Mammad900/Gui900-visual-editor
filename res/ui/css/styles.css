@@ -95,7 +95,7 @@ textarea{
     cursor: text;
 }
 
-[contenteditable]:focus{
+[contenteditable]:focus:focus:focus:focus{ /* Use ':focus' four times to increase specificity */
     outline: none;
     background-color: var(--contenteditable-focus-background);
 }

@@ -23,7 +23,7 @@
     overflow: visible;
 }
 #elements-table-column tr:not(:first-child){
-    overflow: hidden;
+    overflow: clip;
 }
 #elements-table-column tr:last-child{
     border-bottom-left-radius: var(--box-border-radius);

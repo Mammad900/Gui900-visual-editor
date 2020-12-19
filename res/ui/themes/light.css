@@ -14,6 +14,7 @@
 
     --table-outer-border-color: #000000;
     --table-inner-border-color: #bebebe;
+    --table-selected-row: #ececec;
 
     --scrollbar-thumb: rgba(189, 189, 189, 0.74);
     --scrollbar-background: rgba(255, 255, 255, 0);
