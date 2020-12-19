@@ -3,7 +3,7 @@
     max-width: 242px;
     min-width: 242px;
 }
-canvas {
+canvas.sharpZoom{
     /* https://stackoverflow.com/a/38747615/13561926, with some modifications*/
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;

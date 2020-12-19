@@ -31,6 +31,10 @@ function LP_GenerateToolbar() {
     });
     toolBar.menuItem(toolbar, "Preview", function(e){}, function(_preview){
         toolBar.subMenuItem(_preview, "Refresh", "fa-sync", preview.refresh);
+        toolBar.subMenuItem(_preview, "Sharp pixels while zooming", "fa-check", function(){
+            $("#preview canvas").toggleClass("sharpZoom");
+            $("#preview-canvas-sharp-zoom-menu-item i").toggleClass("fa-check");
+        }).attr("id","preview-canvas-sharp-zoom-menu-item")
     })
     toolBar.menuItem(toolbar, "Help", function (e) {}, function (help) {
         toolBar.subMenuItem(help, "Design FAQ", "fa-question-circle", toolBar.handlers.help.design_FAQ);
