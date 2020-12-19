@@ -2,15 +2,19 @@
 function LP_GV_ElementsTableRows() {
     elements.table.rows=
     {
+        /**
+         * Gets the #th row of the table
+         * @param {number} index The # of the row
+         */
         getRow: function(index){
             return $("#elements_table>tr:nth-child("+String(index+1)+")")[0];
         },
 
         new:
         /**
-         * 
+         * Creates a new row in the table
          * @param {string} name The text to show in the "Text" column
-         * @param {"Button"|"Label"|"Check-box"|"Slider"|"Radio-button"} type 
+         * @param {"Button"|"Label"|"Check-box"|"Slider"|"Radio-button"} type Text to show inside 'type' column
          */
         function(name,type,titleEditable=false){
             var num=this.data.length;
@@ -41,6 +45,9 @@ function LP_GV_ElementsTableRows() {
             return tr;
         },
 
+        /**
+         * Sorts the cells in '#' column
+         */
         sortNumbers: function(){
             var trs= $("#elements_table tr");
             for(var i=1;i<trs.length;i++){

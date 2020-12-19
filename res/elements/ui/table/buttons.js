@@ -1,6 +1,10 @@
 'use strict';
 elements.table={
     buttons : {
+        /**
+         * Generates buttons 'move up', 'move down', 'delete element' and puts it in the given element
+         * @param {JQuery<HTMLElement>} td The <td> element to put buttons into
+         */
         generateTripleButtons: function(td) {
             var container=$("<div></div>");
             container.addClass("buttons");
@@ -104,6 +108,13 @@ elements.table={
             td.append(container);
             return [b1[1],b2[1],b3[1]];
         },
+        /**
+         * Generates a button for use in elements table
+         * @param {string} content HTML contents of the button
+         * @param {string} title Tooltip to show on hover, using HTML 'title' property
+         * @param {void} onclick onClick event of the button
+         * @param {style} style HTML 'style' attributes for the <span> element containing button
+         */
         generateButton: function(content, title, onclick,style=""){
             var span= $("<span></span>");
             span.addClass(["inline","block"]);
