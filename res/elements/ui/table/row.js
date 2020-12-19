@@ -7,7 +7,7 @@ function LP_GV_ElementsTableRows() {
          * @param {number} index The # of the row
          */
         getRow: function(index){
-            return $("#elements_table>tr:nth-child("+String(index+1)+")")[0];
+            return $("#elements_table tr:nth-child("+String(index+2)+")")[0]; // nth-child is one-based, not zero based
         },
 
         new:
