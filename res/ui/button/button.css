@@ -1,5 +1,5 @@
 .button {
-    background-color: var(--toolbar-background);
+    background-color: inherit;
     color: var(--text-color);
 }
 .button:hover:not(:disabled):not(.noHoverEffect) {
