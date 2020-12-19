@@ -45,6 +45,11 @@
 #properties.hiddenbox {
     height: fit-content;
     height: -moz-fit-content;
+    min-width: 180px;
+}
+
+#properties.hiddenbox #properties-header-details{
+    display: none;
 }
 
 #properties.hiddenbox div:first-child {
