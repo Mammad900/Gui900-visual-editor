@@ -25,6 +25,9 @@ function LP_GenerateToolbar() {
             toolBar.subMenuItem(new_element, "Slider", "fa-sliders-h", function (e) {elements.create("Slider")});
             toolBar.subMenuItem(new_element, "Radio-button", "fa-dot-circle", function (e) {elements.create("Radio button")});
         }, true,false);
+        toolBar.subMenuItem(element, "Delete selected element", "fa-times", function(){
+            elements.table.buttons.actions.delete(elements.selectedElement);
+        });
     });
     toolBar.menuItem(toolbar, "Preview", function(e){}, function(_preview){
         toolBar.subMenuItem(_preview, "Refresh", "fa-sync", preview.refresh);
