@@ -19,10 +19,14 @@ elements.types["Button"].createProperties= function (index) {
             properties.gen.fieldset(col,"Size",function (fs) {
                 properties.gen.grid(fs,2,1,[
                     function (inCol) {
-                        properties.gen.inputNumber(inCol,"Width","property-size-x",0,240,props.size.width);
+                        properties.gen.inputNumber(inCol,"Width","property-size-x",0,240,props.size.width).on('change',function(e){
+                            $("#property-radius").attr("max",Math.min($("#property-size-x").val(),$("#property-size-y").val())/2);
+                        });
                     },
                     function (inCol) {
-                        properties.gen.inputNumber(inCol,"Height","property-size-y",0,320,props.size.height);
+                        properties.gen.inputNumber(inCol,"Height","property-size-y",0,320,props.size.height).on('change',function(){
+                            $("#property-radius").attr("max",Math.min($("#property-size-x").val(),$("#property-size-y").val())/2);
+                        });
                     }
                 ])
             })
