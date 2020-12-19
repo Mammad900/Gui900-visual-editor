@@ -19,6 +19,7 @@ canvas {
 
 #preview.hiddenbox {
     height: fit-content;
+    height: -moz-fit-content;
 }
 
 #preview-openclose-button {

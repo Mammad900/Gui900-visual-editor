@@ -44,6 +44,7 @@
 
 #properties.hiddenbox {
     height: fit-content;
+    height: -moz-fit-content;
 }
 
 #properties.hiddenbox div:first-child {
