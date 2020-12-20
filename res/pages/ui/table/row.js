@@ -3,7 +3,7 @@ function LP_GV_PagesTableRows() {
     pages.table.rows=
     {
         getRow: function(index){
-            return $("#pages_table>tr:nth-child("+String(index+1)+")")[0];
+            return $("#pages_table tr:nth-child("+String(index+2)+")")[0];
         },
 
         create: function(name){
