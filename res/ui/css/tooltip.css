@@ -38,3 +38,16 @@
     border-style: solid;
     border-color: var(--tooltip-color) transparent transparent transparent;
 }
+
+.tooltiptext.bottom {
+    bottom: unset;
+    top: 100%;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.tooltiptext.bottom::after {
+    bottom: 100%;
+    top: unset;
+    border-color: transparent transparent var(--tooltip-color) transparent;
+}

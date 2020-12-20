@@ -155,3 +155,13 @@ function LP_HandleNewElementButton(){
         elements.create("Radio button");
     });
 }
+
+function cetnbtp() {
+    var tooltip=$("#new_element_button .tooltiptext");
+    if(($("#preview").hasClass("hiddenbox"))&&($("#properties").hasClass("hiddenbox"))){
+        if(!tooltip.hasClass("bottom"))tooltip.addClass("bottom");
+    }
+    else{
+        if(tooltip.hasClass("bottom"))tooltip.removeClass("bottom");
+    }
+}
