@@ -55,7 +55,13 @@
 
 :root[theme=high-contrast] table.table tr.selected td:first-child::before{
     content: "";
-    height: 28px;
+    height: 38px;
     width: 5px;
     background-color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+:root[theme=high-contrast] table.table tr:last-child td:first-child {
+    overflow: hidden;
 }
