@@ -28,6 +28,7 @@ var pages = {
          * @param {Number} i 
          */
         function (i) {
+            $(pages.table.rows.getRow(pages.currentPage)).removeClass("selected");
             if(elements.selectedElement!=-1)
                 elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement);
             properties.getElement().children().remove();
@@ -45,6 +46,8 @@ var pages = {
                elements.create(v);
             });
             $("#page_bc_color_input").val(pages.data[pages.currentPage].background).css("background-color",pages.data[pages.currentPage].background)
+
+            $(pages.table.rows.getRow(i)).addClass("selected");
         },
     currentPage: 0
 }
