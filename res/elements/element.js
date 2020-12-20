@@ -18,7 +18,7 @@ var elements={
             elementData=elements.types[type].createDefaultDataObject();
         }
         var i=this.data.length;
-        var tr= this.table.rows.new(((type=="Slider") ? (elementData.title) : ("Untitled")),type,type=="Slider");
+        var tr= this.table.rows.new(((type=="Slider") ? (elementData.title) : (elementData.text)),type,type=="Slider");
         tr.data("index",i);
         this.data.push(elementData);
         elements.selectElement(i);
