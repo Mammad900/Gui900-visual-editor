@@ -28,6 +28,7 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(element, "Delete selected element", "fa-times", function(){
             elements.table.buttons.actions.delete(elements.selectedElement);
         });
+        toolBar.subMenuItem(element, "Duplicate element","fa-clone", toolBar.handlers.elements.duplicate);
     });
     toolBar.menuItem(toolbar, "Preview", function(e){}, function(_preview){
         toolBar.subMenuItem(_preview, "Refresh", "fa-sync", preview.refresh);

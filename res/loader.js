@@ -54,6 +54,7 @@ function loadJsCssFile(filename){
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
     "res/ui/toolbar/handlers/help/design-faq.js", //Gui900 Design FAQ
     "res/ui/toolbar/handlers/file/open-from-file.js", //Open from file
+    "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
 
 
 
