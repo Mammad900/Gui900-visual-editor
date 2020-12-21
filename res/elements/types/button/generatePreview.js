@@ -17,7 +17,9 @@ function (index,canvas) {
     ctx.fillStyle=clr_bg;
     var clr_border=button.enabled ? preview.lowQualityPixel(button.colors.border) : preview.lowQualityDimPixel(button.colors.border);
     ctx.strokeStyle=clr_border;
-    preview.roundRect(ctx, x+0.5, y+0.5, w, h, button.radius, true, true);
+    ctx.roundRect(x+0.5, y+0.5, w, h, button.radius);
+    ctx.fill();
+    ctx.stroke();
 
     ctx.fillStyle= button.enabled ? preview.lowQualityPixel(button.colors.text) : preview.lowQualityDimPixel(button.colors.text);
     var txt=button.text;
