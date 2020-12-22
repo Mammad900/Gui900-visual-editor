@@ -17,12 +17,15 @@ elements.types["Slider"].createProperties= function (index) {
         },
         function (col) {
             properties.gen.fieldset(col,"Size",function (fs) {
-                properties.gen.grid(fs,2,1,[
+                properties.gen.grid(fs,3,1,[
                     function (inCol) {
                         properties.gen.inputNumber(inCol,"Width","property-size-x",0,240,props.size.width);
                     },
                     function (inCol) {
                         properties.gen.inputNumber(inCol,"Height","property-size-y",0,320,props.size.height);
+                    },
+                    function (inCol) {
+                        properties.gen.inputNumber(inCol,"Touch area height","property-size-area-y",0,320,props.size.touchAreaHeight);
                     }
                 ])
             })

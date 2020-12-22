@@ -9,7 +9,8 @@ elements.types["Slider"]={
             },
             size: {
                 width: 220,
-                height: 10
+                height: 10,
+                touchAreaHeight: 30
             },
             colors: {
                 thumb: "#ffffff",
