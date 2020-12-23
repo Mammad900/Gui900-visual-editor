@@ -39,6 +39,7 @@ function loadJsCssFile(filename){
     "res/elements/types/label/createDefaultDataObject.js",
     "res/elements/types/label/createProperties.js",
     "res/elements/types/label/saveProperties.js",
+    "res/elements/types/label/generatePreview.js",
     "res/elements/types/check-box/createDefaultDataObject.js",
     "res/elements/types/check-box/createProperties.js",
     "res/elements/types/check-box/saveProperties.js",
