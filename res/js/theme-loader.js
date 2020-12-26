@@ -28,7 +28,7 @@ function ThemeMenuGenerator(themes) {
             toolBar.separator(themes);
         }
         else{
-            var name=(val[0].toUpperCase())+(val.replace('-',' ').slice(1)); // Replace "-" with " " and capitalize
+            var name=(val[0].toUpperCase())+(val.replaceAll('-',' ').slice(1)); // Replace "-" with " " and capitalize
             var icon=(val=="dark")?"fa-check":"fa";
             var it= toolBar.subMenuItem(themes, name, icon, function (e) {
                 $("html").attr("theme",val);
