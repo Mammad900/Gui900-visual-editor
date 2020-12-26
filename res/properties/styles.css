@@ -15,7 +15,7 @@
 }
 
 #properties-content {
-    height: 343px;
+    height: 344px;
     z-index: 0;
     overflow: auto;
     padding: 10px;
@@ -34,7 +34,7 @@
 
 #properties-shadow-bottom {
     box-shadow: inset 0px -12px 10px var(--box-background);
-    top: 367px;
+    top: 368px;
     border-bottom-left-radius: var(--box-border-radius);
 }
 
