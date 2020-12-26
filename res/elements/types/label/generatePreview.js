@@ -56,8 +56,11 @@ function (index,canvas) {
         else ctx.font="20px serif";
     }
 
+    ctx.save();
     ctx.fillStyle= label.enabled ? preview.lowQualityPixel(label.color) : preview.lowQualityDimPixel(label.color);
+    ctx.scale(label.text_size.x,label.text_size.y)
     var txt=label.text;
 
     ctx.fillText(txt, x, y+size);
+    ctx.restore();
 }
