@@ -1,6 +1,6 @@
 html,
 body {
-    background-color: var(--back-color);
+    background-color: var(--toolbar-background);
     color: var(--text-color);
     padding: 0;
     margin: 0;
@@ -35,6 +35,11 @@ body {
 body>.content {
     overflow: auto;
     height: calc( 100vh - 28.5px);
+    position: fixed;
+    top: 28.5px;
+    left: 0px;
+    width: 100%;
+    background-color: var(--back-color);
 }
 body>.content::-webkit-scrollbar-track {
     box-shadow: var(--main-scrollbar-shadow);
