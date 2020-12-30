@@ -1,5 +1,5 @@
 .button {
-    background-color: inherit;
+    background-color: transparent;
     color: var(--text-color);
 }
 .button:hover:not(:disabled):not(.noHoverEffect) {
