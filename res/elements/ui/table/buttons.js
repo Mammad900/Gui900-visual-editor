@@ -85,7 +85,7 @@ elements.table={
                     elements.table.rows.data[1][0].prop("disabled",false);
                 }
                 var n=elements.table.rows.data.length-1;
-                if(i++==n){
+                if(i==n){
                     elements.table.rows.data[n][1].prop("disabled",true);
                     elements.table.rows.data[n-1][1].prop("disabled",false);
                 }
