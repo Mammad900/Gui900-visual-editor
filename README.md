@@ -6,7 +6,7 @@ Gui900 visual editor is a web based app which helps you create an app based on [
 
 ## How to use
 
-- You can open the app by opening <https://mammad900.github.io/gui900-visual-editor/Gui900%20visual%20editor.html> (Not recommended)
+- You can open the app by opening [this page](https://mammad900.github.io/Gui900-visual-editor/Gui900%20visual%20editor.html) (Not recommended)
 - For more stability during load, you can download or clone this repository, and open the HTML file locally. But it does not support cookies.
 
 ## Compatibility
