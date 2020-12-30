@@ -65,6 +65,12 @@ elements.table={
                     elements.table.rows.data[n][1].prop("disabled",true);
                     elements.table.rows.data[n-1][1].prop("disabled",false);
                 }
+                if(i+1==elements.selectedElement){
+                    elements.selectedElement--;
+                }
+                else if(i==elements.selectedElement){
+                    elements.selectedElement++;
+                }
                 elements.table.rows.sortNumbers();
                 
                 var arr2=elements.data[i];
@@ -88,6 +94,12 @@ elements.table={
                 if(i==n){
                     elements.table.rows.data[n][1].prop("disabled",true);
                     elements.table.rows.data[n-1][1].prop("disabled",false);
+                }
+                if(i-1==elements.selectedElement){
+                    elements.selectedElement++;
+                }
+                else if(i==elements.selectedElement){
+                    elements.selectedElement--;
                 }
                 elements.table.rows.sortNumbers();
 
