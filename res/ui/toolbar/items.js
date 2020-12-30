@@ -44,7 +44,13 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(help, "Visit Gui900 GitHub repository", "fa-github", function (e) {
             window.open("https://github.com/Mammad900/Gui900");
         });
+        toolBar.subMenuItem(help, "Visit Gui900 visual editor repository", "fa-github", function (e) {
+            window.open("https://github.com/Mammad900/Gui900-visual-editor");
+        },function(){},false,true,false);
         toolBar.subMenu_icon_style="fas";
+        toolBar.subMenuItem(help, "Report a bug", "fa-bug", function (e) {
+            window.open("https://github.com/Mammad900/Gui900/issues/new/choose");
+        });
         toolBar.separator(help);
         toolBar.subMenuItem(help, "About Gui900 visual editor", "fa-info-circle", toolBar.handlers.help.about);
     });
