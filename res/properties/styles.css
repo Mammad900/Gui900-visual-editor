@@ -68,3 +68,11 @@
 #properties.hiddenbox #properties-openclose-button::before {
     content: "\f054";
 }
+
+#properties-header-details {
+    margin: 10px;
+    max-width: calc( 100% - 177px );
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
