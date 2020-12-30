@@ -16,6 +16,8 @@ var themeCatalog=[
     "rainbow",
     "",
     "high-contrast",
+    "",
+    "windows-10-UWP-dark-style"
 ];
 themeCatalog.forEach(function(val){
     if(val!="")
