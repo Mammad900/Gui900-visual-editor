@@ -49,7 +49,7 @@ function LP_GenerateToolbar() {
         },function(){},false,true,false);
         toolBar.subMenu_icon_style="fas";
         toolBar.subMenuItem(help, "Report a bug", "fa-bug", function (e) {
-            window.open("https://github.com/Mammad900/Gui900/issues/new/choose");
+            window.open("https://github.com/Mammad900/Gui900/issues/new?assignees=&labels=bug&template=bug_report.md&title=");
         });
         toolBar.separator(help);
         toolBar.subMenuItem(help, "About Gui900 visual editor", "fa-info-circle", toolBar.handlers.help.about);
