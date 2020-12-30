@@ -19,3 +19,13 @@ Gui900 visual editor is a web based app which helps you create an app based on [
 | Edge              | &nbsp;:grey_question: Not tested |
 | Safari            | &nbsp;:grey_question: Not tested |
 | Opera             | &nbsp;:grey_question: Not tested |
+
+## Currently not implemented
+
+These important features are still not implemented:
+
+- Save and open
+- Code editor
+- Project settings
+- Generate code
+- Preview for check-boxes and radio-buttons
