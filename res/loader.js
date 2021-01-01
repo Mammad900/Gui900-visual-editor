@@ -136,13 +136,6 @@ function LP(){
                 If you reloaded a few times but the issue persists, please <a href='#'>Open an issue.</a><br>
             Error: <code>`+err.message+`</code>
                 </p>`;
-            if(retries<10){
-                if(typeof(err)==ReferenceError){
-                    document.getElementById("loading-header").innerHTML+="<p>Retrying for "+retries+"th time</p>"
-                    retries++
-                    LP(); // Again
-                }
-            }
         }
     },500);
 };
