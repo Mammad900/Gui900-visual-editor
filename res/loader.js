@@ -87,10 +87,37 @@ function LP(){
     setTimeout(function(){
         try{
             [
+                LP_GV_ElementsTableButtons,
                 LP_GV_ElementsTableRows,
+                LP_GV_PagesTableButtons,
                 LP_GV_PagesTableRows,
+                
+                LP_GV_El_Button_1,
+                LP_GV_El_Button_2,
+                LP_GV_El_Button_3,
+                LP_GV_El_Button_4,
+                LP_GV_El_CheckBox_1,
+                LP_GV_El_CheckBox_2,
+                LP_GV_El_CheckBox_3,
+                LP_GV_El_Label_1,
+                LP_GV_El_Label_2,
+                LP_GV_El_Label_3,
+                LP_GV_El_Label_4,
+                LP_GV_El_RadioButton_1,
+                LP_GV_El_RadioButton_2,
+                LP_GV_El_RadioButton_3,
+                LP_GV_El_Slider_1,
+                LP_GV_El_Slider_2,
+                LP_GV_El_Slider_3,
+                LP_GV_El_Slider_4,
+
+                LP_GV_Toolbar_Handler_1,
+                LP_GV_Toolbar_Handler_2,
+                LP_GV_Toolbar_Handler_3,
+                LP_GV_Toolbar_Handler_4,
+                LP_GV_Toolbar_Handler_5,
+                
                 LP_keyBindings,
-                LP_handleNewPageButton,
                 pages.create,
                 LP_HandleNewElementButton,
                 LP_CreateHiddenFileInput,

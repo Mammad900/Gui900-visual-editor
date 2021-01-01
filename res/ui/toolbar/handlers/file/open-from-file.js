@@ -1,6 +1,8 @@
 'use strict';
-toolBar.handlers.open_from_file=function (e) {
-    $("#fileinput").trigger("click");
+function LP_GV_Toolbar_Handler_2(){
+    toolBar.handlers.open_from_file=function (e) {
+        $("#fileinput").trigger("click");
+    }
 }
 function LP_CreateHiddenFileInput(){
     $(document.body).append($('<input type="file" class="hidden" name="fileinput" id="fileinput"/>'));

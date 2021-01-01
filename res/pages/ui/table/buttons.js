@@ -1,4 +1,5 @@
 'use strict';
+function LP_GV_PagesTableButtons(){
 pages.table= {
     buttons : {
         generateTripleButtons: function(td) {
@@ -142,3 +143,4 @@ pages.table= {
         }
     }
 };
+}

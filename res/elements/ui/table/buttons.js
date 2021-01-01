@@ -1,4 +1,5 @@
 'use strict';
+function LP_GV_ElementsTableButtons(){
 elements.table={
     buttons : {
         /**
@@ -150,6 +151,7 @@ elements.table={
         }
     }
 };
+}
 function LP_HandleNewElementButton(){
     $("#new-element-button").on("click",function(){
         elements.create("Button");
