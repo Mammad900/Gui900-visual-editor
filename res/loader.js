@@ -133,8 +133,9 @@ function LP(){
             console.error(err);
             document.getElementById("loading-header").innerHTML+=
             `<p>An error occurred. Please reload the page.<br>
-                If you reloaded a few times but the issue persists, please <a href='#'>Open an issue.</a><br>
-            Error: <code>`+err.message+`</code>
+                If you reloaded a few times but the issue persists, please <a href='https://github.com/Mammad900/Gui900-visual-editor/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report the bug in GitHub.</a><br>
+            Error: <code>`+err.message+`</code><br/>
+            <button class="button" style="font-size: 1.5rem;margin:20px;padding:10px;background:var(--back-color);" onclick="window.location.reload()">Refresh</button
                 </p>`;
         }
     },500);
