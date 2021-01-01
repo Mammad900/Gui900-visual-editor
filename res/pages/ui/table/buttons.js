@@ -142,6 +142,3 @@ pages.table= {
         }
     }
 };
-function LP_handleNewPageButton(){
-    $("#new_page_button").on("click",pages.create);
-}
