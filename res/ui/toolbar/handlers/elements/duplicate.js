@@ -11,7 +11,10 @@ function LP_GV_Toolbar_Handler_5(){
                     dt.text+=" - Copy";
                 }
                 elements.create(dt);
-            };
+            }
+            else{
+                notification.error("Cannot duplicate, no element selected")
+            }
         }
     }
 }
