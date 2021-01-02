@@ -16,5 +16,35 @@ var notification={
             });
         },timeout);
         return div;
-    }
+    },
+    /**
+     * 
+     * @param {string} text 
+     * @param {array<object>} buttons 
+     * @param {Number} timeout 
+     */
+    error: function(text, buttons=[], timeout=5000){
+        this.createNotification("error", text, buttons, timeout);
+        console.error(text);
+    },
+    /**
+     * 
+     * @param {string} text 
+     * @param {array<object>} buttons 
+     * @param {Number} timeout 
+     */
+    warning: function(text, buttons=[], timeout=10000){
+        this.createNotification("warning", text, buttons, timeout);
+        console.warn(text);
+    },
+    /**
+     * 
+     * @param {string} text 
+     * @param {array<object>} buttons 
+     * @param {Number} timeout 
+     */
+    success: function(text, buttons=[], timeout=3000){
+        this.createNotification("success", text, buttons, timeout);
+        console.info(text);
+    },
 }
