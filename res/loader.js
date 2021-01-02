@@ -82,7 +82,6 @@ function loadJsCssFile(filename){
     loadJsCssFile(value);
 });
 
-var retries=0;
 function LP(){
     setTimeout(function(){
         try{
