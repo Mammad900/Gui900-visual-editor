@@ -26,7 +26,7 @@ function LP_GenerateToolbar() {
             toolBar.subMenuItem(new_element, "Radio-button", "fa-dot-circle", function (e) {elements.create("Radio button")});
         }, true,false);
         toolBar.subMenuItem(element, "Delete selected element", "fa-times", function(){
-            elements.table.buttons.actions.delete(elements.selectedElement);
+            (elements.selectedElement!=-1)?(elements.table.buttons.actions.delete(elements.selectedElement)):(notification.error("No element selected, please select one first."));
         });
         toolBar.subMenuItem(element, "Duplicate element","fa-clone", toolBar.handlers.elements.duplicate);
     });
