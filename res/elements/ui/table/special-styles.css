@@ -9,6 +9,8 @@
 }
 #elements_table tr:not(:first-of-type) td:first-child{
     padding: 0;
+}
+#elements_table tr:last-child td:first-child{
     border-bottom-left-radius: var(--box-border-radius);
 }
 #elements_table td:first-child{
