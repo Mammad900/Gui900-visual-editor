@@ -94,11 +94,11 @@
 }
 
 :root[theme=windows-10-UWP-dark-style] #toolbar .toolbar-button:hover {
-    background: #383838;
+    background: rgb(255 255 255 / 15%);
 }
 
 :root[theme=windows-10-UWP-dark-style] #toolbar .toolbar-button:active {
-    background: #4e4e4e !important;
+    background: #ffffff30 !important;
 }
 
 :root[theme=windows-10-UWP-dark-style] #preview button:hover {
@@ -122,14 +122,17 @@
 }
 
 :root[theme=windows-10-UWP-dark-style] #toolbar .dropdown {
-    background: #101010;
+    background-color: #58585838;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
-@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))){
-    :root[theme=windows-10-UWP-dark-style] #toolbar .dropdown:not(.dropdown .dropdown) {
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        background-color: #58585838;
+:root[theme=windows-10-UWP-dark-style] #toolbar .dropdown .dropdown {
+    background: #101010;
+}
+@supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))){
+    :root[theme=windows-10-UWP-dark-style] #toolbar .dropdown {
+        background: #101010;
     }
 }
 
