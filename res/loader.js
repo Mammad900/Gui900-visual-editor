@@ -18,6 +18,7 @@ function loadJsCssFile(filename){
 }
 
 [
+    "res/js/cookies.js", //Writes and reads cookies
     "res/js/theme-loader.js", //Theme loader
     "res/ui/toolbar/toolbar.js", //Toolbar controller, creates tool bar HTML and handle onclick
     "res/ui/toolbar/items.js", //Holds toolbar data
@@ -86,6 +87,8 @@ function LP(){
     setTimeout(function(){
         try{
             [
+                LP_SetTheme,
+
                 LP_GV_ElementsTableButtons,
                 LP_GV_ElementsTableRows,
                 LP_GV_PagesTableButtons,
