@@ -122,26 +122,19 @@
 }
 
 :root[theme=windows-10-UWP-dark-style] #toolbar .dropdown {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    background-color: #58585838;
+    background: #101010;
+}
+
+@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))){
+    :root[theme=windows-10-UWP-dark-style] #toolbar .dropdown:not(.dropdown .dropdown) {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background-color: #58585838;
+    }
 }
 
 :root[theme=windows-10-UWP-dark-style] #toolbar .toolbar-button {
     background: transparent;
-}
-
-:root[theme=windows-10-UWP-dark-style] #toolbar .dropdown .dropdown::before {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(20px);
-    background: #63636378;
-    -webkit-backdrop-filter: blur(20px);
-}
-
-:root[theme=windows-10-UWP-dark-style] #toolbar .dropdown .dropdown {
-    background: #101010;
 }
 
 :root[theme=windows-10-UWP-dark-style] #dialog {
