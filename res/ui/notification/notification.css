@@ -1,0 +1,50 @@
+#notifications {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    max-width: calc( 100vw - 40px);
+}
+
+#notifications>div {
+    margin: 10px;
+    background: var(--box-background);
+    padding: 10px;
+    box-shadow: 0 0 20px 5px #00000087;
+}
+
+#notifications>div.error  {border: 1px solid red;   }
+#notifications>div.warning{border: 1px solid orange;}
+#notifications>div.success{border: 1px solid green;}
+
+#notifications>div .close-button {
+    float: right;
+    cursor: pointer;
+    margin: -10px;
+    padding: 11px 10px;
+    width: 18px;
+    height: 16px;
+    box-sizing: content-box;
+    text-align: center;
+}
+
+#notifications>div .close-button:active {
+    transform: scale(1.2);
+}
+
+#notifications>div .content {
+    display: list-item;
+    margin-left: 17px;
+    text-indent: 10px;
+}
+
+#notifications>div .content::marker {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    position: relative;
+    left: -10px;
+}
+
+#notifications>div.success .content::marker {content: "\f058"; color: green; }
+#notifications>div.warning .content::marker {content: "\f071"; color: yellow;}
+#notifications>div.error   .content::marker {content: "\f057"; color: red;   }

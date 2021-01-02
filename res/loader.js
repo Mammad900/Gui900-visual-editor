@@ -32,6 +32,7 @@ function loadJsCssFile(filename){
     "res/js/key-bindings.js", //Key bindings
     "res/properties/generator.js", //Properties generator
     "res/preview/preview.js", //Preview generator
+    "res/ui/notification/notification.js", // Create and manage notifications
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
@@ -77,6 +78,7 @@ function loadJsCssFile(filename){
     "res/elements/ui/table/special-styles.css", //Elements table special styles
     "res/font-awesome/css/all.css", //Font awesome
     "res/ui/css/tooltip.css", // Tooltips
+    "res/ui/notification/notification.css", // Notifications
 
     "res/js/loader-end.js", // Finishes loading
 ].forEach(function(value){
