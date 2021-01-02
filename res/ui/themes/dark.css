@@ -1,12 +1,11 @@
 :root[theme=dark]{
     --back-color: #131313;
-    --text-color: #ffffff;
-    
+    --text-color: #ececec;
     --toolbar-background: #252525;
     --toolbar-menuitem-hover: #333333;
     --toolbar-menuitem-active: #3f3f3f;
     --toolbar-separator-color: #555555;
-    
+
     --box-border-color: #555555;
     --box-background: #252525;
     
@@ -28,7 +27,7 @@
     --dialog-textarea-background-color: #272727;
     
     --tooltip-color: #252525;
-    
+
     --fieldset-border-color: #555555;
     --input-border-color: #555555;
     --input-focus-border-color: rgb(58, 58, 58);
