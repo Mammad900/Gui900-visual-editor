@@ -26,15 +26,16 @@ themeCatalog.forEach(function(val){
 
 var currentTheme;
 function LP_SetTheme(){
+    var def=(window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
     var t=cookies.getCookie('theme');
     if(t==''){
-        currentTheme='dark';
-        cookies.setCookie('theme','dark', 365);
+        currentTheme=t=def;
+        cookies.setCookie('theme',def, 365);
     }
     else{
         currentTheme=t;
-        $("html").attr('theme', t)
     }
+    $("html").attr('theme', t)
 }
 
 function ThemeMenuGenerator(themes) {
