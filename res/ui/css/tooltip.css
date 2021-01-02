@@ -4,7 +4,7 @@
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
+    display: none;
     width: 120px;
     background-color: var(--tooltip-color);
     text-align: center;
@@ -23,7 +23,7 @@
 }
 
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    display: block;
 }
 
 .tooltip .tooltiptext::after {
