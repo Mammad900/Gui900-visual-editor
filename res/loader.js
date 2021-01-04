@@ -32,6 +32,8 @@ function loadJsCssFile(filename){
     "res/js/key-bindings.js", //Key bindings
     "res/properties/generator.js", //Properties generator
     "res/preview/preview.js", //Preview generator
+    "res/settings/settings.js", //Settings
+    "res/settings/fields/screen-size.js", //Settings - Screen size
     "res/ui/notification/notification.js", // Create and manage notifications
 
     "res/elements/types/button/createDefaultDataObject.js",
@@ -78,6 +80,7 @@ function loadJsCssFile(filename){
     "res/elements/ui/table/special-styles.css", //Elements table special styles
     "res/font-awesome/css/all.css", //Font awesome
     "res/ui/css/tooltip.css", // Tooltips
+    "res/settings/input-styles.css",
     "res/ui/notification/notification.css", // Notifications
 
     "res/js/loader-end.js", // Finishes loading
@@ -95,6 +98,8 @@ function LP(){
                 LP_GV_ElementsTableRows,
                 LP_GV_PagesTableButtons,
                 LP_GV_PagesTableRows,
+                LP_GV_SettingsGenerator,
+                LP_GV_SettingsFields_ScreenSize,
                 
                 LP_GV_El_Button_1,
                 LP_GV_El_Button_2,

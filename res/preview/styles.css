@@ -1,7 +1,7 @@
 #preview{
     padding: 0;
-    max-width: 242px;
-    min-width: 242px;
+    max-width: calc( var(--settings-screen-width-px) + 2px );
+    min-width: calc( var(--settings-screen-width-px) + 2px );
 }
 canvas.sharpZoom{
     /* https://stackoverflow.com/a/38747615/13561926, with some modifications*/

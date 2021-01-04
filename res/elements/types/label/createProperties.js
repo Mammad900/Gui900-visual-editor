@@ -6,10 +6,10 @@ function LP_GV_El_Label_2(){
         properties.gen.fieldset(p,"Position",function (fs) {
             properties.gen.grid(fs,2,1,[
                 function (inCol) {
-                    properties.gen.inputNumber(inCol,"X","property-position-x",0,240,props.position.x);
+                    properties.gen.inputNumber(inCol,"X","property-position-x",0,settings.data.screenSize.width,props.position.x);
                 },
                 function (inCol) {
-                    properties.gen.inputNumber(inCol,"Y","property-position-y",0,320,props.position.y);
+                    properties.gen.inputNumber(inCol,"Y","property-position-y",0,settings.data.screenSize.height,props.position.y);
                 }
             ])
         })

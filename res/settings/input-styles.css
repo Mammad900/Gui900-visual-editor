@@ -1,0 +1,97 @@
+#settings fieldset {
+    border-radius: var(--fieldset-border-radius);
+    border: 1px solid var(--fieldset-border-color);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+#settings fieldset,
+#settings input:not([type=color]),
+#settings-content>div.vertical-center {
+    margin-bottom: 10px;
+}
+
+#settings input:not([type=color]):not([type=range]) {
+    cursor: text;
+    border-radius: var(--input-border-radius);
+    border: 1px solid var(--input-border-color);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    background-color: var(--input-color);
+    color: var(--text-color);
+    padding: .5em .5em;
+}
+
+#settings input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+    #settings input[type=number]::-webkit-inner-spin-button,
+    #settings input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+#settings input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--range-background-color);
+    height: 10px;
+    border-radius: 5px;
+}
+
+    #settings input[type=range]::-webkit-slider-thumb{
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        background-color: var(--range-thumb-color);
+        border-radius: 7.5px;
+        height: 15px;
+        width: 15px;
+        cursor: e-resize;
+        border: var(--border);
+    }
+
+#settings input[type=color] {
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+    #settings input[type=color]::-moz-color-swatch {
+        border-radius: 8px;
+    }
+
+    ::-webkit-color-swatch {
+        border: none;
+    }
+    
+    ::-moz-color-swatch {
+        border: none;
+    }
+
+#settings input.wrong {
+    background-color: var(--wrong-input);
+}
+
+#settings input:focus {
+    border-color: var(--input-focus-border-color) !important;
+}
+
+#settings :focus {
+    outline: none;
+}
+
+#settings label {
+    cursor: pointer;
+}
+
+#settings .flexbox input {
+    margin-bottom: initial;
+}
+
+#settings .flexbox>* {
+    margin: 2.5px;
+}

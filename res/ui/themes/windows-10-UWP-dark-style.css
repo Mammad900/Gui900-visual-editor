@@ -36,12 +36,14 @@
 }
 
 :root[theme=windows-10-UWP-dark-style] #properties input:not([type=color]):not([type=range]),
+:root[theme=windows-10-UWP-dark-style] #settings input:not([type=color]):not([type=range]),
 :root[theme=windows-10-UWP-dark-style] #dialog textarea {
     border: 2px solid grey;
     border-radius: 0px;
 }
 
 :root[theme=windows-10-UWP-dark-style] #properties input:not([type=color]):hover,
+:root[theme=windows-10-UWP-dark-style] #settings input:not([type=color]):hover,
 :root[theme=windows-10-UWP-dark-style] #dialog textarea:hover {
     border-color: #a7a7a7;
 }
@@ -68,20 +70,24 @@
     background: var(--scrollbar-thumb);
 }
 
-:root[theme=windows-10-UWP-dark-style] #properties input[type=color] {
+:root[theme=windows-10-UWP-dark-style] #properties input[type=color],
+:root[theme=windows-10-UWP-dark-style] #settings input[type=color]  {
     border-width: 2px;
 }
 
-:root[theme=windows-10-UWP-dark-style] #properties .vertical-center .far {
+:root[theme=windows-10-UWP-dark-style] #properties .vertical-center .far,
+:root[theme=windows-10-UWP-dark-style] #settings .vertical-center .far {
     font-size: 1.5em;
     color: darkgrey;
 }
 
-:root[theme=windows-10-UWP-dark-style] #properties .vertical-center .far:hover {
+:root[theme=windows-10-UWP-dark-style] #properties .vertical-center .far:hover,
+:root[theme=windows-10-UWP-dark-style] #settings .vertical-center .far:hover {
     color: #e2e2e2;
 }
 
-:root[theme=windows-10-UWP-dark-style] #properties .vertical-center .far:active {
+:root[theme=windows-10-UWP-dark-style] #properties .vertical-center .far:active,
+:root[theme=windows-10-UWP-dark-style] #settings .vertical-center .far:active {
     color: white;
 }
 
@@ -116,6 +122,7 @@
 }
 
 :root[theme=windows-10-UWP-dark-style] #properties input:not([type=color]):focus,
+:root[theme=windows-10-UWP-dark-style] #settings input:not([type=color]):focus,
 :root[theme=windows-10-UWP-dark-style] #dialog textarea:focus {
     background: white;
     color: black;
@@ -144,20 +151,24 @@
     backdrop-filter: blur(10px);
 }
 
-:root[theme=windows-10-UWP-dark-style] #properties input[type=range] {
+:root[theme=windows-10-UWP-dark-style] #properties input[type=range],
+:root[theme=windows-10-UWP-dark-style] #settings input[type=range] {
     height: 2px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-:root[theme=windows-10-UWP-dark-style] #properties input[type=range]::-webkit-slider-thumb {
+:root[theme=windows-10-UWP-dark-style] #properties input[type=range]::-webkit-slider-thumb,
+:root[theme=windows-10-UWP-dark-style] #settings input[type=range]::-webkit-slider-thumb {
     height: 23px;
     width: 8px;
 }
 
-:root[theme=windows-10-UWP-dark-style] #properties input[type=range]:hover::-webkit-slider-thumb {
+:root[theme=windows-10-UWP-dark-style] #properties input[type=range]:hover::-webkit-slider-thumb,
+:root[theme=windows-10-UWP-dark-style] #settings input[type=range]:hover::-webkit-slider-thumb {
     background: #dedede;
 }
+:root[theme=windows-10-UWP-dark-style] #properties input[type=range]:hover::-webkit-slider-runnable-track:right,
 :root[theme=windows-10-UWP-dark-style] #properties input[type=range]:hover::-webkit-slider-runnable-track:right {
     background: #858585;
 }

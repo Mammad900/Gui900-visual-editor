@@ -9,7 +9,7 @@ function LP_GV_El_Slider_1(){
                     y: 10
                 },
                 size: {
-                    width: 220,
+                    width: settings.data.screenSize.width-20,
                     height: 10,
                     touchAreaHeight: 30
                 },

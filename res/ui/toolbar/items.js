@@ -8,6 +8,7 @@ function LP_GenerateToolbar() {
         }, true,false);
         toolBar.subMenuItem(file, "Save", "fa-save", function (e) {});
         toolBar.subMenuItem(file, "Generate code", "fa-code", function (e) {});
+        toolBar.subMenuItem(file, "Project settings", "fa-wrench", settings.showSettingsDialog);
         toolBar.separator(file);
         toolBar.subMenuItem(file, "Change editor theme", "fa-palette", function(e){}, ThemeMenuGenerator, true);
     });

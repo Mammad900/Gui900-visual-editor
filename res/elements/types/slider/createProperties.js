@@ -8,10 +8,10 @@ function LP_GV_El_Slider_2(){
                 properties.gen.fieldset(col,"Position",function (fs) {
                     properties.gen.grid(fs,2,1,[
                         function (inCol) {
-                            properties.gen.inputNumber(inCol,"X","property-position-x",0,240,props.position.x);
+                            properties.gen.inputNumber(inCol,"X","property-position-x",0,settings.data.screenSize.width,props.position.x);
                         },
                         function (inCol) {
-                            properties.gen.inputNumber(inCol,"Y","property-position-y",0,320,props.position.y);
+                            properties.gen.inputNumber(inCol,"Y","property-position-y",0,settings.data.screenSize.height,props.position.y);
                         }
                     ])
                 })
@@ -20,13 +20,13 @@ function LP_GV_El_Slider_2(){
                 properties.gen.fieldset(col,"Size",function (fs) {
                     properties.gen.grid(fs,3,1,[
                         function (inCol) {
-                            properties.gen.inputNumber(inCol,"Width","property-size-x",0,240,props.size.width);
+                            properties.gen.inputNumber(inCol,"Width","property-size-x",0,settings.data.screenSize.width,props.size.width);
                         },
                         function (inCol) {
-                            properties.gen.inputNumber(inCol,"Height","property-size-y",0,320,props.size.height);
+                            properties.gen.inputNumber(inCol,"Height","property-size-y",0,settings.data.screenSize.height,props.size.height);
                         },
                         function (inCol) {
-                            properties.gen.inputNumber(inCol,"Touch area height","property-size-area-y",0,320,props.size.touchAreaHeight);
+                            properties.gen.inputNumber(inCol,"Touch area height","property-size-area-y",0,settings.data.screenSize.height,props.size.touchAreaHeight);
                         }
                     ])
                 })
