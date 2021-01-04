@@ -19,8 +19,8 @@ var settings= {
         },false);
     },
     createFields: function (div) {
-        settings.gen.inputNumber(div,"Screen width", "settings-screen-width",10,32767,settings.data.screenSize.width);
-        settings.gen.inputNumber(div,"Screen height", "settings-screen-height",10,32767,settings.data.screenSize.height);
+        settings.gen.inputNumber(div,"Screen width", "settings-screen-width",100,32767,settings.data.screenSize.width);
+        settings.gen.inputNumber(div,"Screen height", "settings-screen-height",100,32767,settings.data.screenSize.height);
     },
     saveSettings: function () {
         function g(id) {
