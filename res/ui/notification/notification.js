@@ -7,7 +7,9 @@ var notification={
      */
     createNotification: function(type, text, buttons=[], timeout=3000){
         var div=$("<div></div>").addClass(type);
-        div.append($("<i></i>").addClass(["fas","fa-times","close-button"]));
+        div.append($("<i></i>").addClass(["fas","fa-times","close-button"])).on('click',function (e) {
+            div.remove();
+        });
         $("#notifications").append(div);
         div.append($("<div></div>").addClass("content").html(text));
         setTimeout(function(){
