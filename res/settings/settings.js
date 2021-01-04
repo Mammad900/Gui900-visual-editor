@@ -13,7 +13,8 @@ var settings= {
                 "id": 0
             }
         ], function (result, e) {
-            settings.saveSettings();
+            if(result==1)
+                settings.saveSettings();
             dialog.close();
         },false);
     },
