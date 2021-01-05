@@ -92,8 +92,26 @@
     margin-bottom: initial;
 }
 
-@media screen and (min-width:700px){
-    #properties .flexbox>:not(:last-child) {
+@media screen and (min-width:701px){
+    #properties .flexbox.responsive:not(.responsive-big)>:not(:last-child) {
         margin-right: 5px;
     }
+}
+@media screen and (max-width:700px){
+    #properties .flexbox.responsive:not(.responsive-big)>:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+@media screen and (min-width:1025px){
+    #properties .flexbox.responsive-big:not(.responsive)>:not(:last-child) {
+        margin-right: 5px;
+    }
+}
+@media screen and (max-width:1024px){
+    #properties .flexbox.responsive-big:not(.responsive)>:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+#properties .flexbox:not(.responsive):not(.responsive-big)>:not(:last-child) {
+    margin-right: 5px;
 }
