@@ -92,6 +92,8 @@
     margin-bottom: initial;
 }
 
-#properties .flexbox>* {
-    margin: 2.5px;
+@media screen and (min-width:700px){
+    #properties .flexbox>:not(:last-child) {
+        margin-right: 5px;
+    }
 }
