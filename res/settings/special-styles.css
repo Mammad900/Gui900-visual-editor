@@ -1,0 +1,6 @@
+@media screen and (min-width:700px){
+    #settings-screen-brightness-preview-field{
+        margin-top: 22px;
+        display: block;
+    }
+}
