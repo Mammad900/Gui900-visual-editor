@@ -12,7 +12,21 @@ function LP_GV_PagesTableRows() {
             var tr=$("<tr></tr>").append(td1);
             var buttons= pages.table.buttons.generateTripleButtons(td1);
             tr.append($("<td></td>").text(num));
-            tr.append($("<td></td>").text(name).attr("contenteditable",true));
+            tr.append(
+                $("<td></td>")
+                .text(name)
+                .attr("contenteditable",true)
+                // https://stackoverflow.com/a/44162034/13561926
+                .on('paste', function(e) {
+                    //strips elements added to the editable tag when pasting
+                    var $self = $(this);
+                    setTimeout(function() {$self.html($self.text());}, 0);
+                })
+                .on('keypress', function(e) {
+                    //ignores enter key
+                    return e.which != 13;
+                })
+            );
             this.data.push(buttons);
             $("#pages_table").append(tr);
             buttons[1].prop("disabled",true);

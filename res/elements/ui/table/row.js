@@ -29,6 +29,16 @@ function LP_GV_ElementsTableRows() {
                         elements.updatePropertiesTitle(num);
                     }
                 })
+                // https://stackoverflow.com/a/44162034/13561926
+                .on('paste', function(e) {
+                    //strips elements added to the editable tag when pasting
+                    var $self = $(this);
+                    setTimeout(function() {$self.html($self.text());}, 0);
+                })
+                .on('keypress', function(e) {
+                    //ignores enter key
+                    return e.which != 13;
+                });
             }
             tr.append(td3);
             tr.append($("<td></td>").text(type));
