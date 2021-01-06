@@ -5,14 +5,17 @@ function LP_GV_El_CheckBox_3(){
         function g(id) {
             return $("#"+id).val();
         }
+        function n(id) {
+            return $("#"+id)[0].valueAsNumber;
+        }
         function b(id) {
             return (($("#"+id).data("checked"))=="1");
         }
         elements.data[index]={
             type: "Check-box",
             position: {
-                x: g("property-position-x"),
-                y: g("property-position-y")
+                x: n("property-position-x"),
+                y: n("property-position-y")
             },
             text: g("property-text"),
             colors: {
@@ -23,7 +26,7 @@ function LP_GV_El_CheckBox_3(){
                     tick: g("properties-color-tick")
                 }
             },
-            size: g("property-size"),
+            size: n("property-size"),
             checked: b("property-checked"),
             enabled: b("property-enabled"),
             visible: b("property-visible")
