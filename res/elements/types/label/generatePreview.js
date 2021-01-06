@@ -18,35 +18,10 @@ function LP_GV_El_Label_3(){
         var regex=/&Free(Sans|Mono|Serif)(|Bold)(|Oblique)(9|12|18|24)pt7b/;
         var size=20;
         if(regex.test(font)){
-            var style=/(Sans|Serif|Mono)/.exec(font)[0];
-            switch(style){
-                case "Sans":
-                    style= "sans-serif";
-                    break;
-                case "Serif":
-                    style= "serif";
-                    break;
-                case "Mono":
-                    style= "monospace";
-                    break;
-            }
+            var style={"Sans":'sans-serif', "Serif":'serif', "Mono":'monospace'} [/(Sans|Serif|Mono)/.exec(font)[0]];
             var bold=font.includes("Bold");
             var italic=font.includes("Oblique");
-            size= /(9|12|18|24)pt/.exec(font)[0];
-            switch (size) {
-                case "24pt":
-                    size=56;
-                    break;
-                case "18pt":
-                    size=42;
-                    break;
-                case "12pt":
-                    size=29;
-                    break;
-                case "9pt":
-                    size=22;
-                    break;
-            }
+            var size= {"24pt":56, "18pt":42, "12pt":29, "9pt":22} [/(9|12|18|24)pt/.exec(font)[0]]
             ctx.font=(bold?"bold ":"")+(italic?"italic ":"")+size+"px "+style;
         }
         else{
