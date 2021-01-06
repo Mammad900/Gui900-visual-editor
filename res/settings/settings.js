@@ -19,11 +19,17 @@ var settings= {
         },false);
     },
     createFields: function (div) {
-        settings.gen.inputNumber(div,"Screen width", "settings-screen-width",100,32767,settings.data.screenSize.width);
-        settings.gen.inputNumber(div,"Screen height", "settings-screen-height",100,32767,settings.data.screenSize.height);
+        settings.gen.grid(div,2,1,[
+            function (c) {
+                settings.gen.inputNumber(c,"Screen width", "settings-screen-width",100,32767,settings.data.screenSize.width);
+            },
+            function (c) {
+                settings.gen.inputNumber(c,"Screen height", "settings-screen-height",100,32767,settings.data.screenSize.height);
+            }
+        ],true)
         settings.gen.grid(div,2,1,[
             function(c){
-                settings.gen.inputNumber(c,'Screen brightness','settings-screen-brightness',0,255,settings.data.screenBrightness.value);
+                settings.gen.inputNumber(c,'Brightness','settings-screen-brightness',0,255,settings.data.screenBrightness.value);
             },
             function(c){
                 settings.gen.checkBox(c,'Simulate in preview?','settings-screen-brightness-preview',settings.data.screenBrightness.simulateInPreview).parent().attr('id','settings-screen-brightness-preview-field')

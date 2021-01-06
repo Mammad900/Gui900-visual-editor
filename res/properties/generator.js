@@ -12,7 +12,7 @@ var properties={
          * @param {0|1|2} responsiveness 
          * @param {Array<(col:JQuery<HTMLElement>)=>void>} callbacks 
          */
-        function (container, columnCount, responsiveness, callbacks) {
+        function (container, columnCount, responsiveness, callbacks, marginBot=false) {
             var flexBox= $("<div></div>").addClass("flexbox");
             switch (responsiveness) {
                 case 0:
@@ -32,6 +32,9 @@ var properties={
                 var col=$("<div></div>");
                 callbacks[i](col);
                 flexBox.append(col);
+            }
+            if(marginBot){
+                flexBox.css('margin-bottom','10px');
             }
             container.append(flexBox);
         },
