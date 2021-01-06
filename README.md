@@ -26,6 +26,6 @@ These important features are still not implemented:
 
 - Save and open
 - Code editor
-- Project settings
+- Project settings (implemented but most options are not yet created)
 - Generate code
 - Preview for check-boxes and radio-buttons
