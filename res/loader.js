@@ -56,6 +56,7 @@ function loadJsCssFile(filename){
     "res/elements/types/radio-button/createDefaultDataObject.js",
     "res/elements/types/radio-button/createProperties.js",
     "res/elements/types/radio-button/saveProperties.js",
+    "res/elements/types/radio-button/generatePreview.js",
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
@@ -120,6 +121,7 @@ function LP(){
                 LP_GV_El_RadioButton_1,
                 LP_GV_El_RadioButton_2,
                 LP_GV_El_RadioButton_3,
+                LP_GV_El_RadioButton_4,
                 LP_GV_El_Slider_1,
                 LP_GV_El_Slider_2,
                 LP_GV_El_Slider_3,
