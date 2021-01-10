@@ -5,14 +5,17 @@ function LP_GV_El_RadioButton_3(){
         function g(id) {
             return $("#"+id).val();
         }
+        function n(id) {
+            return $("#"+id)[0].valueAsNumber;
+        }
         function b(id) {
             return (($("#"+id).data("checked"))=="1");
         }
         elements.data[index]={
             type: "Radio button",
             position: {
-                x: g("property-position-x"),
-                y: g("property-position-y")
+                x: n("property-position-x"),
+                y: n("property-position-y")
             },
             text: g("property-text"),
             colors: {
@@ -23,8 +26,8 @@ function LP_GV_El_RadioButton_3(){
                     indicator: g("properties-color-indicator")
                 }
             },
-            size: g("property-size"),
-            group: g("property-group"),
+            size: n("property-size"),
+            group: n("property-group"),
             checked: b("property-checked"),
             enabled: b("property-enabled"),
             visible: b("property-visible")
