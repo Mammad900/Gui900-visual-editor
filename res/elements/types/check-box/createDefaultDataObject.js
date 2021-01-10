@@ -12,9 +12,9 @@ function LP_GV_El_CheckBox_1(){
                 colors: {
                     text: "#ffffff",
                     box: {
-                        background: "#000000",
-                        border: "#ffffff",
-                        tick: "#ffffff"
+                        background: "#ffffff",
+                        border: "#000000",
+                        tick: "#000000"
                     }
                 },
                 size: 2,
