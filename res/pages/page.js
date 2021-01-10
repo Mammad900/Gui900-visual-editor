@@ -7,7 +7,10 @@ var pages = {
          */
         function () {
             var i = pages.data.length;
-            var tr = pages.table.rows.create("Untitled");
+            var tr = pages.table.rows.create(i==0?"The only page":"Untitled");
+            if((i>0)&&($(pages.table.rows.getRow(0)).children()[2].innerHTML=="The only page")){
+                $(pages.table.rows.getRow(0)).children()[2].innerHTML="Main page"
+            }
             pages.data.push({
                 elements: [],
                 background: "#000000"
