@@ -24,11 +24,11 @@
         <i class="fas fa-pulse fa-5x fa-spinner"></i>
         <h1>Loading...</h1>
     </div>
-    <div id="toolbar" style="display: none;">
-    </div>
-    <div class="content" style="display: none;">
+    <header id="toolbar" style="display: none;">
+    </header>
+    <main class="content" style="display: none;">
         <div class="flexbox">
-            <div class="float-left box" id="preview">
+            <section class="float-left box" id="preview">
                 <div class="vertical-center">
                     <i class="fa fa-chevron-down" onclick="$('#preview').toggleClass('hiddenbox');cetnbtp()" id="preview-openclose-button"></i
                     ><h2 style="margin: 5px; display: inline-block;margin-left: 0;">
@@ -40,25 +40,25 @@
                     <i class="fas fa-sync"></i>
                     Refresh
                 </button>
-            </div>
-                <div class="box" id="properties" style="padding: 0;">
-                    <div>
-                        <h2>
-                            Properties
-                        </h2>
-                        <span class="float-right" id="properties-header-details">No item selected</span>
-                        <i class="fa fa-chevron-down" id="properties-openclose-button" onclick="$('#properties').toggleClass('hiddenbox');cetnbtp()"></i>
-                    </div>
-                    <div>
-                        <div id="properties-shadow-top"></div>
-                        <div id="properties-content">
-                        </div>
-                        <div id="properties-shadow-bottom"></div>
-                    </div>
+            </section>
+            <section class="box" id="properties" style="padding: 0;">
+                <div>
+                    <h2>
+                        Properties
+                    </h2>
+                    <span class="float-right" id="properties-header-details">No item selected</span>
+                    <i class="fa fa-chevron-down" id="properties-openclose-button" onclick="$('#properties').toggleClass('hiddenbox');cetnbtp()"></i>
                 </div>
+                <div>
+                    <div id="properties-shadow-top"></div>
+                    <div id="properties-content">
+                    </div>
+                    <div id="properties-shadow-bottom"></div>
+                </div>
+            </section>
         </div>
         <div class="flexbox responsive">
-            <div class="l6 m6 s12" id="elements-table-column">
+            <section class="l6 m6 s12" id="elements-table-column">
                 <div class="box" style="padding: 0;">
                     <table class="table np" style="border-radius: 10px;" id="elements_table"><tr style="border-radius: 10px;">
                         <td style="padding: 0; min-width: 165px;">
@@ -87,8 +87,8 @@
                     </tr>
                     </table>
                 </div>
-            </div>
-            <div class="l6 m6 s12" id="pages-table-column">
+            </section>
+            <section class="l6 m6 s12" id="pages-table-column">
                 <div class="box" style="padding: 0;">
                     <table class="table np" style="border-radius: 10px;" id="pages_table">
                         <tr style="border-radius: 10px;">
@@ -109,10 +109,10 @@
                         </tr>
                     </table>
                 </div>
-            </div>
+            </section>
         
         </div>
-    </div>
+    </main>
     <div id="notifications">
     </div>
 </body></html>
