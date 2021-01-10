@@ -129,9 +129,9 @@
 }
 
 :root[theme=windows-10-UWP-dark-style] #toolbar .dropdown {
-    background-color: #58585838;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background-color: #0a0a0ad1;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
 }
 
 :root[theme=windows-10-UWP-dark-style] #toolbar .dropdown .dropdown {
