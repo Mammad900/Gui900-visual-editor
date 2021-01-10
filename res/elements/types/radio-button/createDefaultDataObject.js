@@ -12,9 +12,9 @@ function LP_GV_El_RadioButton_1(){
                 colors: {
                     text: "#ffffff",
                     box: {
-                        background: "#000000",
-                        border: "#ffffff",
-                        indicator: "#ffffff"
+                        background: "#ffffff",
+                        border: "#000000",
+                        indicator: "#222222"
                     }
                 },
                 size: 2,
