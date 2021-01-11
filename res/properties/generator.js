@@ -159,5 +159,30 @@ var properties={
         function (container, label, id, min, max, value) {
             return this.inputText(container,label,id,value).attr("type","range").attr("min",min).attr("max",max);
         },
+        select:
+        /**
+         * 
+         * @param {JQuery<HTMLDivElement>} container 
+         * @param {string} label 
+         * @param {string} id 
+         * @param {Array<string>|Object} values 
+         */
+        function (container, label, id, values, selected) {
+            container.append($("<label></label>").attr("for",id).text(label));
+
+            var select=$("<select></datalist>").addClass(["block","full-width"]).attr("id",id);
+            if(values.constructor==Array){
+                values.forEach(function (val, index) {
+                    select.append($("<option></option>").text(val).prop('selected',index==selected));
+                });
+            }
+            else{
+                for(var value in values){
+                    select.append($("<option></option>").text(values[value]).attr('value',value).prop('selected',value==selected));
+                }
+            }
+            container.append(select);
+            return select;
+        }
     }
 }
