@@ -6,7 +6,7 @@
     white-space: nowrap;
 }
 #toolbar *{
-    z-index: inherit;
+    z-index: 9;
 }
 #toolbar .menuitem{
     position: relative;
@@ -40,7 +40,7 @@
 #toolbar .menuitem .dropdown-container{
     position: absolute; 
     display: none;
-    z-index: 1;
+    z-index: 9;
 }
 #toolbar .menuitem .dropdown .dropdown{
     z-index: 2;
