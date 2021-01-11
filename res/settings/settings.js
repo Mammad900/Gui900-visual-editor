@@ -60,7 +60,7 @@ var settings= {
             settings.gen.grid(fs, 2, 1, [
                 function (iC) { settings.gen.inputNumber(iC, "MINPRESSURE", "settings-touchCalibration-MINPRESSURE", 0,  10000, settings.data.touchCalibration.MINPRESSURE); },
                 function (iC) { settings.gen.inputNumber(iC, "MAXPRESSURE", "settings-touchCalibration-MAXPRESSURE", 0,  10000, settings.data.touchCalibration.MAXPRESSURE); },
-            ],true);
+            ]);
         })
     },
     saveSettings: function () {
