@@ -21,10 +21,10 @@ var settings= {
     createFields: function (div) {
         settings.gen.grid(div,2,1,[
             function (c) {
-                settings.gen.inputNumber(c,"Screen width", "settings-screen-width",100,32767,settings.data.screenSize.width);
+                settings.gen.inputNumber(c,"Screen width", "settings-screen-width",100,32767,((settings.data.orientation%2)==1) ? settings.data.screenSize.height : settings.data.screenSize.width);
             },
             function (c) {
-                settings.gen.inputNumber(c,"Screen height", "settings-screen-height",100,32767,settings.data.screenSize.height);
+                settings.gen.inputNumber(c,"Screen height", "settings-screen-height",100,32767,((settings.data.orientation%2)==1) ? settings.data.screenSize.width : settings.data.screenSize.height);
             }
         ],true)
         settings.gen.grid(div,2,1,[

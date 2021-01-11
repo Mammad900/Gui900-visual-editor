@@ -2,6 +2,9 @@
 function LP_GV_SettingsFields_ScreenSize() {
     settings.fields.screenSize= {
         save: function (w,h) {
+            if((settings.data.orientation%2)==1) {//Landscape
+                [w,h]=[h,w]; // Swap variables
+            }
             settings.data.screenSize.width=w;
             settings.data.screenSize.height=h;
             if((w<200)||(h<200)){
@@ -29,9 +32,6 @@ function LP_GV_SettingsFields_ScreenSize() {
                 else{
                     notification.warning("This resolution is too much for an Arduino board")
                 }
-            }
-            if((settings.data.orientation%2)==1) {//Landscape
-                [w,h]=[h,w]; // Swap variables
             }
             $("html").css("--settings-screen-width-px",w+"px");
             $("#preview-canvas").attr("width",w+"px");
