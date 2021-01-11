@@ -37,6 +37,8 @@
 
 :root[theme=windows-10-UWP-dark-style] #properties input:not([type=color]):not([type=range]),
 :root[theme=windows-10-UWP-dark-style] #settings input:not([type=color]):not([type=range]),
+:root[theme=windows-10-UWP-dark-style] #properties select,
+:root[theme=windows-10-UWP-dark-style] #settings select,
 :root[theme=windows-10-UWP-dark-style] #dialog textarea {
     border: 2px solid grey;
     border-radius: 0px;
@@ -44,6 +46,8 @@
 
 :root[theme=windows-10-UWP-dark-style] #properties input:not([type=color]):hover,
 :root[theme=windows-10-UWP-dark-style] #settings input:not([type=color]):hover,
+:root[theme=windows-10-UWP-dark-style] #properties select:hover,
+:root[theme=windows-10-UWP-dark-style] #settings select:hover,
 :root[theme=windows-10-UWP-dark-style] #dialog textarea:hover {
     border-color: #a7a7a7;
 }
@@ -115,7 +119,7 @@
     backdrop-filter: blur(10px)
 }
 
-:root[theme=windows-10-UWP-dark-style] :not(input):not(textarea):focus,
+:root[theme=windows-10-UWP-dark-style] :not(input):not(textarea):not(select):focus,
 :root[theme=windows-10-UWP-dark-style] input[type=color]:focus {
     outline: 2px white solid !important;
     outline-offset: 2px;
@@ -123,6 +127,7 @@
 
 :root[theme=windows-10-UWP-dark-style] #properties input:not([type=color]):focus,
 :root[theme=windows-10-UWP-dark-style] #settings input:not([type=color]):focus,
+:root[theme=windows-10-UWP-dark-style] #settings select:focus,
 :root[theme=windows-10-UWP-dark-style] #dialog textarea:focus {
     background: white;
     color: black;

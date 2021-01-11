@@ -11,7 +11,8 @@
     margin-bottom: 10px;
 }
 
-#properties input:not([type=color]):not([type=range]) {
+#properties input:not([type=color]):not([type=range]),
+#properties select {
     cursor: text;
     border-radius: var(--input-border-radius);
     border: 1px solid var(--input-border-color);
@@ -19,6 +20,13 @@
     background-color: var(--input-color);
     color: var(--text-color);
     padding: .5em .5em;
+}
+
+#properties select {
+    cursor: pointer;
+}
+#properties select option {
+    cursor: pointer;
 }
 
 #properties input[type="number"] {

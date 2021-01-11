@@ -11,7 +11,8 @@
     margin-bottom: 10px;
 }
 
-#settings input:not([type=color]):not([type=range]) {
+#settings input:not([type=color]):not([type=range]),
+#settings select {
     cursor: text;
     border-radius: var(--input-border-radius);
     border: 1px solid var(--input-border-color);
@@ -19,6 +20,13 @@
     background-color: var(--input-color);
     color: var(--text-color);
     padding: .5em .5em;
+}
+
+#settings select {
+    cursor: pointer;
+}
+#settings select option {
+    cursor: pointer;
 }
 
 #settings input[type="number"] {
@@ -76,7 +84,8 @@
     background-color: var(--wrong-input);
 }
 
-#settings input:focus {
+#settings input:focus,
+#settings select:focus {
     border-color: var(--input-focus-border-color) !important;
 }
 
