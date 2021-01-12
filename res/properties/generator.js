@@ -37,6 +37,7 @@ var properties={
                 flexBox.css('margin-bottom','10px');
             }
             container.append(flexBox);
+            return flexBox;
         },
         fieldset:
         /**

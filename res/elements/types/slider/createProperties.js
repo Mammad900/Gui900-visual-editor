@@ -43,16 +43,16 @@ function LP_GV_El_Slider_2(){
                 col.addClass(["l9 m12 s12"]);
                 properties.gen.grid(col, 3, 1, [
                     function (inCol) {
-                        properties.gen.inputNumber(inCol, "Minimum", "property-min", -32767, props.max, props.min).css("margin-bottom","10px").on("change",function (e) {
+                        properties.gen.inputNumber(inCol, "Minimum", "property-min", -32767, props.max, props.min).on("change",function (e) {
                             $("#property-value").attr("min",e.target.value);
                             $("#property-max").attr("min",e.target.value);
                         });
                     },
                     function (inCol) {
-                        properties.gen.inputNumber(inCol, "Value", "property-value", props.min, props.max, props.value).css("margin-bottom","10px")
+                        properties.gen.inputNumber(inCol, "Value", "property-value", props.min, props.max, props.value)
                     },
                     function (inCol) {
-                        properties.gen.inputNumber(inCol, "Maximum", "property-max", props.min, 32767, props.max).css("margin-bottom","10px").on("change",function (e) {
+                        properties.gen.inputNumber(inCol, "Maximum", "property-max", props.min, 32767, props.max).on("change",function (e) {
                             $("#property-value").attr("max",e.target.value);
                             $("#property-min").attr("max",e.target.value);
                         });
@@ -67,7 +67,7 @@ function LP_GV_El_Slider_2(){
                     }
                 ])
             }
-        ])
+        ]).css("margin-bottom","10px");
         properties.gen.checkBox(p,"Enabled?", "property-enabled", props.enabled);
         properties.gen.checkBox(p,"Visible?", "property-visible", props.visible);
     }

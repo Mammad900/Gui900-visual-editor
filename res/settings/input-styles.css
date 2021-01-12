@@ -101,6 +101,10 @@
     margin-bottom: initial;
 }
 
+#settings fieldset>*:last-child{
+    margin-bottom: 0;
+}
+
 @media screen and (min-width:701px){
     #settings .flexbox.responsive:not(.responsive-big)>:not(:last-child) {
         margin-right: 5px;
