@@ -80,7 +80,7 @@ var settings= {
                             'settings-screen-timeout-remove-scr-on-off-funcs', settings.data.screenTimeout.removeScrOnOffCode).parent().css('display',settings.data.screenTimeout.enabled?'none':'block');
             })
         });
-        settings.gen.fieldset(div, "Touch settings",function (fs) {
+        settings.gen.fieldset(div, "Touch-screen pins & calibration",function (fs) {
             settings.gen.grid(fs, 4, 1, [
                 function (iC) { settings.gen.inputNumber(iC, "TS_LEFT", "settings-touchCalibration-TS_LEFT", 0,  1023, settings.data.touchCalibration.TS_LEFT);},
                 function (iC) { settings.gen.inputNumber(iC, "TS_TOP" , "settings-touchCalibration-TS_TOP" , 0,  1023, settings.data.touchCalibration.TS_TOP );},
