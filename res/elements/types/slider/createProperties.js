@@ -40,7 +40,7 @@ function LP_GV_El_Slider_2(){
         });
         properties.gen.grid(p, 2, 2, [
             function (col) {
-                col.addClass(["l9 m12 s12"]).css("margin","0");
+                col.addClass(["l9 m12 s12"]);
                 properties.gen.grid(col, 3, 1, [
                     function (inCol) {
                         properties.gen.inputNumber(inCol, "Minimum", "property-min", -32767, props.max, props.min).css("margin-bottom","10px").on("change",function (e) {
@@ -60,7 +60,7 @@ function LP_GV_El_Slider_2(){
                 ])
             },
             function (col) {
-                col.addClass(["l3 m12 s12"]).css("margin","0");
+                col.addClass(["l3 m12 s12"]);
                 properties.gen.grid(col, 1, 0, [
                     function (inCol) {
                         properties.gen.inputNumber(inCol, "Thumb width", "property-thumb-width", 0, 50, props.thumbWidth);
