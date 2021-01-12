@@ -45,6 +45,7 @@ var preview={
     },
 
     lowQualityDimPixel: function (color, multiplier=0.5) {
+        if(!settings.data.appearance.dimDisabledElements){ return this.lowQualityPixel(color); }
         var rgb=this.hexToRgb(color);
         return this.rgb565toHex(this.color565(rgb.r*multiplier, rgb.g*multiplier, rgb.b*multiplier));
     },
