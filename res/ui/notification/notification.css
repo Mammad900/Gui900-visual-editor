@@ -4,6 +4,7 @@
     right: 20px;
     width: 350px;
     max-width: calc( 100vw - 40px);
+    z-index: 11;
 }
 
 #notifications>div {
