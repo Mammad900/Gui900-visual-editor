@@ -143,7 +143,7 @@ var properties={
                 }
             })
             cb.css("margin-right","5px");
-            contain.append(cb,$("<span></span>").text(label));
+            contain.append(cb,$("<span></span>").html(label));
             container.append(contain);
             return cb;
         },
