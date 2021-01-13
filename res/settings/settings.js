@@ -82,7 +82,22 @@ var settings= {
         });
         settings.gen.fieldset(div, "Appearance", function (fs) {
             settings.gen.checkBox(fs, "Dim disabled elements", "settings-dim-disabled-elements", settings.data.appearance.dimDisabledElements);
-        })
+        });
+        settings.gen.fieldset(div, "Max elements per page (0 for auto)", function (fs) {
+            settings.gen.grid(fs, 3, 2, [
+                   function (oC) { oC.addClass(["l6","m12","s12"]); settings.gen.grid(oC, 2, 1, [
+                        function (col) { settings.gen.inputNumber(col, "Button", "settings-maxElement-button", 0, 50, settings.data.maxElPerPage.button); },
+                        function (col) { settings.gen.inputNumber(col, "Label", "settings-maxElement-label", 0, 50, settings.data.maxElPerPage.label); },
+                    ])
+                }, function (oC) { oC.addClass(["l6","m12","s12"]); settings.gen.grid(oC, 2, 1, [
+                        function (col) { settings.gen.inputNumber(col, "Check-box", "settings-maxElement-checkBox", 0, 50, settings.data.maxElPerPage.checkBox); },
+                        function (col) { settings.gen.inputNumber(col, "Slider", "settings-maxElement-slider", 0, 50, settings.data.maxElPerPage.slider); },
+                    ])
+                }, function (oC) {oC.addClass(["l3","m12","s12"]);
+                    settings.gen.inputNumber(oC, "Radio-button", "settings-maxElement-radioButton", 0, 50, settings.data.maxElPerPage.radioButton);
+                },
+            ])
+        });
         settings.gen.fieldset(div, "Touch-screen pins & calibration",function (fs) {
             settings.gen.grid(fs, 4, 1, [
                 function (iC) { settings.gen.inputNumber(iC, "TS_LEFT", "settings-touchCalibration-TS_LEFT", 0,  1023, settings.data.touchCalibration.TS_LEFT);},
@@ -130,6 +145,13 @@ var settings= {
             removeScrOnOffCode: b("settings-screen-timeout-remove-scr-on-off-funcs"),
         }
         settings.data.appearance.dimDisabledElements= b("settings-dim-disabled-elements");
+        settings.data.maxElPerPage= {
+            button: n("settings-maxElement-button"),
+            label: n("settings-maxElement-label"),
+            checkBox: n("settings-maxElement-checkBox"),
+            slider: n("settings-maxElement-slider"),
+            radioButton: n("settings-maxElement-radioButton"),
+        }
     },
     fields:{},
     data:{
@@ -156,7 +178,10 @@ var settings= {
         },
         appearance: {
             dimDisabledElements: true,
-        }
+        },
+        maxElPerPage: {
+            button: 0, label: 0, checkBox: 0, slider: 0, radioButton: 0,
+        },
     }
 }
 function LP_GV_SettingsGenerator() {
