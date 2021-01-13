@@ -6,7 +6,14 @@
 }
 #elements_table tr:not(:first-of-type) td:nth-child(3){
     user-select: text;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: overlay;
 }
+#elements_table tr:not(:first-of-type) td:nth-child(3)::-webkit-scrollbar {
+    height: 7px;
+}
+
 #elements_table tr:not(:first-of-type) td:first-child{
     padding: 0;
 }
@@ -19,7 +26,7 @@
 }
 
 #elements-table-column{
-    min-width: 400px;
+    min-width: fit-content;
 }
 
 #elements-table-column>.box{

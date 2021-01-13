@@ -13,7 +13,7 @@
 }
 
 #pages-table-column{
-    min-width: 350px;
+    min-width: fit-content;
 }
 
 #pages_table div.buttons{
