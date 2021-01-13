@@ -93,67 +93,64 @@ function loadJsCssFile(filename){
 });
 
 function LP(){
-    setTimeout(function(){
-        try{
-            [
-                LP_SetTheme,
+    try{
+        [
+            LP_SetTheme,
 
-                LP_GV_ElementsTableButtons,
-                LP_GV_ElementsTableRows,
-                LP_GV_PagesTableButtons,
-                LP_GV_PagesTableRows,
-                LP_GV_SettingsGenerator,
-                LP_GV_SettingsFields_ScreenSize,
-                LP_GV_SettingsFields_ScreenBrightness,
-                
-                LP_GV_El_Button_1,
-                LP_GV_El_Button_2,
-                LP_GV_El_Button_3,
-                LP_GV_El_Button_4,
-                LP_GV_El_CheckBox_1,
-                LP_GV_El_CheckBox_2,
-                LP_GV_El_CheckBox_3,
-                LP_GV_El_Checkbox_4,
-                LP_GV_El_Label_1,
-                LP_GV_El_Label_2,
-                LP_GV_El_Label_3,
-                LP_GV_El_Label_4,
-                LP_GV_El_RadioButton_1,
-                LP_GV_El_RadioButton_2,
-                LP_GV_El_RadioButton_3,
-                LP_GV_El_RadioButton_4,
-                LP_GV_El_Slider_1,
-                LP_GV_El_Slider_2,
-                LP_GV_El_Slider_3,
-                LP_GV_El_Slider_4,
+            LP_GV_ElementsTableButtons,
+            LP_GV_ElementsTableRows,
+            LP_GV_PagesTableButtons,
+            LP_GV_PagesTableRows,
+            LP_GV_SettingsGenerator,
+            LP_GV_SettingsFields_ScreenSize,
+            LP_GV_SettingsFields_ScreenBrightness,
+            
+            LP_GV_El_Button_1,
+            LP_GV_El_Button_2,
+            LP_GV_El_Button_3,
+            LP_GV_El_Button_4,
+            LP_GV_El_CheckBox_1,
+            LP_GV_El_CheckBox_2,
+            LP_GV_El_CheckBox_3,
+            LP_GV_El_Checkbox_4,
+            LP_GV_El_Label_1,
+            LP_GV_El_Label_2,
+            LP_GV_El_Label_3,
+            LP_GV_El_Label_4,
+            LP_GV_El_RadioButton_1,
+            LP_GV_El_RadioButton_2,
+            LP_GV_El_RadioButton_3,
+            LP_GV_El_RadioButton_4,
+            LP_GV_El_Slider_1,
+            LP_GV_El_Slider_2,
+            LP_GV_El_Slider_3,
+            LP_GV_El_Slider_4,
 
-                LP_GV_Toolbar_Handler_1,
-                LP_GV_Toolbar_Handler_2,
-                LP_GV_Toolbar_Handler_3,
-                LP_GV_Toolbar_Handler_4,
-                LP_GV_Toolbar_Handler_5,
-                
-                LP_keyBindings,
-                pages.create,
-                LP_HandleNewElementButton,
-                LP_CreateHiddenFileInput,
-                LP_GenerateToolbar,
-                preview.refresh,
-                LP_HandleColorPickerInput,
-                LP_loaderEnd,
-            ].forEach(function(value){
-                value();
-            });
-        }
-        catch(err){
-            console.error(err);
-            document.getElementById("loading-header").innerHTML+=
-            `<p>An error occurred. Please reload the page.<br>
-                If you reloaded a few times but the issue persists, please <a href='https://github.com/Mammad900/Gui900-visual-editor/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report the bug in GitHub.</a><br>
-            Error: <code>`+err.message+`</code><br/>
-            <button class="button" style="font-size: 1.5rem;margin:20px;padding:10px;background:var(--back-color);" onclick="window.location.reload()">Refresh</button
-                </p>`;
-        }
-    },500);
+            LP_GV_Toolbar_Handler_1,
+            LP_GV_Toolbar_Handler_2,
+            LP_GV_Toolbar_Handler_3,
+            LP_GV_Toolbar_Handler_4,
+            LP_GV_Toolbar_Handler_5,
+            
+            LP_keyBindings,
+            pages.create,
+            LP_HandleNewElementButton,
+            LP_CreateHiddenFileInput,
+            LP_GenerateToolbar,
+            preview.refresh,
+            LP_HandleColorPickerInput,
+            LP_loaderEnd,
+        ].forEach(function(value){
+            value();
+        });
+    }
+    catch(err){
+        console.error(err);
+        document.getElementById("loading-header").innerHTML+=
+        `<p>An error occurred. Please reload the page.<br>
+            If you reloaded a few times but the issue persists, please <a href='https://github.com/Mammad900/Gui900-visual-editor/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report the bug in GitHub.</a><br>
+        Error: <code>`+err.message+`</code><br/>
+        <button class="button" style="font-size: 1.5rem;margin:20px;padding:10px;background:var(--back-color);" onclick="window.location.reload()">Refresh</button
+            </p>`;
+    }
 };
-$(LP);
