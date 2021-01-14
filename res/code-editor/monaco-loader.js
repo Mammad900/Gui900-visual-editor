@@ -20,10 +20,12 @@ function LP_LoadEditor() {
     monaco.editor.defineTheme('GVE-windows-10-UWP-dark-style', { base: 'vs-dark', inherit: true, rules: [{ background: "000000" }], colors: { "editor.background": "#000000" } });
     monaco.editor.defineTheme('GVE-light', { base: 'vs', inherit: true, rules: [{  }], });
 
-    monacoInstance= monaco.editor.create($("#monaco-container")[0],{
+    monacoInstance= monaco.editor.create($("#monaco-container")[0],{...{
         language: "cpp",
         value: "void a(){\n    \n}",
         automaticLayout: true,
-        theme: "GVE-"+$("html").attr('theme')
-    })
+        theme: "GVE-"+$("html").attr('theme'),
+    }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
+       ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),
+       ...(JSON.parse(localStorage.getItem("monacoMainCodeEditorOptions")))});
 }
