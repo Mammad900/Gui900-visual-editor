@@ -7,6 +7,10 @@ var preview={
         var ctx= $("#preview-canvas")[0].getContext("2d");
         ctx.fillStyle = $("#page_bc_color_input").val();
         ctx.fillRect(0, 0, settings.data.screenSize.width, settings.data.screenSize.height);
+        if(preview.doesPageExceedMaxElementPerPage()){
+            notification.error("Arduino crashed");
+            return;
+        }
         ["Button", "Label", "Check-box", "Slider", "Radio Button"].forEach(function (el) {
             elements.data.forEach(function (val, index) {
                 if((val.type)==el){
@@ -16,6 +20,23 @@ var preview={
         })
     },
 
+    doesPageExceedMaxElementPerPage: function () {
+        function checkElType(typeStr, count) {
+            if(count==0) return false;
+            var c=0;
+            elements.data.forEach(function (val) {
+                if(val.type==typeStr){
+                    c++;
+                }
+            });
+            return(c>count)
+        }
+        return checkElType("Button", settings.data.maxElPerPage.button) ||
+               checkElType("Label", settings.data.maxElPerPage.label) ||
+               checkElType("Check-box", settings.data.maxElPerPage.checkBox) ||
+               checkElType("Slider", settings.data.maxElPerPage.slider) ||
+               checkElType("Radio button", settings.data.maxElPerPage.radioButton) ;
+    },
     
     /**
      * 

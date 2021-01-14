@@ -128,8 +128,6 @@ var settings= {
             return (($("#"+id).data("checked"))=="1");
         }
         settings.data.orientation= Number(g("settings-orientation"));
-        settings.fields.screenBrightness.save(n('settings-screen-brightness'),b('settings-screen-brightness-preview'))
-        settings.fields.screenSize.save(n("settings-screen-width"),n("settings-screen-height"))
         settings.data.touchCalibration= {
             XP: g("settings-touchCalibration-XP"), XM: g("settings-touchCalibration-XM"),
             YP: g("settings-touchCalibration-YP"), YM: g("settings-touchCalibration-YM"),
@@ -152,6 +150,8 @@ var settings= {
             slider: n("settings-maxElement-slider"),
             radioButton: n("settings-maxElement-radioButton"),
         }
+        settings.fields.screenBrightness.save(n('settings-screen-brightness'),b('settings-screen-brightness-preview'))
+        settings.fields.screenSize.save(n("settings-screen-width"),n("settings-screen-height"))
     },
     fields:{},
     data:{
