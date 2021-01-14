@@ -4,11 +4,31 @@
     width: auto;
 }
 
-#code-editor h2{
-    margin: 5px;
+#code-editor>div:first-child h2{
+    margin: 5px 0;
+    display: inline-block;
 }
 
-#monaco-container.fullscreen {
+#code-editor>div:first-child i{
+    padding: 11px;
+    width: 16px;
+    box-sizing: content-box;
+    text-align: center;
+    cursor: pointer;
+}
+#code-editor.hiddenbox>div:first-child i::before{
+    content: "\f054";
+}
+
+#code-editor.hiddenbox #monaco-container{
+    display: none;
+}
+
+#code-editor.hiddenbox{
+    height: fit-content;
+}
+
+#code-editor #monaco-container.fullscreen {
     position: fixed;
     top: 27.5px;
     left: 0;
