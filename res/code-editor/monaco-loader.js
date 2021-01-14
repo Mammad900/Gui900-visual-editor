@@ -36,7 +36,7 @@ function LP_LoadEditor() {
 }
 
 function codeEditorFullScreen() {
-    if($("#code-editor").hasClass('hiddenbox')){
+    if(!$("#code-editor").hasClass('hiddenbox')){
         $('#monaco-container').addClass('fullscreen');
         notification.createNotification("info","Press <kbd>Esc</kbd> to exit full screen");
     }
