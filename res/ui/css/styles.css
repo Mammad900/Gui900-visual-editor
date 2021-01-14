@@ -84,7 +84,7 @@ body {
     background-color: var(--selection-background);
 }
 
-* {
+*:not(.defaultCursor):not(.defaultCursor *) {
     cursor: default;
     user-select: none;
 }

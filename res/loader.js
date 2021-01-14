@@ -86,6 +86,7 @@ function loadJsCssFile(filename){
     "res/settings/input-styles.css", // Project settings input styles
     "res/ui/notification/notification.css", // Notifications
     "res/settings/special-styles.css", // Project settings special styles
+    "res/code-editor/monaco-loader.js", // Monaco editor
 
     "res/js/loader-end.js", // Finishes loading
 ].forEach(function(value){
@@ -138,6 +139,7 @@ function LP(){
             LP_CreateHiddenFileInput,
             LP_GenerateToolbar,
             preview.refresh,
+            LP_LoadEditor,
             LP_HandleColorPickerInput,
             LP_loaderEnd,
         ].forEach(function(value){

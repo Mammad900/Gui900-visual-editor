@@ -1,1 +1,3 @@
+.gitignore
 .vscode/
+res/monaco-editor-0.21.2.tgz
