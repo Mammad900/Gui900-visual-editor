@@ -1,6 +1,7 @@
 #code-editor{
     padding: 0;
     height: 500px;
+    width: auto;
 }
 
 #code-editor h2{

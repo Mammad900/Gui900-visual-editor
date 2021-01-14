@@ -12,10 +12,6 @@
     cursor: pointer;
 }
 
-#pages-table-column{
-    min-width: fit-content;
-}
-
 #pages_table div.buttons{
     display: inline-block;
 }
