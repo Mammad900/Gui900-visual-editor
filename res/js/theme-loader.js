@@ -28,7 +28,7 @@ var currentTheme;
 function LP_SetTheme(){
     var def=(window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
     var t=localStorage.getItem('theme');
-    if(t==''){
+    if(!t){
         currentTheme=t=def;
         localStorage.setItem('theme',def);
     }
