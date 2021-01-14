@@ -27,10 +27,10 @@ themeCatalog.forEach(function(val){
 var currentTheme;
 function LP_SetTheme(){
     var def=(window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
-    var t=cookies.getCookie('theme');
+    var t=localStorage.getItem('theme');
     if(t==''){
         currentTheme=t=def;
-        cookies.setCookie('theme',def, 365);
+        localStorage.setItem('theme',def);
     }
     else{
         currentTheme=t;
@@ -50,7 +50,7 @@ function ThemeMenuGenerator(themes) {
                 $("html").attr("theme",val);
                 toolBar.menuItemIconChange(it.siblings(),"fa");
                 toolBar.menuItemIconChange(it,"fa-check");
-                cookies.setCookie('theme', val, 365);
+                localStorage.setItem('theme', val);
             },function (e) {}, false, false);
         }
     })
