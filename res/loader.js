@@ -87,6 +87,7 @@ function loadJsCssFile(filename){
     "res/ui/notification/notification.css", // Notifications
     "res/settings/special-styles.css", // Project settings special styles
     "res/code-editor/monaco-loader.js", // Monaco editor
+    "res/code-editor/styles.css", // Code editor styles
 
     "res/js/loader-end.js", // Finishes loading
 ].forEach(function(value){
