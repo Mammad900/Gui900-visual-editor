@@ -36,6 +36,7 @@ function loadJsCssFile(filename){
     "res/settings/fields/screen-size.js", //Settings - Screen size
     "res/settings/fields/screen-brightness.js", //Settings - Screen brightness
     "res/ui/notification/notification.js", // Create and manage notifications
+    "res/code-editor/monaco-loader.js", // Monaco editor
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
@@ -86,7 +87,6 @@ function loadJsCssFile(filename){
     "res/settings/input-styles.css", // Project settings input styles
     "res/ui/notification/notification.css", // Notifications
     "res/settings/special-styles.css", // Project settings special styles
-    "res/code-editor/monaco-loader.js", // Monaco editor
     "res/code-editor/styles.css", // Code editor styles
 
     "res/js/loader-end.js", // Finishes loading
