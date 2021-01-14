@@ -28,4 +28,14 @@ function LP_LoadEditor() {
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
        ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),
        ...(JSON.parse(localStorage.getItem("monacoMainCodeEditorOptions")))});
+
+    
+    var exitFullScreen = monacoInstance.addCommand(monaco.KeyCode.Escape, function() {
+        $('#monaco-container').removeClass('fullscreen');
+    });
+}
+
+function codeEditorFullScreen() {
+    $('#monaco-container').addClass('fullscreen');
+    notification.createNotification("info","Press <kbd>Esc</kbd> to exit full screen");
 }
