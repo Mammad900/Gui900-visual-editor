@@ -27,5 +27,5 @@ These important features are still not implemented:
 
 - Save and open
 - Code editor
-- Project settings (only a few options are implemented)
+- Using `NULL` font for less app size
 - Generate code
