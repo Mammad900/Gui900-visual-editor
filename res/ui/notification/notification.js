@@ -1,7 +1,7 @@
 var notification={
     /**
      * Creates a notification
-     * @param {"error"| "warning"| "success"} type 
+     * @param {"error"| "warning"| "success"| "info"} type 
      * @param {string} text 
      * @param {array<object>} buttons 
      */
@@ -47,6 +47,16 @@ var notification={
      */
     success: function(text, buttons=[], timeout=3000){
         this.createNotification("success", text, buttons, timeout);
+        console.info(text);
+    },
+    /**
+     * 
+     * @param {string} text 
+     * @param {array<object>} buttons 
+     * @param {Number} timeout 
+     */
+    info: function(text, buttons=[], timeout=3000){
+        this.createNotification("info", text, buttons, timeout);
         console.info(text);
     },
 }
