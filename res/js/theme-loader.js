@@ -51,6 +51,9 @@ function ThemeMenuGenerator(themes) {
                 toolBar.menuItemIconChange(it.siblings(),"fa");
                 toolBar.menuItemIconChange(it,"fa-check");
                 localStorage.setItem('theme', val);
+                monacoInstance.updateOptions({
+                    theme: "GVE-"+val
+                })
             },function (e) {}, false, false);
         }
     })
