@@ -7,8 +7,12 @@ var preview={
         var ctx= $("#preview-canvas")[0].getContext("2d");
         ctx.fillStyle = $("#page_bc_color_input").val();
         ctx.fillRect(0, 0, settings.data.screenSize.width, settings.data.screenSize.height);
-        elements.data.forEach(function (val, index) {
-            elements.types[val.type].generatePreview(index,$("#preview-canvas"));
+        ["Button", "Label", "Check-box", "Slider", "Radio Button"].forEach(function (el) {
+            elements.data.forEach(function (val, index) {
+                if((val.type)==el){
+                    elements.types[val.type].generatePreview(index,$("#preview-canvas"));
+                }
+            })
         })
     },
 
