@@ -5,7 +5,7 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(file, "Open", "fa-folder-open", function (e) {}, function (open) {
             toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.open_from_file);
             toolBar.subMenuItem(open, "Open from JSON code", "fa-code", toolBar.handlers.file.open.import_from_json);
-            toolBar.subMenuItem(open, "Open from browser storage", "fa-code", function () {
+            toolBar.subMenuItem(open, "Open from browser storage", "fa-database", function () {
                 fileIO.load(localStorage.getItem("savedProject"));
             });
         }, true,false);
