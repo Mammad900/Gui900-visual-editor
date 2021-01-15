@@ -26,9 +26,7 @@ function LP_LoadEditor() {
         automaticLayout: true,
         theme: "GVE-"+$("html").attr('theme'),
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
-       ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),
-       ...(JSON.parse(localStorage.getItem("monacoMainCodeEditorOptions")))});
-
+       ...(JSON.parse(localStorage.getItem("monacoCppOptions")))});
     
     var exitFullScreen = monacoInstance.addCommand(monaco.KeyCode.Escape, function() {
         $('#monaco-container').removeClass('fullscreen');
