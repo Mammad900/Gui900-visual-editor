@@ -22,7 +22,7 @@ function LP_LoadEditor() {
 
     monacoInstance= monaco.editor.create($("#monaco-container")[0],{...{
         language: "cpp",
-        value: "void a(){\n    \n}",
+        value: "",
         automaticLayout: true,
         theme: "GVE-"+$("html").attr('theme'),
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
@@ -31,6 +31,14 @@ function LP_LoadEditor() {
     var exitFullScreen = monacoInstance.addCommand(monaco.KeyCode.Escape, function() {
         $('#monaco-container').removeClass('fullscreen');
     });
+
+    $("#codeParts span").on("click", function (e) {
+        var el=$(e.target);
+        projectCode[$("#codeParts span[data-selected=true]").attr("data-name")]=monacoInstance.getValue();
+        $("#codeParts span[data-selected]").attr("data-selected","false");
+        monacoInstance.setValue(projectCode[el.attr("data-name")]);
+        el.attr("data-selected","true");
+    })
 }
 
 function codeEditorFullScreen() {
@@ -38,4 +46,15 @@ function codeEditorFullScreen() {
         $('#monaco-container').addClass('fullscreen');
         notification.createNotification("info","Press <kbd>Esc</kbd> to exit full screen");
     }
+}
+
+var projectCode= {
+    "globalBeginning": "",
+    "globalAfterConfig": "",
+    "globalAfterLibrary": "",
+    "setupBeginning": "",
+    "setupBeforeStart": "",
+    "setupAfterStart": "",
+    "loop": "",
+    "globalAfterLoop": "",
 }

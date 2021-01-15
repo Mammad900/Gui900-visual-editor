@@ -35,3 +35,47 @@
     z-index: 200;
     width: 100%;
 }
+
+#code-editor #codeParts {
+    overflow-x: overlay;
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+}
+
+#code-editor #codeParts span {
+    padding: 10px;
+    display: inline-block;
+    cursor: default;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid transparent;
+    /* border-bottom: 2px solid var(--toolbar-menuitem-active); */
+    z-index: 3;
+}
+
+#code-editor #codeParts span:hover:not([data-selected=true]) {
+    background: var(--toolbar-menuitem-hover);
+}
+
+#code-editor #codeParts span[data-selected=true] {
+    border-color: var(--toolbar-menuitem-active);
+    border-bottom: 2px solid var(--box-background);
+    z-index: 5;
+    padding-bottom: 12px;
+    margin-bottom: -2px;
+}
+
+#code-editor #codeParts div div {
+    position: static;
+    left: 0;
+    bottom: 0px;
+    height: 2px;
+    width: 100%;
+    z-index: 4;
+    background: var(--toolbar-menuitem-hover);
+}
+
+#code-editor #codeParts div{
+    width: fit-content;
+}
