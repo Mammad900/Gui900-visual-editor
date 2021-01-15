@@ -54,3 +54,13 @@ var pages = {
         },
     currentPage: 0
 }
+
+function LP_createFirstPage() {
+    if(!localStorage.getItem("fileToBeLoaded")){
+        pages.create();
+    }
+    else{
+        fileIO.loadProject(localStorage.getItem("fileToBeLoaded"));
+        localStorage.setItem("fileToBeLoaded","");
+    }
+}

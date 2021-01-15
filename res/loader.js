@@ -37,6 +37,8 @@ function loadJsCssFile(filename){
     "res/settings/fields/screen-brightness.js", //Settings - Screen brightness
     "res/ui/notification/notification.js", // Create and manage notifications
     "res/code-editor/code-editor.js", // Monaco editor
+    "res/file/save.js", // Save the project
+    "res/file/load.js", // Load the project
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
@@ -63,6 +65,7 @@ function loadJsCssFile(filename){
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
     "res/ui/toolbar/handlers/help/design-faq.js", //Gui900 Design FAQ
     "res/ui/toolbar/handlers/file/open-from-file.js", //Open from file
+    "res/ui/toolbar/handlers/file/save.js", //Save project
     "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
 
 
@@ -106,6 +109,7 @@ function LP(){
             LP_GV_SettingsGenerator,
             LP_GV_SettingsFields_ScreenSize,
             LP_GV_SettingsFields_ScreenBrightness,
+            LP_GV_loadProject,
             
             LP_GV_El_Button_1,
             LP_GV_El_Button_2,
@@ -133,12 +137,13 @@ function LP(){
             LP_GV_Toolbar_Handler_3,
             LP_GV_Toolbar_Handler_4,
             LP_GV_Toolbar_Handler_5,
+            LP_GV_Toolbar_Handler_6,
             
             LP_keyBindings,
-            pages.create,
             LP_HandleNewElementButton,
-            LP_CreateHiddenFileInput,
             LP_GenerateToolbar,
+            LP_createFirstPage,
+            LP_CreateHiddenFileInput,
             preview.refresh,
             LP_LoadEditor,
             LP_HandleColorPickerInput,

@@ -15,9 +15,8 @@ function LP_GV_Toolbar_Handler_1(){
                         }
                     ],function (id,e) {
                         if(id==1){
-                            alert($("#dialog-json-input").val());
+                            fileIO.load($("#dialog-json-input").val());
                         }
-                        //fileIO.load($("#dialog-json-input").val());
                         dialog.close();
                     })
                 }

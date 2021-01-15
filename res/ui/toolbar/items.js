@@ -4,9 +4,19 @@ function LP_GenerateToolbar() {
     toolBar.menuItem(toolbar, "File", function (e) {}, function (file) {
         toolBar.subMenuItem(file, "Open", "fa-folder-open", function (e) {}, function (open) {
             toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.open_from_file);
-            toolBar.subMenuItem(open, "Import from JSON code", "fa-code", toolBar.handlers.file.open.import_from_json);
+            toolBar.subMenuItem(open, "Open from JSON code", "fa-code", toolBar.handlers.file.open.import_from_json);
+            toolBar.subMenuItem(open, "Open from browser storage", "fa-code", function () {
+                fileIO.load(localStorage.getItem("savedProject"));
+            });
         }, true,false);
-        toolBar.subMenuItem(file, "Save", "fa-save", function (e) {});
+        toolBar.subMenuItem(file, "Save", "fa-save", function (e) {}, function (save) {
+            toolBar.subMenuItem(save, "Save to file", "fa-file", toolBar.handlers.file.save.saveToFile);
+            toolBar.subMenuItem(save, "Get JSON code", "fa-code", toolBar.handlers.file.save.saveToJSON);
+            toolBar.subMenuItem(save, "Save to browser storage", "fa-database", function () {
+                localStorage.setItem("savedProject",JSON.stringify(fileIO.createJSON()));
+                notification.success("Saved to browser storage");
+            });
+        }, true,false);
         toolBar.subMenuItem(file, "Generate code", "fa-code", function (e) {});
         toolBar.subMenuItem(file, "Project settings", "fa-wrench", settings.showSettingsDialog);
         toolBar.separator(file);

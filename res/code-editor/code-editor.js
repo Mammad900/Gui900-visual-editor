@@ -22,7 +22,7 @@ function LP_LoadEditor() {
 
     monacoInstance= monaco.editor.create($("#monaco-container")[0],{...{
         language: "cpp",
-        value: "",
+        value: projectCode["globalBeginning"],
         automaticLayout: true,
         theme: "GVE-"+$("html").attr('theme'),
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),

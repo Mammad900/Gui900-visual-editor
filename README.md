@@ -25,6 +25,5 @@ Gui900 visual editor is a web based app which helps you create an app based on [
 
 These important features are still not implemented:
 
-- Save and open
 - Using `NULL` font for less app size
 - Generate code

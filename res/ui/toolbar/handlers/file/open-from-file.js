@@ -10,7 +10,7 @@ function LP_CreateHiddenFileInput(){
         
         var fr=new FileReader(); 
         fr.onload=function(){ 
-            alert(fr.result);
+            fileIO.load(fr.result)
         } 
         
         fr.readAsText(this.files[0]); 
