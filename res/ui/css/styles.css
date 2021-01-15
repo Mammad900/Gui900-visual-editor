@@ -112,3 +112,11 @@ textarea{
 .vertical-center>*{
     vertical-align: middle;
 }
+
+kbd{
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    box-shadow: 0 2px var(--text-color);
+    font-size: 0.9em;
+    padding: 0 0.2em;
+}
