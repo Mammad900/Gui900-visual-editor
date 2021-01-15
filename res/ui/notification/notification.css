@@ -17,7 +17,7 @@
 #notifications>div.error  {border: 1px solid red;   }
 #notifications>div.warning{border: 1px solid orange;}
 #notifications>div.success{border: 1px solid green;}
-#notifications>div.info   {border: 1px solid white;}
+#notifications>div.info   {border: 1px solid var(--text-color);}
 
 #notifications>div .close-button {
     float: right;
@@ -50,4 +50,4 @@
 #notifications>div.success .content::marker {content: "\f058"; color: green; }
 #notifications>div.warning .content::marker {content: "\f071"; color: yellow;}
 #notifications>div.error   .content::marker {content: "\f057"; color: red;   }
-#notifications>div.info    .content::marker {content: "\f05a"; color: white; }
+#notifications>div.info    .content::marker {content: "\f05a"; color: var(--text-color); }
