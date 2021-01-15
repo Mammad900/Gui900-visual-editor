@@ -24,6 +24,10 @@
     display: none;
 }
 
+#code-editor.hiddenbox #codeParts{
+    display: none;
+}
+
 #code-editor.hiddenbox{
     height: fit-content;
 }
