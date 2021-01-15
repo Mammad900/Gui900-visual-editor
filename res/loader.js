@@ -36,7 +36,7 @@ function loadJsCssFile(filename){
     "res/settings/fields/screen-size.js", //Settings - Screen size
     "res/settings/fields/screen-brightness.js", //Settings - Screen brightness
     "res/ui/notification/notification.js", // Create and manage notifications
-    "res/code-editor/monaco-loader.js", // Monaco editor
+    "res/code-editor/code-editor.js", // Monaco editor
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
