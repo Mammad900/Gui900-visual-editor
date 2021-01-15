@@ -39,6 +39,10 @@
     width: 100%;
 }
 
+#code-editor #monaco-container .monaco-editor .monaco-inputbox>.wrapper>.input:focus{
+    outline: 1px solid rgb(0, 119, 255);
+}
+
 #code-editor #codeParts {
     overflow-x: overlay;
     white-space: nowrap;
