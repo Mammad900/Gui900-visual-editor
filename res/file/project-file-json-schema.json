@@ -1,0 +1,594 @@
+{
+    "$comment": "There are NO optional fields. If you noticed one, please report it.",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://mammad900.github.io/Gui900-visual-editor/res/file/project-file-json-schema.json",
+    "title": "Gui900 project",
+    "type": "object",
+    "properties": {
+        "fileVersion": {
+            "description": "The version of the file format",
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+        },
+        "code": {
+            "description": "Non-UI code of the project",
+            "type": "object",
+            "properties": {
+                "globalBeginning": {
+                    "description": "Code inserted at the very beginning of generated code",
+                    "type": "string"
+                },
+                "globalAfterConfig": {
+                    "description": "Code inserted between configuration code and library",
+                    "type": "string"
+                },
+                "globalAfterLibrary": {
+                    "description": "Code inserted after the library, before setup()",
+                    "type": "string"
+                },
+                "setupBeginning": {
+                    "description": "Code inserted at the very beginning of setup()",
+                    "type": "string"
+                },
+                "setupBeforeStart": {
+                    "description": "Code inserted between elements definition and calling start()",
+                    "type": "string"
+                },
+                "setupAfterStart": {
+                    "description": "Code inserted at the end of setup(), after calling start()",
+                    "type": "string"
+                },
+                "loop": {
+                    "description": "Code in loop()",
+                    "type": "string"
+                },
+                "globalAfterLoop": {
+                    "description": "Code after loop(), good for placing functions",
+                    "type": "string"
+                }
+            },
+            "required": ["globalBeginning", "globalAfterConfig", "globalAfterLibrary", "setupBeginning", "setupBeforeStart", "setupAfterStart", "loop", "globalAfterLoop"]
+        },
+        "settings": {
+            "description": "Configuration of the project",
+            "type": "object",
+            "properties": {
+                "screenSize":{
+                    "description": "Resolution of the TFT screen",
+                    "type": "object",
+                    "properties": {
+                        "width": {
+                            "type": "integer",
+                            "examples": [240,320,480,640],
+                            "minimum": 100,
+                            "maximum": 32767
+                        },
+                        "height": {
+                            "type": "integer",
+                            "examples": [240,320,480,640],
+                            "minimum": 100,
+                            "maximum": 32767
+                        }
+                    },
+                    "required": ["width", "height"]
+                },
+                "screenBrightness": {
+                    "description": "Brightness of the TFT screen, controlled by backlight pin",
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "description": "Brightness",
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 255
+                        },
+                        "simulateInPreview": {
+                            "description": "If true, brightness affects preview.",
+                            "type": "boolean"
+                        }
+                    },
+                    "required": ["value", "simulateInPreview"]
+                },
+                "orientation": {
+                    "description": "Orientation of TFT screen.\n\n0: Portrait\n1: Landscape\n2: Portrait reverse\n3: Landscape reverse",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 3
+                },
+                "touchCalibration": {
+                    "description": "Use `TouchScreen_Calibr_native` example from MCUFRIEND_kbv library to get these values\nUse default values for `MAXPRESSURE` and `MINPRESSURE`.",
+                    "type": "object",
+                    "properties": {
+                        "XP": {"type": "string", "maxLength": 2, "pattern": "(|A)[0-9](|[0-9])"},
+                        "YP": {"type": "string", "maxLength": 2, "pattern": "(|A)[0-9](|[0-9])"},
+                        "XM": {"type": "string", "maxLength": 2, "pattern": "(|A)[0-9](|[0-9])"},
+                        "YM": {"type": "string", "maxLength": 2, "pattern": "(|A)[0-9](|[0-9])"},
+                        "TS_LEFT": {"type": "integer", "minimum": 0, "maxLength": 1023},
+                        "TS_RT": {"type": "integer", "minimum": 0, "maxLength": 1023},
+                        "TS_TOP": {"type": "integer", "minimum": 0, "maxLength": 1023},
+                        "TS_BOT": {"type": "integer", "minimum": 0, "maxLength": 1023},
+                        "MINPRESSURE": {"type": "integer", "minimum": 0, "maximum": 10000, "description": "Default: 10"},
+                        "MAXPRESSURE": {"type": "integer", "minimum": 0, "maximum": 10000, "description": "Default: 1000"}
+                    },
+                    "required": ["XP", "YP", "XM", "YM", "TS_BOT", "TS_LEFT", "TS_RT", "TS_TOP", "MINPRESSURE", "MAXPRESSURE"]
+                },
+                "backlightPin": {
+                    "description": "The pin on Arduino board which controls the backlight, -1 for disable",
+                    "type": "string",
+                    "pattern": "(-1|(|A)[0-9](|[0-9]))",
+                    "maxLength": 2
+                },
+                "screenTimeout": {
+                    "description": "Screen timeout configuration",
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "description": "Whether screen time-out is enabled",
+                            "type": "boolean"
+                        },
+                        "value": {
+                            "description": "Inactivity in seconds before turning off screen",
+                            "type": "integer",
+                            "minimum": 5,
+                            "maximum": 3600
+                        },
+                        "animationTime": {
+                            "description": "Duration of screen-off animation",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 10.24,
+                            "multipleOf": 0.256
+                        },
+                        "removeScrOnOffCode": {
+                            "description": "If screen time-out is disabled and this is true, scrOn() and scrOff() are removed to make the library lighter.",
+                            "type": "boolean"
+                        }
+                    },
+                    "required": ["enabled", "value", "animationTime", "removeScrOnOffCode"]
+                },
+                "appearance": {
+                    "description": "Appearance of the app",
+                    "type": "object",
+                    "properties": {
+                        "dimDisabledElements": {
+                            "description": "If true, disabled elements are dimmed 50%",
+                            "type": "boolean"
+                        }
+                    },
+                    "required": ["dimDisabledElements"]
+                },
+                "maxElPerPage": {
+                    "description": "Maximum elements per page",
+                    "type": "object",
+                    "properties": {
+                        "button": {"description": "Maximum buttons per page, 0 for auto", "type": "integer", "minimum":0 , "maximum": 50},
+                        "label": {"description": "Maximum labels per page, 0 for auto", "type": "integer", "minimum":0 , "maximum": 50},
+                        "checkBox": {"description": "Maximum check-boxes per page, 0 for auto", "type": "integer", "minimum":0 , "maximum": 50},
+                        "slider": {"description": "Maximum sliders per page, 0 for auto", "type": "integer", "minimum":0 , "maximum": 50},
+                        "radioButton": {"description": "Maximum radio-buttons per page, 0 for auto", "type": "integer", "minimum":0 , "maximum": 50}
+                    },
+                    "required": ["button", "label", "checkBox", "slider", "radioButton"]
+                }
+            },
+            "required": ["screenSize", "screenBrightness", "orientation", "touchCalibration", "backlightPin", "screenTimeout", "appearance", "maxElPerPage"]
+        },
+        "pages": {
+            "description": "Pages of the app",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "background": {
+                        "description": "Background color of the page",
+                        "type": "string",
+                        "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                    },
+                    "name": {
+                        "description": "Name of page, only used in Gui900 visual editor",
+                        "type": "string"
+                    },
+                    "elements": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "type": "string",
+                                            "pattern": "Button"
+                                        },
+                                        "position": {
+                                            "description": "Position of this element in pixels",
+                                            "type": "object",
+                                            "properties": {
+                                                "x": {
+                                                    "type": "integer"
+                                                },
+                                                "y": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["x","y"]
+                                        },
+                                        "size": {
+                                            "description": "Size of this element in pixels",
+                                            "type": "object",
+                                            "properties": {
+                                                "width": {
+                                                    "type": "integer"
+                                                },
+                                                "height": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["width", "height"]
+                                        },
+                                        "text": {
+                                            "description": "Text shown inside the button",
+                                            "type": "string"
+                                        },
+                                        "colors": {
+                                            "description": "Colors used to draw this button",
+                                            "type": "object",
+                                            "properties": {
+                                                "text": {
+                                                    "description": "Text color",
+                                                    "type": "string",
+                                                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                },
+                                                "background": {
+                                                    "description": "Background color",
+                                                    "type": "string",
+                                                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                },
+                                                "border": {
+                                                    "description": "Border color",
+                                                    "type": "string",
+                                                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                }
+                                            },
+                                            "required": ["text", "background", "border"]
+                                        },
+                                        "radius": {
+                                            "description": "Border radius for this button (it is a round rectangle). Use 0 for sharp edges.",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "enabled": {
+                                            "description": "If false, this button cannot be clicked and will be dimmed.",
+                                            "type": "boolean"
+                                        },
+                                        "visible": {
+                                            "description": "If false, this button is not drawn and is invisible, as if it didn't exist.",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": ["type", "position", "size", "text", "colors", "radius", "enabled", "visible"]
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "type": "string",
+                                            "pattern": "Label"
+                                        },
+                                        "position": {
+                                            "description": "Position of this element in pixels",
+                                            "type": "object",
+                                            "properties": {
+                                                "x": {
+                                                    "type": "integer"
+                                                },
+                                                "y": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["x","y"]
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        },
+                                        "color": {
+                                            "description": "Text color",
+                                            "type": "string",
+                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                        },
+                                        "font": {
+                                            "description": "The GFX font used to draw the label",
+                                            "type": "string"
+                                        },
+                                        "text_size": {
+                                            "description": "Text size multiplier (fonts are raster ones)",
+                                            "type": "object",
+                                            "properties": {
+                                                "x": {
+                                                    "type": "integer",
+                                                    "minimum": 1,
+                                                    "maximum": 10
+                                                },
+                                                "y": {
+                                                    "type": "integer",
+                                                    "minimum": 1,
+                                                    "maximum": 10
+                                                }
+                                            },
+                                            "required": ["x","y"]
+                                        },
+                                        "enabled": {
+                                            "description": "If false, this label will be dimmed.",
+                                            "type": "boolean"
+                                        },
+                                        "visible": {
+                                            "description": "If false, this label is not drawn and is invisible, as if it didn't exist.",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": ["type", "position", "text", "color", "font", "text_size", "enabled", "visible"]
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "type": "string",
+                                            "pattern": "Check-box"
+                                        },
+                                        "position": {
+                                            "description": "Position of this element in pixels",
+                                            "type": "object",
+                                            "properties": {
+                                                "x": {
+                                                    "type": "integer"
+                                                },
+                                                "y": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["x","y"]
+                                        },
+                                        "text": {
+                                            "description": "Text shown beside the box",
+                                            "type": "string"
+                                        },
+                                        "colors": {
+                                            "description": "Colors used to draw check-box",
+                                            "type": "object",
+                                            "properties": {
+                                                "text": {
+                                                    "type": "string",
+                                                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                },
+                                                "box": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "background": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        },
+                                                        "border": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        },
+                                                        "tick": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        }
+                                                    },
+                                                    "required": ["background", "border", "tick"]
+                                                }
+                                            },
+                                            "required": ["text", "box"]
+                                        },
+                                        "size": {
+                                            "description": "One of the size presets for the check-box\n1: SIZE9PT18PX\n2: SIZE12PT28PX\n3: SIZE18PT42PX\n4: SIZE24PT56PX",
+                                            "type": "integer",
+                                            "minimum": 1,
+                                            "maximum": 4
+                                        },
+                                        "checked": {
+                                            "description": "If true, a tick will appear in the check-box. It is toggled when the user clicks on the check-box.",
+                                            "type": "boolean"
+                                        },
+                                        "enabled": {
+                                            "description": "If false, this check-box cannot be toggled and will be dimmed.",
+                                            "type": "boolean"
+                                        },
+                                        "visible": {
+                                            "description": "If false, this check-box is not drawn and is invisible, as if it didn't exist.",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": ["type", "position", "text", "colors", "size", "checked", "enabled", "visible"]
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "type": "string",
+                                            "pattern": "Slider"
+                                        },
+                                        "position": {
+                                            "description": "Position of this element in pixels",
+                                            "type": "object",
+                                            "properties": {
+                                                "x": {
+                                                    "type": "integer"
+                                                },
+                                                "y": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["x","y"]
+                                        },
+                                        "size": {
+                                            "description": "Size of this element in pixels",
+                                            "type": "object",
+                                            "properties": {
+                                                "width": {
+                                                    "type": "integer"
+                                                },
+                                                "height": {
+                                                    "type": "integer"
+                                                },
+                                                "touchAreaHeight": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["width", "height", "touchAreaHeight"]
+                                        },
+                                        "colors": {
+                                            "description": "The colors used to draw the slider",
+                                            "type": "object",
+                                            "properties": {
+                                                "thumb": {
+                                                    "type": "string",
+                                                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                },
+                                                "border": {
+                                                    "type": "string",
+                                                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                },
+                                                "background": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "left": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        },
+                                                        "right": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        }
+                                                    },
+                                                    "required": ["left","right"]
+                                                }
+                                            },
+                                            "required": ["thumb", "border", "background"]
+                                        },
+                                        "thumbWidth": {
+                                            "description": "The width (or height for vertical sliders) of the slider thumb",
+                                            "type": "integer",
+                                            "minimum": 0,
+                                            "maximum": 50
+                                        },
+                                        "min": {
+                                            "description": "Minimum value that the slider can have",
+                                            "type": "integer",
+                                            "minimum": -32767,
+                                            "maximum": 32767
+                                        },
+                                        "value": {
+                                            "description": "Value of the slider, changeable by dragging the thumb",
+                                            "type": "integer",
+                                            "minimum": -32767,
+                                            "maximum": 32767
+                                        },
+                                        "max": {
+                                            "description": "Maximum value that the slider can have",
+                                            "type": "integer",
+                                            "minimum": -32767,
+                                            "maximum": 32767
+                                        },
+                                        "enabled": {
+                                            "description": "If false, this slider cannot be changed and will be dimmed.",
+                                            "type": "boolean"
+                                        },
+                                        "visible": {
+                                            "description": "If false, this slider is not drawn and is invisible, as if it didn't exist.",
+                                            "type": "boolean"
+                                        },
+                                        "title": {
+                                            "description": "Only used by Gui900 visual editor"
+                                        }
+                                    },
+                                    "required": ["type", "position", "size", "colors", "thumbWidth", "min", "value", "max", "enabled", "visible", "title"]
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "type": "string",
+                                            "pattern": "Radio button"
+                                        },
+                                        "position": {
+                                            "description": "Position of this element in pixels",
+                                            "type": "object",
+                                            "properties": {
+                                                "x": {
+                                                    "type": "integer"
+                                                },
+                                                "y": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["x","y"]
+                                        },
+                                        "text": {
+                                            "description": "Text shown beside the box",
+                                            "type": "string"
+                                        },
+                                        "colors": {
+                                            "description": "Colors used to draw radio button",
+                                            "type": "object",
+                                            "properties": {
+                                                "text": {
+                                                    "type": "string",
+                                                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                },
+                                                "box": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "background": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        },
+                                                        "border": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        },
+                                                        "indicator": {
+                                                            "type": "string",
+                                                            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                                                        }
+                                                    },
+                                                    "required": ["background", "border", "indicator"]
+                                                }
+                                            },
+                                            "required": ["text", "box"]
+                                        },
+                                        "size": {
+                                            "description": "One of the size presets for the radio-button\n1: SIZE9PT18PX\n2: SIZE12PT28PX\n3: SIZE18PT42PX\n4: SIZE24PT56PX",
+                                            "type": "integer",
+                                            "minimum": 1,
+                                            "maximum": 4
+                                        },
+                                        "checked": {
+                                            "description": "If true, a filled circle will appear in the radio button. It is selected when the user clicks on the radio button.",
+                                            "type": "boolean"
+                                        },
+                                        "enabled": {
+                                            "description": "If false, this radio button cannot be selected and will be dimmed.",
+                                            "type": "boolean"
+                                        },
+                                        "visible": {
+                                            "description": "If false, this radio button is not drawn and is invisible, as if it didn't exist.",
+                                            "type": "boolean"
+                                        },
+                                        "group": {
+                                            "type": "number",
+                                            "minimum": 1,
+                                            "maximum": 32767,
+                                            "description": "Radio buttons with the same group number are grouped together.\nOnly one radio button in a group can be selected at a time\nGroups don't need to be registered."
+                                        }
+                                    },
+                                    "required": ["type", "position", "text", "colors", "size", "checked", "enabled", "visible"]
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": ["fileVersion", "code", "settings"]
+}
