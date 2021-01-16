@@ -55,12 +55,15 @@ var preview={
 
     /**
      * 
-     * @param {Number} r 
+     * @param {Number|Object} r 
      * @param {Number} g 
      * @param {Number} b 
      */
     color565: function(r, g, b)
     {
+        if((typeof r)=='object'){
+            [r,g,b]=[r.r, r.g, r.b];
+        }
         return (( ( r & 0xF8 ) << 8 ) | ( ( g & 0xFC ) << 3 ) | ( ( b & 0xF8 ) >> 3));
     },
 
