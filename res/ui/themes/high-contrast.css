@@ -42,9 +42,6 @@
     --range-thumb-color: black;
 }
 
-:root[theme=high-contrast] body>.content{
-    height: calc( 100vh - 29.5px)
-}
 :root[theme=high-contrast] #toolbar .menuitem .dropdown .dropdown-container{
     left: calc( 0px - var(--toolbar-hover-safe-area) - 2px );
 }
@@ -62,6 +59,6 @@
     vertical-align: middle;
 }
 
-:root[theme=high-contrast] table.table tr:last-child td:first-child {
+:root[theme=high-contrast] table.table tr:last-child:not(:first-child) td:first-child {
     overflow: hidden;
 }
