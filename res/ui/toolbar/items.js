@@ -6,7 +6,7 @@ function LP_GenerateToolbar() {
             toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.open_from_file);
             toolBar.subMenuItem(open, "Open from JSON code", "fa-code", toolBar.handlers.file.open.import_from_json);
             toolBar.subMenuItem(open, "Open from browser storage", "fa-database", function () {
-                fileIO.load(localStorage.getItem("savedProject"));
+                localStorage.getItem("savedProject") ? fileIO.load(localStorage.getItem("savedProject")) : notification.error("There is no saved project in browser storage.");
             });
         }, true,false);
         toolBar.subMenuItem(file, "Save", "fa-save", function (e) {}, function (save) {

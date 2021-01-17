@@ -1,6 +1,15 @@
 'use strict';
 function LP_GV_loadProject() {
     fileIO.load=function (json) {
+        var data=JSON.parse(json);
+        if(!data){
+            notification.error("Project is corrupt");
+            return;
+        }
+        if(data.fileVersion!="0.0.1"){
+            notification.error("This project was saved in an incompatible version of Gui900 visual editor");
+            return;
+        }
         localStorage.setItem("fileToBeLoaded",json);
         location.reload();
     }
@@ -8,8 +17,12 @@ function LP_GV_loadProject() {
     fileIO.loadProject= function (json) {
         var data=JSON.parse(json);
 
+        if(!data){
+            notification.error("Project is corrupt");
+            return;
+        }
         if(data.fileVersion!="0.0.1"){
-            notification.error("This file was saved in an incompatible version of Gui900 visual editor");
+            notification.error("This project was saved in an incompatible version of Gui900 visual editor");
             return;
         }
 
