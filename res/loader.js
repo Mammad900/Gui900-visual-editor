@@ -39,27 +39,34 @@ function loadJsCssFile(filename){
     "res/code-editor/code-editor.js", // Monaco editor
     "res/file/save.js", // Save the project
     "res/file/load.js", // Load the project
+    "res/code-generator/config.js", // Generates Arduino config code
+    "res/code-generator/generateCode.js", // Generates Arduino code
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
     "res/elements/types/button/saveProperties.js",
     "res/elements/types/button/generatePreview.js",
+    "res/elements/types/button/generateCode.js",
     "res/elements/types/label/createDefaultDataObject.js",
     "res/elements/types/label/createProperties.js",
     "res/elements/types/label/saveProperties.js",
     "res/elements/types/label/generatePreview.js",
+    "res/elements/types/label/generateCode.js",
     "res/elements/types/check-box/createDefaultDataObject.js",
     "res/elements/types/check-box/createProperties.js",
     "res/elements/types/check-box/saveProperties.js",
     "res/elements/types/check-box/generatePreview.js",
+    "res/elements/types/check-box/generateCode.js",
     "res/elements/types/slider/createDefaultDataObject.js",
     "res/elements/types/slider/createProperties.js",
     "res/elements/types/slider/saveProperties.js",
     "res/elements/types/slider/generatePreview.js",
+    "res/elements/types/slider/generateCode.js",
     "res/elements/types/radio-button/createDefaultDataObject.js",
     "res/elements/types/radio-button/createProperties.js",
     "res/elements/types/radio-button/saveProperties.js",
     "res/elements/types/radio-button/generatePreview.js",
+    "res/elements/types/radio-button/generateCode.js",
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
@@ -67,6 +74,7 @@ function loadJsCssFile(filename){
     "res/ui/toolbar/handlers/file/open-from-file.js", //Open from file
     "res/ui/toolbar/handlers/file/save.js", //Save project
     "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
+    "res/ui/toolbar/handlers/file/generateCode.js", //Generate code
 
 
 
@@ -93,6 +101,7 @@ function loadJsCssFile(filename){
     "res/code-editor/styles.css", // Code editor styles
 
     "res/js/loader-end.js", // Finishes loading
+
 ].forEach(function(value){
     loadJsCssFile(value);
 });
@@ -115,22 +124,27 @@ function LP(){
             LP_GV_El_Button_2,
             LP_GV_El_Button_3,
             LP_GV_El_Button_4,
+            LP_GV_El_Button_5,
             LP_GV_El_CheckBox_1,
             LP_GV_El_CheckBox_2,
             LP_GV_El_CheckBox_3,
             LP_GV_El_Checkbox_4,
+            LP_GV_El_CheckBox_5,
             LP_GV_El_Label_1,
             LP_GV_El_Label_2,
             LP_GV_El_Label_3,
             LP_GV_El_Label_4,
+            LP_GV_El_Label_5,
             LP_GV_El_RadioButton_1,
             LP_GV_El_RadioButton_2,
             LP_GV_El_RadioButton_3,
             LP_GV_El_RadioButton_4,
+            LP_GV_El_RadioButton_5,
             LP_GV_El_Slider_1,
             LP_GV_El_Slider_2,
             LP_GV_El_Slider_3,
             LP_GV_El_Slider_4,
+            LP_GV_El_Slider_5,
 
             LP_GV_Toolbar_Handler_1,
             LP_GV_Toolbar_Handler_2,
@@ -138,6 +152,7 @@ function LP(){
             LP_GV_Toolbar_Handler_4,
             LP_GV_Toolbar_Handler_5,
             LP_GV_Toolbar_Handler_6,
+            LP_GV_Toolbar_Handler_7,
             
             LP_keyBindings,
             LP_HandleNewElementButton,

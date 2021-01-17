@@ -45,7 +45,7 @@
     outline: none;
 }
 
-#dialog .content textarea{
+#dialog .content:not(.doNotTouchCss) textarea{
     width: 100%;
     resize: vertical;
     border: none;

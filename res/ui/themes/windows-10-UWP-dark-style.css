@@ -39,7 +39,7 @@
 :root[theme=windows-10-UWP-dark-style] #settings input:not([type=color]):not([type=range]),
 :root[theme=windows-10-UWP-dark-style] #properties select,
 :root[theme=windows-10-UWP-dark-style] #settings select,
-:root[theme=windows-10-UWP-dark-style] #dialog textarea {
+:root[theme=windows-10-UWP-dark-style] #dialog .content:not(.doNotTouchCss) textarea {
     border: 2px solid grey;
     border-radius: 0px;
 }

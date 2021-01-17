@@ -1,7 +1,5 @@
 # Gui900 visual editor
 
-**THIS PROJECT IS INCOMPLETE AND SOME IMPORTANT PARTS ARE MISSING**
-
 Gui900 visual editor is a web based app which helps you create an app based on [Gui900](https://github.com/Mammad900/Gui900) easily.
 
 ## How to use
@@ -29,4 +27,3 @@ Gui900 visual editor is a web based app which helps you create an app based on [
 These important features are still not implemented:
 
 - Using `NULL` font for less app size
-- Generate code
