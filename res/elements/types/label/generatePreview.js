@@ -15,12 +15,12 @@ function LP_GV_El_Label_3(){
 
         /**@type {string}*/
         var font=label.font;
-        var regex=/&Free(Sans|Mono|Serif)(|Bold)(|Oblique)(9|12|18|24)pt7b/;
+        var regex=/&Free((Sans|Mono)(|Bold)(|Oblique)|Serif(|Bold)(|Italic))(9|12|18|24)pt7b/;
         var size=20;
         if(regex.test(font)){
             var style={"Sans":'sans-serif', "Serif":'serif', "Mono":'monospace'} [/(Sans|Serif|Mono)/.exec(font)[0]];
             var bold=font.includes("Bold");
-            var italic=font.includes("Oblique");
+            var italic=font.includes("Oblique")||font.includes("Italic");
             var size= {"24pt":56, "18pt":42, "12pt":29, "9pt":22} [/(9|12|18|24)pt/.exec(font)[0]]
             ctx.font=(bold?"bold ":"")+(italic?"italic ":"")+size+"px "+style;
         }
