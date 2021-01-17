@@ -31,7 +31,7 @@ function LP_GV_El_RadioButton_4(){
 
         ctx.fillStyle= radio.enabled ? preview.lowQualityPixel(radio.colors.text) : preview.lowQualityDimPixel(radio.colors.text);
         ctx.font= (size*0.83)+'px'+' sans-serif';
-        ctx.fillText(radio.text, x+size+5, y+(size*0.8));
+        ctx.fillText(radio.text, x+size+5, y+(size*0.83));
         
     }
 }

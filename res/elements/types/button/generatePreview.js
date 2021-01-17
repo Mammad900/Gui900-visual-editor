@@ -25,20 +25,20 @@ function LP_GV_El_Button_3(){
         ctx.fillStyle= button.enabled ? preview.lowQualityPixel(button.colors.text) : preview.lowQualityDimPixel(button.colors.text);
         var txt=button.text;
 
-        var th=56; // FreeSana24pt7b
-        ctx.font= (th*0.83)+"px arial";
+        var th=56*0.83; // FreeSana24pt7b
+        ctx.font= th+"px arial";
         var sz=ctx.measureText(txt);
         if((sz.width>w)||(th>h)){
-            th=42; // FreeSans18pt7b
-            ctx.font= (th*0.83)+"px arial";
+            th=42*0.83; // FreeSans18pt7b
+            ctx.font= th+"px arial";
             sz=ctx.measureText(txt);
             if((sz.width>w)||(th>h)){
-                th=29; // FreeSans12pt7b
-                ctx.font= (th*0.83)+"px arial";
+                th=29*0.83; // FreeSans12pt7b
+                ctx.font= th+"px arial";
                 sz=ctx.measureText(txt);
                 if((sz.width>w)||(th>h)){
-                    th=22; // FreeSans9pt7b
-                    ctx.font= (th*0.83)+"px arial";
+                    th=22*0.83; // FreeSans9pt7b
+                    ctx.font= th+"px arial";
                     sz=ctx.measureText(txt);
                 }
             }

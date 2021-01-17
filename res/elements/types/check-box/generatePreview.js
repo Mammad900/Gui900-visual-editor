@@ -32,7 +32,7 @@ function LP_GV_El_Checkbox_4(){
 
         ctx.fillStyle= checkBox.enabled ? preview.lowQualityPixel(checkBox.colors.text) : preview.lowQualityDimPixel(checkBox.colors.text);
         ctx.font= (size*0.83)+'px'+' sans-serif';
-        ctx.fillText(checkBox.text, x+size+5, y+(size*0.8));
+        ctx.fillText(checkBox.text, x+size+5, y+(size*0.83));
         
     }
 }
