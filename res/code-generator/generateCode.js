@@ -1,14 +1,26 @@
 'use strict';
 function generateCode(libPath) {
+    // Save everything
+    if(elements.selectedElement!=-1){
+        elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement)
+    }
+
+    pages.selectPage(pages.currentPage);
+
+    // Indents text by 4 characters
     function indent(text) {
         return "    "+ text.replace(new RegExp("\n","g"), "\n    ");
     }
+
+    // Generate element creation code
     var elCode="";
     pages.data.forEach(function (pg, pi) {
         pg.elements.forEach(function (el,ei) {
             elCode+= elements.types[el.type].generateCode(pi, el);
         })
     })
+
+    // Assemble everything
     return  projectCode.globalBeginning+
             "\n\n"+
             CodeGen_Config()+
