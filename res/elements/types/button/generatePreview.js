@@ -26,19 +26,19 @@ function LP_GV_El_Button_3(){
         var txt=button.text;
 
         var th=56; // FreeSana24pt7b
-        ctx.font= th+"px arial";
+        ctx.font= (th*0.83)+"px arial";
         var sz=ctx.measureText(txt);
         if((sz.width>w)||(th>h)){
             th=42; // FreeSans18pt7b
-            ctx.font= th+"px arial";
+            ctx.font= (th*0.83)+"px arial";
             sz=ctx.measureText(txt);
             if((sz.width>w)||(th>h)){
                 th=29; // FreeSans12pt7b
-                ctx.font= th+"px arial";
+                ctx.font= (th*0.83)+"px arial";
                 sz=ctx.measureText(txt);
                 if((sz.width>w)||(th>h)){
                     th=22; // FreeSans9pt7b
-                    ctx.font= th+"px arial";
+                    ctx.font= (th*0.83)+"px arial";
                     sz=ctx.measureText(txt);
                 }
             }

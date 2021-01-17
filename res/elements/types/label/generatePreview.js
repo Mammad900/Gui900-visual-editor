@@ -22,7 +22,7 @@ function LP_GV_El_Label_3(){
             var bold=font.includes("Bold");
             var italic=font.includes("Oblique")||font.includes("Italic");
             var size= {"24pt":56, "18pt":42, "12pt":29, "9pt":22} [/(9|12|18|24)pt/.exec(font)[0]]
-            ctx.font=(bold?"bold ":"")+(italic?"italic ":"")+size+"px "+style;
+            ctx.font=(bold?"bold ":"")+(italic?"italic ":"")+(size*0.83)+"px "+style;
         }
         else{
             if(font=="NULL"){
