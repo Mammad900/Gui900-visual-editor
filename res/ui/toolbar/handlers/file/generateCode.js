@@ -4,7 +4,7 @@ function LP_GV_Toolbar_Handler_7() {
         var code=generateCode(path);
 
         var el=$("<div></div>").css("height", "300px");
-        monacoInstance= monaco.editor.create(el[0],{...{
+        monaco.editor.create(el[0],{...{
             language: "cpp",
             value: code,
             automaticLayout: true,
