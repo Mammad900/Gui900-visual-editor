@@ -11,7 +11,7 @@ var preview={
             notification.error("Arduino crashed");
             return;
         }
-        ["Button", "Label", "Check-box", "Slider", "Radio Button"].forEach(function (el) {
+        ["Button", "Label", "Check-box", "Slider", "Radio button"].forEach(function (el) {
             elements.data.forEach(function (val, index) {
                 if((val.type)==el){
                     elements.types[val.type].generatePreview(index,$("#preview-canvas"));
