@@ -1,6 +1,9 @@
 function LP_GV_Toolbar_Handler_7() {
     toolBar.handlers.file.generateCode= function (e) {
-        var path=prompt("Please enter the path of Gui900 library, to include it in the generated code.\nThis file name will be used in an #include statement, you can change it later.","gui900.h");
+        var p= localStorage.getItem("generateCodePath") || "gui900.h";
+        var path=prompt("Please enter the path of Gui900 library, to include it in the generated code.\nThis file name will be used in an #include statement, you can change it later.",p);
+        if(!path)return;
+        localStorage.setItem("generateCodePath", path);
         var code=generateCode(path);
 
         var el=$("<div></div>").css("height", "300px");
