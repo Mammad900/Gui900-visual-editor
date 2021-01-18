@@ -28,9 +28,14 @@ function LP_LoadEditor() {
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
        ...(JSON.parse(localStorage.getItem("monacoCppOptions")))});
     
-    var exitFullScreen = monacoInstance.addCommand(monaco.KeyCode.Escape, function() {
+    monacoInstance.addCommand(monaco.KeyCode.Escape, function() {
         $('#monaco-container').removeClass('fullscreen');
     });
+    monacoInstance.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KEY_D, function () {
+        if((window.docWin!=undefined) && (!window.docWin.closed)){
+            window.docWin.focus();
+        }
+    })
 
     $("#codeParts span").on("click", function (e) {
         var el=$(e.target);

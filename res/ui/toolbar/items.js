@@ -63,6 +63,11 @@ function LP_GenerateToolbar() {
             window.open("https://github.com/Mammad900/Gui900-visual-editor/issues/new?assignees=&labels=bug&template=bug_report.md&title=");
         });
         toolBar.separator(help);
+        toolBar.subMenuItem(help, "Gui900 documentation", "fa-book-open", function (e) {
+            window.docWin=window.open("https://github.com/Mammad900/Gui900/wiki/","_blank", "width=500;height=500");
+            notification.info("Use <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd> on code editor to re-focus documentation window.",[], 15000)
+        });
+        toolBar.separator(help);
         toolBar.subMenuItem(help, "About Gui900 visual editor", "fa-info-circle", toolBar.handlers.help.about);
     });
     toolBar.makeMenuItemsHideOnClick();
