@@ -12,6 +12,13 @@ function generateCode(libPath) {
         return "    "+ text.replace(new RegExp("\n","g"), "\n    ");
     }
 
+    function emptyLinesAtEnd(text) {
+        if(text){ return text+"\n\n"; } else{ return ""; }
+    }
+    function emptyLineAtEnd(text) {
+        if(text.trim()){ return text+"\n"; } else{ return ""; }
+    }
+
     // Generate element creation code
     var elCode="";
     pages.data.forEach(function (pg, pi) {
@@ -21,34 +28,27 @@ function generateCode(libPath) {
     })
 
     // Assemble everything
-    return  projectCode.globalBeginning+
-            "\n\n"+
+    return  emptyLinesAtEnd(projectCode.globalBeginning)+
             CodeGen_Config()+
             "\n\n"+ 
-            projectCode.globalAfterConfig+
-            "\n\n"+
+            emptyLinesAtEnd(projectCode.globalAfterConfig)+
             '#include "'+libPath+'"'+
             '\n\n'+ 
-            projectCode.globalAfterLibrary+
-            "\n\n"+
+            emptyLinesAtEnd(projectCode.globalAfterLibrary)+
             "void setup(){\n"+
-                indent(projectCode.setupBeginning)+
-                "\n"+
-                indent(elCode)+
-                "\n"+
-                indent(projectCode.setupBeforeStart)+
-                "\n"+
+                emptyLineAtEnd(indent(projectCode.setupBeginning))+
+                emptyLineAtEnd(indent(elCode))+
+                emptyLineAtEnd(indent(projectCode.setupBeforeStart))+
                 "    start();"+
                 "\n"+
-                indent(projectCode.setupAfterStart)+
-                "\n"+
+                emptyLineAtEnd(indent(projectCode.setupAfterStart))+
             "}"+
             "\n\n"+
             "void loop(){\n"+
-                indent(projectCode.loop)+
+                emptyLineAtEnd(indent(projectCode.loop))+
                 "\n"+
             "}"+
-            "\n\n"+
+            (projectCode.globalAfterLoop==""?"":"\n\n")+
             projectCode.globalAfterLoop;
 
 }
