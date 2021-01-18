@@ -14,7 +14,9 @@
     <!--Loads All JS and CSS files-->
     <script src="res/loader.js"></script>
 </head>
-<body onload="LP()">
+<body onload="LP()" onunload="  if((window.docWin!=undefined) && (!window.docWin.closed)){
+                                    window.docWin.close();
+                                }">
     <noscript style="text-align: center; color:red">
         <h1>Scripts disabled</h1>
         <p>You have disabled scripts, or your browser does not support scripts.<br/>
