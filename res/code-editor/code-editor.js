@@ -35,6 +35,10 @@ function LP_LoadEditor() {
         if((window.docWin!=undefined) && (!window.docWin.closed)){
             window.docWin.focus();
         }
+        else {
+            window.docWin=window.open("https://github.com/Mammad900/Gui900/wiki/","_blank", "width=500;height=500");
+            notification.info("Use <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd> on code editor to re-focus documentation window.",[], 15000)
+        }
     })
 
     $("#codeParts span").on("click", function (e) {
