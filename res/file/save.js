@@ -7,7 +7,7 @@ var fileIO= {
         }
 
         pages.selectPage(pages.currentPage);
-
+        projectCode[$("#codeParts span[data-selected=true]").attr("data-name")]=monacoInstance.getValue();
 
 
         var data= {

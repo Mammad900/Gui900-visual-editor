@@ -6,6 +6,7 @@ function generateCode(libPath) {
     }
 
     pages.selectPage(pages.currentPage);
+    projectCode[$("#codeParts span[data-selected=true]").attr("data-name")]=monacoInstance.getValue();
 
     // Indents text by 4 characters
     function indent(text) {
