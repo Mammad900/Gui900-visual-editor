@@ -52,7 +52,7 @@
 }
 
 #elements_table.hiddenbox tr:not(:first-child),
-#elements_table.hiddenbox tr:first-child td:not(:first-child),
+#elements_table.hiddenbox tr:first-child th:not(:first-child),
 #elements_table.hiddenbox #new_element_button {
     display: none;
 }

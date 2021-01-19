@@ -25,7 +25,7 @@
 }
 
 #pages_table.hiddenbox tr:not(:first-child),
-#pages_table.hiddenbox tr:first-child td:not(:first-child),
+#pages_table.hiddenbox tr:first-child th:not(:first-child),
 #pages_table.hiddenbox #new_page_button {
     display: none;
 }
