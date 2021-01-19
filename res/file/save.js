@@ -6,7 +6,8 @@ var fileIO= {
             elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement)
         }
 
-        pages.selectPage(pages.currentPage);
+        pages.data[pages.currentPage].elements=elements.data;
+        pages.data[pages.currentPage].background=$("#page_bc_color_input").val();
         projectCode[$("#codeParts span[data-selected=true]").attr("data-name")]=monacoInstance.getValue();
 
 
