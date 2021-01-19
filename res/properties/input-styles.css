@@ -127,3 +127,9 @@
 #properties .flexbox:not(.responsive):not(.responsive-big)>:not(:last-child) {
     margin-right: 5px;
 }
+
+#properties legend,
+#properties label,
+#properties .vertical-center span{
+    user-select: none;
+}

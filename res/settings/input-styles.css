@@ -128,3 +128,9 @@
 #settings .flexbox:not(.responsive):not(.responsive-big)>:not(:last-child) {
     margin-right: 5px;
 }
+
+#settings legend,
+#settings label,
+#settings .vertical-center span{
+    user-select: none;
+}

@@ -1,7 +1,7 @@
 'use strict';
 var settings= {
     showSettingsDialog: function () {
-        var div=$("<div><h2 style='margin-top:0'>Project settings</h2></div>").attr("id","settings");
+        var div=$("<div><h2 style='margin-top:0;user-select:none'>Project settings</h2></div>").attr("id","settings");
         settings.createFields(div);
         dialog.new(div,[
             {
