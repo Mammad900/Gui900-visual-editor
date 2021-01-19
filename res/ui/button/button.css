@@ -1,6 +1,7 @@
 .button {
     background-color: transparent;
     color: var(--text-color);
+    user-select:none;
 }
 .button:hover:not(:disabled):not(.noHoverEffect) {
     background-color: var(--toolbar-menuitem-hover);
