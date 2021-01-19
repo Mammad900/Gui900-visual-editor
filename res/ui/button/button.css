@@ -1,6 +1,7 @@
 .button {
     background-color: transparent;
     color: var(--text-color);
+    border: none;
     user-select:none;
 }
 .button:hover:not(:disabled):not(.noHoverEffect) {
@@ -11,9 +12,6 @@
 }
 .button:focus{
     outline: none;
-}
-.button{
-    border: none;
 }
 
 .size38{
