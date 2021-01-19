@@ -20,7 +20,7 @@
 #elements_table tr:last-child td:first-child{
     border-bottom-left-radius: var(--box-border-radius);
 }
-#elements_table td:first-child{
+#elements_table tr:not(:first-child) td:first-child{
     min-width: 200px;
     cursor: pointer;
 }

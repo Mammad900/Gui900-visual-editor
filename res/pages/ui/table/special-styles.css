@@ -7,7 +7,7 @@
 #pages_table tr:not(:first-of-type) td:first-child{
     padding: 0;
 }
-#pages_table td:first-child{
+#pages_table tr:not(:first-child) td:first-child{
     min-width: 165px;
     cursor: pointer;
 }
