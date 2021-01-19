@@ -12,6 +12,10 @@ table.table tr{
 table.table tr.selected td{
     background-color: var(--table-selected-row);
 }
+table.table th{
+    user-select: none;
+    text-align: left;
+}
 table.table th,
 table.table td{
     padding: 7px;
