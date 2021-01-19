@@ -43,6 +43,9 @@ function LP_LoadEditor() {
 
     $("#codeParts span").on("click", function (e) {
         var el=$(e.target);
+        if(el[0].tagName=="CODE"){
+            el=el.parent();
+        }
         projectCode[$("#codeParts span[data-selected=true]").attr("data-name")]=monacoInstance.getValue();
         $("#codeParts span[data-selected]").attr("data-selected","false");
         monacoInstance.setValue(projectCode[el.attr("data-name")]);
