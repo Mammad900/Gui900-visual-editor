@@ -17,10 +17,8 @@ Gui900 visual editor is a web based app which helps you create an app based on [
 | Edge              | :grey_question: Not tested |
 | Safari            | :grey_question: Not tested |
 | Opera             | :grey_question: Not tested |
-| Android WebView   | :heavy_check_mark: Works   |
 
-**Note: You can't edit code on mobile browsers:**
-> The Monaco editor is **not** supported in mobile browsers or mobile web frameworks.
+**Note: Gui900 visual editor works on mobile browsers but it's support is no longer maintained.**
 
 ## Currently not implemented
 
