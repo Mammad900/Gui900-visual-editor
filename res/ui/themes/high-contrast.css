@@ -40,6 +40,8 @@
 
     --range-background-color: rgb(255, 255, 255);
     --range-thumb-color: black;
+    
+    --code-editor-background: #000;
 }
 
 :root[theme=high-contrast] #toolbar .menuitem .dropdown .dropdown-container{

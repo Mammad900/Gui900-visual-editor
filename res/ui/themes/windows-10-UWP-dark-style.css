@@ -28,6 +28,7 @@
     --dialog-link-hover-underline-color: white;
     --range-background-color: #444444;
     --contenteditable-focus-background: #ffffff42;
+    --code-editor-background: #000;
 }
 
 :root[theme=windows-10-UWP-dark-style] fieldset {

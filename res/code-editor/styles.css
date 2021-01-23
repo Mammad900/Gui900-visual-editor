@@ -67,10 +67,11 @@
 
 #code-editor #codeParts span[data-selected=true] {
     border-color: var(--toolbar-menuitem-active);
-    border-bottom: 2px solid var(--box-background);
+    border-bottom: 2px solid var(--code-editor-background);
     z-index: 5;
     padding-bottom: 12px;
     margin-bottom: -2px;
+    background: var(--code-editor-background);
 }
 
 #code-editor #codeParts div div {
