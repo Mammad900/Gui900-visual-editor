@@ -23,9 +23,6 @@
 #pages-table-column>.box{
     overflow: visible;
 }
-#pages-table-column tr:not(:first-child){
-    overflow: clip;
-}
 #pages_table tr:last-child td:last-child{
     border-bottom-right-radius: var(--box-border-radius);
 }
