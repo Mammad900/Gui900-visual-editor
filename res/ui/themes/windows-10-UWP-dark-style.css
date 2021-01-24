@@ -120,6 +120,11 @@
     backdrop-filter: blur(10px)
 }
 
+:root[theme=windows-10-UWP-dark-style] .tooltiptext .tooltiptext{
+    background: #101010;
+    backdrop-filter: none;
+}
+
 :root[theme=windows-10-UWP-dark-style] :not(input):not(textarea):not(select):focus,
 :root[theme=windows-10-UWP-dark-style] input[type=color]:focus {
     outline: 2px white solid !important;
@@ -181,4 +186,8 @@
 
 :root[theme=windows-10-UWP-dark-style] [contenteditable]:focus:focus:focus:focus{
     outline: none !important;
+}
+
+:root[theme=windows-10-UWP-dark-style] .hint>.tooltiptext>button:hover{
+    padding: 8px;
 }

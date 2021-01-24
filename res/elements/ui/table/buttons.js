@@ -153,20 +153,20 @@ elements.table={
 };
 }
 function LP_HandleNewElementButton(){
-    $("#new-element-button").on("click",function(){
-        elements.create("Button");
+    $("#new-element-button").on("click",async function(){
+        await elements.create("Button");
     });
-    $("#new-element-label").on("click",function(){
-        elements.create("Label");
+    $("#new-element-label").on("click",async function(){
+        await elements.create("Label");
     });
-    $("#new-element-checkbox").on("click",function(){
-        elements.create("Check-box");
+    $("#new-element-checkbox").on("click",async function(){
+        await elements.create("Check-box");
     });
-    $("#new-element-slider").on("click",function(){
-        elements.create("Slider", true);
+    $("#new-element-slider").on("click",async function(){
+        await elements.create("Slider", true);
     });
-    $("#new-element-radio-button").on("click",function(){
-        elements.create("Radio button");
+    $("#new-element-radio-button").on("click",async function(){
+        await elements.create("Radio button");
     });
 }
 

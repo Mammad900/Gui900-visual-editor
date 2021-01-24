@@ -120,3 +120,8 @@ kbd{
     font-size: 0.9em;
     padding: 0 0.2em;
 }
+
+abbr {
+    text-decoration: underline dotted 1px;
+    cursor: help !important;
+}

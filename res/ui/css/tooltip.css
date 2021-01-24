@@ -1,10 +1,9 @@
 .tooltip {
     position: relative;
-    display: inline-block;
 }
 
-.tooltip .tooltiptext {
-    display: none;
+.tooltip>.tooltiptext {
+    display: none !important;
     width: 120px;
     background-color: var(--tooltip-color);
     text-align: center;
@@ -22,11 +21,12 @@
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
-.tooltip:hover .tooltiptext {
-    display: block;
+.tooltip:hover>.tooltiptext,
+.tooltip>.tooltiptext.alwaysVisible {
+    display: block !important;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip>.tooltiptext::after {
     content: " ";
     position: absolute;
     top: 100%;
@@ -39,14 +39,19 @@
 }
 
 .tooltiptext.bottom {
-    bottom: unset;
+    bottom: unset !important;
     top: 100%;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     margin-top: 15px;
 }
 
 .tooltiptext.bottom::after {
     bottom: 100%;
-    top: unset;
-    border-color: transparent transparent var(--tooltip-color) transparent;
+    top: unset !important;
+    border-color: transparent transparent var(--tooltip-color) transparent !important;
+}
+
+.tooltip>.tooltiptext.wide {
+    width: 240px;
+    margin-left: -120px;
 }

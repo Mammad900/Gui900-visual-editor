@@ -72,7 +72,10 @@ var toolBar=
     menuItem: function (container,innerHTML,event,callback=function(){},hasChild=true){
         var x=toolBar.createMenuItem($(container),innerHTML,hasChild);
         callback(toolBar.getDropDown(x)[0]);
-        x.children(":first-child").on("click",event);
+        x.children(":first-child").on("click",function (e) {
+            if(e.target.innerHTML=="OK") {return;}
+            event(e);
+        });
     },
     subMenuItem: 
     /**
@@ -89,7 +92,10 @@ var toolBar=
     function (container,innerHTML,icon_class,event,callback=function(a){},hasChild=false,hideMenuOnClick=true,fits=true){
         var x= toolBar.createSubMenuItem ($(container),innerHTML,icon_class,hasChild,fits,hideMenuOnClick);
         callback(toolBar.getDropDown(x)[0]);
-        x.children(":first-child").on("click",event);
+        x.children(":first-child").on("click",function (e) {
+            if(e.target.innerHTML=="OK") {return;}
+            event(e);
+        });
         return x;
     },
     separator:

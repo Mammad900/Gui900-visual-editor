@@ -41,6 +41,7 @@ function loadJsCssFile(filename){
     "res/file/load.js", // Load the project
     "res/code-generator/config.js", // Generates Arduino config code
     "res/code-generator/generateCode.js", // Generates Arduino code
+    "res/ui/hint/hint.js",
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
@@ -99,6 +100,7 @@ function loadJsCssFile(filename){
     "res/ui/notification/notification.css", // Notifications
     "res/settings/special-styles.css", // Project settings special styles
     "res/code-editor/styles.css", // Code editor styles
+    "res/ui/hint/styles.css",
 
     "res/js/loader-end.js", // Finishes loading
 
@@ -106,9 +108,9 @@ function loadJsCssFile(filename){
     loadJsCssFile(value);
 });
 
-function LP(){
+async function LP(){
     try{
-        [
+        var LP_funcs=[
             LP_SetTheme,
 
             LP_GV_ElementsTableButtons,
@@ -163,9 +165,17 @@ function LP(){
             LP_LoadEditor,
             LP_HandleColorPickerInput,
             LP_loaderEnd,
-        ].forEach(function(value){
-            value();
-        });
+            [LP_Hints],
+        ];
+        for(var i=0;i<LP_funcs.length;i++){
+            var value=LP_funcs[i];
+            if(typeof value=='object'){
+                await value[0]();
+            }
+            else{
+                value();
+            }
+        }
     }
     catch(err){
         console.error(err);
@@ -177,3 +187,6 @@ function LP(){
             </p>`;
     }
 };
+window.onload= async function () {
+    await LP();
+}

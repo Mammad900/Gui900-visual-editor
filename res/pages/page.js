@@ -56,6 +56,11 @@ var pages = {
 }
 
 function LP_createFirstPage() {
+    $("#new_page_button").on("click", function (e) {
+        if(!(e.target.innerHTML=='OK')){
+            pages.create()
+        }
+    })
     if(!localStorage.getItem("fileToBeLoaded")){
         pages.create();
     }

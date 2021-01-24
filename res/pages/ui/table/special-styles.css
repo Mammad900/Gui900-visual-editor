@@ -12,6 +12,28 @@
     cursor: pointer;
 }
 
+#pages_table tr:last-child td:first-child{
+    border-bottom-left-radius: var(--box-border-radius);
+}
+#pages_table tr:not(:first-child) td:first-child{
+    min-width: 200px;
+    cursor: pointer;
+}
+
+#pages-table-column>.box{
+    overflow: visible;
+}
+#pages-table-column tr:not(:first-child){
+    overflow: clip;
+}
+#pages_table tr:last-child td:last-child{
+    border-bottom-right-radius: var(--box-border-radius);
+}
+
+#pages_table tr:last-child .buttons>*:first-child button.button{
+    border-bottom-left-radius: var(--box-border-radius);
+}
+
 #pages_table div.buttons{
     display: inline-block;
 }

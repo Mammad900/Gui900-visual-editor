@@ -55,7 +55,10 @@
     
     margin-left: var(--toolbar-sub-menu-width);
 }
-#toolbar .menuitem:hover>.dropdown-container{display: block;}
+#toolbar .menuitem:hover>.dropdown-container,
+#toolbar .menuitem.hashint>.dropdown-container{
+    display: block;
+}
 
 #toolbar .dropdown hr{
     border: none;

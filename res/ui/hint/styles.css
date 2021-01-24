@@ -1,0 +1,118 @@
+.hint {
+    position: relative;
+}
+
+.hint>.tooltiptext {
+    width: 120px;
+    background-color: var(--tooltip-color);
+    text-align: center;
+    border-radius: 6px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 9;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    margin-bottom: 15px;
+    border: var(--border);
+    box-shadow: 0 0 100px 50px black;
+    font-weight: initial;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.hint>.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--tooltip-color) transparent transparent transparent;
+}
+
+.hint.bottom {
+    bottom: unset;
+    top: 100%;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.hint.bottom::after {
+    bottom: 100%;
+    top: unset;
+    border-color: transparent transparent var(--tooltip-color) transparent;
+}
+
+.hint>.tooltiptext.wide {
+    width: 240px;
+    margin-left: -120px;
+}
+
+.hint>.tooltiptext{
+    padding: 0;
+    box-shadow: 0 0 100px 50px black;
+    font-weight: initial;
+}
+.hint>.tooltiptext>div{
+    padding: 10px;
+    padding-bottom: 0;
+    font-size: 1rem;
+    white-space: initial;
+}
+.hint>.tooltiptext>button{
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+.tooltiptext.right {
+    margin-left: 15px !important;
+    top: 0;
+    bottom: initial;
+    left: 100%;
+    right: initial;
+}
+
+.hint>.tooltiptext.right::after {
+    top: 10px;
+    left: -10px;
+    border-color: transparent var(--tooltip-color) transparent transparent;
+}
+
+.tooltiptext.left {
+    margin-left: 0px !important;
+    margin-right: 15px;
+    margin-bottom: 0 !important;
+    top: 0;
+    bottom: initial;
+    right: 100%;
+    left: initial;
+}
+
+.hint>.tooltiptext.left::after {
+    top: 10px;
+    right: -20px;
+    left: unset;
+    border-color: transparent transparent transparent var(--tooltip-color);
+}
+
+#toolbar .hint>.tooltiptext {
+    box-shadow: 0 0 19px black;
+    z-index: 20;
+}
+
+#toolbar .hint>.tooltiptext::after {
+    top: 4px;
+}
+#toolbar .menuitem.hashint .menuitem>.dropdown-container {
+    display: none !important;
+}
