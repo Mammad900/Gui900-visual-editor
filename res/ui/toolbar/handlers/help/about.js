@@ -6,7 +6,7 @@ function LP_GV_Toolbar_Handler_3(){
                 `Gui900 UI Editor<br>
                 By <a href="https://github.com/Mammad900" target="_blank">Mammad900</a><br>
                 JQuery 3.5.1<br>
-                Monaco editor 0.21.2<br>
+                Monaco editor 0.21.3<br>
                 Font Awesome Free 5.15.1`,[
                 {
                     "id": 0,
