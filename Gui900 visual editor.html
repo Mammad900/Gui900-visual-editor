@@ -111,33 +111,32 @@
                         </tr>
                     </table>
                 </section>
-                <section class="box" id="code-editor">
-                    <div ondblclick="codeEditorFullScreen()" class="vertical-center">
-                        <i class="fas fa-chevron-down" onclick="$('#code-editor').toggleClass('hiddenbox')"></i
-                        ><h2>Code</h2>
-                    </div>
-                    <div id="codeParts-container">
-                        <div id="codeParts">
-                            <div>
-                                <span data-name="globalBeginning" data-selected="true">Code in the biginning (global)</span
-                                ><span data-name="globalAfterConfig">Code after config defines</span
-                                ><span data-name="globalAfterLibrary">Code after Gui900 include</span
-                                ><span data-name="setupBeginning">Code in the beginning of <code>setup()</code></span
-                                ><span data-name="setupBeforeStart">Code before <code>start()</code></span
-                                ><span data-name="setupAfterStart">Code after <code>start()</code></span
-                                ><span data-name="loop">Code in <code>loop()</code></span
-                                ><span data-name="globalAfterLoop">Code after <code>loop()</code></span>
-                            <div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="monaco-container" style="height: 500px; overflow: hidden; 
-                                                        border-bottom-left-radius: var(--box-border-radius); 
-                                                        border-bottom-right-radius: var(--box-border-radius);"></div>
-                </section>
             </div>
-        
         </div>
+        <section class="box" id="code-editor">
+            <div ondblclick="codeEditorFullScreen()" class="vertical-center">
+                <i class="fas fa-chevron-down" onclick="$('#code-editor').toggleClass('hiddenbox')"></i
+                ><h2>Code</h2>
+            </div>
+            <div id="codeParts-container">
+                <div id="codeParts">
+                    <div>
+                        <span data-name="globalBeginning" data-selected="true">Code in the biginning (global)</span
+                        ><span data-name="globalAfterConfig">Code after config defines</span
+                        ><span data-name="globalAfterLibrary">Code after Gui900 include</span
+                        ><span data-name="setupBeginning">Code in the beginning of <code>setup()</code></span
+                        ><span data-name="setupBeforeStart">Code before <code>start()</code></span
+                        ><span data-name="setupAfterStart">Code after <code>start()</code></span
+                        ><span data-name="loop">Code in <code>loop()</code></span
+                        ><span data-name="globalAfterLoop">Code after <code>loop()</code></span>
+                    <div></div>
+                    </div>
+                </div>
+            </div>
+            <div id="monaco-container" style="height: 500px; overflow: hidden; 
+                                                border-bottom-left-radius: var(--box-border-radius); 
+                                                border-bottom-right-radius: var(--box-border-radius);"></div>
+        </section>
     </main>
     <div id="notifications">
     </div>
