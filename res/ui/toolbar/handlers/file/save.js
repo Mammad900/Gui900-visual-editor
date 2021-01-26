@@ -21,7 +21,7 @@ function LP_GV_Toolbar_Handler_6(){
             download(JSON.stringify(fileIO.createJSON()), "Untitled.gui900", "gui900")
         },
         saveToJSON: function (e) {
-            dialog.new(("<textarea style='height: 300px' readonly>"+JSON.stringify(fileIO.createJSON())+"</textarea>"), [
+            dialog(("<textarea style='height: 300px' readonly>"+JSON.stringify(fileIO.createJSON())+"</textarea>"), [
                 {
                     "id": 0,
                     "text": "OK"

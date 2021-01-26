@@ -78,7 +78,7 @@ pages.table= {
                 `<i class="fas fa-times"></i>`,
                 "Delete page", function(){
                     var row=$(this);
-                    dialog.new("Do you really want to <strong>delete</strong> this page?<br>This cannot be undone.",[
+                    dialog("Do you really want to <strong>delete</strong> this page?<br>This cannot be undone.",[
                         {
                             "id": 0,
                             "text": "No",

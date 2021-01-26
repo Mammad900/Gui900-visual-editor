@@ -21,7 +21,7 @@ function LP_GV_Toolbar_Handler_7() {
            ...(JSON.parse(localStorage.getItem("monacoCppOptions")))});
         
         
-        dialog.new(el, [
+        dialog(el, [
             {
                 "id": 0,
                 "text": "OK"

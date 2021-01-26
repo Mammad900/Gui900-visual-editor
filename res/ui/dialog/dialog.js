@@ -1,15 +1,5 @@
 'use strict';
-var dialog=
-{
-    new:
-    /**
-     * H
-     * @param {String|JQuery|HTMLElement} Content The content of the dialog
-     * @param {Array<object>} options Buttons of the dialog
-     * @param {(result:Number|String,event:JQuery.ClickEvent)=>void} callback 
-     * @param {boolean} selectable
-     */
-    function(Content, options, callback, selectable){
+function dialog(Content, options, callback, selectable){
 
         var dialogE=$("<div></div>").attr("id","dialog"); // dialogE= dialog element
         if(selectable){
@@ -67,9 +57,7 @@ var dialog=
         $(document.body).append(dialogE);
         if(act!=undefined)act.focus();
         return content2;
-    },
-    
-    close: function () {
-        $("#dialog, #dialog *").remove();
-    }
+}
+dialog.close= function () {
+    $("#dialog, #dialog *").remove();
 }

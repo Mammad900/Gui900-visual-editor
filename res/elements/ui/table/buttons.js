@@ -111,7 +111,7 @@ elements.table={
             delete: function(index){
                 var hasIndex=typeof(index)=='number';
                 var row=(!hasIndex)?$(this):undefined;
-                dialog.new("Do you really want to <strong>delete</strong> this element?<br>This cannot be undone.",[
+                dialog("Do you really want to <strong>delete</strong> this element?<br>This cannot be undone.",[
                     {
                         "id": 0,
                         "text": "No",

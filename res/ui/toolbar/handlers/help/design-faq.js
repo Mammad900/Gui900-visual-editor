@@ -1,7 +1,7 @@
 'use strict';
 function LP_GV_Toolbar_Handler_4(){
     toolBar.handlers.help.design_FAQ= function (e) {
-        dialog.new(
+        dialog(
             `<h3>How to group several elements in a group, like Windows forms <code>GroupBox</code>?</h3>
             <p>
                 It is not natively supported, but there is a workaround with a button and a label to do this:

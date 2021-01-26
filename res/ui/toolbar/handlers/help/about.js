@@ -2,7 +2,7 @@
 function LP_GV_Toolbar_Handler_3(){
     toolBar.handlers.help= {
         about: function (e) {
-            dialog.new(
+            dialog(
                 `Gui900 UI Editor<br>
                 By <a href="https://github.com/Mammad900" target="_blank">Mammad900</a><br>
                 JQuery 3.5.1<br>
