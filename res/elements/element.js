@@ -35,16 +35,26 @@ var elements={
     },
     types: {},
     selectElement:
-    function (index){
-        var type=this.data[index].type;
+    function (index, saveCurrentElement=true){
         if(this.selectedElement!=-1){
-            elements.types[this.data[this.selectedElement].type].saveProperties(this.selectedElement);
+            if(saveCurrentElement){
+                elements.types[this.data[this.selectedElement].type].saveProperties(this.selectedElement);
+            }
             $(elements.table.rows.getRow(this.selectedElement)).removeClass("selected");
         }
         properties.getElement().children().remove();
-        elements.types[type].createProperties(index);
-        this.updatePropertiesTitle(index);
-        $(elements.table.rows.getRow(index)).addClass("selected");
+        if(index!=-1){
+            var type=this.data[index].type;
+            elements.types[type].createProperties(index);
+            this.updatePropertiesTitle(index);
+            $(elements.table.rows.getRow(index)).addClass("selected");
+            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").removeClass("disabled");
+            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").removeClass("disabled");
+        }
+        else{
+            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").addClass("disabled");
+            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").addClass("disabled");
+        }
         elements.selectedElement=index;
     },
     updatePropertiesTitle: function (index) {

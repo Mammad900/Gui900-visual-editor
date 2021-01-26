@@ -22,13 +22,19 @@
     user-select: none;
     display: block;
 }
-#toolbar .toolbar-button:hover {
+
+#toolbar .menuitem .toolbar-button.disabled {
+    opacity: 0.2;
+    cursor: no-drop;
+}
+
+#toolbar .toolbar-button:hover:not(.disabled) {
     background-color: var(--toolbar-menuitem-hover);
 }
-#toolbar .toolbar-button:active {
+#toolbar .toolbar-button:active:not(.disabled) {
     background-color: var(--toolbar-menuitem-active) !important;
 }
-#toolbar .menuitem:hover>.toolbar-button{
+#toolbar .menuitem:hover>.toolbar-button:not(.disabled){
     background-color: var(--toolbar-menuitem-hover);
 }
 #toolbar .menuitem .dropdown {

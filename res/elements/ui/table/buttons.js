@@ -126,7 +126,6 @@ elements.table={
                     if(id==1){
                         if(elements.selectedElement!=-1)
                             elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement);
-                        properties.getElement().children().remove();
                         $("#properties-header-details").text("No item selected");
 
                         var tr =(!hasIndex)?(row.parent().parent().parent().parent()):(elements.table.rows.getRow(index));
@@ -141,8 +140,8 @@ elements.table={
                                 elements.table.rows.data[i-1][1].prop("disabled",true);
                             }
                         }
-                        elements.data.splice(i, 1)
-                        elements.selectedElement=-1;
+                        elements.data.splice(i, 1);
+                        elements.selectElement(-1, false);
                     }
                     elements.table.rows.sortNumbers();
                     dialog.close();

@@ -38,8 +38,8 @@ function LP_GenerateToolbar() {
         }, true,false);
         toolBar.subMenuItem(element, "Delete selected element", "fa-times", function(){
             (elements.selectedElement!=-1)?(elements.table.buttons.actions.delete(elements.selectedElement)):(notification.error("No element selected, please select one first."));
-        });
-        toolBar.subMenuItem(element, "Duplicate element","fa-clone", toolBar.handlers.elements.duplicate);
+        }, function () {}, false, true, true, true);
+        toolBar.subMenuItem(element, "Duplicate element","fa-clone", toolBar.handlers.elements.duplicate, function () {}, false, true, true, true);
     });
     toolBar.menuItem(toolbar, "Preview", function(e){}, function(_preview){
         toolBar.subMenuItem(_preview, "Refresh", "fa-sync", preview.refresh);

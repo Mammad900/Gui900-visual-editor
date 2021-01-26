@@ -32,10 +32,7 @@ var pages = {
          */
         function (i) {
             $(pages.table.rows.getRow(pages.currentPage)).removeClass("selected");
-            if(elements.selectedElement!=-1)
-                elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement);
-            properties.getElement().children().remove();
-            elements.selectedElement=-1;
+            elements.selectElement(-1);
 
             pages.data[pages.currentPage].elements=elements.data;
             pages.data[pages.currentPage].background=$("#page_bc_color_input").val();

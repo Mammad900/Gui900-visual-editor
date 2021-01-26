@@ -6,8 +6,8 @@ var toolBar=
         buttons.on("click", function (e) {
             var t=$(e.target);
             var shouldClose=false;
-            if(t.hasClass("menuitem")) shouldClose= !(t.hasClass("noHide"));
-            else if(t.hasClass("toolbar-button")) shouldClose= !(t.parent().hasClass("noHide"));
+            if(t.hasClass("menuitem")) shouldClose= !((t.hasClass("noHide"))||(t.children(".toolbar-button").hasClass("disabled")));
+            else if(t.hasClass("toolbar-button")) shouldClose= !((t.parent().hasClass("noHide"))||(t.hasClass("disabled")));
             else return;
             if(shouldClose){
                 var dropDownMenu = $('#toolbar .menuitem .dropdown').addClass("hidden");
@@ -22,10 +22,12 @@ var toolBar=
 
     subMenu_icon_style: "fas",
 
-    createMenuItem: function ( container, innerHtml, hasChild=false){
+    createMenuItem: function ( container, innerHtml, hasChild=false, disabled=false){
         var menuItem= $("<div></div>").addClass("menuitem");
 
-        menuItem.append($("<div></div>").addClass("toolbar-button").html(innerHtml));
+        var tbb=$("<div></div>").addClass("toolbar-button").html(innerHtml);
+        if(disabled){ tbb.addClass("disabled") }
+        menuItem.append(tbb);
 
         if(hasChild){
             var dropdownc=$("<div></div>").addClass("dropdown-container").append($("<div></div>").addClass("dropdown"));
@@ -37,7 +39,7 @@ var toolBar=
         return menuItem;
     },
 
-    createSubMenuItem: function ( container, innerHtml,icon_class, hasChild=false, fits=true,hideMenuOnClick=true){
+    createSubMenuItem: function ( container, innerHtml, icon_class, hasChild=false, fits=true,hideMenuOnClick=true, disabled=false){
         var menuItem= $("<div></div>").addClass("menuitem");
         if(!hideMenuOnClick) {
             menuItem.addClass("noHide");
@@ -47,7 +49,7 @@ var toolBar=
         if(!fits){
             toolBarButton.attr("title",innerHtml).addClass("OVF-H");
         }
-
+        if(disabled){ toolBarButton.addClass("disabled") }
         toolBarButton.append($("<i></i>").addClass([toolBar.subMenu_icon_style,icon_class,"fa-fw"]));
 
         toolBarButton.append(innerHtml);
@@ -69,8 +71,8 @@ var toolBar=
         return element.children().children(".dropdown");
     },
 
-    menuItem: function (container,innerHTML,event,callback=function(){},hasChild=true){
-        var x=toolBar.createMenuItem($(container),innerHTML,hasChild);
+    menuItem: function (container,innerHTML,event,callback=function(){},hasChild=true, disabled=false){
+        var x=toolBar.createMenuItem($(container),innerHTML,hasChild, disabled);
         callback(toolBar.getDropDown(x)[0]);
         x.children(":first-child").on("click",function (e) {
             if(e.target.innerHTML=="OK") {return;}
@@ -89,10 +91,11 @@ var toolBar=
      * @param {boolean} hasChild Set it to true if you want to make childs for this menu-item
      * @param {boolean} fits Set to true if the menu-item does not fit in it's place
      */
-    function (container,innerHTML,icon_class,event,callback=function(a){},hasChild=false,hideMenuOnClick=true,fits=true){
-        var x= toolBar.createSubMenuItem ($(container),innerHTML,icon_class,hasChild,fits,hideMenuOnClick);
+    function (container,innerHTML,icon_class,event,callback=function(a){},hasChild=false,hideMenuOnClick=true,fits=true, disabled=false){
+        var x= toolBar.createSubMenuItem ($(container),innerHTML,icon_class,hasChild,fits,hideMenuOnClick, disabled);
         callback(toolBar.getDropDown(x)[0]);
         x.children(":first-child").on("click",function (e) {
+            if($(e.target).closest(".toolbar-button").hasClass("disabled")) {return;}
             if(e.target.innerHTML=="OK") {return;}
             event(e);
         });
