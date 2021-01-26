@@ -32,8 +32,9 @@ pages.table= {
             return [span,button];
         },
         actions: {
-            delete: function(){
-                var row=$(this);
+            delete: function(index){
+                var hasIndex=typeof(index)=='number';
+                var row=(!hasIndex)?$(this):undefined;
                 dialog("Do you really want to <strong>delete</strong> this page?<br>This cannot be undone.",[
                     {
                         "id": 0,
@@ -47,7 +48,7 @@ pages.table= {
                     }
                 ],function (id,e) {
                     if(id==1){
-                        var tr= row.parent().parent().parent().parent();
+                        var tr =(!hasIndex)?(row.parent().parent().parent().parent()):(pages.table.rows.getRow(index));
                         var i=$("#pages_table tr").index(tr)-1;
                         var ib=false;
                         if(i==pages.currentPage){
