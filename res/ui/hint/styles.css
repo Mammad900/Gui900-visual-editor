@@ -62,6 +62,7 @@
     padding-bottom: 0;
     font-size: 1rem;
     white-space: initial;
+    font-family: var(--default-font);
 }
 .hint>.tooltiptext>button{
     padding: 10px;
