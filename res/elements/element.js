@@ -1,5 +1,7 @@
 'use strict';
 var elements={
+    sawHints: false,
+
     data:[],
     create:
     /**
@@ -28,10 +30,13 @@ var elements={
                 elements.selectElement(num);
             }
         });
-        await createHint("selectElement",$(tr.children()[0]), "Click on the empty area to select the element.", true, "top");
-        await createHint("moveElementUp",$("#elements_table tr:last-child .buttons>*:first-child"), "Click on this to move this element above the element above it (move it up).<br> It's disabled for the first element.<br>You can use it to move an element behind another.", true, "right");
-        await createHint("moveElementDown",$("#elements_table tr:last-child .buttons>*:nth-child(2)"), "Click on this to move this element below the element below it (move it down).<br> It's disabled for the last element.<br>You can use it to move an element in front of another.", true, "right");
-        await createHint("deleteElement",$("#elements_table tr:last-child .buttons>*:nth-child(3)"), "Click on this to delete the element.", false, "right");
+        if(!elements.sawHints){
+            elements.sawHints=true;
+            await createHint("selectElement",$(tr.children()[0]), "Click on the empty area to select the element.", true, "top");
+            await createHint("moveElementUp",$("#elements_table tr:last-child .buttons>*:first-child"), "Click on this to move this element above the element above it (move it up).<br> It's disabled for the first element.<br>You can use it to move an element behind another.", true, "right");
+            await createHint("moveElementDown",$("#elements_table tr:last-child .buttons>*:nth-child(2)"), "Click on this to move this element below the element below it (move it down).<br> It's disabled for the last element.<br>You can use it to move an element in front of another.", true, "right");
+            await createHint("deleteElement",$("#elements_table tr:last-child .buttons>*:nth-child(3)"), "Click on this to delete the element.", false, "right");
+        }
     },
     types: {},
     selectElement:

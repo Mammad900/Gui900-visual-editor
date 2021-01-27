@@ -5,8 +5,15 @@
  */
 async function createHint(id,element, html, wide=true, direction="top") {
     var storageObj=JSON.parse(localStorage.getItem("hints"));
-    if((storageObj[id])==true) {return;}
-    element.addClass("hint");
+    if((storageObj[id])==true) { 
+        return; // This hint was already read, So don't display it.
+    }
+
+    if($(".hint[data-hid="+id+"]").length!=0) {
+        return; // This hint is already shown and is waiting for 'OK' to be pressed, so don't show it again.
+    }
+
+    element.addClass("hint").attr("data-hid", id);
     if(element.is("#toolbar .dropdown .toolbar-button")){
         element.parent().parent().parent().parent().addClass("hashint");
     }
@@ -25,8 +32,10 @@ async function createHint(id,element, html, wide=true, direction="top") {
         ttt.addClass("wide");
     }
     element.append(ttt);
+
     var promise = new Promise((resolve) => { cont = resolve });
     await promise.then((result) => {});
+
     storageObj[id]=true;
     localStorage.setItem("hints",JSON.stringify(storageObj));
 }
