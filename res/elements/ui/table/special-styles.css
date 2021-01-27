@@ -32,9 +32,6 @@
 #elements-table-column>.box{
     overflow: visible;
 }
-#elements-table-column tr:not(:first-child){
-    overflow: clip;
-}
 #elements-table-column tr:last-child td:last-child{
     border-bottom-right-radius: var(--box-border-radius);
 }
