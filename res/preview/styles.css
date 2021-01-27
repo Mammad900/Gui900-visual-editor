@@ -1,5 +1,6 @@
 #preview{
     padding: 0;
+    width: calc( var(--settings-screen-width-px) + 2px );
     width: fit-content;
 }
 canvas.sharpZoom{
