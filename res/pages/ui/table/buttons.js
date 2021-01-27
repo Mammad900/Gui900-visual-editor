@@ -33,6 +33,10 @@ pages.table= {
         },
         actions: {
             delete: function(index){
+                if(pages.data.length==1){
+                    notification.error("You can't delete the last page");
+                    return;
+                }
                 var hasIndex=typeof(index)=='number';
                 var row=(!hasIndex)?$(this):undefined;
                 dialog("Do you really want to <strong>delete</strong> this page?<br>This cannot be undone.",[
