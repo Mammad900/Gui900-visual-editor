@@ -86,6 +86,7 @@
 
 #code-editor #codeParts div{
     width: fit-content;
+    min-width: 100%;
 }
 
 .monaco-editor .margin-view-overlays .line-numbers{
