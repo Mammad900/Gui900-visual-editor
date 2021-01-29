@@ -51,6 +51,10 @@
     user-select: none;
 }
 
+#code-editor #codeParts::-webkit-scrollbar{
+    height: 8px;
+}
+
 #code-editor #codeParts span {
     padding: 10px;
     display: inline-block;
