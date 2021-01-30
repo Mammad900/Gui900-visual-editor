@@ -29,13 +29,31 @@ function generateCode(libPath) {
         })
     })
 
+    function getFontIncludes() {
+        var result="";
+        pages.data.forEach(function (pg, pi) {
+            pg.elements.forEach(function (el,ei) {
+                if(el.type= "Label"){
+                    if(/&Free((Sans|Mono)(|Bold)(|Oblique)|Serif(|Bold)(|Italic))(9|12|18|24)pt7b/.test(el.font)){
+                        if(!(/&FreeSans(9|12|18|24)pt7b/.test(el.font))){
+                            result+= "#include <Fonts/"+ el.font.slice(1) +".h>\n";
+                        }
+                    }
+                }
+            });
+        });
+        return result;
+    }
+
     // Assemble everything
     return  emptyLinesAtEnd(projectCode.globalBeginning)+
             CodeGen_Config()+
             "\n\n"+ 
             emptyLinesAtEnd(projectCode.globalAfterConfig)+
             '#include "'+libPath+'"'+
-            '\n\n'+ 
+            '\n'+
+            getFontIncludes()+
+            '\n'+ 
             emptyLinesAtEnd(projectCode.globalAfterLibrary)+
             "void setup(){\n"+
                 emptyLineAtEnd(indent(projectCode.setupBeginning))+
