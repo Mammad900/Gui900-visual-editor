@@ -29,6 +29,6 @@ function LP_GV_Toolbar_Handler_7() {
         ], function () {
             dialog.close();
         });
-        $("#dialog .content").addClass("doNotTouchCss");
+        $("#dialog .content").addClass(["doNotTouchCss","defaultCursor"]);
     }
 }
