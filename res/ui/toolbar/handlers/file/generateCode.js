@@ -17,8 +17,8 @@ function LP_GV_Toolbar_Handler_7() {
                 enabled: false
             }
         }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
-           ...(JSON.parse(localStorage.getItem("monacoGenerateCodeResultOptions"))),
-           ...(JSON.parse(localStorage.getItem("monacoCppOptions")))});
+           ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),
+           ...(JSON.parse(localStorage.getItem("monacoGenerateCodeResultOptions")))});
         
         
         dialog(el, [
