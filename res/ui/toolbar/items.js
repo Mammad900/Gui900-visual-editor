@@ -21,6 +21,10 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(file, "Project settings", "fa-wrench", settings.showSettingsDialog);
         toolBar.separator(file);
         toolBar.subMenuItem(file, "Change editor theme", "fa-palette", function(e){}, ThemeMenuGenerator, true);
+        toolBar.subMenuItem(file, "Advanced", "fa-cogs", function (e) {}, function (advanced) {
+            toolBar.subMenuItem(advanced, "Custom monaco-editor options", "fa-cogs", showMonacoEditorOptionOverridesEditor);
+        }, true,false);
+        
     });
     toolBar.menuItem(toolbar, "Page", function (e) {}, function (page) {
         toolBar.subMenuItem(page, "New page", "fa-plus", pages.create);
