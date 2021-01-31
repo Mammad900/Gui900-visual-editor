@@ -11,15 +11,15 @@ function showMonacoEditorOptionOverridesEditor() {
         "monacoMainCodeEditorOptions"       : "Main code editor instance"
     }, lastMod).css({
         "background": "var(--input-color)",
-        "color": "var(--text-color",
+        "color": "var(--text-color)",
         "padding": "7px",
         "border": "none"
     });
 
-    var mC=$("<div>").height("350px").addClass(["noNotTouchCss", "defaultCursor"]);
+    var mC=$("<div>").height("350px").addClass(["doNotTouchCss", "defaultCursor"]);
     var OEMS= monaco.editor.create(mC[0],{...{
         language: "json",
-        value: localStorage.getItem("monacoGlobalOptions"),
+        value: localStorage.getItem("monacoGlobalOptions") || "{\n    \n}",
         automaticLayout: true,
         theme: "GVE-"+$("html").attr('theme'),
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
@@ -46,4 +46,6 @@ function showMonacoEditorOptionOverridesEditor() {
             dialog.close();
         }
     })
+
+    $("#dialog .content").addClass(["doNotTouchCss","defaultCursor"]);
 }
