@@ -1,5 +1,6 @@
 function showMonacoEditorOptionOverridesEditor() {
-    var cont=$("<div>");
+    var cont=$("<div>")
+            .attr("id", "settings"); // A hack to apply setting field styles to editor instance selector
 
     var lastMod="monacoGlobalOptions";
     var modSelect= properties.gen.select(cont, "", "monacoEditorOptionsOverridesEditor_Class", {
@@ -9,14 +10,14 @@ function showMonacoEditorOptionOverridesEditor() {
         "monacoOptionsEditorOptions"        : "Monaco editor custom options editor instance",
         "monacoGenerateCodeResultOptions"   : "Code generator result monaco instance",
         "monacoMainCodeEditorOptions"       : "Main code editor instance"
-    }, lastMod).css({
-        "background": "var(--input-color)",
-        "color": "var(--text-color)",
-        "padding": "7px",
-        "border": "none"
-    });
+    }, lastMod);
 
-    var mC=$("<div>").height("350px").addClass(["doNotTouchCss", "defaultCursor"]);
+    var mC=$("<div>").height("350px")
+                .addClass(["doNotTouchCss", "defaultCursor"])
+                .css({
+                    "margin-top": "10px",
+                    "margin-bottom": "10px"
+                });
     var OEMS= monaco.editor.create(mC[0],{...{
         language: "json",
         value: localStorage.getItem("monacoGlobalOptions") || "{\n    \n}",
