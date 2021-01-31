@@ -1,4 +1,5 @@
 #toolbar {
+    padding-left: 45px;
     background-color: var(--toolbar-background);
     margin: 0;
     z-index: 9;
