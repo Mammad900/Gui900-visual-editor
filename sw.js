@@ -1,23 +1,12 @@
-'use strict';
-function loadJsCssFile(filename){
-    var filetype= filename.split('.')[filename.split('.').length-1];
-    if (filetype=="js"){ //if filename is a external JavaScript file
-        var fileRef=document.createElement('script')
-        fileRef.setAttribute("type","text/javascript")
-        fileRef.setAttribute("src", filename)
-    }
-    else if (filetype=="css"){ //if filename is an external CSS file
-        var fileRef=document.createElement("link")
-        fileRef.setAttribute("rel", "stylesheet")
-        fileRef.setAttribute("type", "text/css")
-        fileRef.setAttribute("href", filename)
-    }
-    if (typeof fileRef!="undefined")
-        document.getElementsByTagName("head")[0].appendChild(fileRef);
-    return fileRef;
-}
+self.addEventListener('install', async event => {
+    console.log('install event')
+});
+  
+self.addEventListener('fetch', async event => {
+    console.log('fetch event')
+});
 
-[
+var LP_Files=[
     "res/js/cookies.js", //Writes and reads cookies
     "res/js/theme-loader.js", //Theme loader
     "res/ui/toolbar/toolbar.js", //Toolbar controller, creates tool bar HTML and handle onclick
@@ -105,104 +94,30 @@ function loadJsCssFile(filename){
 
     "res/js/loader-end.js", // Finishes loading
 
-].forEach(function(value){
-    loadJsCssFile(value);
+]
+
+self.addEventListener('install', async event => {
+    console.log("Installed")
+
+    const cache = await caches.open("gve-pwa-conf-1"); 
+
+    await cache.addAll([
+        "./",
+        "./Gui900 visual editor.html"
+    ]);
+    LP_Files.forEach(async function (e) {
+        await cache.add("./"+e);
+    });
+
 });
 
-async function LP(){
-    try{
-        var LP_funcs=[
-            LP_SetTheme,
+self.addEventListener('fetch', event => {
+    const req = event.request;
+    event.respondWith(cacheFirst(req));
+});
 
-            LP_GV_ElementsTableButtons,
-            LP_GV_ElementsTableRows,
-            LP_GV_PagesTableButtons,
-            LP_GV_PagesTableRows,
-            LP_GV_SettingsGenerator,
-            LP_GV_SettingsFields_ScreenSize,
-            LP_GV_SettingsFields_ScreenBrightness,
-            LP_GV_loadProject,
-            
-            LP_GV_El_Button_1,
-            LP_GV_El_Button_2,
-            LP_GV_El_Button_3,
-            LP_GV_El_Button_4,
-            LP_GV_El_Button_5,
-            LP_GV_El_CheckBox_1,
-            LP_GV_El_CheckBox_2,
-            LP_GV_El_CheckBox_3,
-            LP_GV_El_Checkbox_4,
-            LP_GV_El_CheckBox_5,
-            LP_GV_El_Label_1,
-            LP_GV_El_Label_2,
-            LP_GV_El_Label_3,
-            LP_GV_El_Label_4,
-            LP_GV_El_Label_5,
-            LP_GV_El_RadioButton_1,
-            LP_GV_El_RadioButton_2,
-            LP_GV_El_RadioButton_3,
-            LP_GV_El_RadioButton_4,
-            LP_GV_El_RadioButton_5,
-            LP_GV_El_Slider_1,
-            LP_GV_El_Slider_2,
-            LP_GV_El_Slider_3,
-            LP_GV_El_Slider_4,
-            LP_GV_El_Slider_5,
-
-            LP_GV_Toolbar_Handler_1,
-            LP_GV_Toolbar_Handler_2,
-            LP_GV_Toolbar_Handler_3,
-            LP_GV_Toolbar_Handler_4,
-            LP_GV_Toolbar_Handler_5,
-            LP_GV_Toolbar_Handler_6,
-            LP_GV_Toolbar_Handler_7,
-            
-            LP_keyBindings,
-            LP_HandleNewElementButton,
-            LP_GenerateToolbar,
-            LP_createFirstPage,
-            LP_CreateHiddenFileInput,
-            preview.refresh,
-            LP_LoadEditor,
-            LP_HandleColorPickerInput,
-            LP_loaderEnd,
-            function () {
-                registerSW(); 
-            },
-            [LP_Hints],
-        ];
-        for(var i=0;i<LP_funcs.length;i++){
-            var value=LP_funcs[i];
-            if(typeof value=='object'){
-                await value[0]();
-            }
-            else{
-                value();
-            }
-        }
-    }
-    catch(err){
-        console.error(err);
-        document.getElementById("loading-header").innerHTML+=
-        `<p>An error occurred. Please reload the page.<br>
-            If you reloaded a few times but the issue persists, please <a href='https://github.com/Mammad900/Gui900-visual-editor/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report the bug in GitHub.</a><br>
-        Error: <code>`+err.message+`</code><br/>
-        <button class="button" style="font-size: 1.5rem;margin:20px;padding:10px;background:var(--back-color);" onclick="window.location.reload()">Refresh</button
-            </p>`;
-    }
-};
-window.onload= async function () {
-    await LP();
-}
-
-async function registerSW() { 
-    if ('serviceWorker' in navigator) { 
-        try {
-            await navigator.serviceWorker.register('./sw.js'); 
-        } catch (e) {
-            notification.warning("Failed to register ServiceWorker: " + e);
-        }
-    } else {
-        notification.warning("Your browser does not support ServiceWorker");
-    }
+async function cacheFirst(req) {
+    const cache = await caches.open("gve-pwa-conf-1"); 
+    const cachedResponse = await cache.match(req); 
+    return cachedResponse || fetch(req); 
 }

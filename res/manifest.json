@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/web-manifest.json",
+    "name": "Gui900 visual editor",
+    "short_name": "Gui900",
+    "display": "standalone",
+    "start_url": "../Gui900 visual editor.html",
+    "icons": [
+        {
+            "src": "img/favicon.ico",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon-square.png",
+            "sizes": "475x475",
+            "type": "image/png"
+        }
+    ]
+}
