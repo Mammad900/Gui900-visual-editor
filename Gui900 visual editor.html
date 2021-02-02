@@ -15,6 +15,12 @@
     <script src="res/JQuery/jquery.js"></script>
     <!--Loads All JS and CSS files-->
     <script src="res/loader.js"></script>
+
+    <script>
+        if(window.document.documentMode){
+            document.write("Gui900 visual editor is not supported in Internet Explorer")
+        }
+    </script>
 </head>
 <body onunload="  if((window.docWin!=undefined) && (!window.docWin.closed)){
                                     window.docWin.close();
