@@ -13,4 +13,4 @@ jobs:
       - name: Auto Minify
         uses: nizarmah/auto-minify@master
         with:
-          output: '/min/'
+          output: 'min'
