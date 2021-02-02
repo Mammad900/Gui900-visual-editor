@@ -6,13 +6,8 @@
     "start_url": "../Gui900 visual editor.html",
     "icons": [
         {
-            "src": "img/favicon.ico",
-            "sizes": "32x32",
-            "type": "image/png"
-        },
-        {
             "src": "img/icon-square.png",
-            "sizes": "475x475",
+            "sizes": "396x396",
             "type": "image/png"
         }
     ]
