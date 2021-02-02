@@ -1,6 +1,5 @@
 name: Minify
-on: [push]
-
+on: [release]
 jobs:
   label:
 
