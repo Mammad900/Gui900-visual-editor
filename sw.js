@@ -1,9 +1,9 @@
 self.addEventListener('install', async event => {
-    console.log('install event')
+    console.debug('install event')
 });
   
 self.addEventListener('fetch', async event => {
-    console.log('fetch event')
+    console.debug('fetch event')
 });
 
 var LP_Files=[
@@ -97,7 +97,7 @@ var LP_Files=[
 ]
 
 self.addEventListener('install', async event => {
-    console.log("Installed")
+    console.debug("Installed")
 
     const cache = await caches.open("gve-pwa-conf-1"); 
 
