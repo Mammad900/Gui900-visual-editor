@@ -55,7 +55,10 @@ function GenerateLoopCode() {
         str+=`\n        break;`;
     });
 
-    str+="\n}"+
+    str+="\n    //default:"+
+         `\n        //Serial.println("This function should not be reached. If it does, there is serious problem with this program and you should stop it being used in production.");`+
+         "\n        //break;"+
+         "\n}"+
          `\n// END GENERATED LOOP CODE`;
     return str;
 }
