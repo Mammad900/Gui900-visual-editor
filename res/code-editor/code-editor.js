@@ -25,6 +25,9 @@ function LP_LoadEditor() {
         value: projectCode["globalBeginning"],
         automaticLayout: true,
         theme: "GVE-"+$("html").attr('theme'),
+        scrollbar:{
+            alwaysConsumeMouseWheel: false
+        }
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
        ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),
        ...(JSON.parse(localStorage.getItem("monacoMainCodeEditorOptions")))});

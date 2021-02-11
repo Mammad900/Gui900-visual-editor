@@ -23,6 +23,9 @@ function showMonacoEditorOptionOverridesEditor() {
         value: localStorage.getItem("monacoGlobalOptions") || "{\n    \n}",
         automaticLayout: true,
         theme: "GVE-"+$("html").attr('theme'),
+        scrollbar:{
+            alwaysConsumeMouseWheel: false
+        }
     }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
        ...(JSON.parse(localStorage.getItem("monacoJsonOptions"))),
        ...(JSON.parse(localStorage.getItem("monacoOptionsEditorOptions")))});

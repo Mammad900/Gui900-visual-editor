@@ -15,6 +15,9 @@ function LP_GV_Toolbar_Handler_7() {
             readOnly: true,
             minimap: {
                 enabled: false
+            },
+            scrollbar:{
+                alwaysConsumeMouseWheel: false
             }
         }, ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
            ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),

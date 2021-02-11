@@ -58,6 +58,9 @@ function LP_GV_El_Button_2(){
             value: (props.clickEvent || ""),
             automaticLayout: true,
             theme: "GVE-"+$("html").attr('theme'),
+            scrollbar:{
+                alwaysConsumeMouseWheel: false
+            }
         }, "monacoButtonEventOptions", 400)[0].prev().css("margin-top", "10px");
     }
 }
