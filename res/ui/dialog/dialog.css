@@ -22,7 +22,9 @@
     text-align: right;
     user-select: none;
     cursor: default;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+    line-height: 44px;
 }
 
 #dialog .content .options .option{
