@@ -67,6 +67,7 @@ var LP_Files=[
     "res/ui/toolbar/handlers/file/save.js", //Save project
     "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
     "res/ui/toolbar/handlers/file/generateCode.js", //Generate code
+    "res/ui/toolbar/handlers/code/generateLoopCode.js", //Generate loop code
 
 
 

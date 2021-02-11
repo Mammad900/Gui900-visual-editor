@@ -78,6 +78,7 @@ function loadJsCssFile(filename){
     "res/ui/toolbar/handlers/file/save.js", //Save project
     "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
     "res/ui/toolbar/handlers/file/generateCode.js", //Generate code
+    "res/ui/toolbar/handlers/code/generateLoopCode.js", //Generate loop code
 
 
 
@@ -157,6 +158,7 @@ async function LP(){
             LP_GV_Toolbar_Handler_5,
             LP_GV_Toolbar_Handler_6,
             LP_GV_Toolbar_Handler_7,
+            LP_GV_Toolbar_Handler_8,
             
             LP_keyBindings,
             LP_HandleNewElementButton,

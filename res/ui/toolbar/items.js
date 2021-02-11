@@ -53,6 +53,9 @@ function LP_GenerateToolbar() {
             $("#preview canvas").toggleClass("sharpZoom");
             $("#preview-canvas-sharp-zoom-menu-item i").toggleClass("fa-check");
         }).attr("id","preview-canvas-sharp-zoom-menu-item")
+    });
+    toolBar.menuItem(toolbar, "Code", function (e) {}, function (code) {
+        toolBar.subMenuItem(code, "Generate loop code", "fa-code", toolBar.handlers.code.generateLoopCode);
     })
     toolBar.menuItem(toolbar, "Help", function (e) {}, function (help) {
         toolBar.subMenuItem(help, "Design FAQ", "fa-question-circle", toolBar.handlers.help.design_FAQ);
