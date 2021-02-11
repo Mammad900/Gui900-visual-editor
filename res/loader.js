@@ -41,6 +41,7 @@ function loadJsCssFile(filename){
     "res/file/load.js", // Load the project
     "res/code-generator/config.js", // Generates Arduino config code
     "res/code-generator/generateCode.js", // Generates Arduino code
+    "res/code-generator/loopCode.js", // Generates loop code
     "res/ui/hint/hint.js",
     "res/code-editor/editorOptionsEditor.js", // Monaco options editor
 
