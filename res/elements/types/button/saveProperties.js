@@ -11,6 +11,9 @@ function LP_GV_El_Button_4(){
         function b(id) {
             return (($("#"+id).data("checked"))=="1");
         }
+        function m(id) {
+            return monacoEditorPropertiesInstances[id].getValue();
+        }
         elements.data[index]={
             type: "Button",
             position: {
@@ -29,7 +32,8 @@ function LP_GV_El_Button_4(){
             },
             radius: n("property-radius"),
             enabled: b("property-enabled"),
-            visible: b("property-visible")
+            visible: b("property-visible"),
+            clickEvent: m("property-event"),
         }
     }
 }

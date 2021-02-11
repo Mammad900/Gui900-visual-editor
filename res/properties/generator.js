@@ -184,6 +184,30 @@ var properties={
             }
             container.append(select);
             return select;
+        },
+        /**
+         * 
+         * @param {JQuery<HTMLElement>} container 
+         * @param {string} label 
+         * @param {string} id 
+         * @param {Object} options 
+         * @param {number} height 
+         */
+        monacoEditor:
+        function (container, label, id, options, optionsOverrideName, height) {
+            var mc=$("<div>").attr("id",id).height(height).addClass("doNotTouchCss defaultCursor");
+            var me= monaco.editor.create(mc[0], {
+                ...(options),
+                ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
+                ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),
+                ...(JSON.parse(localStorage.getItem("monacoPropertiesWindowOptions"))),
+                ...(JSON.parse(localStorage.getItem(optionsOverrideName))),
+            });
+            monacoEditorPropertiesInstances[id]=me;
+            container.append($("<label>").attr("for",id).addClass("block").text(label));
+            container.append(mc);
+            return [mc,me];
         }
     }
 }
+var monacoEditorPropertiesInstances={};

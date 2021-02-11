@@ -20,7 +20,8 @@ function LP_GV_El_Button_1(){
                 },
                 radius: 0,
                 enabled: true,
-                visible: true
+                visible: true,
+                clickEvent: "",
             }
         }
     }

@@ -53,5 +53,11 @@ function LP_GV_El_Button_2(){
         properties.gen.inputNumber(p,"Border radius", "property-radius",0,Math.min(props.size.height,props.size.width)/2,props.radius)
         properties.gen.checkBox(p,"Enabled?", "property-enabled", props.enabled);
         properties.gen.checkBox(p,"Visible?", "property-visible", props.visible);
+        properties.gen.monacoEditor(p, "Click event", "property-event", {
+            language: "cpp",
+            value: (props.clickEvent || ""),
+            automaticLayout: true,
+            theme: "GVE-"+$("html").attr('theme'),
+        }, "monacoButtonEventOptions", 400)[0].prev().css("margin-top", "10px");
     }
 }
