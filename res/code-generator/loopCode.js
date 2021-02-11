@@ -49,10 +49,10 @@ function GenerateLoopCode() {
             }
         })
         
-        str+=`\n        break;`+
-             `\n// END GENERATED LOOP CODE`;
+        str+=`\n        break;`;
     });
 
-    str+="\n}";
+    str+="\n}"+
+         `\n// END GENERATED LOOP CODE`;
     return str;
 }
