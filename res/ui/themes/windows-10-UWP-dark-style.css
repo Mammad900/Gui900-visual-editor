@@ -96,11 +96,11 @@
     color: white;
 }
 
-:root[theme=windows-10-UWP-dark-style] button.button:hover {
+:root[theme=windows-10-UWP-dark-style] button.button:not(.tooltiptext .button):hover {
     border: 2px solid grey;
 }
 
-:root[theme=windows-10-UWP-dark-style] button.button:active {
+:root[theme=windows-10-UWP-dark-style] button.button:not(.tooltiptext .button):active {
     border: 2px solid white;
 }
 

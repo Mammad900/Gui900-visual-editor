@@ -53,6 +53,38 @@ function LP_GV_El_Button_2(){
         properties.gen.inputNumber(p,"Border radius", "property-radius",0,Math.min(props.size.height,props.size.width)/2,props.radius)
         properties.gen.checkBox(p,"Enabled?", "property-enabled", props.enabled);
         properties.gen.checkBox(p,"Visible?", "property-visible", props.visible);
+        (function(){
+            var html=ht=> ht[0];
+            p.append(html`
+                <div style="margin: 0;
+                        margin-top: 10px;
+                        display: flex;">
+                    <label for="property-event" class="block" 
+                        style="white-space: nowrap;">
+                        Click event
+                    </label>
+                    <div style="float: right; width: 100%;">
+                        <div class="fas fa-ellipsis-v fa-fw tooltip" style="float: right;">
+                            <div class="tooltiptext left small-indicator" style="font-family: var(--default-font); font-weight: initial">
+                                <div class="button tooltip">
+                                    Place code for page navigation
+                                    <div class="left tooltiptext">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`);
+            var pl= $("div div div.fas div.tooltiptext div.button div.tooltiptext");
+            pages.data.forEach(function(page, i){
+                pl.append(
+                    $("<button>").addClass("button block")
+                        .text(`#${i}: ${$("#pages_table tr:not(:first-of-type) td:nth-child(3)").eq(i).html()}`)
+                        .data("index", i).on("click", function (e) {
+                            monacoEditorPropertiesInstances["property-event"].setValue(`navigatePage(${$(e.target).data("index")});`);
+                        }));
+            });
+        })();
         properties.gen.monacoEditor(p, "Click event", "property-event", {
             language: "cpp",
             value: (props.clickEvent || ""),
@@ -61,6 +93,6 @@ function LP_GV_El_Button_2(){
             scrollbar:{
                 alwaysConsumeMouseWheel: false
             }
-        }, "monacoButtonEventOptions", 400)[0].prev().css("margin-top", "10px");
+        }, "monacoButtonEventOptions", 400, false)[0].prev().css("margin-top", "10px");
     }
 }

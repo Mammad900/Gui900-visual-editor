@@ -83,7 +83,7 @@
     right: initial;
 }
 
-.hint>.tooltiptext.right::after {
+.tooltiptext.right::after {
     top: 10px;
     left: -10px;
     border-color: transparent var(--tooltip-color) transparent transparent;
@@ -99,7 +99,7 @@
     left: initial;
 }
 
-.hint>.tooltiptext.left::after {
+.tooltiptext.left::after {
     top: 10px;
     right: -20px;
     left: unset;

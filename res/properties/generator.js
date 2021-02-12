@@ -194,7 +194,7 @@ var properties={
          * @param {number} height 
          */
         monacoEditor:
-        function (container, label, id, options, optionsOverrideName, height) {
+        function (container, label, id, options, optionsOverrideName, height, placeLabel=true) {
             var mc=$("<div>").attr("id",id).height(height).addClass("doNotTouchCss defaultCursor");
             var me= monaco.editor.create(mc[0], {
                 ...(options),
@@ -204,7 +204,9 @@ var properties={
                 ...(JSON.parse(localStorage.getItem(optionsOverrideName))),
             });
             monacoEditorPropertiesInstances[id]=me;
-            container.append($("<label>").attr("for",id).addClass("block").text(label));
+            if(placeLabel){
+                container.append($("<label>").attr("for",id).addClass("block").text(label));
+            }
             container.append(mc);
             return [mc,me];
         }

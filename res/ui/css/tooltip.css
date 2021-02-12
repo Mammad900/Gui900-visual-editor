@@ -55,3 +55,14 @@
     width: 240px;
     margin-left: -120px;
 }
+
+.tooltiptext.left.small-indicator::after {
+    top: 0;
+    border-width: 8px;
+    right: -16px;
+}
+
+.tooltiptext.left.small-indicator {
+    border-top-right-radius: 0;
+    margin-right: 5px;
+}
