@@ -7,9 +7,11 @@ function showMonacoEditorOptionOverridesEditor() {
         "monacoGlobalOptions"               : "All monaco editor instances",
         "monacoCppOptions"                  : "All C++ monaco editor instances",
         "monacoJsonOptions"                 : "All JSON monaco editor instances",
+        "monacoPropertiesWindowOptions"     : "All monaco editor instances in properties window",
         "monacoOptionsEditorOptions"        : "Monaco editor custom options editor instance",
         "monacoGenerateCodeResultOptions"   : "Code generator result monaco instance",
-        "monacoMainCodeEditorOptions"       : "Main code editor instance"
+        "monacoMainCodeEditorOptions"       : "Main code editor instance",
+        "monacoButtonEventOptions"          : "Button click event editor monaco instance",
     }, lastMod);
 
     var mC=$("<div>").height("350px")
