@@ -24,6 +24,7 @@ function GenerateLoopCode() {
     }
 
     var str="// GENERATED LOOP CODE\n"+
+            "checkPage();\n"+
             "switch(CurrentPage){";
     
     pages.data.forEach(function (page,pI) {
