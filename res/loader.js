@@ -199,6 +199,7 @@ window.onload= async function () {
 }
 
 async function registerSW() { 
+    if(window.location.origin=="file://")return; // App is loaded using file:///
     if ('serviceWorker' in navigator) { 
         try {
             await navigator.serviceWorker.register('./sw.js'); 
