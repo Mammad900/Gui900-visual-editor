@@ -43,7 +43,7 @@ function GenerateLoopCode() {
                           `\n            `+
                           `\n`            + indent(indent(indent(element.clickEvent)))+
                           `\n            `+
-                          `\n            while(button_pressed[${pI}][${buttonI++}])checkPage // Comment this line for repeated firing of event`+
+                          `\n            while(button_pressed[${pI}][${buttonI++}])checkPage(); // Comment this line for repeated firing of event`+
                           `\n        }`;
                     break;
             
