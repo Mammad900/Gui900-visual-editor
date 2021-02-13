@@ -66,6 +66,10 @@
     z-index: 3;
 }
 
+#code-editor #codeParts span code {
+    font-family: consolas, "courier new", monospace;
+}
+
 #code-editor #codeParts span:hover:not([data-selected=true]) {
     background: var(--toolbar-menuitem-hover);
 }
