@@ -209,9 +209,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     prog.min=0;
     prog.max=LP_res.length;
     prog.value=0;
+    var error=false;
     resourceElements.forEach(res => {
         res.onload=function () {
             prog.value++;
+        }
+        res.onerror=function () {
+            if(error)return;
+            error=true;
+            document.getElementById("loading-header").innerHTML+="<p>One of the resources could not be loaded.<br/>Please reload the page.</p>"
         }
     });
 });
