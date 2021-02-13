@@ -150,11 +150,12 @@ var settings= {
             slider: n("settings-maxElement-slider"),
             radioButton: n("settings-maxElement-radioButton"),
         }
-        settings.fields.screenBrightness.save(n('settings-screen-brightness'),b('settings-screen-brightness-preview'))
-        settings.fields.screenSize.save(n("settings-screen-width"),n("settings-screen-height"))
+        settings.fields.screenBrightness.save(n('settings-screen-brightness'),b('settings-screen-brightness-preview'));
+        settings.fields.screenSize.save(n("settings-screen-width"),n("settings-screen-height"));
+        localStorage.setItem("lastSettings", JSON.stringify(settings.data));
     },
     fields:{},
-    data:{
+    data: JSON.parse(localStorage.getItem("lastSettings")) || {
         screenSize:{
             width: 240,
             height: 320
