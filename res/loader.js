@@ -26,6 +26,7 @@ function loadJsCssFile(filename){
     "res/pages/ui/table/buttons.js", //Pages table row buttons generator 
     "res/pages/ui/table/row.js", //Pages table rows
     "res/elements/element.js", //Elements handler
+    "res/elements/template.js", //Element templates
     "res/elements/ui/table/buttons.js", //Elements table row buttons generator
     "res/elements/ui/table/row.js", //Elements table rows
     "res/ui/dialog/dialog.js", //Handles dialogs
@@ -161,6 +162,7 @@ async function LP(){
             LP_GV_Toolbar_Handler_8,
             
             LP_keyBindings,
+            LP_GV_ElementTemplates,
             LP_HandleNewElementButton,
             LP_GenerateToolbar,
             LP_createFirstPage,

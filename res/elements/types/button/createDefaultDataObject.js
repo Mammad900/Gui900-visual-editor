@@ -2,7 +2,7 @@
 function LP_GV_El_Button_1(){
     elements.types["Button"]={
         createDefaultDataObject: function () {
-            return {
+            return JSON.parse(localStorage.getItem("elementTemplate-Button")) || {
                 type: "Button",
                 position: {
                     x: 0,

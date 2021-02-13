@@ -46,6 +46,19 @@ function LP_GenerateToolbar() {
             (elements.selectedElement!=-1)?(elements.table.buttons.actions.delete(elements.selectedElement)):(notification.error("No element selected, please select one first."));
         }, function () {}, false, true, true, true);
         toolBar.subMenuItem(element, "Duplicate element","fa-clone", toolBar.handlers.elements.duplicate, function () {}, false, true, true, true);
+
+        toolBar.subMenu_icon_style="far";
+        toolBar.subMenuItem(element, "Element templates", "fa-square", function(){}, function (templates) {
+            toolBar.subMenu_icon_style="fas";
+            toolBar.subMenuItem(templates, "Set selected element as template", "fa-plus", elements.templates.setGlobalTemplate);
+            toolBar.subMenuItem(templates, "Reset to default template", "fa-times", function(){}, function (reset) {
+                toolBar.subMenuItem(reset, "Button", "fa-square", function (e) {elements.templates.clearGlobalTemplate("Button")});
+                toolBar.subMenuItem(reset, "Label", "fa-font", function (e) {elements.templates.clearGlobalTemplate("Label")});
+                toolBar.subMenuItem(reset, "Check-box", "fa-check-square", function (e) {elements.templates.clearGlobalTemplate("Check-box")});
+                toolBar.subMenuItem(reset, "Slider", "fa-sliders-h", function (e) {elements.templates.clearGlobalTemplate("Slider")});
+                toolBar.subMenuItem(reset, "Radio-button", "fa-dot-circle", function (e) {elements.templates.clearGlobalTemplate("Radio button")});
+            }, true, false);
+        }, true, false)
     });
     toolBar.menuItem(toolbar, "Preview", function(e){}, function(_preview){
         toolBar.subMenuItem(_preview, "Refresh", "fa-sync", preview.refresh);

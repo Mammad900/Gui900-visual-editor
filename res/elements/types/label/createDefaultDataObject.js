@@ -2,7 +2,7 @@
 function LP_GV_El_Label_1(){
     elements.types["Label"]={
         createDefaultDataObject: function () {
-            return {
+            return JSON.parse(localStorage.getItem("elementTemplate-Label")) ||{
                 type: "Label",
                 position: {
                     x: 0,

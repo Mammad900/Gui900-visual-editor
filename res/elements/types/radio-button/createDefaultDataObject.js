@@ -2,7 +2,7 @@
 function LP_GV_El_RadioButton_1(){
     elements.types["Radio button"]={
         createDefaultDataObject: function () {
-            return {
+            return JSON.parse(localStorage.getItem("elementTemplate-Radio-button")) ||{
                 type: "Radio button",
                 position: {
                     x: 0,

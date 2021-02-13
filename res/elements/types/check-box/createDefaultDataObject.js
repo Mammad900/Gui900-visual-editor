@@ -2,7 +2,7 @@
 function LP_GV_El_CheckBox_1(){
     elements.types["Check-box"]={
         createDefaultDataObject: function () {
-            return {
+            return JSON.parse(localStorage.getItem("elementTemplate-Check-box")) ||{
                 type: "Check-box",
                 position: {
                     x: 0,

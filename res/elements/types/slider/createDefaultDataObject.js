@@ -2,7 +2,7 @@
 function LP_GV_El_Slider_1(){
     elements.types["Slider"]={
         createDefaultDataObject: function () {
-            return {
+            return JSON.parse(localStorage.getItem("elementTemplate-Slider")) ||{
                 type: "Slider",
                 position: {
                     x: 10,
