@@ -1,4 +1,5 @@
 'use strict';
+var resourceElements=[];
 function loadJsCssFile(filename){
     var filetype= filename.split('.')[filename.split('.').length-1];
     if (filetype=="js"){ //if filename is a external JavaScript file
@@ -12,12 +13,13 @@ function loadJsCssFile(filename){
         fileRef.setAttribute("type", "text/css")
         fileRef.setAttribute("href", filename)
     }
-    if (typeof fileRef!="undefined")
+    if (typeof fileRef!="undefined"){
         document.getElementsByTagName("head")[0].appendChild(fileRef);
+        resourceElements.push(fileRef);
+    }
     return fileRef;
 }
-
-[
+var LP_res=[
     "res/js/cookies.js", //Writes and reads cookies
     "res/js/theme-loader.js", //Theme loader
     "res/ui/toolbar/toolbar.js", //Toolbar controller, creates tool bar HTML and handle onclick
@@ -108,7 +110,9 @@ function loadJsCssFile(filename){
 
     "res/js/loader-end.js", // Finishes loading
 
-].forEach(function(value){
+];
+
+LP_res.forEach(function(value){
     loadJsCssFile(value);
 });
 
@@ -199,6 +203,18 @@ async function LP(){
 window.onload= async function () {
     await LP();
 }
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+    var prog= document.getElementById("loading-progress");
+    prog.min=0;
+    prog.max=LP_res.length;
+    prog.value=0;
+    resourceElements.forEach(res => {
+        res.onload=function () {
+            prog.value++;
+        }
+    });
+});
 
 async function registerSW() { 
     if(window.location.origin=="file://")return; // App is loaded using file:///
