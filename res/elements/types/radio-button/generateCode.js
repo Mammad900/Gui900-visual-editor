@@ -1,3 +1,4 @@
+'use strict';
 function LP_GV_El_RadioButton_5() {
     elements.types["Radio button"].generateCode= function (pageI, rad) {
         return "addradioButton("+pageI+ ", " + rad.position.x+ ", "+

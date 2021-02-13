@@ -1,3 +1,4 @@
+'use strict';
 var require = { paths: { 'vs': 'res/code-editor/monaco-editor/min/vs' } };
 
 loadJsCssFile("res/code-editor/monaco-editor/min/vs/loader.js");

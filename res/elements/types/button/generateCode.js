@@ -1,3 +1,4 @@
+'use strict';
 function LP_GV_El_Button_5() {
     elements.types["Button"].generateCode= function (pageI, btn) {
         return "addbutton("+pageI+ ", " + btn.position.x+ ", "+

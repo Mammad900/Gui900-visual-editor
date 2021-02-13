@@ -1,3 +1,4 @@
+'use strict';
 function showMonacoEditorOptionOverridesEditor() {
     var cont=$("<div>")
             .attr("id", "settings"); // A hack to apply setting field styles to editor instance selector

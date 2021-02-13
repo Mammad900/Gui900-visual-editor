@@ -1,3 +1,4 @@
+'use strict';
 function LP_GV_El_Label_5() {
     elements.types["Label"].generateCode= function (pageI, lbl) {
         return "addlabel("+pageI+ ", " + lbl.position.x+ ", "+

@@ -1,3 +1,4 @@
+'use strict';
 function LP_GV_El_Slider_5() {
     elements.types["Slider"].generateCode= function (pageI, sli) {
         return "addslider("+pageI+ ", " + sli.position.x+ ", "+

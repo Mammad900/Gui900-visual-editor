@@ -1,3 +1,4 @@
+'use strict';
 function LP_GV_El_CheckBox_5() {
     elements.types["Check-box"].generateCode= function (pageI, cb) {
         return "addcheckBox("+pageI+ ", " + cb.position.x+ ", "+
