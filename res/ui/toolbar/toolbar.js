@@ -5,6 +5,9 @@ var toolBar=
         var buttons= $("#toolbar .menuitem .menuitem:not(.noHide)");
         buttons.on("click", function (e) {
             var t=$(e.target);
+            if(t[0].tagName=="I"){
+                t=t.parent();
+            }
             var shouldClose=false;
             if(t.hasClass("menuitem")) shouldClose= !((t.hasClass("noHide"))||(t.children(".toolbar-button").hasClass("disabled")));
             else if(t.hasClass("toolbar-button")) shouldClose= !((t.parent().hasClass("noHide"))||(t.hasClass("disabled")));
