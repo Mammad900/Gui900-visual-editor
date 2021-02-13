@@ -97,6 +97,7 @@ var LP_Files=[
 
     "res/js/loader-end.js", // Finishes loading
 
+    "res/img/icon-square.png", // App icon
 ]
 
 self.addEventListener('install', async event => {
