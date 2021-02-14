@@ -34,7 +34,7 @@
 
 #properties-shadow-bottom {
     box-shadow: inset 0px -12px 10px var(--box-background);
-    top: calc( var(--settings-screen-height-px) + 48px );
+    bottom: 0;
     border-bottom-left-radius: var(--box-border-radius);
 }
 
@@ -71,7 +71,7 @@
 
 #properties-header-details {
     margin: 10px;
-    max-width: calc( 100% - 177px );
+    max-width: calc( 100% - 215px );
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

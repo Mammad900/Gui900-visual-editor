@@ -50,27 +50,53 @@
                     z-index: 10;">
     </header>
     <main class="content" style="display: none;">
-        <div class="flexbox">
-            <section class="float-left box" id="preview">
+        <div class="flexbox"
+            ><section class="float-left box" id="preview">
                 <div class="vertical-center">
                     <i class="fa fa-chevron-down" onclick="$('#preview').toggleClass('hiddenbox');cetnbtp()" id="preview-openclose-button"></i
                     ><h2 style="margin: 5px; display: inline-block;margin-left: 0;">
                         Preview
                     </h2>
+                    <i class="float-right fas fa-ellipsis-v tooltip"
+                       style="padding: 11px;  width: 16px;  box-sizing: content-box;  text-align: center;">
+                        <div class="tooltiptext left">
+                            <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
+                                Swap position with
+                                <div class="tooltiptext bottom">
+                                    <button class="button block" onclick="swapBox($('#properties'), $('#preview'),true)">
+                                        Properties
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </i>
                 </div>
                 <canvas width="240px" height="320px" id="preview-canvas" class="sharpZoom"></canvas>
                 <button class="button block" onclick="preview.refresh()" style="width:100%;border-bottom-left-radius: var(--box-border-radius);border-bottom-right-radius: var(--box-border-radius); margin-top: -4px;padding: 5px;">
                     <i class="fas fa-sync"></i>
                     Refresh
                 </button>
-            </section>
-            <section class="box" id="properties" style="padding: 0;">
+            </section
+            ><section class="box" id="properties" style="padding: 0;">
                 <div>
                     <h2>
                         Properties
                     </h2>
-                    <span class="float-right" id="properties-header-details">No item selected</span>
                     <i class="fa fa-chevron-down" id="properties-openclose-button" onclick="$('#properties').toggleClass('hiddenbox');cetnbtp()"></i>
+                    <i class="float-right fas fa-ellipsis-v tooltip"
+                       style="padding: 11px;  width: 16px;  box-sizing: content-box;  text-align: center;">
+                        <div class="tooltiptext left">
+                            <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
+                                Swap position with
+                                <div class="tooltiptext bottom">
+                                    <button class="button block" onclick="swapBox($('#properties'), $('#preview'),true)">
+                                        Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </i>
+                    <span class="float-right" id="properties-header-details">No item selected</span>
                 </div>
                 <div style="border-bottom-right-radius: var(--box-border-radius); overflow: hidden;">
                     <div id="properties-shadow-top"></div>
@@ -78,8 +104,8 @@
                     </div>
                     <div id="properties-shadow-bottom"></div>
                 </div>
-            </section>
-        </div>
+            </section
+        ></div>
         <div class="flexbox responsive">
             <div class="l6 m6 s12" id="elements-table-column">
                 <section class="box" style="padding: 0;">
