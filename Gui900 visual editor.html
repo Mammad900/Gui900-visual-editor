@@ -132,7 +132,21 @@
                         </th>
                         <th title="Index">#</th>
                         <th>Title</th>
-                        <th>Type</th>
+                        <th style="min-width: 79px;">
+                            Type
+                            <i class="fa-ellipsis-v fas float-right tooltip" style="margin-left: 10px;  width: 16px;  box-sizing: content-box;  text-align: center;">
+                                <div class="tooltiptext small-indicator left">
+                                    <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
+                                        Swap position with
+                                        <div class="tooltiptext bottom">
+                                            <button class="button block" onclick="swapBox($('#elements-table-column'), $('#pages-table-column'),true)">
+                                                Pages
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </i>
+                        </th>
                     </tr>
                     </table>
                 </section>
@@ -154,7 +168,21 @@
                                 </div>
                             </th>
                             <th>Number</th>
-                            <th>Title</th>
+                            <th style="min-width: 79px;">
+                                Title
+                                <i class="fa-ellipsis-v fas float-right tooltip" style="margin-left: 10px;  width: 16px;  box-sizing: content-box;  text-align: center;">
+                                    <div class="tooltiptext small-indicator left">
+                                        <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
+                                            Swap position with
+                                            <div class="tooltiptext bottom">
+                                                <button class="button block" onclick="swapBox($('#elements-table-column'), $('#pages-table-column'),true)">
+                                                    Elements
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </i>
+                            </th>
                         </tr>
                     </table>
                 </section>
