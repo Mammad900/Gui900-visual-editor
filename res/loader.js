@@ -111,6 +111,9 @@ var LP_res=[
 
     "res/js/loader-end.js", // Finishes loading
 
+    "res/code-editor/monaco-editor/min/vs/loader.js",
+    "res/code-editor/monaco-editor/min/vs/editor/editor.main.nls.js",
+    "res/code-editor/monaco-editor/min/vs/editor/editor.main.js",
 ];
 
 LP_res.forEach(function(value){

@@ -1,10 +1,6 @@
 'use strict';
 var require = { paths: { 'vs': 'res/code-editor/monaco-editor/min/vs' } };
 
-loadJsCssFile("res/code-editor/monaco-editor/min/vs/loader.js");
-loadJsCssFile("res/code-editor/monaco-editor/min/vs/editor/editor.main.nls.js");
-loadJsCssFile("res/code-editor/monaco-editor/min/vs/editor/editor.main.js");
-
 var monacoInstance=undefined;
 
 function LP_LoadEditor() {
