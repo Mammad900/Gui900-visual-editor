@@ -1,10 +1,17 @@
 'use strict';
 var preview={
+    getCanvas(){
+        var x= $("#preview-canvas");
+        if(x.length==0){ // Preview box is floating
+            x=$(floatingBoxes.Preview.document.getElementById("preview-canvas"));
+        }
+        return x;
+    },
     refresh: function(){
         if(elements.selectedElement!=-1){
             elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement)
         }
-        var ctx= $("#preview-canvas")[0].getContext("2d");
+        var ctx= preview.getCanvas()[0].getContext("2d");
         ctx.fillStyle = $("#page_bc_color_input").val();
         ctx.fillRect(0, 0, settings.data.screenSize.width, settings.data.screenSize.height);
         if(preview.doesPageExceedMaxElementPerPage()){
@@ -14,7 +21,7 @@ var preview={
         ["Button", "Label", "Check-box", "Slider", "Radio button"].forEach(function (el) {
             elements.data.forEach(function (val, index) {
                 if((val.type)==el){
-                    elements.types[val.type].generatePreview(index,$("#preview-canvas"));
+                    elements.types[val.type].generatePreview(index,preview.getCanvas());
                 }
             })
         })

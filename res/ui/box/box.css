@@ -26,6 +26,7 @@
     margin: 0 10px;
     border-radius: var(--box-border-radius);
     opacity: 0.4;
+    display: flex;
 }
 .box-row.empty::after {
     content: "Move boxes here";

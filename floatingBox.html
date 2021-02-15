@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="shortcut icon" href="res/img/icon-square.png" type="image/x-icon">
+    <link rel="manifest" href="res/manifest.json">
+
+    <!--JQuery (development)-->
+    <script src="res/JQuery/jquery.js"></script>
+    <!--Loads All JS and CSS files-->
+    <script src="res/ui/box/loader.js"></script>
+
+    <script>
+        if(window.document.documentMode){
+            document.write("Gui900 visual editor is not supported in Internet Explorer")
+        }
+        window.onresize = function() 
+        {
+            if(!windowResizable)
+                window.resizeTo(document.body.clientWidth+(outerWidth-innerWidth),document.body.clientHeight+(outerHeight-innerHeight));
+        }
+        window.onclick = function() 
+        {
+            if(!windowResizable)
+                window.resizeTo(document.body.clientWidth+(outerWidth-innerWidth),document.body.clientHeight+(outerHeight-innerHeight));
+        }
+</script>
+</head>
+<body class="floatingBox">
+    <!--This is empty, just made so it is in the app's folder.-->
+</body>
+</html>

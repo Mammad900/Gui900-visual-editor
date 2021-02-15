@@ -7,7 +7,7 @@ function LP_GV_SettingsFields_ScreenBrightness(){
             if((value<20)&(preview)){
                 notification.warning("Preview can be unreadable with so low brightness, it is recommended to either disable emulating brightness, or increase brightness.")
             }
-            $("#preview-canvas").css('filter',(preview?('brightness('+(value/255)+')'):'none'));
+            window.preview.getCanvas().css('filter',(preview?('brightness('+(value/255)+')'):'none'));
         }
     }
 }

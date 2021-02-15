@@ -66,6 +66,10 @@ function LP_GenerateToolbar() {
             $("#preview canvas").toggleClass("sharpZoom");
             $("#preview-canvas-sharp-zoom-menu-item i").toggleClass("fa-check");
         }).attr("id","preview-canvas-sharp-zoom-menu-item")
+        toolBar.separator(_preview);
+        toolBar.subMenu_icon_style="far";
+        toolBar.subMenuItem(_preview, "Move to a floating window", "fa-clone", ()=> boxToNewWindow($("#preview")) );
+        toolBar.subMenu_icon_style="fas";
     });
     toolBar.menuItem(toolbar, "Code", function (e) {}, function (code) {
         toolBar.subMenuItem(code, "Generate loop code", "fa-code", toolBar.handlers.code.generateLoopCode);

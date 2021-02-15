@@ -34,6 +34,7 @@ var LP_Files=[
     "res/code-generator/loopCode.js", // Generates loop code
     "res/ui/hint/hint.js",
     "res/code-editor/editorOptionsEditor.js", // Monaco options editor
+    "res/ui/box/manageBoxes.js", // Manage boxes (move and float)
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",

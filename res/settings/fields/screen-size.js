@@ -34,9 +34,9 @@ function LP_GV_SettingsFields_ScreenSize() {
                 }
             }
             $("html").css("--settings-screen-width-px",w+"px");
-            $("#preview-canvas").attr("width",w+"px");
+            preview.getCanvas().attr("width",w+"px");
             $("html").css("--settings-screen-height-px",h+"px");
-            $("#preview-canvas").attr("height",h+"px");
+            preview.getCanvas().attr("height",h+"px");
             preview.refresh();
         }
     };

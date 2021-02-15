@@ -2,6 +2,7 @@
     padding: 0;
     width: calc( var(--settings-screen-width-px) + 2px );
     width: fit-content;
+    height: fit-content;
 }
 canvas.sharpZoom{
     /* https://stackoverflow.com/a/38747615/13561926, with some modifications*/

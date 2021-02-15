@@ -22,9 +22,12 @@
         }
     </script>
 </head>
-<body onunload="  if((window.docWin!=undefined) && (!window.docWin.closed)){
-                                    window.docWin.close();
-                                }">
+<body onunload="if((window.docWin!=undefined) && (!window.docWin.closed)){
+                    window.docWin.close();
+                }
+                if((window.floatingBoxes.Preview!=undefined) && (!window.floatingBoxes.Preview.closed)){
+                    window.floatingBoxes.Preview.close();
+                }">
     <noscript style="text-align: center; color:red">
         <h1>Scripts disabled</h1>
         <p>You have disabled scripts, or your browser does not support scripts.<br/>
@@ -50,7 +53,7 @@
                     z-index: 10;">
     </header>
     <main class="content" style="display: none;">
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="res/JQuery/JQuery UI/jquery-ui.min.js"></script>
         <div class="flexbox box-row"
             ><section class="float-left box" id="preview">
                 <div class="vertical-center box-header defaultCursor">
@@ -136,8 +139,8 @@
                 </section>
             </div
         ></div>
-        <div class="box-row">
-            <section class="box" id="code-editor">
+        <div class="box-row"
+            ><section class="box" id="code-editor">
                 <div ondblclick="codeEditorFullScreen()" class="vertical-center box-header defaultCursor">
                     <i class="fas fa-chevron-down" onclick="$('#code-editor').toggleClass('hiddenbox')"></i
                     ><h2>Code</h2>
@@ -160,8 +163,8 @@
                 <div id="monaco-container" class="defaultCursor" style="height: 500px; overflow: hidden; 
                                                                         border-bottom-left-radius: var(--box-border-radius); 
                                                                         border-bottom-right-radius: var(--box-border-radius);"></div>
-            </section>
-        </div>
+            </section
+        ></div>
     </main>
     <div id="notifications">
     </div>

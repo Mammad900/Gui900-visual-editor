@@ -1,0 +1,18 @@
+body.floatingBox {
+    background: var(--back-color);
+    height: fit-content;
+    min-height: 100vh;
+}
+#preview.floatingBox button{
+    border-radius: 0 !important;
+}
+.floatingBox #properties-content{
+    height: 100%;
+}
+.floatingBox #properties-shadow-top,.floatingBox #properties-shadow-bottom{
+    position:fixed;
+    width: 100%;
+}
+.floatingBox#properties{
+    background-color: var(--box-background);
+}

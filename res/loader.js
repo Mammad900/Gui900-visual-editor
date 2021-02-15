@@ -47,6 +47,7 @@ var LP_res=[
     "res/code-generator/loopCode.js", // Generates loop code
     "res/ui/hint/hint.js",
     "res/code-editor/editorOptionsEditor.js", // Monaco options editor
+    "res/ui/box/manageBoxes.js", // Manage boxes (move and float)
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
@@ -82,7 +83,6 @@ var LP_res=[
     "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
     "res/ui/toolbar/handlers/file/generateCode.js", //Generate code
     "res/ui/toolbar/handlers/code/generateLoopCode.js", //Generate loop code
-    "res/ui/box/reorder.js", // Reorder boxes
 
 
 
