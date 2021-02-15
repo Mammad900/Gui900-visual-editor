@@ -50,26 +50,14 @@
                     z-index: 10;">
     </header>
     <main class="content" style="display: none;">
-        <div class="flexbox"
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <div class="flexbox box-row"
             ><section class="float-left box" id="preview">
-                <div class="vertical-center">
+                <div class="vertical-center box-header">
                     <i class="fa fa-chevron-down" onclick="$('#preview').toggleClass('hiddenbox');cetnbtp()" id="preview-openclose-button"></i
                     ><h2 style="margin: 5px; display: inline-block;margin-left: 0;">
                         Preview
                     </h2>
-                    <i class="float-right fas fa-ellipsis-v tooltip"
-                       style="padding: 11px;  width: 16px;  box-sizing: content-box;  text-align: center;">
-                        <div class="tooltiptext left">
-                            <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
-                                Swap position with
-                                <div class="tooltiptext bottom">
-                                    <button class="button block" onclick="swapBox($('#properties'), $('#preview'),true)">
-                                        Properties
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </i>
                 </div>
                 <canvas width="240px" height="320px" id="preview-canvas" class="sharpZoom"></canvas>
                 <button class="button block" onclick="preview.refresh()" style="width:100%;border-bottom-left-radius: var(--box-border-radius);border-bottom-right-radius: var(--box-border-radius); margin-top: -4px;padding: 5px;">
@@ -78,24 +66,11 @@
                 </button>
             </section
             ><section class="box" id="properties" style="padding: 0;">
-                <div>
+                <div class="box-header">
                     <h2>
                         Properties
                     </h2>
                     <i class="fa fa-chevron-down" id="properties-openclose-button" onclick="$('#properties').toggleClass('hiddenbox');cetnbtp()"></i>
-                    <i class="float-right fas fa-ellipsis-v tooltip"
-                       style="padding: 11px;  width: 16px;  box-sizing: content-box;  text-align: center;">
-                        <div class="tooltiptext left">
-                            <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
-                                Swap position with
-                                <div class="tooltiptext bottom">
-                                    <button class="button block" onclick="swapBox($('#properties'), $('#preview'),true)">
-                                        Preview
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </i>
                     <span class="float-right" id="properties-header-details">No item selected</span>
                 </div>
                 <div style="border-bottom-right-radius: var(--box-border-radius); overflow: hidden; width: 100%;">
@@ -106,55 +81,42 @@
                 </div>
             </section
         ></div>
-        <div class="flexbox responsive">
+        <div class="flexbox responsive box-row">
             <div class="l6 m6 s12" id="elements-table-column">
                 <section class="box" style="padding: 0;">
-                    <table class="table np" style="border-radius: 10px;" id="elements_table"><tr style="border-radius: 10px;">
-                        <th style="padding: 0; min-width: 165px;">
-                            <div class="vertical-center">
-                                <i class="fa fa-chevron-down" id="elements-openclose-button"  onclick="$('#elements_table').toggleClass('hiddenbox')"></i
-                                ><h2 style="margin: 5px; display: inline-block;margin-left: 0px">
-                                    Elements
-                                </h2>
-                                <div class="float-right noselect tooltip" style="margin-right: 10px;" id="new_element_button">
-                                    <button class="noHoverEffect noRippleEffect button size38" title="New element">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                    <div class="tooltiptext">
-                                        <input type="button" class="button block" value="Button" id="new-element-button"/>
-                                        <input type="button" class="button block" value="Label" id="new-element-label"/>
-                                        <input type="button" class="button block" value="Check-box" id="new-element-checkbox"/>
-                                        <input type="button" class="button block" value="Slider" id="new-element-slider"/>
-                                        <input type="button" class="button block" value="Radio-button" id="new-element-radio-button"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </th>
-                        <th title="Index">#</th>
-                        <th>Title</th>
-                        <th style="min-width: 79px;">
-                            Type
-                            <i class="fa-ellipsis-v fas float-right tooltip" style="margin-left: 10px;  width: 16px;  box-sizing: content-box;  text-align: center;">
-                                <div class="tooltiptext small-indicator left">
-                                    <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
-                                        Swap position with
-                                        <div class="tooltiptext bottom">
-                                            <button class="button block" onclick="swapBox($('#elements-table-column'), $('#pages-table-column'),true)">
-                                                Pages
-                                            </button>
+                    <table class="table np" style="border-radius: 10px;" id="elements_table">
+                        <tr style="border-radius: 10px;" class="box-header">
+                            <th style="padding: 0; min-width: 165px;">
+                                <div class="vertical-center">
+                                    <i class="fa fa-chevron-down" id="elements-openclose-button"  onclick="$('#elements_table').toggleClass('hiddenbox')"></i
+                                    ><h2 style="margin: 5px; display: inline-block;margin-left: 0px">
+                                        Elements
+                                    </h2>
+                                    <div class="float-right noselect tooltip" style="margin-right: 10px;" id="new_element_button">
+                                        <button class="noHoverEffect noRippleEffect button size38" title="New element">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <div class="tooltiptext">
+                                            <input type="button" class="button block" value="Button" id="new-element-button"/>
+                                            <input type="button" class="button block" value="Label" id="new-element-label"/>
+                                            <input type="button" class="button block" value="Check-box" id="new-element-checkbox"/>
+                                            <input type="button" class="button block" value="Slider" id="new-element-slider"/>
+                                            <input type="button" class="button block" value="Radio-button" id="new-element-radio-button"/>
                                         </div>
                                     </div>
                                 </div>
-                            </i>
-                        </th>
-                    </tr>
+                            </th>
+                            <th title="Index">#</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                        </tr>
                     </table>
                 </section>
             </div>
             <div class="l6 m6 s12" id="pages-table-column">
                 <section class="box" style="padding: 0; min-width: fit-content;">
                     <table class="table np" style="border-radius: 10px;" id="pages_table">
-                        <tr style="border-radius: 10px;">
+                        <tr style="border-radius: 10px;" class="box-header">
                             <th style="padding: 0;">
                                 <div class="vertical-center">
                                     <i class="fa fa-chevron-down" id="pages-openclose-button"  onclick="$('#pages_table').toggleClass('hiddenbox')"></i
@@ -168,50 +130,38 @@
                                 </div>
                             </th>
                             <th>Number</th>
-                            <th style="min-width: 79px;">
-                                Title
-                                <i class="fa-ellipsis-v fas float-right tooltip" style="margin-left: 10px;  width: 16px;  box-sizing: content-box;  text-align: center;">
-                                    <div class="tooltiptext small-indicator left">
-                                        <div class="button tooltip" style="font-family: var(--default-font); font-weight: initial">
-                                            Swap position with
-                                            <div class="tooltiptext bottom">
-                                                <button class="button block" onclick="swapBox($('#elements-table-column'), $('#pages-table-column'),true)">
-                                                    Elements
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </i>
-                            </th>
+                            <th>Title</th>
                         </tr>
                     </table>
                 </section>
             </div>
         </div>
-        <section class="box" id="code-editor">
-            <div ondblclick="codeEditorFullScreen()" class="vertical-center">
-                <i class="fas fa-chevron-down" onclick="$('#code-editor').toggleClass('hiddenbox')"></i
-                ><h2>Code</h2>
-            </div>
-            <div id="codeParts-container">
-                <div id="codeParts">
-                    <div>
-                        <span data-name="globalBeginning" data-selected="true">Code in the biginning (global)</span
-                        ><span data-name="globalAfterConfig">Code after config defines</span
-                        ><span data-name="globalAfterLibrary">Code after Gui900 include</span
-                        ><span data-name="setupBeginning">Code in the beginning of <code>setup()</code></span
-                        ><span data-name="setupBeforeStart">Code before <code>start()</code></span
-                        ><span data-name="setupAfterStart">Code after <code>start()</code></span
-                        ><span data-name="loop">Code in <code>loop()</code></span
-                        ><span data-name="globalAfterLoop">Code after <code>loop()</code></span>
-                    <div></div>
+        <div class="box-row">
+            <section class="box" id="code-editor">
+                <div ondblclick="codeEditorFullScreen()" class="vertical-center box-header">
+                    <i class="fas fa-chevron-down" onclick="$('#code-editor').toggleClass('hiddenbox')"></i
+                    ><h2>Code</h2>
+                </div>
+                <div id="codeParts-container">
+                    <div id="codeParts">
+                        <div>
+                            <span data-name="globalBeginning" data-selected="true">Code in the biginning (global)</span
+                            ><span data-name="globalAfterConfig">Code after config defines</span
+                            ><span data-name="globalAfterLibrary">Code after Gui900 include</span
+                            ><span data-name="setupBeginning">Code in the beginning of <code>setup()</code></span
+                            ><span data-name="setupBeforeStart">Code before <code>start()</code></span
+                            ><span data-name="setupAfterStart">Code after <code>start()</code></span
+                            ><span data-name="loop">Code in <code>loop()</code></span
+                            ><span data-name="globalAfterLoop">Code after <code>loop()</code></span>
+                        <div></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="monaco-container" class="defaultCursor" style="height: 500px; overflow: hidden; 
-                                                                    border-bottom-left-radius: var(--box-border-radius); 
-                                                                    border-bottom-right-radius: var(--box-border-radius);"></div>
-        </section>
+                <div id="monaco-container" class="defaultCursor" style="height: 500px; overflow: hidden; 
+                                                                        border-bottom-left-radius: var(--box-border-radius); 
+                                                                        border-bottom-right-radius: var(--box-border-radius);"></div>
+            </section>
+        </div>
     </main>
     <div id="notifications">
     </div>

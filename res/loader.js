@@ -180,6 +180,7 @@ async function LP(){
             preview.refresh,
             LP_LoadEditor,
             LP_HandleColorPickerInput,
+            LP_MakeBoxesSortable,
             LP_loaderEnd,
             function () {
                 registerSW(); 

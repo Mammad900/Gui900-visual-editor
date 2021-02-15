@@ -8,3 +8,9 @@
 .box h2 {
     user-select: none;
 }
+.box-placeholder{
+    background-color: var(--back-color);
+    min-height: 38px;
+    min-width: 38px;
+    border-style: dashed;
+}

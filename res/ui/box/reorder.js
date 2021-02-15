@@ -19,3 +19,11 @@ function swapBox(one, two, areDirectSiblings=false) {
         par.append(two);
     }
 }
+
+function LP_MakeBoxesSortable() {
+    $("main.content .box-row").sortable({
+        connectWith: ".box-row",
+        handle: ".box-header",
+        placeholder: "box box-placeholder"
+    })
+}

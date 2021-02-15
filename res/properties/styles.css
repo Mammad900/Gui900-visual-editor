@@ -71,7 +71,7 @@
 
 #properties-header-details {
     margin: 10px;
-    max-width: calc( 100% - 215px );
+    max-width: calc( 100% - 177px );
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
