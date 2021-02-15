@@ -28,6 +28,7 @@
 #elements-table-column{
     min-width: min-content;
     min-width: fit-content;
+    width: 100%;
 }
 
 #elements-table-column>.box{

@@ -1,3 +1,6 @@
+#pages-table-column {
+    width: 100%;
+}
 #pages_table tr:not(:first-of-type) td:nth-child(2){
     user-select: text;
 }
