@@ -35,7 +35,7 @@
     margin-top: 10px;
 }
 
-.flexbox .box + .box {
+.flexbox .box + .box:not(.box-placeholder) {
     margin-left: 10px;
 }
 
