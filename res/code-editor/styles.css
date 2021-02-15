@@ -1,6 +1,6 @@
 #code-editor{
     padding: 0;
-    width: auto;
+    width: 100%;
 }
 
 #code-editor>div:first-child h2{
