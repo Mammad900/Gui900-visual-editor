@@ -33,7 +33,7 @@ body {
 }
 
 body>.content {
-    overflow: auto;
+    overflow: overlay;
     height: calc( 100vh - 28.5px);
     position: fixed;
     top: 28.5px;

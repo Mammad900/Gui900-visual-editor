@@ -29,6 +29,8 @@
 
 #code-editor.hiddenbox{
     height: fit-content;
+    min-width: 110px;
+    width: 100%;
 }
 
 #code-editor #monaco-container.fullscreen {
