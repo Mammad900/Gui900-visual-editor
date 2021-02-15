@@ -14,6 +14,9 @@
     min-width: 38px;
     border-style: dashed;
 }
+.box-header, .box-header *{
+    cursor: move;
+}
 .box-row{
     min-height: 38px;
     min-width: 38px;

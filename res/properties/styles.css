@@ -62,7 +62,7 @@
     width: 16px;
     text-align: center;
     box-sizing: content-box;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 #properties.hiddenbox #properties-openclose-button::before {
