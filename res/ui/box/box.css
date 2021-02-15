@@ -1,5 +1,4 @@
 .box{
-    margin: 10px;
     border: 1px solid var(--box-border-color);
     border-radius: var(--box-border-radius);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
@@ -23,7 +22,6 @@
 }
 .box-row.empty{
     border: dotted 1px var(--box-border-color);
-    margin: 0 10px;
     border-radius: var(--box-border-radius);
     opacity: 0.4;
     display: flex;
@@ -31,4 +29,30 @@
 .box-row.empty::after {
     content: "Move boxes here";
     margin: auto;
+}
+.box-row+.box-row {
+    margin-top: 10px;
+}
+
+.flexbox .box + .box {
+    margin-left: 10px;
+}
+
+.box-row:not(.flexbox) .box + .box{
+    margin-top: 10px;
+}
+
+@media screen and (max-width:700px) {
+    .flexbox.responsive .box + .box,
+    .flexbox.responsive-big + .box{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width:701px) and (max-width:1024px) {
+    .flexbox.responsive-big .box{
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }

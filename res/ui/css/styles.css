@@ -40,6 +40,7 @@ body>.content {
     left: 0px;
     width: 100%;
     background-color: var(--back-color);
+    padding: 10px;
 }
 body>.content::-webkit-scrollbar-track {
     box-shadow: var(--main-scrollbar-shadow);

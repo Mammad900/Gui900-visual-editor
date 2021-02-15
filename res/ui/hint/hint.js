@@ -45,9 +45,9 @@ async function LP_Hints() {
         localStorage.setItem("hints","{}");
     }
     var hints= [
-        ["elements"       , "#elements-table-column section.box"                 , "Using the elements section, you can create, delete and re-order <abbr class='tooltip'>elements<span class='tooltiptext wide'>Elements are UI widgets on a page. They consist of buttons, labels, check-boxes, sliders and radio-buttons.</span></abbr>." , true         ],
+        ["elements"       , "#elements section.box"                              , "Using the elements section, you can create, delete and re-order <abbr class='tooltip'>elements<span class='tooltiptext wide'>Elements are UI widgets on a page. They consist of buttons, labels, check-boxes, sliders and radio-buttons.</span></abbr>." , true         ],
         ["newElement"     , "#new_element_button"                                , "Hover over this button to see a list of element types. Click on any of them to create an element of that kind."                                               , true         ],
-        ["pages"          , "#pages-table-column"                                , "Using the pages section, you can create, re-order and delete pages."                                                                                          , true         ],
+        ["pages"          , "#pages"                                             , "Using the pages section, you can create, re-order and delete pages."                                                                                          , true         ],
         ["newPage"        , "#new_page_button"                                   , "Click on this to create a new page."                                                                                                                          , true         ],
         ["selectPage"     , "#pages_table tr.selected td:first-child"            , "Click on the empty area here to select the page."                                                                                                             , true         ],
         ["movePageUp"     , "#pages_table tr:last-child .buttons>*:first-child"  , "Click on this to move this page above the page above it (move it up).<br> It's disabled for the first page."                                                  , true ,"right"],

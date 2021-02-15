@@ -25,16 +25,17 @@
     cursor: pointer;
 }
 
-#elements-table-column{
+#elements{
     min-width: min-content;
     min-width: fit-content;
     width: 100%;
+    height: max-content;
 }
 
-#elements-table-column>.box{
+#elements{
     overflow: visible;
 }
-#elements-table-column tr:last-child td:last-child{
+#elements_table tr:last-child td:last-child{
     border-bottom-right-radius: var(--box-border-radius);
 }
 

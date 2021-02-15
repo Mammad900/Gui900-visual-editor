@@ -85,59 +85,55 @@
             </section
         ></div>
         <div class="flexbox responsive box-row"
-            ><div class="l6 m6 s12" id="elements-table-column">
-                <section class="box" style="padding: 0;">
-                    <table class="table np" style="border-radius: 10px;" id="elements_table">
-                        <tr style="border-radius: 10px;" class="box-header defaultCursor">
-                            <th style="padding: 0; min-width: 165px;">
-                                <div class="vertical-center">
-                                    <i class="fa fa-chevron-down" id="elements-openclose-button"  onclick="$('#elements_table').toggleClass('hiddenbox')"></i
-                                    ><h2 style="margin: 5px; display: inline-block;margin-left: 0px">
-                                        Elements
-                                    </h2>
-                                    <div class="float-right noselect tooltip" style="margin-right: 10px;" id="new_element_button">
-                                        <button class="noHoverEffect noRippleEffect button size38" title="New element">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                        <div class="tooltiptext">
-                                            <input type="button" class="button block" value="Button" id="new-element-button"/>
-                                            <input type="button" class="button block" value="Label" id="new-element-label"/>
-                                            <input type="button" class="button block" value="Check-box" id="new-element-checkbox"/>
-                                            <input type="button" class="button block" value="Slider" id="new-element-slider"/>
-                                            <input type="button" class="button block" value="Radio-button" id="new-element-radio-button"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </th>
-                            <th title="Index">#</th>
-                            <th>Title</th>
-                            <th>Type</th>
-                        </tr>
-                    </table>
-                </section>
-            </div
-            ><div class="l6 m6 s12" id="pages-table-column">
-                <section class="box" style="padding: 0; min-width: fit-content;">
-                    <table class="table np" style="border-radius: 10px;" id="pages_table">
-                        <tr style="border-radius: 10px;" class="box-header defaultCursor">
-                            <th style="padding: 0;">
-                                <div class="vertical-center">
-                                    <i class="fa fa-chevron-down" id="pages-openclose-button"  onclick="$('#pages_table').toggleClass('hiddenbox')"></i
-                                    ><h2 style="margin: 5px; display: inline-block;margin-left: 0px;">
-                                        Pages
-                                    </h2>
-                                    <button class="float-right button size38 noselect" title="New page"
-                                        style="margin-right: 10px;" id="new_page_button">
+            ><section class="box l6 m6 s12" id="elements" style="padding: 0;">
+                <table class="table np" style="border-radius: 10px;" id="elements_table">
+                    <tr style="border-radius: 10px;" class="box-header defaultCursor">
+                        <th style="padding: 0; min-width: 165px;">
+                            <div class="vertical-center">
+                                <i class="fa fa-chevron-down" id="elements-openclose-button"  onclick="$('#elements_table').toggleClass('hiddenbox')"></i
+                                ><h2 style="margin: 5px; display: inline-block;margin-left: 0px">
+                                    Elements
+                                </h2>
+                                <div class="float-right noselect tooltip" style="margin-right: 10px;" id="new_element_button">
+                                    <button class="noHoverEffect noRippleEffect button size38" title="New element">
                                         <i class="fa fa-plus"></i>
                                     </button>
+                                    <div class="tooltiptext">
+                                        <input type="button" class="button block" value="Button" id="new-element-button"/>
+                                        <input type="button" class="button block" value="Label" id="new-element-label"/>
+                                        <input type="button" class="button block" value="Check-box" id="new-element-checkbox"/>
+                                        <input type="button" class="button block" value="Slider" id="new-element-slider"/>
+                                        <input type="button" class="button block" value="Radio-button" id="new-element-radio-button"/>
+                                    </div>
                                 </div>
-                            </th>
-                            <th>Number</th>
-                            <th>Title</th>
-                        </tr>
-                    </table>
-                </section>
-            </div
+                            </div>
+                        </th>
+                        <th title="Index">#</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                    </tr>
+                </table>
+            </section
+            ><section class="box l6 m6 s12" id="pages" style="padding: 0; min-width: fit-content;">
+                <table class="table np" style="border-radius: 10px;" id="pages_table">
+                    <tr style="border-radius: 10px;" class="box-header defaultCursor">
+                        <th style="padding: 0;">
+                            <div class="vertical-center">
+                                <i class="fa fa-chevron-down" id="pages-openclose-button"  onclick="$('#pages_table').toggleClass('hiddenbox')"></i
+                                ><h2 style="margin: 5px; display: inline-block;margin-left: 0px;">
+                                    Pages
+                                </h2>
+                                <button class="float-right button size38 noselect" title="New page"
+                                    style="margin-right: 10px;" id="new_page_button">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>Number</th>
+                        <th>Title</th>
+                    </tr>
+                </table>
+            </section
         ></div>
         <div class="box-row"
             ><section class="box" id="code-editor">

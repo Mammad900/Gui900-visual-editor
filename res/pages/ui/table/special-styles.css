@@ -1,5 +1,6 @@
-#pages-table-column {
+#pages {
     width: 100%;
+    height: max-content;
 }
 #pages_table tr:not(:first-of-type) td:nth-child(2){
     user-select: text;
@@ -23,7 +24,7 @@
     cursor: pointer;
 }
 
-#pages-table-column>.box{
+#pages>.box{
     overflow: visible;
 }
 #pages_table tr:last-child td:last-child{
