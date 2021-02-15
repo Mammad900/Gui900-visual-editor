@@ -97,11 +97,13 @@ var LP_Files=[
 
     "res/js/loader-end.js", // Finishes loading
 
-    "res/img/icon-square.png", // App icon
-
     "res/code-editor/monaco-editor/min/vs/loader.js",
     "res/code-editor/monaco-editor/min/vs/editor/editor.main.nls.js",
     "res/code-editor/monaco-editor/min/vs/editor/editor.main.js",
+    "res/JQuery/JQuery UI/jquery-ui.min.css",
+    "res/JQuery/JQuery UI/jquery-ui.min.js",
+
+    "res/img/icon-square.png", // App icon
 ]
 
 self.addEventListener('install', async event => {

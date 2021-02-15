@@ -114,6 +114,8 @@ var LP_res=[
     "res/code-editor/monaco-editor/min/vs/loader.js",
     "res/code-editor/monaco-editor/min/vs/editor/editor.main.nls.js",
     "res/code-editor/monaco-editor/min/vs/editor/editor.main.js",
+    "res/JQuery/JQuery UI/jquery-ui.min.css",
+    "res/JQuery/JQuery UI/jquery-ui.min.js",
 ];
 
 LP_res.forEach(function(value){
