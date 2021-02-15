@@ -14,3 +14,17 @@
     min-width: 38px;
     border-style: dashed;
 }
+.box-row{
+    min-height: 38px;
+    min-width: 38px;
+}
+.box-row.empty{
+    border: dotted 1px var(--box-border-color);
+    margin: 0 10px;
+    border-radius: var(--box-border-radius);
+    opacity: 0.4;
+}
+.box-row.empty::after {
+    content: "Move boxes here";
+    margin: auto;
+}

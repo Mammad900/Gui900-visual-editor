@@ -21,9 +21,18 @@ function swapBox(one, two, areDirectSiblings=false) {
 }
 
 function LP_MakeBoxesSortable() {
+    function update() {
+        $(".box-row:empty").addClass("empty");
+        $(".box-row:not(:empty)").removeClass("empty");
+    }
     $("main.content .box-row").sortable({
         connectWith: ".box-row",
         handle: ".box-header",
-        placeholder: "box box-placeholder"
+        placeholder: "box box-placeholder",
+        activate: update,
+        deactivate: update,
+        beforeStop: update,
+        out: update,
+        change: update
     })
 }
