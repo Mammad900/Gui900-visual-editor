@@ -191,3 +191,22 @@
 :root[theme=windows-10-UWP-dark-style] .hint>.tooltiptext>button:hover{
     padding: 8px;
 }
+:root[theme=windows-10-UWP-dark-style] #code-editor #codeParts span[data-selected=true] {
+    background: #303030;
+    background-clip: padding-box;
+    border-bottom: none;
+    padding-bottom: 11px;
+}
+
+:root[theme=windows-10-UWP-dark-style] #code-editor #codeParts span {
+    border: none;
+}
+
+:root[theme=windows-10-UWP-dark-style] #code-editor #codeParts div div {
+    background: var(--toolbar-menuitem-active);
+    height: 6px;
+}
+
+:root[theme=windows-10-UWP-dark-style] #code-editor #codeParts::-webkit-scrollbar {
+    height: 6px;
+}
