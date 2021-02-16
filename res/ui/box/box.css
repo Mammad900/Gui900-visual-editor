@@ -39,6 +39,10 @@
     margin-left: 10px;
 }
 
+.flexbox .box.ui-sortable-helper:first-child + .box.box-placeholder {
+    margin-left: 0;
+}
+
 .box-row:not(.flexbox) .box + .box{
     margin-top: 10px;
 }
