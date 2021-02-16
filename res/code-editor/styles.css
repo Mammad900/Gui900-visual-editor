@@ -31,7 +31,7 @@
 }
 
 #code-editor.hiddenbox{
-    height: fit-content;
+    height: max-content;
     min-width: 110px;
     width: 100%;
 }
