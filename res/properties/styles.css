@@ -15,12 +15,12 @@
 }
 
 #properties-content {
-    height: calc( var(--settings-screen-height-px) + 24px );
     z-index: 0;
     overflow: auto;
     padding: 10px;
     padding-bottom: 15px;
     width: 100%; /* Fixes a visual bug in some zoom levels */
+    height: 100%;
 }
 
 #properties-shadow-top,
