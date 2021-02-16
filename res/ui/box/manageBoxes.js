@@ -54,6 +54,8 @@ function boxToNewWindow(box) {
         switch (name) {
             case "Preview":
                 w.document.body.style.minHeight="unset";
+                w.document.body.style.width="min-content";
+                w.document.body.style.overflow="hidden";
                 w.document.getElementsByTagName("button")[0].onclick=preview.refresh;
                 w.CanvasRenderingContext2D.prototype.roundRect=CanvasRenderingContext2D.prototype.roundRect;
                 preview.refresh();
