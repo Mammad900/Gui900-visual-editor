@@ -33,7 +33,7 @@ body {
 }
 
 body>.content {
-    overflow: overlay;
+    overflow: auto;
     height: calc( 100vh - 28.5px);
     position: fixed;
     top: 28.5px;
@@ -41,6 +41,7 @@ body>.content {
     width: 100%;
     background-color: var(--back-color);
     padding: 10px;
+    overflow: overlay;
 }
 body>.content::-webkit-scrollbar-track {
     box-shadow: var(--main-scrollbar-shadow);
