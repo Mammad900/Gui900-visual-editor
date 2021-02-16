@@ -1,6 +1,8 @@
 #code-editor{
     padding: 0;
     width: 100%;
+    position: relative;
+    height: 584px;
 }
 
 #code-editor>div:first-child h2{
@@ -103,4 +105,23 @@
 
 .monaco-editor .margin-view-overlays .line-numbers{
     user-select:none;
+}
+
+#codeParts-container {
+    width: 100%;
+    position: absolute;
+    top: 37px;
+    left: 0;
+    right: 0;
+}
+
+#code-editor #monaco-container{
+    height: 500px;
+    overflow: hidden;
+    border-bottom-left-radius: var(--box-border-radius);
+    border-bottom-right-radius: var(--box-border-radius);
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
 }
