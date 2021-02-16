@@ -64,6 +64,7 @@ function boxToNewWindow(box) {
         updateEmptyBoxRows();
         w.onbeforeunload=function () {
             bp.append(box);
+            updateEmptyBoxRows();
         }
     }
     floatingBoxes[name]=w;
