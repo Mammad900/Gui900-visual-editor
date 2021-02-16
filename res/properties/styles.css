@@ -2,6 +2,7 @@
     width: 100%;
     min-width: 350px;
     position: relative;
+    min-height: 300px;
 }
 
 #properties h2:first-child {
@@ -21,6 +22,11 @@
     padding-bottom: 15px;
     width: 100%; /* Fixes a visual bug in some zoom levels */
     height: 100%;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
+    height: inherit;
 }
 
 #properties-shadow-top,
@@ -46,6 +52,7 @@
     height: fit-content;
     height: -moz-fit-content;
     min-width: 180px;
+    min-height: unset;
 }
 
 #properties.hiddenbox #properties-header-details{

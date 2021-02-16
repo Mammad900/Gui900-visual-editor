@@ -3,6 +3,7 @@
     width: 100%;
     position: relative;
     height: 584px;
+    min-width: 110px;
 }
 
 #code-editor>div:first-child h2{
