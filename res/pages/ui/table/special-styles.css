@@ -47,14 +47,14 @@
     cursor: pointer;
 }
 
-#pages_table.hiddenbox tr:not(:first-child),
-#pages_table.hiddenbox tr:first-child th:not(:first-child),
-#pages_table.hiddenbox #new_page_button {
+#pages.hiddenbox tr:not(:first-child),
+#pages.hiddenbox tr:first-child th:not(:first-child),
+#pages.hiddenbox #new_page_button {
     display: none;
 }
-#pages_table.hiddenbox tr:first-child{
+#pages.hiddenbox tr:first-child{
     border-bottom:0;
 }
-#pages_table.hiddenbox #pages-openclose-button::before{
+#pages.hiddenbox #pages-openclose-button::before{
     content: "\f054";
 }
