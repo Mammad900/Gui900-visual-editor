@@ -23,7 +23,7 @@
     width: 100%; /* Fixes a visual bug in some zoom levels */
     height: 100%;
     position: absolute;
-    top: 38px;
+    top: 39px;
     left: 0;
     right: 0;
     height: inherit;
