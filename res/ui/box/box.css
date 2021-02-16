@@ -48,7 +48,7 @@
 }
 
 .box.hiddenbox {
-    width: 10% !important;
+    width: 180px !important;
 }
 
 @media screen and (max-width:700px) {
