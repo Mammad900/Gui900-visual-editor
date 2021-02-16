@@ -1,11 +1,7 @@
 'use strict';
 var pages = {
     data: [],
-    create:
-        /**
-         * 
-         */
-        function () {
+        create () {
             var i = pages.data.length;
             var tr = pages.table.rows.create(i==0?"The only page":"Untitled");
             if((i>0)&&($(pages.table.rows.getRow(0)).children()[2].innerHTML=="The only page")){
@@ -25,12 +21,11 @@ var pages = {
                 }
             });
         },
-    selectPage:
         /**
          * 
          * @param {Number} i 
          */
-        function (i) {
+        selectPage (i) {
             $(pages.table.rows.getRow(pages.currentPage)).removeClass("selected");
             elements.selectElement(-1);
 

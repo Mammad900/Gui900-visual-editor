@@ -2,7 +2,7 @@
 function LP_GV_PagesTableButtons(){
 pages.table= {
     buttons : {
-        generateTripleButtons: function(td) {
+        generateTripleButtons(td) {
             var container=$("<div></div>");
             container.addClass("buttons");
 
@@ -16,7 +16,7 @@ pages.table= {
             td.append(container);
             return [b1[1],b2[1],b3[1]];
         },
-        generateButton: function(content, title, onclick,style=""){
+        generateButton(content, title, onclick,style=""){
             var span= $("<span></span>");
             span.addClass(["inline","block"]);
             span.attr("style",style);
@@ -32,7 +32,7 @@ pages.table= {
             return [span,button];
         },
         actions: {
-            delete: function(index){
+            delete(index){
                 if(pages.data.length==1){
                     notification.error("You can't delete the last page");
                     return;
@@ -82,7 +82,7 @@ pages.table= {
                     dialog.close();
                 })
             },
-            moveDown: function(){
+            moveDown(){
                 var e=$(this).parent().parent().parent().parent();
                 e.next().insertBefore(e);
                 var i=$("#pages_table tr").index(e)-1;
@@ -113,7 +113,7 @@ pages.table= {
                 }
                 pages.table.rows.sortNumbers();
             },
-            moveUp: function(){
+            moveUp(){
                 var e=$(this).parent().parent().parent().parent();
                 e.prev().insertAfter(e);
                 var i=$("#pages_table tr").index(e)-1;

@@ -1,7 +1,7 @@
 'use strict';
 function LP_GV_Toolbar_Handler_3(){
     toolBar.handlers.help= {
-        about: function (e) {
+        about (e) {
             dialog(
                 `Gui900 UI Editor 0.1.0<br>
                 By <a href="https://github.com/Mammad900" target="_blank">Mammad900</a><br>

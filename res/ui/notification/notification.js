@@ -5,7 +5,7 @@ var notification={
      * @param {string} text 
      * @param {array<object>} buttons 
      */
-    createNotification: function(type, text, buttons=[], timeout=3000){
+    createNotification(type, text, buttons=[], timeout=3000){
         var div=$("<div></div>").addClass(type);
         div.append($("<i></i>").addClass(["fas","fa-times","close-button"]).on('click',function (e) {
             div.remove();
@@ -25,7 +25,7 @@ var notification={
      * @param {array<object>} buttons 
      * @param {Number} timeout 
      */
-    error: function(text, buttons=[], timeout=5000){
+    error(text, buttons=[], timeout=5000){
         this.createNotification("error", text, buttons, timeout);
         console.error(text);
     },
@@ -35,7 +35,7 @@ var notification={
      * @param {array<object>} buttons 
      * @param {Number} timeout 
      */
-    warning: function(text, buttons=[], timeout=10000){
+    warning(text, buttons=[], timeout=10000){
         this.createNotification("warning", text, buttons, timeout);
         console.warn(text);
     },
@@ -45,7 +45,7 @@ var notification={
      * @param {array<object>} buttons 
      * @param {Number} timeout 
      */
-    success: function(text, buttons=[], timeout=3000){
+    success(text, buttons=[], timeout=3000){
         this.createNotification("success", text, buttons, timeout);
         console.info(text);
     },
@@ -55,7 +55,7 @@ var notification={
      * @param {array<object>} buttons 
      * @param {Number} timeout 
      */
-    info: function(text, buttons=[], timeout=3000){
+    info(text, buttons=[], timeout=3000){
         this.createNotification("info", text, buttons, timeout);
         console.info(text);
     },

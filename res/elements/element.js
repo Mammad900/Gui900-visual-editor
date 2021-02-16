@@ -3,12 +3,11 @@ var elements={
     sawHints: false,
 
     data:[],
-    create:
     /**
      * 
      * @param {"Button"|"Label"|"Check-box"|"Slider"|"Radio-button"|Object} el 
      */
-    async function (el) {
+    async create (el) {
         var type;
         var elementData;
         if(typeof(el)=="object"){
@@ -39,8 +38,7 @@ var elements={
         }
     },
     types: {},
-    selectElement:
-    function (index, saveCurrentElement=true){
+    selectElement(index, saveCurrentElement=true){
         if(this.selectedElement!=-1){
             if(saveCurrentElement){
                 elements.types[this.data[this.selectedElement].type].saveProperties(this.selectedElement);
@@ -62,7 +60,7 @@ var elements={
         }
         elements.selectedElement=index;
     },
-    updatePropertiesTitle: function (index) {
+    updatePropertiesTitle (index) {
         $("#properties-header-details").text(this.data[index].type + ' #' + index + ' (' + $($("#elements_table").children().children()[index + 1]).children()[2].innerHTML + ")");
     },
     selectedElement: -1

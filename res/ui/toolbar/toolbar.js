@@ -1,7 +1,7 @@
 'use strict';
 var toolBar=
 {
-    makeMenuItemsHideOnClick: function () {
+    makeMenuItemsHideOnClick () {
         var buttons= $("#toolbar .menuitem .menuitem:not(.noHide)");
         buttons.on("click", function (e) {
             var t=$(e.target);
@@ -25,7 +25,7 @@ var toolBar=
 
     subMenu_icon_style: "fas",
 
-    createMenuItem: function ( container, innerHtml, hasChild=false, disabled=false){
+    createMenuItem ( container, innerHtml, hasChild=false, disabled=false){
         var menuItem= $("<div></div>").addClass("menuitem");
 
         var tbb=$("<div></div>").addClass("toolbar-button").html(innerHtml);
@@ -42,7 +42,7 @@ var toolBar=
         return menuItem;
     },
 
-    createSubMenuItem: function ( container, innerHtml, icon_class, hasChild=false, fits=true,hideMenuOnClick=true, disabled=false){
+    createSubMenuItem ( container, innerHtml, icon_class, hasChild=false, fits=true,hideMenuOnClick=true, disabled=false){
         var menuItem= $("<div></div>").addClass("menuitem");
         if(!hideMenuOnClick) {
             menuItem.addClass("noHide");
@@ -69,12 +69,11 @@ var toolBar=
         return menuItem;
     },
 
-    getDropDown:
-     function (element){
+    getDropDown (element){
         return element.children().children(".dropdown");
     },
 
-    menuItem: function (container,innerHTML,event,callback=function(){},hasChild=true, disabled=false){
+    menuItem (container,innerHTML,event,callback=function(){},hasChild=true, disabled=false){
         var x=toolBar.createMenuItem($(container),innerHTML,hasChild, disabled);
         callback(toolBar.getDropDown(x)[0]);
         x.children(":first-child").on("click",function (e) {
@@ -82,7 +81,7 @@ var toolBar=
             event(e);
         });
     },
-    subMenuItem: 
+    
     /**
      * 
      * @param {HTMLElement} container The container (dropdown) to insert the sub menu item into
@@ -94,7 +93,7 @@ var toolBar=
      * @param {boolean} hasChild Set it to true if you want to make childs for this menu-item
      * @param {boolean} fits Set to true if the menu-item does not fit in it's place
      */
-    function (container,innerHTML,icon_class,event,callback=function(a){},hasChild=false,hideMenuOnClick=true,fits=true, disabled=false){
+    subMenuItem (container,innerHTML,icon_class,event,callback=function(a){},hasChild=false,hideMenuOnClick=true,fits=true, disabled=false){
         var x= toolBar.createSubMenuItem ($(container),innerHTML,icon_class,hasChild,fits,hideMenuOnClick, disabled);
         callback(toolBar.getDropDown(x)[0]);
         x.children(":first-child").on("click",function (e) {
@@ -104,17 +103,16 @@ var toolBar=
         });
         return x;
     },
-    separator:
-    function (container) {
+    separator (container) {
         $(container).append($("<hr>"));
     },
-    menuItemIconChange:
+    
     /**
      * 
      * @param {JQuery<HTMLElement>} element 
      * @param {string} icon 
      */
-    function (element,icon) {
+    menuItemIconChange (element,icon) {
         element.children(":first-child").children(":first-child").removeClass().addClass([toolBar.subMenu_icon_style,icon,"fa-fw"]);
     }
 }

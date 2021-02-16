@@ -1,6 +1,6 @@
 function LP_GV_Toolbar_Handler_6(){
     toolBar.handlers.file.save = {
-        saveToFile: function (e) {
+        saveToFile (e) {
             // https://stackoverflow.com/a/30832210/13561926 deleted IE code
             // Function to download data to a file
             function download(data, filename, type) {
@@ -20,7 +20,7 @@ function LP_GV_Toolbar_Handler_6(){
 
             download(JSON.stringify(fileIO.createJSON()), "Untitled.gui900", "gui900")
         },
-        saveToJSON: function (e) {
+        saveToJSON (e) {
             dialog(("<textarea style='height: 300px' readonly>"+JSON.stringify(fileIO.createJSON())+"</textarea>"), [
                 {
                     "id": 0,

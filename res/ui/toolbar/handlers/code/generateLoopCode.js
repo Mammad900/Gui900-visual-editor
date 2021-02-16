@@ -1,7 +1,7 @@
 'use strict';
 function LP_GV_Toolbar_Handler_8(){
     toolBar.handlers.code= {
-        generateLoopCode: function (e) {
+        generateLoopCode (e) {
             var lc=GenerateLoopCode();
             var code= projectCode.loop;
             var goneToDialog=false;

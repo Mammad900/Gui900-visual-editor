@@ -2,11 +2,11 @@
 function LP_GV_PagesTableRows() {
     pages.table.rows=
     {
-        getRow: function(index){
+        getRow(index){
             return $("#pages_table tr:nth-child("+String(index+2)+")")[0];
         },
 
-        create: function(name){
+        create(name){
             var num=this.data.length;
             var td1=$("<td></td>");
             var tr=$("<tr></tr>").append(td1);
@@ -40,7 +40,7 @@ function LP_GV_PagesTableRows() {
             return tr;
         },
 
-        sortNumbers: function(){
+        sortNumbers(){
             var trs= $("#pages_table tr");
             for(var i=1;i<trs.length;i++){
                 $(trs[i]).children(":nth-child(2)").text(i-1);

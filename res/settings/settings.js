@@ -1,6 +1,6 @@
 'use strict';
 var settings= {
-    showSettingsDialog: function () {
+    showSettingsDialog () {
         var div=$("<div><h2 style='margin-top:0;user-select:none'>Project settings</h2></div>").attr("id","settings");
         settings.createFields(div);
         dialog(div,[
@@ -18,7 +18,7 @@ var settings= {
             dialog.close();
         },false);
     },
-    createFields: function (div) {
+    createFields (div) {
         settings.gen.fieldset(div, "Screen options", function (fs) {
             settings.gen.grid(fs,2,1,[
                 function (c) {
@@ -117,7 +117,7 @@ var settings= {
             ]);
         });
     },
-    saveSettings: function () {
+    saveSettings () {
         function g(id) {
             return $("#"+id).val();
         }

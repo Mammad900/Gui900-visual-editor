@@ -1,10 +1,10 @@
 'use strict';
 var properties={
-    getElement: function () {
+    getElement () {
         return $("#properties-content");
     },
     gen: {
-        grid:
+        
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
@@ -12,7 +12,7 @@ var properties={
          * @param {0|1|2} responsiveness 
          * @param {Array<(col:JQuery<HTMLElement>)=>void>} callbacks 
          */
-        function (container, columnCount, responsiveness, callbacks, marginBot=false) {
+        grid (container, columnCount, responsiveness, callbacks, marginBot=false) {
             var flexBox= $("<div></div>").addClass("flexbox");
             switch (responsiveness) {
                 case 0:
@@ -39,20 +39,20 @@ var properties={
             container.append(flexBox);
             return flexBox;
         },
-        fieldset:
+        
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
          * @param {string} legendText 
          * @param {(el:JQuery<HTMLElement>)=>void} callback 
          */
-        function (container, legendText, callback) {
+        fieldset (container, legendText, callback) {
             var fieldset= $("<fieldset></fieldset>");
             fieldset.append($("<legend></legend>").text(legendText));
             callback(fieldset);
             container.append(fieldset);
         },
-        inputText:
+        
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
@@ -60,13 +60,13 @@ var properties={
          * @param {string} id
          * @param {string} value 
          */
-        function (container, label, id, value) {
+        inputText (container, label, id, value) {
             container.append($("<label></label>").attr("for",id).text(label));
             var npt=$("<input/>").val(value).addClass(["block","full-width"]).attr("type","text").attr("id",id);
             container.append(npt);
             return npt;
         },
-        inputNumber:
+        
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
@@ -76,10 +76,9 @@ var properties={
          * @param {Number} max 
          * @param {Number} value 
          */
-        function (container, label, id, min, max, value) {
+        inputNumber (container, label, id, min, max, value) {
             return this.inputText(container,label,id,value).attr("type","number").attr("min",min).attr("max",max);
         },
-        inputColor:
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
@@ -87,7 +86,7 @@ var properties={
          * @param {string} id 
          * @param {string} value 
          */
-        function (container, label, id, value) {
+        inputColor (container, label, id, value) {
             var div=$("<div></div>").addClass("vertical-center");
             div.append($("<label></label>").attr("for",id).text(label));
             var npt= $("<input/>").attr("type","color").attr("id",id).val(value).css("background-color",value);
@@ -98,7 +97,7 @@ var properties={
             container.append(div);
             return div;
         },
-        datalist:
+        
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
@@ -106,7 +105,7 @@ var properties={
          * @param {string} id 
          * @param {Array<string>} values 
          */
-        function (container, input, id, values) {
+        datalist (container, input, id, values) {
             var dat=$("<datalist></datalist>").attr("id",id);
             values.forEach(function (val) {
                 dat.append($("<option></option>").text(val));
@@ -115,7 +114,7 @@ var properties={
             container.append(dat);
             return input;
         },
-        checkBox:
+        
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
@@ -123,7 +122,7 @@ var properties={
          * @param {string} id 
          * @param {boolean} value
          */
-        function (container, label, id, value, block=false) {
+        checkBox (container, label, id, value, block=false) {
             var contain=$(block?"<div></div>":"<span></span>").addClass("vertical-center").css("white-space","nowrap");
             if(!block)contain.css("margin-right","10px");
             var cb=$("<i/>").attr("id",id);
@@ -147,7 +146,7 @@ var properties={
             container.append(contain);
             return cb;
         },
-        inputRange:
+        
         /**
          * 
          * @param {JQuery<HTMLElement>} container 
@@ -157,10 +156,10 @@ var properties={
          * @param {Number} max 
          * @param {Number} value 
          */
-        function (container, label, id, min, max, value) {
+        inputRange (container, label, id, min, max, value) {
             return this.inputText(container,label,id,value).attr("type","range").attr("min",min).attr("max",max);
         },
-        select:
+        
         /**
          * 
          * @param {JQuery<HTMLDivElement>} container 
@@ -168,7 +167,7 @@ var properties={
          * @param {string} id 
          * @param {Array<string>|Object} values 
          */
-        function (container, label, id, values, selected) {
+        select (container, label, id, values, selected) {
             container.append($("<label></label>").attr("for",id).text(label));
 
             var select=$("<select></datalist>").addClass(["block","full-width"]).attr("id",id);
@@ -193,8 +192,7 @@ var properties={
          * @param {Object} options 
          * @param {number} height 
          */
-        monacoEditor:
-        function (container, label, id, options, optionsOverrideName, height, placeLabel=true) {
+        monacoEditor (container, label, id, options, optionsOverrideName, height, placeLabel=true) {
             var mc=$("<div>").attr("id",id).height(height).addClass("doNotTouchCss defaultCursor");
             var me= monaco.editor.create(mc[0], {
                 ...(options),

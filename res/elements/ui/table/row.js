@@ -6,17 +6,16 @@ function LP_GV_ElementsTableRows() {
          * Gets the #th row of the table
          * @param {number} index The # of the row
          */
-        getRow: function(index){
+        getRow(index){
             return $("#elements_table tr:nth-child("+String(index+2)+")")[0]; // nth-child is one-based, not zero based
         },
 
-        new:
         /**
          * Creates a new row in the table
          * @param {string} name The text to show in the "Text" column
          * @param {"Button"|"Label"|"Check-box"|"Slider"|"Radio-button"} type Text to show inside 'type' column
          */
-        function(name,type,titleEditable=false){
+        new(name,type,titleEditable=false){
             var num=this.data.length;
             var td1=$("<td></td>");
             var tr=$("<tr></tr>").append(td1);
@@ -58,7 +57,7 @@ function LP_GV_ElementsTableRows() {
         /**
          * Sorts the cells in '#' column
          */
-        sortNumbers: function(){
+        sortNumbers(){
             var trs= $("#elements_table tr");
             for(var i=1;i<trs.length;i++){
                 $(trs[i]).children(":nth-child(2)").text(i-1);

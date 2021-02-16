@@ -1,6 +1,6 @@
 'use strict';
 var fileIO= {
-    createJSON: function () {
+    createJSON () {
 
         if(elements.selectedElement!=-1){
             elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement)

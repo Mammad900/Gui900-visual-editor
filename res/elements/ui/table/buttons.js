@@ -6,7 +6,7 @@ elements.table={
          * Generates buttons 'move up', 'move down', 'delete element' and puts it in the given element
          * @param {JQuery<HTMLElement>} td The <td> element to put buttons into
          */
-        generateTripleButtons: function(td) {
+        generateTripleButtons(td) {
             var container=$("<div></div>");
             container.addClass("buttons");
 
@@ -33,7 +33,7 @@ elements.table={
          * @param {void} onclick onClick event of the button
          * @param {style} style HTML 'style' attributes for the <span> element containing button
          */
-        generateButton: function(content, title, onclick,style=""){
+        generateButton(content, title, onclick,style=""){
             var span= $("<span></span>");
             span.addClass(["inline","block"]);
             span.attr("style",style);
@@ -49,7 +49,7 @@ elements.table={
             return [span,button];
         },
         actions: {
-            moveUp: function(){
+            moveUp(){
                 var e=$(this).parent().parent().parent().parent();
                 e.prev().insertAfter(e);
                 var i=$("#elements_table tr").index(e)-1;
@@ -78,7 +78,7 @@ elements.table={
                 elements.data[i]=elements.data[i+1];
                 elements.data[i+1]=arr2;
             },
-            moveDown: function(){
+            moveDown(){
                 var e=$(this).parent().parent().parent().parent();
                 e.next().insertBefore(e);
                 var i=$("#elements_table tr").index(e)-1;
@@ -108,7 +108,7 @@ elements.table={
                 elements.data[i]=elements.data[i-1];
                 elements.data[i-1]=arr2;
             },
-            delete: function(index){
+            delete(index){
                 var hasIndex=typeof(index)=='number';
                 var row=(!hasIndex)?$(this):undefined;
                 dialog("Do you really want to <strong>delete</strong> this element?<br>This cannot be undone.",[

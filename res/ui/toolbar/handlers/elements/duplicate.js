@@ -1,7 +1,7 @@
 'use strict';
 function LP_GV_Toolbar_Handler_5(){
     toolBar.handlers.elements = {
-        duplicate: function (e) {
+        duplicate (e) {
             if(elements.selectedElement!=-1) {
                 var dt=elements.data[elements.selectedElement];
                 if(dt.type=="Slider"){

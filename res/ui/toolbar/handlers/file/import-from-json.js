@@ -3,7 +3,7 @@ function LP_GV_Toolbar_Handler_1(){
     toolBar.handlers={
         file: {
             open: {
-                import_from_json: function (e) {
+                import_from_json (e) {
                     dialog("Please paste the JSON code here: <textarea id='dialog-json-input' rows='8'></textarea>",[
                         {
                             "id": 0,
