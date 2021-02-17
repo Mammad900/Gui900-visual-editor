@@ -23,6 +23,19 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(file, "Change editor theme", "fa-palette", function(e){}, ThemeMenuGenerator, true);
         toolBar.subMenuItem(file, "Advanced", "fa-cogs", function (e) {}, function (advanced) {
             toolBar.subMenuItem(advanced, "Custom monaco-editor options", "fa-cogs", showMonacoEditorOptionOverridesEditor);
+            toolBar.subMenuItem(advanced, "Clear application cache", "fa-trash",async ()=>{
+                if(window.location.origin=="file://"){
+                    notification.error("This action is not available in local files.");
+                    return;
+                }
+                if(!navigator.onLine){
+                    if(!confirm("You appear to be offline.\nYou won't be able to reload the app after reloading the app.\nDo you want to continue?")){
+                        return;
+                    }
+                }
+                await caches.delete("gve-pwa-conf-1");
+                notification.success("Cleared cache");
+            });
         }, true,false);
         
     });
