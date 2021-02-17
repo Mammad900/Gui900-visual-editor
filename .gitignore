@@ -2,3 +2,5 @@
 .vscode/
 res/monaco-editor-0.21.2.tgz
 min/
+node_modules/
+package-lock.json

@@ -8,7 +8,7 @@ function LP_GV_Toolbar_Handler_3(){
                 JQuery 3.5.1<br>
                 JQuery UI 1.10.3<br>
                 Monaco editor 0.21.3<br>
-                Font Awesome Free 5.15.1`,[
+                Font Awesome Free 5.15.2`,[
                 {
                     "id": 0,
                     "text": "OK",
