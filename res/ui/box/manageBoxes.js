@@ -86,6 +86,11 @@ function LP_MakeBoxesSortable() {
         deactivate: updateEmptyBoxRows,
         beforeStop: updateEmptyBoxRows,
         out: updateEmptyBoxRows,
-        change: updateEmptyBoxRows
+        change: updateEmptyBoxRows,
+        start: function(e, ui){
+            ui.placeholder.css("--box-placeholder-width",ui.item.width()+"px");
+            ui.placeholder.css("--box-placeholder-height",ui.item.height()+"px");
+            ui.placeholder.width(ui.item.width());
+        }
     })
 }

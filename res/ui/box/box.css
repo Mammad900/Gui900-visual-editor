@@ -9,9 +9,14 @@
 }
 .box-placeholder{
     background-color: var(--back-color);
-    min-height: 50px;
-    min-width: 100px;
+    min-height: var(--box-placeholder-height);
+    max-height: var(--box-placeholder-height);
+    height: var(--box-placeholder-height);
+    min-width: var(--box-placeholder-width);
+    max-width: var(--box-placeholder-width);
+    width: var(--box-placeholder-width);
     border-style: dashed;
+    box-sizing: content-box;
 }
 .box-header, .box-header *{
     cursor: move;
