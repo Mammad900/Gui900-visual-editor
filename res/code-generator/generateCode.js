@@ -33,7 +33,7 @@ function generateCode(libPath) {
         var result="";
         pages.data.forEach(function (pg, pi) {
             pg.elements.forEach(function (el,ei) {
-                if(el.type= "Label"){
+                if(el.type== "Label"){
                     if(/&Free((Sans|Mono)(|Bold)(|Oblique)|Serif(|Bold)(|Italic))(9|12|18|24)pt7b/.test(el.font)){
                         if(!(/&FreeSans(9|12|18|24)pt7b/.test(el.font))){
                             result+= "#include <Fonts/"+ el.font.slice(1) +".h>\n";
