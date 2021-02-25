@@ -38,19 +38,20 @@ function GenerateLoopCode() {
             switch (element.type) {
                 case "Button":
                     if(element.clickEvent.trim()==""){
-                        return;
+                        break;
                     }
                     str+= `\n        if(button_pressed[${pI}][${buttonI}]){ // ${element.text}`+
                           `\n            `+
                           `\n`            + indent(indent(indent(element.clickEvent)))+
                           `\n            `+
-                          `\n            while(button_pressed[${pI}][${buttonI++}])checkPage(); // Comment this line for repeated firing of event`+
+                          `\n            while(button_pressed[${pI}][${buttonI}])checkPage(); // Comment this line for repeated firing of event`+
                           `\n        }`;
                     break;
             
                 default:
                     break;
             }
+            buttonI++;
         })
         
         str+=`\n        break;`;
