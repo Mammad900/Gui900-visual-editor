@@ -35,7 +35,8 @@ function LP_SetTheme(){
     else{
         currentTheme=t;
     }
-    $("html").attr('theme', t)
+    $("html").attr('theme', t);
+    $("head").append($(html`<meta name="theme-color" id="theme-color-meta" content="${$(":root").css("--toolbar-background")}">`));
 }
 
 function ThemeMenuGenerator(themes) {
@@ -48,6 +49,7 @@ function ThemeMenuGenerator(themes) {
             var icon=(val==currentTheme)?"fa-check":"fa";
             var it= toolBar.subMenuItem(themes, name, icon, function (e) {
                 $("html").attr("theme",val);
+                $("#theme-color-meta").attr("content",$(":root").css("--toolbar-background"));
                 toolBar.menuItemIconChange(it.siblings(),"fa");
                 toolBar.menuItemIconChange(it,"fa-check");
                 localStorage.setItem('theme', val);
