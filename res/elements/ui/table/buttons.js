@@ -10,17 +10,11 @@ elements.table={
             var container=$("<div></div>");
             container.addClass("buttons");
 
-            var b1=elements.table.buttons.generateButton(
-                `<i class="fas fa-arrow-up"></i>`,
-                "Move up", elements.table.buttons.actions.moveUp);
+            var b1=elements.table.buttons.generateButton(`fa-arrow-up`,"Move up", elements.table.buttons.actions.moveUp);
             container.append(b1[0]);
-            var b2=elements.table.buttons.generateButton(
-                `<i class="fas fa-arrow-down"></i>`,
-                "Move down", elements.table.buttons.actions.moveDown);
+            var b2=elements.table.buttons.generateButton(`fa-arrow-down`,"Move down", elements.table.buttons.actions.moveDown);
             container.append(b2[0]);
-            var b3=elements.table.buttons.generateButton(
-                `<i class="fas fa-times"></i>`,
-                "Delete element", elements.table.buttons.actions.delete)
+            var b3=elements.table.buttons.generateButton(`fa-times`,"Delete element", elements.table.buttons.actions.delete)
             container.append(b3[0]);
 
             td.append(container);
@@ -33,7 +27,7 @@ elements.table={
          * @param {void} onclick onClick event of the button
          * @param {style} style HTML 'style' attributes for the <span> element containing button
          */
-        generateButton(content, title, onclick,style=""){
+        generateButton(icon, title, onclick,style=""){
             var span= $("<span></span>");
             span.addClass(["inline","block"]);
             span.attr("style",style);
@@ -42,7 +36,7 @@ elements.table={
             button.addClass(["button","size38"]);
             button.attr("title",title);
             button.on("click",onclick);
-            button.html(content);
+            button.append($("<i>").addClass(["fas",icon]));
 
             span.append(button);
 

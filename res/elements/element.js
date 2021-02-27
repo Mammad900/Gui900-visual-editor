@@ -7,7 +7,7 @@ var elements={
      * 
      * @param {"Button"|"Label"|"Check-box"|"Slider"|"Radio-button"|Object} el 
      */
-    async create (el) {
+    async create (el, saveCurrentElement=true, doNotModifyDOM=false) {
         var type;
         var elementData;
         if(typeof(el)=="object"){
@@ -22,7 +22,7 @@ var elements={
         var tr= this.table.rows.new(((type=="Slider") ? (elementData.title) : (elementData.text)),type,type=="Slider");
         tr.data("index",i);
         this.data.push(elementData);
-        elements.selectElement(i);
+        elements.selectElement(i, saveCurrentElement, doNotModifyDOM);
         tr.on("click",function (e) {
             if(e.target==tr.children()[0]){
                 var num= $("#elements_table tr").index(tr)-1
@@ -38,25 +38,27 @@ var elements={
         }
     },
     types: {},
-    selectElement(index, saveCurrentElement=true){
+    selectElement(index, saveCurrentElement=true, doNotModifyDOM=false){
         if(this.selectedElement!=-1){
             if(saveCurrentElement){
                 elements.types[this.data[this.selectedElement].type].saveProperties(this.selectedElement);
             }
             $(elements.table.rows.getRow(this.selectedElement)).removeClass("selected");
         }
-        properties.getElement().children().remove();
-        if(index!=-1){
-            var type=this.data[index].type;
-            elements.types[type].createProperties(index);
-            this.updatePropertiesTitle(index);
-            $(elements.table.rows.getRow(index)).addClass("selected");
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").removeClass("disabled");
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").removeClass("disabled");
-        }
-        else{
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").addClass("disabled");
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").addClass("disabled");
+        if(!doNotModifyDOM){
+            properties.getElement().children().remove();
+            if(index!=-1){
+                var type=this.data[index].type;
+                elements.types[type].createProperties(index);
+                this.updatePropertiesTitle(index);
+                $(elements.table.rows.getRow(index)).addClass("selected");
+                $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").removeClass("disabled");
+                $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").removeClass("disabled");
+            }
+            else{
+                $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").addClass("disabled");
+                $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").addClass("disabled");
+            }
         }
         elements.selectedElement=index;
     },
