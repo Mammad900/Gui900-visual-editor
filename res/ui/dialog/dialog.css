@@ -67,3 +67,9 @@
 #dialog a:hover{
     text-decoration: underline var(--dialog-link-hover-underline-color);
 }
+#dialog pre {
+    background: #00000021;
+    overflow: auto;
+    padding: 10px;
+    user-select: initial;
+}

@@ -54,7 +54,6 @@ function LP_GV_El_Button_2(){
         properties.gen.checkBox(p,"Enabled?", "property-enabled", props.enabled);
         properties.gen.checkBox(p,"Visible?", "property-visible", props.visible);
         (function(){
-            var html=ht=> ht[0];
             p.append(html`
                 <div style="margin: 0;
                         margin-top: 10px;

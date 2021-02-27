@@ -249,3 +249,11 @@ async function registerSW() {
         notification.warning("Your browser does not support ServiceWorker");
     }
 }
+
+var html=(i, ...z)=>{
+    var s='';
+    i.forEach((l,f)=>{
+        s+=l+((z[f] ==undefined) ? "": z[f])
+    })
+    return $.parseHTML(s);
+}
