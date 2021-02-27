@@ -15,7 +15,8 @@ var fileIO= {
             pages: pages.data,
             settings: settings.data,
             code: projectCode,
-            fileVersion: "0.0.2",
+            title: $("#project-name").text(),
+            fileVersion: "0.0.3",
             "$schema": "https://mammad900.github.io/Gui900-visual-editor/res/file/project-file-json-schema.json"
         };
         $("#pages_table tr:not(:first-of-type) td:nth-child(3)").each(function (index, element) {

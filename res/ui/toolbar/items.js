@@ -110,4 +110,14 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(help, "About Gui900 visual editor", "fa-info-circle", toolBar.handlers.help.about);
     });
     toolBar.makeMenuItemsHideOnClick();
+    (()=>{
+        var update=()=>document.title=$("#project-name").text()+" - Gui900 visual editor";
+        $(toolbar).append(
+            $("<div>").attr("id","project-name-container").append(
+                $("<div>").attr("id","project-name").text("Untitled project")
+                .attr("contenteditable",true).on("input",update)
+            )
+        );
+        update();
+    })();
 };

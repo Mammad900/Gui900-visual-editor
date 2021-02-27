@@ -6,7 +6,8 @@ function LP_GV_loadProject() {
             notification.error("Project is corrupt");
             return;
         }
-        if((data.fileVersion!="0.0.2")&&
+        if((data.fileVersion!="0.0.3")&&
+           (data.fileVersion!="0.0.2")&&
            (data.fileVersion!="0.0.1")){
             notification.error("This project was saved in an incompatible version of Gui900 visual editor");
             return;
@@ -18,15 +19,22 @@ function LP_GV_loadProject() {
     fileIO.loadProject= function (json) {
         var data=JSON.parse(json);
 
+
+        // Validation
+
         if(!data){
             notification.error("Project is corrupt");
             return;
         }
-        if((data.fileVersion!="0.0.2")&&
+        if((data.fileVersion!="0.0.3")&&
+           (data.fileVersion!="0.0.2")&&
            (data.fileVersion!="0.0.1")){
             notification.error("This project was saved in an incompatible version of Gui900 visual editor");
             return;
         }
+
+
+
 
         // Settings
 
@@ -40,6 +48,15 @@ function LP_GV_loadProject() {
             settings.fields.screenSize.save(settings.data.screenSize.width, settings.data.screenSize.height);
         }
 
+
+
+
+
+        // Title
+
+        var title = data.title || "Untitled project";
+        document.title = title + " - Gui900 visual editor";
+        $("#project-name").text(title);
 
 
 
