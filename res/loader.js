@@ -126,15 +126,6 @@ async function LP(){
     try{
         var LP_funcs=[
             LP_SetTheme,
-
-            LP_GV_Toolbar_Handler_1,
-            LP_GV_Toolbar_Handler_2,
-            LP_GV_Toolbar_Handler_3,
-            LP_GV_Toolbar_Handler_4,
-            LP_GV_Toolbar_Handler_5,
-            LP_GV_Toolbar_Handler_6,
-            LP_GV_Toolbar_Handler_7,
-            LP_GV_Toolbar_Handler_8,
             
             LP_keyBindings,
             LP_HandleNewElementButton,

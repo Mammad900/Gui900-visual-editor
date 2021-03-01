@@ -3,7 +3,7 @@ function LP_GenerateToolbar() {
     var toolbar = document.getElementById("toolbar");
     toolBar.menuItem(toolbar, "File", function (e) {}, function (file) {
         toolBar.subMenuItem(file, "Open", "fa-folder-open", function (e) {}, function (open) {
-            toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.open_from_file);
+            toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.file.open.open_from_file);
             toolBar.subMenuItem(open, "Open from JSON code", "fa-code", toolBar.handlers.file.open.import_from_json);
             toolBar.subMenuItem(open, "Open from browser storage", "fa-database", function () {
                 localStorage.getItem("savedProject") ? fileIO.load(localStorage.getItem("savedProject")) : notification.error("There is no saved project in browser storage.");

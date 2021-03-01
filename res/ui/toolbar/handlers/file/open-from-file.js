@@ -4,7 +4,7 @@ toolBar.handlers= toolBar.handlers || {};
 toolBar.handlers.file= toolBar.handlers.file || {};
 toolBar.handlers.file.open= toolBar.handlers.file.open || {};
 
-toolBar.handlers.file.open_from_file=function (e) {
+toolBar.handlers.file.open.open_from_file=function (e) {
     $("#fileinput").trigger("click");
 }
 
