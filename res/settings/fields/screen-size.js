@@ -30,7 +30,19 @@ function LP_GV_SettingsFields_ScreenSize() {
                     notification.warning("UHD on an Arduino board? Really?");
                 }
                 else{
-                    notification.warning("This resolution is too much for an Arduino board")
+                    var pixels=w*h;
+                    if(pixels>100000000){
+                        notification.warning("A computer can barely handle this resolution, let alone an Arduino board.");
+                    }
+                    else if(pixels>25000000){
+                        notification.warning("That's an Arduino, not an RTX!");
+                    }
+                    else if(pixels>12500000){
+                        notification.warning("Does a display with this resolution even exist?");
+                    }
+                    else{
+                        notification.warning("This resolution is too much for an Arduino board")
+                    }
                 }
             }
             $("html").css("--settings-screen-width-px",w+"px");
