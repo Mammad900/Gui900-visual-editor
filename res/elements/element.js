@@ -40,8 +40,6 @@ elements.create=async function (el, saveCurrentElement=true, doNotModifyDOM=fals
     }
 };
 
-elements.types= {};
-
 elements.selectElement=function(index, saveCurrentElement=true, doNotModifyDOM=false){
     if(this.selectedElement!=-1){
         if(saveCurrentElement){
