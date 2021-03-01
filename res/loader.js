@@ -127,8 +127,6 @@ async function LP(){
         var LP_funcs=[
             LP_SetTheme,
 
-            LP_GV_ElementsTableButtons,
-            LP_GV_ElementsTableRows,
             LP_GV_PagesTableButtons,
             LP_GV_PagesTableRows,
             LP_GV_SettingsGenerator,
@@ -172,7 +170,6 @@ async function LP(){
             LP_GV_Toolbar_Handler_8,
             
             LP_keyBindings,
-            LP_GV_ElementTemplates,
             LP_HandleNewElementButton,
             LP_GenerateToolbar,
             LP_createFirstPage,
