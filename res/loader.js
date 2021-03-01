@@ -127,10 +127,6 @@ async function LP(){
         var LP_funcs=[
             LP_SetTheme,
 
-            LP_GV_SettingsGenerator,
-            LP_GV_SettingsFields_ScreenSize,
-            LP_GV_SettingsFields_ScreenBrightness,
-
             LP_GV_Toolbar_Handler_1,
             LP_GV_Toolbar_Handler_2,
             LP_GV_Toolbar_Handler_3,
