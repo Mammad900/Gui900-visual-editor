@@ -132,7 +132,6 @@ async function LP(){
             LP_GV_SettingsGenerator,
             LP_GV_SettingsFields_ScreenSize,
             LP_GV_SettingsFields_ScreenBrightness,
-            LP_GV_loadProject,
 
             LP_GV_Toolbar_Handler_1,
             LP_GV_Toolbar_Handler_2,
