@@ -127,8 +127,6 @@ async function LP(){
         var LP_funcs=[
             LP_SetTheme,
 
-            LP_GV_PagesTableButtons,
-            LP_GV_PagesTableRows,
             LP_GV_SettingsGenerator,
             LP_GV_SettingsFields_ScreenSize,
             LP_GV_SettingsFields_ScreenBrightness,
