@@ -134,11 +134,6 @@ async function LP(){
             LP_GV_SettingsFields_ScreenBrightness,
             LP_GV_loadProject,
             
-            LP_GV_El_CheckBox_1,
-            LP_GV_El_CheckBox_2,
-            LP_GV_El_CheckBox_3,
-            LP_GV_El_Checkbox_4,
-            LP_GV_El_CheckBox_5,
             LP_GV_El_Label_1,
             LP_GV_El_Label_2,
             LP_GV_El_Label_3,
