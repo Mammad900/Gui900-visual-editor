@@ -1,9 +1,13 @@
 'use strict';
-function LP_GV_Toolbar_Handler_2(){
-    toolBar.handlers.open_from_file=function (e) {
-        $("#fileinput").trigger("click");
-    }
+var toolBar= toolBar || {};
+toolBar.handlers= toolBar.handlers || {};
+toolBar.handlers.file= toolBar.handlers.file || {};
+toolBar.handlers.file.open= toolBar.handlers.file.open || {};
+
+toolBar.handlers.file.open_from_file=function (e) {
+    $("#fileinput").trigger("click");
 }
+
 function LP_CreateHiddenFileInput(){
     $(document.body).append($('<input type="file" class="hidden" name="fileinput" id="fileinput"/>'));
     $('#fileinput').on('change', function() { 
