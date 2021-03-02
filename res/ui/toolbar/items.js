@@ -88,7 +88,7 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(code, "Generate loop code", "fa-code", toolBar.handlers.code.generateLoopCode);
     })
     toolBar.menuItem(toolbar, "Help", function (e) {}, function (help) {
-        toolBar.subMenuItem(help, "Design FAQ", "fa-question-circle", toolBar.handlers.help.design_FAQ);
+        toolBar.subMenuItem(help, "Design tricks", "fa-question-circle", toolBar.handlers.help.design_tricks);
         toolBar.separator(help);
         toolBar.subMenu_icon_style="fab";
         toolBar.subMenuItem(help, "Visit Gui900 GitHub repository", "fa-github", function (e) {

@@ -77,7 +77,7 @@ var LP_res=[
 
     "res/ui/toolbar/handlers/file/import-from-json.js", //Import from JSON
     "res/ui/toolbar/handlers/help/about.js", //About Gui900 UI editor
-    "res/ui/toolbar/handlers/help/design-faq.js", //Gui900 Design FAQ
+    "res/ui/toolbar/handlers/help/design-tricks.js", //Gui900 Design tricks
     "res/ui/toolbar/handlers/file/open-from-file.js", //Open from file
     "res/ui/toolbar/handlers/file/save.js", //Save project
     "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
