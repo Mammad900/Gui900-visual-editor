@@ -1,7 +1,16 @@
 'use strict';
 var fileIO=fileIO || {};
 fileIO.load=function (json) {
-    var data=JSON.parse(json);
+    var data;
+    try{
+        data=JSON.parse(json);
+    }
+    catch(err){
+        if(err.constructor==SyntaxError){
+            notification.error("Project is corrupt");
+            return;
+        }
+    }
     if(!data){
         notification.error("Project is corrupt");
         return;
