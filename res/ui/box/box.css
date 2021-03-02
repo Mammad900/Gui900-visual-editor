@@ -3,6 +3,7 @@
     border-radius: var(--box-border-radius);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
     background-color: var(--box-background);
+    transition: box-shadow 0.3s;
 }
 .box h2 {
     user-select: none;
@@ -69,4 +70,10 @@
         margin-left: 0;
         margin-top: 10px;
     }
+}
+
+
+.box.ui-sortable-helper {
+    box-shadow: 0 0 50px rgb(0 0 0);
+    z-index: 20;
 }
