@@ -7,8 +7,8 @@ fileIO.load=function (json) {
         return;
     }
     if((data.fileVersion!="0.0.3")&&
-        (data.fileVersion!="0.0.2")&&
-        (data.fileVersion!="0.0.1")){
+       (data.fileVersion!="0.0.2")&&
+       (data.fileVersion!="0.0.1")){
         notification.error("This project was saved in an incompatible version of Gui900 visual editor");
         return;
     }
