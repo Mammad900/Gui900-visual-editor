@@ -6,7 +6,7 @@ toolBar.handlers.help= toolBar.handlers.help || {};
 toolBar.handlers.help.design_FAQ= function (e) {
     dialog(
         html`
-        <p>With these tips, you can create UI elements that are not natively supported by Gui900: <strong>(Most of theme are performance-unfriendly!)</strong></p>
+        <p>With these tips, you can create UI elements that are not natively supported by Gui900: <strong>(Most of these are performance-unfriendly!)</strong></p>
         <h3>Grouping elements like <code>GroupBox</code> in Windows Forms or <code>fieldset</code> in HTML</h3>
         <p>
             Possible using a button and a label: 
