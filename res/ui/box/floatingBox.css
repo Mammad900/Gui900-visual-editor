@@ -3,9 +3,13 @@ body.floatingBox {
     height: fit-content;
     min-height: 100vh;
 }
-#preview.floatingBox button{
+
+
+.floatingBox#preview button{
     border-radius: 0 !important;
 }
+
+
 .floatingBox #properties-content{
     height: 100%;
 }
