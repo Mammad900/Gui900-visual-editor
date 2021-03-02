@@ -45,7 +45,7 @@ toolBar.handlers.help.design_tricks= function (e) {
                     </ul>
                 </li>
             </ol>
-            Limitation: Buttons need to be much smaller if the extra button is round.
+            <p>Limitation: Buttons need to be much smaller if the extra button is round.</p>
             <button data-example="twoButtonsWithMergedSquare"></button>
         </p>
 
