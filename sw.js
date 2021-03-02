@@ -114,7 +114,8 @@ self.addEventListener('install', async event => {
 
     await cache.addAll([
         "./",
-        "./Gui900 visual editor.html"
+        "./Gui900 visual editor.html",
+        "./floatingBox.html",
     ]);
     LP_Files.forEach(async function (e) {
         await cache.add("./"+e);
