@@ -71,7 +71,12 @@ function LP_GenerateToolbar() {
                 toolBar.subMenuItem(reset, "Slider", "fa-sliders-h", function (e) {elements.templates.clearGlobalTemplate("Slider")});
                 toolBar.subMenuItem(reset, "Radio-button", "fa-dot-circle", function (e) {elements.templates.clearGlobalTemplate("Radio button")});
             }, true, false);
-        }, true, false)
+        }, true, false);
+
+        toolBar.separator(element);
+        toolBar.subMenu_icon_style="far";
+        toolBar.subMenuItem(element, "Move properties to a floating window", "fa-clone", ()=> boxToNewWindow("properties") , ()=>{}, false, true, false);
+        toolBar.subMenu_icon_style="fas";
     });
     toolBar.menuItem(toolbar, "Preview", function(e){}, function(_preview){
         toolBar.subMenuItem(_preview, "Refresh", "fa-sync", preview.refresh);
