@@ -5,15 +5,7 @@ elements.types["Check-box"] = elements.types["Check-box"] || {}
 
 elements.types["Check-box"].saveProperties=function (index) {
     if(index==-1)return;
-    function g(id) {
-        return $("#"+id).val();
-    }
-    function n(id) {
-        return $("#"+id)[0].valueAsNumber;
-    }
-    function b(id) {
-        return (($("#"+id).data("checked"))=="1");
-    }
+    var [g,n,b,m]= [properties.get.g,properties.get.n,properties.get.b,properties.get.m]
     elements.data[index]={
         type: "Check-box",
         position: {

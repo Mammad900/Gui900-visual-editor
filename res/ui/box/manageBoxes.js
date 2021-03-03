@@ -4,6 +4,16 @@ var floatingBoxes={};
  * @param {JQuery<HTMLElement>} box 
  */
 function boxToNewWindow(box) {
+    var boxId=box;
+    box=$("#"+box);
+    if(box.length==0){
+        if(floatingBoxes[boxId]){
+            floatingBoxes[boxId].focus();
+        }else{
+            notification.error("An unexpected error occurred");
+        }
+        return;
+    }
     var name=box.find("h2").text().trim();
     var w=window.open('floatingBox.html','', `innerHeight=${box.height()+1},innerWidth=${box.width()},resizable=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no`);
     if(w==null){
@@ -37,7 +47,8 @@ function boxToNewWindow(box) {
                 w.CanvasRenderingContext2D.prototype.roundRect=CanvasRenderingContext2D.prototype.roundRect;
                 preview.refresh();
                 break;
-        
+            case "Properties":
+                w.defineMonacoThemes();
             default:
                 break;
         }
@@ -47,7 +58,7 @@ function boxToNewWindow(box) {
             updateEmptyBoxRows();
         }
     }
-    floatingBoxes[name]=w;
+    floatingBoxes[boxId]=w;
 }
 
 function updateEmptyBoxRows() {

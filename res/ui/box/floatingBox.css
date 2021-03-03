@@ -12,6 +12,7 @@ body.floatingBox {
 
 .floatingBox #properties-content{
     height: 100%;
+    position: unset;
 }
 .floatingBox #properties-shadow-top,.floatingBox #properties-shadow-bottom{
     position:fixed;
@@ -19,4 +20,11 @@ body.floatingBox {
 }
 .floatingBox#properties{
     background-color: var(--box-background);
+    min-height: unset;
+    height: 100%;
+    min-width: unset;
+}
+.floatingBox#properties>div:first-child {
+    border: none;
+    height: 100% !important;
 }

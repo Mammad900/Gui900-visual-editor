@@ -1,9 +1,38 @@
 'use strict';
 var properties= properties || {};
 properties.gen= properties.gen || {};
+properties.get= properties.get || {};
+
+properties.get.f= function(id) {
+    var p= $("#"+id);
+    if(p.length==0){ // Where is the properties window?
+        p=$(floatingBoxes["properties"].document.getElementById(id))
+    }
+    return p;
+}
+properties.get.g= function(id) {
+    return properties.get.f(id).val();
+}
+properties.get.n= function(id) {
+    return properties.get.f(id)[0].valueAsNumber;
+}
+properties.get.b= function(id) {
+    return ((properties.get.f(id).data("checked"))=="1");
+}
+properties.get.m= function(id) {
+    var mi= monacoEditorPropertiesInstances[id];
+    if($("#properties").length==0){
+        mi=floatingBoxes["properties"].propertiesMonacoInstance;
+    }
+    return mi.getValue();
+}
 
 properties.getElement = ()=>{
-    return $("#properties-content");
+    var p= $("#properties-content");
+    if(p.length==0){ // Where is the properties window?
+        p=$(floatingBoxes["properties"].document.getElementById("properties-content"))
+    }
+    return p;
 }
         
 /**
@@ -196,13 +225,20 @@ properties.gen.select = function(container, label, id, values, selected) {
     */
 properties.gen.monacoEditor = function(container, label, id, options, optionsOverrideName, height, placeLabel=true) {
     var mc=$("<div>").attr("id",id).height(height).addClass("doNotTouchCss defaultCursor");
-    var me= monaco.editor.create(mc[0], {
+    var computedOptions={
         ...(options),
         ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
         ...(JSON.parse(localStorage.getItem("monacoCppOptions"))),
         ...(JSON.parse(localStorage.getItem("monacoPropertiesWindowOptions"))),
         ...(JSON.parse(localStorage.getItem(optionsOverrideName))),
-    });
+    };
+    var me;
+    if($("#properties").length==0){
+        me= floatingBoxes["properties"].createMonaco(mc[0],computedOptions);
+    }
+    else{
+        me= monaco.editor.create(mc[0], computedOptions);
+    }
     monacoEditorPropertiesInstances[id]=me;
     if(placeLabel){
         container.append($("<label>").attr("for",id).addClass("block").text(label));

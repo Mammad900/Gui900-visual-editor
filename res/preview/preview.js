@@ -3,7 +3,7 @@ var preview={
     getCanvas(){
         var x= $("#preview-canvas");
         if(x.length==0){ // Preview box is floating
-            x=$(floatingBoxes.Preview.document.getElementById("preview-canvas"));
+            x=$(floatingBoxes.preview.document.getElementById("preview-canvas"));
         }
         return x;
     },

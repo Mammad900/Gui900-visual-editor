@@ -26,8 +26,11 @@
 <body onunload="if((window.docWin!=undefined) && (!window.docWin.closed)){
                     window.docWin.close();
                 }
-                if((window.floatingBoxes.Preview!=undefined) && (!window.floatingBoxes.Preview.closed)){
-                    window.floatingBoxes.Preview.close();
+                if((window.floatingBoxes.preview!=undefined) && (!window.floatingBoxes.preview.closed)){
+                    window.floatingBoxes.preview.close();
+                }
+                if((window.floatingBoxes.properties!=undefined) && (!window.floatingBoxes.properties.closed)){
+                    window.floatingBoxes.properties.close();
                 }">
     <noscript style="text-align: center; color:red">
         <h1>Scripts disabled</h1>

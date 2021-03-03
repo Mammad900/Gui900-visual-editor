@@ -19,6 +19,25 @@ function loadJsCssFile(filename){
     }
     return fileRef;
 }
+function createMonaco(container, options){
+    var x= monaco.editor.create(container, options);
+    window.propertiesMonacoInstance=x;
+    return x;
+}
+function defineMonacoThemes(){
+    monaco.editor.defineTheme('GVE-dark', { base: 'vs-dark', inherit: true, rules: [{  }], });
+    monaco.editor.defineTheme('GVE-dark-red'   , { base: 'vs-dark', inherit: true, rules: [{ background: "200000" }], colors: { "editor.background": "#200000" } });
+    monaco.editor.defineTheme('GVE-dark-green' , { base: 'vs-dark', inherit: true, rules: [{ background: "002000" }], colors: { "editor.background": "#002000" } });
+    monaco.editor.defineTheme('GVE-dark-blue'  , { base: 'vs-dark', inherit: true, rules: [{ background: "000020" }], colors: { "editor.background": "#000020" } });
+    monaco.editor.defineTheme('GVE-dark-yellow', { base: 'vs-dark', inherit: true, rules: [{ background: "202000" }], colors: { "editor.background": "#202000" } });
+    monaco.editor.defineTheme('GVE-light-red'   , { base: 'vs', inherit: true, rules: [{ background: "ff8e8e" }], colors: { "editor.background": "#ff8e8e" } });
+    monaco.editor.defineTheme('GVE-light-green' , { base: 'vs', inherit: true, rules: [{ background: "8eff8e" }], colors: { "editor.background": "#8eff8e" } });
+    monaco.editor.defineTheme('GVE-light-blue'  , { base: 'vs', inherit: true, rules: [{ background: "8e8eff" }], colors: { "editor.background": "#8e8eff" } });
+    monaco.editor.defineTheme('GVE-light-yellow', { base: 'vs', inherit: true, rules: [{ background: "ffff8e" }], colors: { "editor.background": "#ffff8e" } });
+    monaco.editor.defineTheme('GVE-high-contrast', { base: 'hc-black', inherit: true, rules: [{  }], });
+    monaco.editor.defineTheme('GVE-windows-10-UWP-dark-style', { base: 'vs-dark', inherit: true, rules: [{ background: "000000" }], colors: { "editor.background": "#000000" } });
+    monaco.editor.defineTheme('GVE-light', { base: 'vs', inherit: true, rules: [{  }], });
+}
 var LP_res=[
     "res/ui/toolbar/toolbar.css", //Styles for the toolbar
     "res/ui/css/constants.css", //Holds the UI constants
