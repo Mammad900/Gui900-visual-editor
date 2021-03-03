@@ -17,7 +17,6 @@ elements.types["Slider"].saveProperties=function (index) {
             height: n("property-size-y"),
             touchAreaHeight: n("property-size-area-y")
         },
-        text: g("property-text"),
         colors: {
             thumb: g("property-color-thumb"),
             background: {
