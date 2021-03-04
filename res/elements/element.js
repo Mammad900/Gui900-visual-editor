@@ -54,12 +54,12 @@ elements.selectElement=function(index, saveCurrentElement=true, doNotModifyDOM=f
             elements.types[type].createProperties(index);
             this.updatePropertiesTitle(index);
             $(elements.table.rows.getRow(index)).addClass("selected");
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").removeClass("disabled");
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").removeClass("disabled");
+            $("#toolbar>.menuitem:nth-of-type(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").removeClass("disabled");
+            $("#toolbar>.menuitem:nth-of-type(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").removeClass("disabled");
         }
         else{
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").addClass("disabled");
-            $("#toolbar>.menuitem:nth-child(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").addClass("disabled");
+            $("#toolbar>.menuitem:nth-of-type(3)>div>.dropdown>.menuitem:nth-child(2)>.toolbar-button").addClass("disabled");
+            $("#toolbar>.menuitem:nth-of-type(3)>div>.dropdown>.menuitem:nth-child(3)>.toolbar-button").addClass("disabled");
         }
     }
     elements.selectedElement=index;
