@@ -70,6 +70,7 @@ var LP_Files=[
     "res/ui/toolbar/handlers/elements/duplicate.js", //Duplicate element
     "res/ui/toolbar/handlers/file/generateCode.js", //Generate code
     "res/ui/toolbar/handlers/code/generateLoopCode.js", //Generate loop code
+    "res/ui/toolbar/handlers/page/duplicate.js", // Duplicate page
 
 
 
