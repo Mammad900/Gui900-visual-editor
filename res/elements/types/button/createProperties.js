@@ -89,7 +89,7 @@ elements.types["Button"].createProperties= function (index) {
     })();
     properties.gen.monacoEditor(p, "Click event", "property-event", {
         language: "cpp",
-        value: (props.clickEvent || ""),
+        value: props.clickEvent,
         automaticLayout: true,
         theme: "GVE-"+$("html").attr('theme'),
         scrollbar:{

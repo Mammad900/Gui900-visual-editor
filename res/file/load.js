@@ -3,7 +3,7 @@ var fileIO=fileIO || {};
 fileIO.load=function (json) {
     var data;
     try{
-        data=JSON.parse(json);
+        data = migrateOlderProject(json);
     }
     catch(err){
         if(err.constructor==SyntaxError){
@@ -21,7 +21,7 @@ fileIO.load=function (json) {
         notification.error("This project was saved in an incompatible version of Gui900 visual editor");
         return;
     }
-    localStorage.setItem("fileToBeLoaded",json);
+    localStorage.setItem("fileToBeLoaded",JSON.stringify(data));
     location.reload();
 }
 
@@ -63,9 +63,8 @@ fileIO.loadProject= function (json) {
 
     // Title
 
-    var title = data.title || "Untitled project";
-    document.title = title + " - Gui900 visual editor";
-    $("#project-name").text(title);
+    document.title = data.title + " - Gui900 visual editor";
+    $("#project-name").text(data.title);
 
 
 

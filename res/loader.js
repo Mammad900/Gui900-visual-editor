@@ -42,6 +42,7 @@ var LP_res=[
     "res/code-editor/code-editor.js", // Monaco editor
     "res/file/save.js", // Save the project
     "res/file/load.js", // Load the project
+    "res/file/migrate.js", // Migrate a project to a more recent format
     "res/code-generator/config.js", // Generates Arduino config code
     "res/code-generator/generateCode.js", // Generates Arduino code
     "res/code-generator/loopCode.js", // Generates loop code
