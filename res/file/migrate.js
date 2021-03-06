@@ -21,6 +21,7 @@ function migrateOlderProject(project) {
                         if(!element.clickEvent) {
                             project.pages[pI].elements[eI].clickEvent = "";
                         } else if(typeof element.clickEvent != 'string') {
+                            project.pages[pI].elements[eI].clickEvent = "";
                             console.warn("Found something unexpected while migrating the project: An older version project (with a version which doesn't support button click events) contained a click event property, but was not a string. The property was set to an empty string.");
                         } else {
                             console.warn("Found something unexpected while migrating the project: An older version project (with a version which doesn't support button click events) contained a valid click event property. This button was skipped.");
