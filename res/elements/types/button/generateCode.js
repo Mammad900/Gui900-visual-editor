@@ -12,5 +12,7 @@ elements.types["Button"].generateCode= function (pageI, btn) {
                         preview.color565(preview.hexToRgb(btn.colors.border)) + ", "+
                         (btn.enabled?"true":"false") + ", "+
                         (btn.visible?"true":"false") + ", "+
-                        btn.radius + ");\n";
+                        btn.radius+ ", "+
+                        btn.textOffset.x + ", "+
+                        btn.textOffset.y + ");\n";
 }

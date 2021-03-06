@@ -224,7 +224,7 @@ properties.gen.select = function(container, label, id, values, selected) {
     * @param {number} height 
     */
 properties.gen.monacoEditor = function(container, label, id, options, optionsOverrideName, height, placeLabel=true) {
-    var mc=$("<div>").attr("id",id).height(height).addClass("doNotTouchCss defaultCursor");
+    var mc=$("<div>").attr("id",id).height(height).addClass("doNotTouchCss defaultCursor").css("margin-bottom", "10px");
     var computedOptions={
         ...(options),
         ...(JSON.parse(localStorage.getItem("monacoGlobalOptions"))),
@@ -245,6 +245,20 @@ properties.gen.monacoEditor = function(container, label, id, options, optionsOve
     }
     container.append(mc);
     return [mc,me];
+}
+
+/**
+    * 
+    * @param {JQuery<HTMLElement>} container 
+    * @param {(el:JQuery<HTMLElement>)=>void} callback 
+    */
+properties.gen.advancedOptions = function(container, callback) {
+    var div= $("<div></div>").addClass("advanced-options closed").one("click", function (e) {
+        div.removeClass("closed");
+    })
+    callback(div);
+    container.append(div);
+    return div
 }
 
 var monacoEditorPropertiesInstances={};

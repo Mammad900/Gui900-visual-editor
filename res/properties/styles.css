@@ -84,3 +84,63 @@
     text-overflow: ellipsis;
     user-select: none;
 }
+
+
+.advanced-options.closed {
+    height: 20px;
+    margin: 10px 0;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.advanced-options.closed * {
+    display: none !important;
+}
+
+.advanced-options.closed::after {
+    content: "\f078";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    margin: auto;
+}
+
+.advanced-options.closed:hover {
+    background: var(--toolbar-menuitem-hover);
+}
+
+.advanced-options.closed:active {
+    background: var(--toolbar-menuitem-active);
+}
+
+.advanced-options.closed::before {
+    box-sizing: content-box;
+    content: "View advanced options";
+    position: absolute;
+    background: var(--tooltip-color);
+    bottom: 100%;
+    display: none;
+    margin: 10px;
+    right: calc(50% - 98px);
+    width: 165px;
+    padding: 5px;
+    border-radius: 999em;
+    box-shadow: 0 0 10px #00000036;
+    opacity: 0;
+    text-decoration: none;
+    animation: tooltip-appear .1s ease-in 1s;
+    animation-fill-mode: forwards;
+}
+
+.advanced-options.closed:hover::before {
+     display: block;
+}
+
+@keyframes tooltip-appear{
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

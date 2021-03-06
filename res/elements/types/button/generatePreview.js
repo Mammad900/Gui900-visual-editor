@@ -47,7 +47,7 @@ function (index,canvas) {
         }
     }
 
-    var tx=preview.centerAlign(sz.width, w, x);
-    var ty=preview.centerAlign(th*1.25, h, y);
+    var tx=preview.centerAlign(sz.width, w, x) + button.textOffset.x;
+    var ty=preview.centerAlign(th*1.25, h, y) + button.textOffset.y;
     ctx.fillText(txt, tx, ty+th);
 }

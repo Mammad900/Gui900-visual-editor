@@ -96,4 +96,17 @@ elements.types["Button"].createProperties= function (index) {
             alwaysConsumeMouseWheel: false
         }
     }, "monacoButtonEventOptions", 400, false)[0].prev().css("margin-top", "10px");
+
+    properties.gen.advancedOptions(p, opt=>{
+        properties.gen.fieldset(opt,"Move text",function (fs) {
+            properties.gen.grid(fs,2,1,[
+                function (col) {
+                    properties.gen.inputNumber(col, "To right", "property-text-offset-x", -1000, 1000, props.textOffset.x);
+                },
+                function (col) {
+                    properties.gen.inputNumber(col, "To bottom", "property-text-offset-y", -1000, 1000, props.textOffset.y);
+                }
+            ])
+        })
+    });
 }

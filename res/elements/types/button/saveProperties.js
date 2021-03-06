@@ -26,5 +26,9 @@ elements.types["Button"].saveProperties=function (index) {
         enabled: b("property-enabled"),
         visible: b("property-visible"),
         clickEvent: m("property-event"),
+        textOffset: {
+            x: n("property-text-offset-x"),
+            y: n("property-text-offset-y"),
+        },
     }
 }

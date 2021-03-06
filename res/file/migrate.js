@@ -39,7 +39,21 @@ function migrateOlderProject(project) {
             }
             project.fileVersion = "0.0.3";
             break;
-        case "0.0.3": // Already up to date
+        case "0.0.3": // Migrate from 0.0.3 to 0.0.4
+            project.pages.forEach(function (page, pI) {
+                page.elements.forEach(function (element, eI) {
+                    if(element.type == "Button") {
+                        if(!element.textOffset) {
+                            project.pages[pI].elements[eI].textOffset = {x:0,y:0};
+                        } else if(typeof element.textOffset != 'object') {
+                            console.warn("Found something unexpected while migrating the project: An older version project (with a version which doesn't support button text offset) contained a text offset property, but was not an object. The property was set to the default value.");
+                        } else {
+                            console.warn("Found something unexpected while migrating the project: An older version project (with a version which doesn't support button text offset) contained a valid text offset property. This button was skipped.");
+                        }
+                    }
+                })
+            })
+        case "0.0.4": // Already up to date
             return project;
         default:
             notification.error("This project was saved in an incompatible version of Gui900 visual editor");

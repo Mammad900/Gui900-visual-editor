@@ -17,7 +17,7 @@ fileIO.createJSON = () => {
         settings: settings.data,
         code: projectCode,
         title: $("#project-name").text(),
-        fileVersion: "0.0.3",
+        fileVersion: "0.0.4",
         "$schema": "https://mammad900.github.io/Gui900-visual-editor/res/file/project-file-json-schema.json"
     };
     $("#pages_table tr:not(:first-of-type) td:nth-child(3)").each(function (index, element) {

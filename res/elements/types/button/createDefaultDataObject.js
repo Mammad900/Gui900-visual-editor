@@ -24,5 +24,9 @@ elements.types["Button"].createDefaultDataObject= function () {
         enabled: true,
         visible: true,
         clickEvent: "",
+        textOffset: {
+            x: 0,
+            y: 0,
+        },
     }
 }
