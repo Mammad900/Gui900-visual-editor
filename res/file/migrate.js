@@ -41,6 +41,8 @@ function migrateOlderProject(project) {
         case "0.0.3": // Already up to date
             return project;
         default:
+            notification.error("This project was saved in an incompatible version of Gui900 visual editor");
+            return;
             break;
     }
     return migrateOlderProject(project);

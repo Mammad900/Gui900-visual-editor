@@ -15,12 +15,6 @@ fileIO.load=function (json) {
         notification.error("Project is corrupt");
         return;
     }
-    if((data.fileVersion!="0.0.3")&&
-       (data.fileVersion!="0.0.2")&&
-       (data.fileVersion!="0.0.1")){
-        notification.error("This project was saved in an incompatible version of Gui900 visual editor");
-        return;
-    }
     localStorage.setItem("fileToBeLoaded",JSON.stringify(data));
     location.reload();
 }
@@ -33,12 +27,6 @@ fileIO.loadProject= function (json) {
 
     if(!data){
         notification.error("Project is corrupt");
-        return;
-    }
-    if((data.fileVersion!="0.0.3")&&
-        (data.fileVersion!="0.0.2")&&
-        (data.fileVersion!="0.0.1")){
-        notification.error("This project was saved in an incompatible version of Gui900 visual editor");
         return;
     }
 
