@@ -73,6 +73,14 @@
     font-weight: bold;
     font-size: 1rem;
 }
+.hint>.tooltiptext>button.skip{
+    font-size: 0.8rem;
+    padding: 7px;
+    border-radius: 6px 6px 0 0;
+}
+.hint>.tooltiptext>button.skip+div{
+    padding-top: 5px;
+}
 
 
 .tooltiptext.right {

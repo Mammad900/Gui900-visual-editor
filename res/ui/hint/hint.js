@@ -3,9 +3,9 @@
  * @param {JQuery<HTMLElement>} element 
  * @param {string|HTMLElement|JQuery<HTMLElement>} html 
  */
-async function createHint(id,element, html, wide=true, direction="top") {
+async function createHint(id,element, html, wide=true, direction="top", showSkipButton=false) {
     var storageObj=JSON.parse(localStorage.getItem("hints"));
-    if((storageObj[id])==true) { 
+    if(((storageObj[id])==true) || (storageObj==true)) { 
         return; // This hint was already read, So don't display it.
     }
 
@@ -18,6 +18,14 @@ async function createHint(id,element, html, wide=true, direction="top") {
         element.parent().parent().parent().parent().addClass("hashint");
     }
     var ttt= $("<div>").addClass(["tooltiptext",direction]);
+    if(showSkipButton) {
+        ttt.append($("<button>").addClass("button skip").text("Skip all hints").on("click",function (e) {
+            ttt.remove();
+            element.removeClass("hint");
+            localStorage.setItem("hints","true");
+            cont();
+        }));
+    }
     var cont;
     ttt.append($("<div>").append(html));
     ttt.append($("<button>").addClass("button").text("OK").on("click",function (e) {
@@ -26,6 +34,8 @@ async function createHint(id,element, html, wide=true, direction="top") {
         if(element.is("#toolbar .dropdown .toolbar-button")){
             element.parent().parent().parent().parent().removeClass("hashint");
         }
+        storageObj[id]=true;
+        localStorage.setItem("hints",JSON.stringify(storageObj));
         cont();
     }));
     if(wide){
@@ -36,8 +46,6 @@ async function createHint(id,element, html, wide=true, direction="top") {
     var promise = new Promise((resolve) => { cont = resolve });
     await promise.then((result) => {});
 
-    storageObj[id]=true;
-    localStorage.setItem("hints",JSON.stringify(storageObj));
 }
 
 async function LP_Hints() {
@@ -68,7 +76,7 @@ async function LP_Hints() {
     ]
     for(var i=0;i<hints.length;i++){
         var hint=hints[i];
-        await createHint(hint[0], $(hint[1]), hint[2], hint[3] || true, hint[4] || "top");
+        await createHint(hint[0], $(hint[1]), hint[2], hint[3] || true, hint[4] || "top", i==0);
     }
 }
 
