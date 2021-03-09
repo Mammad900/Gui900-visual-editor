@@ -45,7 +45,7 @@ async function LP_Hints() {
         localStorage.setItem("hints","{}");
     }
     var hints= [
-        ["elements"       , "#elements section.box"                              , "Using the elements section, you can create, delete and re-order <abbr class='tooltip'>elements<span class='tooltiptext wide'>Elements are UI widgets on a page. They consist of buttons, labels, check-boxes, sliders and radio-buttons.</span></abbr>." , true         ],
+        ["elements"       , "#elements"                                          , "Using the elements section, you can create, delete and re-order <abbr class='tooltip'>elements<span class='tooltiptext wide'>Elements are UI widgets on a page. They consist of buttons, labels, check-boxes, sliders and radio-buttons.</span></abbr>." , true         ],
         ["newElement"     , "#new_element_button"                                , "Hover over this button to see a list of element types. Click on any of them to create an element of that kind."                                               , true         ],
         ["pages"          , "#pages"                                             , "Using the pages section, you can create, re-order and delete pages."                                                                                          , true         ],
         ["newPage"        , "#new_page_button"                                   , "Click on this to create a new page."                                                                                                                          , true         ],
