@@ -40,7 +40,7 @@ function defineMonacoThemes(){
 }
 function changeTheme(theme) {
     $("html").attr("theme",theme);
-    $("#theme-color-meta").attr("content",$(":root").css("--toolbar-background"));
+    $("#theme-color-meta").attr("content",$(":root").css("--box-background"));
 }
 function createThemeMeta() {
     $("head").append($(html`<meta name="theme-color" id="theme-color-meta" content="${$(":root").css("--box-background")}">`));
