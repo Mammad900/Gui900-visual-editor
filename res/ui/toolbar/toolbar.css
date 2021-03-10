@@ -1,6 +1,8 @@
 #toolbar {
+    position: absolute;
+    width: 100%;
     padding-left: 45px;
-    background-color: var(--toolbar-background);
+    background: var(--toolbar-background);
     margin: 0;
     z-index: 9;
     border-bottom: var(--border);

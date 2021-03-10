@@ -35,9 +35,10 @@ body {
 
 body>.content {
     overflow: auto;
-    height: calc( 100vh - 28.5px);
+    height: 100vh;
     position: fixed;
-    top: 28.5px;
+    top: 0;
+    padding-top: 38px !important;
     left: 0px;
     width: 100%;
     background-color: var(--back-color);
