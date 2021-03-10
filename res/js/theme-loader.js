@@ -50,6 +50,10 @@ function ThemeMenuGenerator(themes) {
             var it= toolBar.subMenuItem(themes, name, icon, function (e) {
                 $("html").attr("theme",val);
                 $("#theme-color-meta").attr("content",$(":root").css("--toolbar-background"));
+                for(var w in floatingBoxes){
+                    var win=floatingBoxes[w];
+                    win.changeTheme(val);
+                }
                 toolBar.menuItemIconChange(it.siblings(),"fa");
                 toolBar.menuItemIconChange(it,"fa-check");
                 localStorage.setItem('theme', val);

@@ -38,6 +38,20 @@ function defineMonacoThemes(){
     monaco.editor.defineTheme('GVE-windows-10-UWP-dark-style', { base: 'vs-dark', inherit: true, rules: [{ background: "000000" }], colors: { "editor.background": "#000000" } });
     monaco.editor.defineTheme('GVE-light', { base: 'vs', inherit: true, rules: [{  }], });
 }
+function changeTheme(theme) {
+    $("html").attr("theme",theme);
+    $("#theme-color-meta").attr("content",$(":root").css("--toolbar-background"));
+}
+function createThemeMeta() {
+    $("head").append($(html`<meta name="theme-color" id="theme-color-meta" content="${$(":root").css("--box-background")}">`));
+}
+var html=(i, ...z)=>{
+    var s='';
+    i.forEach((l,f)=>{
+        s+=l+((z[f] ==undefined) ? "": z[f])
+    })
+    return $.parseHTML(s);
+}
 var LP_res=[
     "res/ui/toolbar/toolbar.css", //Styles for the toolbar
     "res/ui/css/constants.css", //Holds the UI constants

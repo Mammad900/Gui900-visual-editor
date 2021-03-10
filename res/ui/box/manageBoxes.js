@@ -53,6 +53,7 @@ function boxToNewWindow(box) {
                 break;
         }
         updateEmptyBoxRows();
+        w.createThemeMeta();
         w.onbeforeunload=function () {
             bp.append(box);
             updateEmptyBoxRows();
