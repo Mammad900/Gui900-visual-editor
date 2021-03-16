@@ -9,14 +9,14 @@ Gui900 visual editor is a web based app which helps you create an app based on [
   
 ## Compatibility
 
-| Browser           | Support                    |
-| ----------------- | -------------------------- |
-| Chrome            | :heavy_check_mark: Works   |
-| Firefox           | :heavy_check_mark: Works   |
-| Internet explorer | :x: Does not load          |
-| Edge              | :grey_question: Not tested |
-| Safari            | :grey_question: Not tested |
-| Opera             | :grey_question: Not tested |
+Hover over text on 'Support' column for more info
+| Browser           | Support                                                                                                                                                        |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Chrome            | :heavy_check_mark: <span title="Development is done with Chrome, and almost every commit is tested.">Works</span>                                              |
+| Firefox           | :heavy_check_mark: <span title="Development is done using Chrome, and Firefox is only tested before tagging a new release">Works (only releases tested)</span> |
+| Internet explorer | :x: <span title="Does not even download loader.js">Does not load, unsupported</span>                                                                           |
+| Legacy edge       | :x: <span title="There are unhandled errors">Does not load, unsupported</span>                                                                                 |
+| Safari            | :grey_question: <span title="I don't own an Apple device, but anybody who has one can test in Safari and report problems">Not tested</span>                    |
 
 **Note: Gui900 visual editor is not supported on mobile browsers**
 
