@@ -111,9 +111,39 @@ elements.table.buttons.actions.moveDown= function(){
     elements.data[i-1]=arr2;
 }
 
-elements.table.buttons.actions.delete=function(index){
+elements.table.buttons.actions.delete=function(index, confirm= true, saveCurrentElement=true, doNotModifyDOM=false){
     var hasIndex=typeof(index)=='number';
     var row=(!hasIndex)?$(this):undefined;
+
+    function doDelete() {
+        if(elements.selectedElement!=-1)
+        if(saveCurrentElement){
+            elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement);
+        }
+        $("#properties-header-details").text("No item selected");
+
+        var tr =(!hasIndex)?(row.parent().parent().parent().parent()):(elements.table.rows.getRow(index));
+        var i=$("#elements_table tr").index(tr)-1;
+        tr.remove();
+        elements.table.rows.data.splice(i, 1)
+        if(!elements.table.rows.data.length==0){
+            if(i==0){
+                elements.table.rows.data[0][0].prop("disabled",true)
+            }
+            if(i==elements.table.rows.data.length){
+                elements.table.rows.data[i-1][1].prop("disabled",true);
+            }
+        }
+        elements.data.splice(i, 1);
+        elements.selectElement(-1, false, doNotModifyDOM);
+        elements.table.rows.sortNumbers();
+    }
+
+    if(!confirm){
+        doDelete();
+        return;
+    }
+
     dialog("Do you really want to <strong>delete</strong> this element?<br>This cannot be undone.",[
         {
             "id": 0,
@@ -127,26 +157,8 @@ elements.table.buttons.actions.delete=function(index){
         }
     ],function (id,e) {
         if(id==1){
-            if(elements.selectedElement!=-1)
-                elements.types[elements.data[elements.selectedElement].type].saveProperties(elements.selectedElement);
-            $("#properties-header-details").text("No item selected");
-
-            var tr =(!hasIndex)?(row.parent().parent().parent().parent()):(elements.table.rows.getRow(index));
-            var i=$("#elements_table tr").index(tr)-1;
-            tr.remove();
-            elements.table.rows.data.splice(i, 1)
-            if(!elements.table.rows.data.length==0){
-                if(i==0){
-                    elements.table.rows.data[0][0].prop("disabled",true)
-                }
-                if(i==elements.table.rows.data.length){
-                    elements.table.rows.data[i-1][1].prop("disabled",true);
-                }
-            }
-            elements.data.splice(i, 1);
-            elements.selectElement(-1, false);
+            doDelete();
         }
-        elements.table.rows.sortNumbers();
         dialog.close();
     })
 }

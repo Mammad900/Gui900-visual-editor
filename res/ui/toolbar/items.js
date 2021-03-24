@@ -47,6 +47,7 @@ function LP_GenerateToolbar() {
         toolBar.subMenuItem(page, "Duplicate page", "fa-clone", toolBar.handlers.pages.duplicate);
         toolBar.separator(page);
         toolBar.subMenuItem(page, '<input type="color" id="page_bc_color_input" class="color-preview float-right" style="background-color: #000000;"/>Change background color', "fa-palette", function (e) {});
+        toolBar.subMenuItem(page, 'Clear page', "fa-trash", toolBar.handlers.pages.clear);
     });
     toolBar.menuItem(toolbar, "Element", function (e) {}, function (element) {
         toolBar.subMenuItem(element, "New element", "fa-plus", function (e) {}, function (new_element) {
