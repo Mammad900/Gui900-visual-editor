@@ -1,0 +1,31 @@
+.context-menu{
+    position: fixed;
+    width: 150px;
+    background-color: var(--toolbar-background);
+    z-index: 5000;
+    border-radius: 5px;
+    box-shadow: 0 0 30px black;
+}
+.context-menu button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    background-color: inherit;
+    border: none;
+    color: var(--text-color);
+}
+.context-menu button:hover {
+    background-color: var(--toolbar-menuitem-hover);
+}
+.context-menu button:first-child {
+    border-top-left-radius: 5px; border-top-right-radius: 5px;
+}
+.context-menu button:last-child {
+    border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;
+}
+.context-menu button:active {
+    background-color: var(--toolbar-menuitem-active);
+}
+.context-menu button:focus {
+    outline: none;
+}

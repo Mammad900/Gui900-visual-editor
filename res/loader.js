@@ -49,6 +49,7 @@ var LP_res=[
     "res/ui/hint/hint.js",
     "res/code-editor/editorOptionsEditor.js", // Monaco options editor
     "res/ui/box/manageBoxes.js", // Manage boxes (move and float)
+    "res/ui/context-menu/context-menu.js", // Custom context menus
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
@@ -111,6 +112,7 @@ var LP_res=[
     "res/settings/special-styles.css", // Project settings special styles
     "res/code-editor/styles.css", // Code editor styles
     "res/ui/hint/styles.css",
+    "res/ui/context-menu/style.css", // Custom context menus
 
     "res/js/loader-end.js", // Finishes loading
 
@@ -138,6 +140,7 @@ async function LP(){
             preview.refresh,
             LP_LoadEditor,
             LP_HandleColorPickerInput,
+            LP_contextMenuHideTrigger,
             LP_MakeBoxesSortable,
             LP_loaderEnd,
             function () {
