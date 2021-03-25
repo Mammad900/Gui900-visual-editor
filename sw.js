@@ -37,6 +37,7 @@ var LP_Files=[
     "res/code-editor/editorOptionsEditor.js", // Monaco options editor
     "res/ui/box/manageBoxes.js", // Manage boxes (move and float)
     "res/ui/context-menu/context-menu.js", // Custom context menus
+    "res/ui/context-menu/items.js", // Custom context menus
 
     "res/elements/types/button/createDefaultDataObject.js",
     "res/elements/types/button/createProperties.js",
