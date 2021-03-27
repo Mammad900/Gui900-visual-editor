@@ -5,7 +5,7 @@ toolBar.handlers.pages= toolBar.handlers.pages || {};
 
 toolBar.handlers.pages.clear = function(e) {
     
-    dialog("Do you really want to <strong>delete</strong> this element?<br>This cannot be undone.",[
+    dialog("Do you really want to <strong>delete ALL elements</strong> in this page?<br>This cannot be undone.",[
         {
             "id": 0,
             "text": "No",
