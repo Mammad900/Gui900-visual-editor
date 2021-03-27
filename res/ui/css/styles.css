@@ -95,7 +95,9 @@ body {
 .selectable, .selectable *{
     cursor: initial;
     user-select: text;
-    
+}
+input:not(div), [contenteditable][contenteditable] {
+    user-select: initial !important;
 }
 
 [contenteditable],
