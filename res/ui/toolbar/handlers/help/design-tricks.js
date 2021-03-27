@@ -80,7 +80,15 @@ toolBar.handlers.help.design_tricks= function (e) {
     }).on("mousedown",(e)=>{
         if(e.button==1){
             e.preventDefault();
-            localStorage.setItem("fileToBeLoaded",examples[$(e.target).attr("data-example")]);
+            localStorage.setItem("fileToBeLoaded",
+                JSON.stringify(
+                    migrateOlderProject( 
+                        examples[ 
+                            $(e.target).attr("data-example") 
+                        ] 
+                    ) 
+                ) 
+            );
             window.open(window.location);
         }
     })
