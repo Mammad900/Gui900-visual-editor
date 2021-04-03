@@ -9,9 +9,12 @@ toolBar.handlers.file.open.open_from_file=function (e) {
 }
 
 function LP_CreateHiddenFileInput(){
-    $(document.body).append($('<input type="file" class="hidden" name="fileinput" id="fileinput"/>'));
+    $(document.body).append($('<input type="file" class="hidden" name="fileinput" id="fileinput" accept=".gui900"/>'));
     $('#fileinput').on('change', function() { 
-        
+        if(($("#fileinput")[0].value.match(/\.([^\.]+)$/)[1])!="gui900"){
+            notification.error("This file is not a Gui900 visual editor project file");
+            return;
+        }
         var fr=new FileReader(); 
         fr.onload=function(){ 
             fileIO.load(fr.result)
