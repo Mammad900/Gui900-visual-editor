@@ -136,3 +136,17 @@
 #toolbar #project-name:empty {
     outline: 1px dotted;
 }
+
+#GVE-logo {
+    padding: 5px;
+    box-sizing: content-box;
+    width: 32px;
+    height: 45px;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--toolbar-background);
+    border-bottom-right-radius: 19px;
+    z-index: 10;
+}
