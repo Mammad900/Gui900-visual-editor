@@ -42,7 +42,7 @@ toolBar.createMenuItem = function( container, innerHtml, hasChild=false, disable
     return menuItem;
 }
 
-toolBar.createSubMenuItem = function( container, innerHtml, icon_class, hasChild=false, fits=true,hideMenuOnClick=true, disabled=false){
+toolBar.createSubMenuItem = function( container, innerHtml, icon_class, hasChild=false, fits=true,hideMenuOnClick=true, disabled=false, rightText=undefined){
     var menuItem= $("<div></div>").addClass("menuitem");
     if(!hideMenuOnClick) {
         menuItem.addClass("noHide");
@@ -57,6 +57,9 @@ toolBar.createSubMenuItem = function( container, innerHtml, icon_class, hasChild
 
     toolBarButton.append(innerHtml);
     if(hasChild) toolBarButton.append('<i class="float-right"><i class="fas fa-chevron-right"></i></i>');
+    if(rightText){
+        toolBarButton.append($("<span>").addClass("float-right").html(rightText));
+    }
     menuItem.append(toolBarButton);
 
     if(hasChild){
@@ -93,8 +96,8 @@ toolBar.menuItem = function(container,innerHTML,event,callback=function(){},hasC
  * @param {boolean} hasChild Set it to true if you want to make childs for this menu-item
  * @param {boolean} fits Set to true if the menu-item does not fit in it's place
  */
-toolBar.subMenuItem = function(container,innerHTML,icon_class,event,callback=function(a){},hasChild=false,hideMenuOnClick=true,fits=true, disabled=false){
-    var x= toolBar.createSubMenuItem ($(container),innerHTML,icon_class,hasChild,fits,hideMenuOnClick, disabled);
+toolBar.subMenuItem = function(container,innerHTML,icon_class,event,callback=function(a){},hasChild=false,hideMenuOnClick=true,fits=true, disabled=false, rightText=undefined){
+    var x= toolBar.createSubMenuItem ($(container),innerHTML,icon_class,hasChild,fits,hideMenuOnClick, disabled, rightText);
     callback(toolBar.getDropDown(x)[0]);
     x.children(":first-child").on("click",function (e) {
         if($(e.target).closest(".toolbar-button").hasClass("disabled")) {return;}

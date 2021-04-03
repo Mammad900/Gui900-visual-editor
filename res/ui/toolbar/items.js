@@ -3,14 +3,14 @@ function LP_GenerateToolbar() {
     var toolbar = document.getElementById("toolbar");
     toolBar.menuItem(toolbar, "File", function (e) {}, function (file) {
         toolBar.subMenuItem(file, "Open", "fa-folder-open", function (e) {}, function (open) {
-            toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.file.open.open_from_file);
+            toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.file.open.open_from_file, undefined, false, true, true, false, "Ctrl+O");
             toolBar.subMenuItem(open, "Open from JSON code", "fa-code", toolBar.handlers.file.open.import_from_json);
             toolBar.subMenuItem(open, "Open from browser storage", "fa-database", function () {
                 localStorage.getItem("savedProject") ? fileIO.load(localStorage.getItem("savedProject")) : notification.error("There is no saved project in browser storage.");
             });
         }, true,false);
         toolBar.subMenuItem(file, "Save", "fa-save", function (e) {}, function (save) {
-            toolBar.subMenuItem(save, "Save to file", "fa-file", toolBar.handlers.file.save.saveToFile);
+            toolBar.subMenuItem(save, "Save to file", "fa-file", toolBar.handlers.file.save.saveToFile, undefined, false, true, true, false, "Ctrl+S");
             toolBar.subMenuItem(save, "Get JSON code", "fa-code", toolBar.handlers.file.save.saveToJSON);
             toolBar.subMenuItem(save, "Save to browser storage", "fa-database", function () {
                 localStorage.setItem("savedProject",JSON.stringify(fileIO.createJSON()));
