@@ -133,16 +133,16 @@ async function LP(){
         var LP_funcs=[
             LP_SetTheme,
             
-            LP_keyBindings,
             LP_HandleNewElementButton,
             LP_GenerateToolbar,
             LP_createFirstPage,
             LP_CreateHiddenFileInput,
             preview.refresh,
             LP_LoadEditor,
+            LP_MakeBoxesSortable,
+            LP_keyBindings,
             LP_HandleColorPickerInput,
             LP_contextMenuHideTrigger,
-            LP_MakeBoxesSortable,
             LP_DefaultContextMenus,
             LP_loaderEnd,
             function () {
