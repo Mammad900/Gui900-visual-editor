@@ -1,6 +1,11 @@
 'use strict';
 function LP_GenerateToolbar() {
-    var toolbar = document.getElementById("toolbar");
+    var toolbar;
+    $("#loading-header").after(toolbar=$(html`
+        <header id="toolbar" style="display: none;">
+            <img src="res/img/icon-square.png" alt="Gui900 visual editor" id="GVE-logo">
+        </header>
+    `));
     toolBar.menuItem(toolbar, "File", function (e) {}, function (file) {
         toolBar.subMenuItem(file, "Open", "fa-folder-open", function (e) {}, function (open) {
             toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.file.open.open_from_file, undefined, false, true, true, false, "Ctrl+O");
