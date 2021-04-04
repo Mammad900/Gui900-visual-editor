@@ -10,7 +10,7 @@ function boxToNewWindow(box) {
         if(floatingBoxes[boxId]){
             floatingBoxes[boxId].focus();
         }else{
-            notification.error("An unexpected error occurred");
+            notification.error("An unexpected error occurred: The box was neither in this window nor in any floating windows");
         }
         return;
     }
