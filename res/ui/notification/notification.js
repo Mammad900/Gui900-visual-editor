@@ -12,6 +12,11 @@ var notification={
         }));
         $("#notifications").append(div);
         div.append($("<div></div>").addClass("content").html(text));
+        var btns=$("<div>").addClass("buttons");
+        buttons.forEach(btn => {
+            btns.append($("<button>").addClass("button").text(btn.text).on("click",btn.event))
+        });
+        div.append(btns);
         setTimeout(function(){
             div.animate({"opacity":"0"},"slow",function(){
                 div.remove();

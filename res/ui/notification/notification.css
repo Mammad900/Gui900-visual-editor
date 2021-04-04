@@ -51,3 +51,13 @@
 #notifications>div.warning .content::marker {content: "\f071"; color: yellow;}
 #notifications>div.error   .content::marker {content: "\f057"; color: red;   }
 #notifications>div.info    .content::marker {content: "\f05a"; color: var(--text-color); }
+
+
+#notifications>div .buttons {
+    margin-top: 6px;
+}
+
+#notifications>div .buttons button {
+    padding: 8px;
+    border: 1px solid var(--toolbar-menuitem-active);
+}
