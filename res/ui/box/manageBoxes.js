@@ -62,9 +62,24 @@ function boxToNewWindow(box) {
     floatingBoxes[boxId]=w;
 }
 
-function updateEmptyBoxRows() {
+function updateEmptyBoxRows(e) {
     $(".box-row:empty").addClass("empty");
     $(".box-row:not(:empty)").removeClass("empty");
+
+    if(e.type=="sortdeactivate"){
+        if(!($(this).hasClass("responsive"))){ // Event fires for all 5 rows, and 4 rows have the "responsive" class. To execute our code only once, we can check if it doesn't have the class.
+
+            var rows=[];
+            $("main").children(".box-row").each(function () {
+                let boxes=[]
+                $(this).children(".box").each(function () {
+                    boxes.push(this.id);
+                })
+                rows.push(boxes);
+            })
+            localStorage.setItem("boxesPositions", JSON.stringify(rows))
+        }
+    }
 }
 function LP_MakeBoxesSortable() {
     $("main.content .box-row").sortable({

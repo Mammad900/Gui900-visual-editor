@@ -7,6 +7,7 @@ self.addEventListener('fetch', async event => {
 });
 
 var LP_Files=[
+    "res/ui/box/createBoxes.js", //Creates Preview, Properties, Elements, Pages and Code editor boxes
     "res/js/cookies.js", //Writes and reads cookies
     "res/js/theme-loader.js", //Theme loader
     "res/ui/toolbar/toolbar.js", //Toolbar controller, creates tool bar HTML and handle onclick

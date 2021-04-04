@@ -20,6 +20,7 @@ function loadJsCssFile(filename){
     return fileRef;
 }
 var LP_res=[
+    "res/ui/box/createBoxes.js", //Creates Preview, Properties, Elements, Pages and Code editor boxes
     "res/js/cookies.js", //Writes and reads cookies
     "res/js/theme-loader.js", //Theme loader
     "res/ui/toolbar/toolbar.js", //Toolbar controller, creates tool bar HTML and handle onclick
@@ -132,7 +133,7 @@ async function LP(){
     try{
         var LP_funcs=[
             LP_SetTheme,
-            
+            LP_CreateBoxes,
             LP_HandleNewElementButton,
             LP_GenerateToolbar,
             LP_createFirstPage,
