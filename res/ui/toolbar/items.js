@@ -42,6 +42,11 @@ function LP_GenerateToolbar() {
                 await caches.delete("gve-pwa-conf-1");
                 notification.success("Cleared cache");
             });
+            toolBar.subMenuItem(advanced, "Reset page layout", "fa-undo", function () {
+                localStorage.removeItem("boxesPositions");
+                notification.warning("To apply layout changes, please reload the page. Dragging any box will override the default layout"
+                                        ,[{text: "Reload", event: e=>window.location.reload()}], 15000)
+            });
         }, true,false);
         
     });
