@@ -6,6 +6,7 @@ function LP_GenerateToolbar() {
             <img src="res/img/icon-square.png" alt="Gui900 visual editor" id="GVE-logo">
         </header>
     `));
+    toolbar=toolbar[1]
     toolBar.menuItem(toolbar, "File", function (e) {}, function (file) {
         toolBar.subMenuItem(file, "Open", "fa-folder-open", function (e) {}, function (open) {
             toolBar.subMenuItem(open, "Open from file", "fa-folder-open", toolBar.handlers.file.open.open_from_file, undefined, false, true, true, false, "Ctrl+O");
