@@ -45,7 +45,7 @@ function LP_GenerateToolbar() {
             toolBar.subMenuItem(advanced, "Reset page layout", "fa-undo", function () {
                 localStorage.removeItem("boxesPositions");
                 notification.warning("To apply layout changes, please reload the page. Dragging any box will override the default layout"
-                                        ,[{text: "Reload", event: e=>window.location.reload()}], 15000)
+                                        ,[{text: "Reload", event: e=>window.location.reload(), hideOnClick: true}], 15000)
             });
         }, true,false);
         

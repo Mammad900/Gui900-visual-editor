@@ -14,7 +14,12 @@ var notification={
         div.append($("<div></div>").addClass("content").html(text));
         var btns=$("<div>").addClass("buttons");
         buttons.forEach(btn => {
-            btns.append($("<button>").addClass("button").text(btn.text).on("click",btn.event))
+            btns.append(
+                $("<button>").addClass("button").text(btn.text).on("click",e=>{
+                    btn.event(e);
+                    if(btn.hideOnClick) {div.remove();}
+                })
+            )
         });
         div.append(btns);
         setTimeout(function(){
