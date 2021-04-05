@@ -10,7 +10,7 @@ toolBar.handlers.file.generateCode= function (e) {
     localStorage.setItem("generateCodePath", path);
     var code=generateCode(path);
 
-    var el=$("<div></div>").css("height", "300px");
+    var el=$("<div></div>").css({"height": "300px", "width": "350px"});
     monaco.editor.create(el[0],{...{
         language: "cpp",
         value: code,

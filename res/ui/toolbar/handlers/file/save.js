@@ -26,7 +26,7 @@ toolBar.handlers.file.save.saveToFile = function(e) {
 }
 
 toolBar.handlers.file.save.saveToJSON = function(e) {
-    dialog(("<textarea style='height: 300px' readonly>"+JSON.stringify(fileIO.createJSON())+"</textarea>"), [
+    dialog(("<textarea style='height: 300px;width: 350px' readonly>"+JSON.stringify(fileIO.createJSON())+"</textarea>"), [
         {
             "id": 0,
             "text": "OK"

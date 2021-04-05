@@ -1,4 +1,6 @@
 #dialog {
+    display: flex;
+    padding: 50px;
     position: fixed;
     z-index: 10;
     left: 0;
@@ -12,9 +14,9 @@
 
 #dialog .content {
     background-color: var(--dialog-background-color);
-    margin: 15% auto;
+    margin: auto;
     padding: 20px;
-    width: 50%;
+    max-width: 600px;
     border: var(--border);
 }
 
