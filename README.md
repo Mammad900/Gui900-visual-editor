@@ -1,3 +1,6 @@
+## Note: This projector is not maintained anymore. 
+**\*If**\* the developer decides to continue this project, it will be created from scratch with a new architecture, and based on the new Gui900 (which will be also made from scratch in case this happens) 
+
 # Gui900 visual editor
 
 Gui900 visual editor is a web based app which helps you create an app based on [Gui900](https://github.com/Mammad900/Gui900) easily.
