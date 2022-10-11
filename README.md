@@ -1,5 +1,5 @@
-## Note: This projector is not maintained anymore. 
-**\*If**\* the developer decides to continue this project, it will be created from scratch with a new architecture, and based on the new Gui900 (which will be also made from scratch in case this happens) 
+## Note: This project is not maintained anymore. 
+**\*If**\* the developer decides to continue this project, it will be created from scratch with a new architecture, and based on a new Gui900 (which will be also made from scratch in case this happens) 
 
 # Gui900 visual editor
 
